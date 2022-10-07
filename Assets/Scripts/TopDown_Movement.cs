@@ -1,14 +1,14 @@
-// Unity Script for the Player
+// This script allows movement for the player in the top-down view
+// Author: Robot and I Team
+// Last modification date: 10-07-2022
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TopDown_Movement : MonoBehaviour
 {
     // Public variables
-    public float moveSpeed;
-    public Rigidbody2D rb;
+    public float moveSpeed; // Inspector view modifiable
+    public Rigidbody2D rb; // Associated sprite object
 
     // Private variables
     private Vector2 moveDirection;
@@ -35,6 +35,7 @@ public class TopDown_Movement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         // Create a new variable for the move direction
+        // .normalized stops diagonal movement being greater than movement speed
         moveDirection = new Vector2(moveX, moveY).normalized;
     }
 
