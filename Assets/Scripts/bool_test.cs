@@ -5,25 +5,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Compile_Code : MonoBehaviour
+public class bool_test : MonoBehaviour
 {
-    public TMP_InputField userInput; // References the User's Input Field
-    public TextMeshProUGUI programOutput; // References the TMP Output Field
+    public TMP_InputField userInputB; // References the User's Input Field
+    public TextMeshProUGUI programOutputB; // References the TMP Output Field
     public void Code_Compiler()
     {
         string path = Application.dataPath + "/Scripts/test.txt";
-        //if(!File.Exists(path)){
-            File.WriteAllText(path, " ");
-       // }
-
         // Save Text from input field into user input
         bool safe = true;
-        try { 
-            int i = int.Parse(userInput.text);
+        try
+        {
+            bool i = bool.Parse(userInputB.text);
         }
         catch (Exception ex)
         {
-            programOutput.text = "Incorrect";
+            programOutputB.text = "Incorrect";
             safe = false;
             Debug.Log(ex.Message);
             string bit = "0";
@@ -32,11 +29,12 @@ public class Compile_Code : MonoBehaviour
         }
         if (safe)
         {
-
-            programOutput.text = "Correct!";
+            programOutputB.text = "Correct!";
             string bit = "1";
             File.AppendAllText(path, bit);
         }
+
+
 
     }
 }

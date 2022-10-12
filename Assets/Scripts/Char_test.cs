@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Compile_Code : MonoBehaviour
+public class Char_test : MonoBehaviour
 {
     public TMP_InputField userInput; // References the User's Input Field
     public TextMeshProUGUI programOutput; // References the TMP Output Field
@@ -13,13 +13,14 @@ public class Compile_Code : MonoBehaviour
     {
         string path = Application.dataPath + "/Scripts/test.txt";
         //if(!File.Exists(path)){
-            File.WriteAllText(path, " ");
-       // }
+        File.WriteAllText(path, " ");
+        // }
 
         // Save Text from input field into user input
         bool safe = true;
-        try { 
-            int i = int.Parse(userInput.text);
+        try
+        {
+            char i = char.Parse(userInput.text);
         }
         catch (Exception ex)
         {
