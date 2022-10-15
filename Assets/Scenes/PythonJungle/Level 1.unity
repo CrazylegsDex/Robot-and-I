@@ -2148,54 +2148,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1955576246}
-        m_TargetAssemblyTypeName: String_test, Assembly-CSharp
-        m_MethodName: Code_Compiler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1955576245}
-        m_TargetAssemblyTypeName: Float_test, Assembly-CSharp
-        m_MethodName: Code_Compiler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1955576244}
-        m_TargetAssemblyTypeName: bool_test, Assembly-CSharp
-        m_MethodName: Code_Compiler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1955576248}
-        m_TargetAssemblyTypeName: Complete_check, Assembly-CSharp
-        m_MethodName: ReadString
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &903605672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4253,7 +4205,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9299611, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4773,10 +4725,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1955576243}
   - component: {fileID: 1955576247}
-  - component: {fileID: 1955576246}
-  - component: {fileID: 1955576245}
-  - component: {fileID: 1955576244}
-  - component: {fileID: 1955576248}
   m_Layer: 0
   m_Name: ScriptController
   m_TagString: Untagged
@@ -4799,48 +4747,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1955576244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955576241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6163711d7e134ca4f87d12755884aa1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userInputB: {fileID: 34873046}
-  programOutputB: {fileID: 2040227756}
---- !u!114 &1955576245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955576241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a614e60f7cf4414bbdbf9e5bddff02b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userInputF: {fileID: 2109395587}
-  programOutputF: {fileID: 153849807}
---- !u!114 &1955576246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955576241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115645b722f300c47a8e7785a116201b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  userInputS: {fileID: 1008102023}
-  programOutputS: {fileID: 545916970}
 --- !u!114 &1955576247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,20 +4760,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userInput: {fileID: 1849319269}
+  stringInput: {fileID: 1008102023}
+  boolInput: {fileID: 34873046}
+  floatInput: {fileID: 2109395587}
   programOutput: {fileID: 245613262}
---- !u!114 &1955576248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955576241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8d57fce8405c448b52f840ceb336c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameobject: {fileID: 79581020}
+  stringOutput: {fileID: 545916970}
+  boolOutput: {fileID: 2040227756}
+  floatOutput: {fileID: 153849807}
+  blockobject: {fileID: 79581020}
 --- !u!1 &2040227754
 GameObject:
   m_ObjectHideFlags: 0
@@ -5089,7 +4989,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.8283677, a: 1}
+  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
