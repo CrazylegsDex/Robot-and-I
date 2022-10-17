@@ -43,7 +43,7 @@ public class Platformer_Movement : MonoBehaviour
     // Update is called once per frame
     void Update() // Called Second
     {
-        if (!textMeshInput.isFocused) // The the cursor is not currently in a TMP object
+        if (!textMeshInput.isFocused) // Check that the cursor is not currently selected on a TMP object
         {
             // Get player inputs
             processInputs();
