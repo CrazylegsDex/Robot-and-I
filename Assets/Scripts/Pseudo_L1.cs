@@ -56,8 +56,20 @@ public class Pseudo_L1 : MonoBehaviour
         }
         if (safe)
         {
+<<<<<<< Updated upstream
             stringOutput.text = "Correct!";
             num++;
+=======
+            string s = stringInput.text;
+            if (s.StartsWith("\"") && s.EndsWith("\""))
+            {
+                stringOutput.text = "Correct!";
+                num++;
+            }
+            else
+                stringOutput.text = "Incorrect";
+
+>>>>>>> Stashed changes
 
         }
         //bool
