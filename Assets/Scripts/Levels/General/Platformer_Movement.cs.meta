@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Platformer_Movement.cs.meta
+guid: 493a1bca2436a5e478280dd04144e707
+=======
+guid: abce406dd0733cf45b74a3ec4d3ca5fc
+>>>>>>> main:Assets/Scripts/Levels/General/Platformer_Movement.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
