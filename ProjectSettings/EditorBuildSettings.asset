@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Overworld/MainGame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/PseudoCity/PseudoIsland.unity
+    guid: 3943f48196cb8fd449c6ef34c4bec9c9
   - enabled: 1
-    path: Assets/Scenes/PythonJungle/Level1.unity
-    guid: 4d6c305a0a3f4bc4caf46151e3183881
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level1.unity
+    guid: ba322565918b4f44fbd6777b472bcc7f
   - enabled: 1
-    path: Assets/Scenes/TheSharpSeas/Level2.unity
-    guid: 946b1d42df5c4714ea5d4094583b15c2
+    path: Assets/Scenes/PythonJungle/PythonIsland.unity
+    guid: 2f7f96d191455d842bad6df89653c202
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level10.unity
+    guid: 5cb10cbf87eba924ebbc3d6446183c05
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/SharpSeas.unity
+    guid: ece9351c77008084cb4fcce3a115cbf3
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level10.unity
+    guid: f8f9ccf1dabd8b546a32ad4000ae8cc1
   m_configObjects: {}

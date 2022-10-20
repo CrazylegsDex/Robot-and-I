@@ -16,9 +16,6 @@
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
-# Asset meta data should only be ignored when the corresponding asset is also ignored
-# !/[Aa]ssets/**/*.meta
-
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
@@ -50,10 +47,9 @@ ExportedObj/
 *.VC.db
 
 # Unity3D generated meta files
-# *.pidb.meta
-# *.pdb.meta
-# *.mdb.meta
-# *.png.meta
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
