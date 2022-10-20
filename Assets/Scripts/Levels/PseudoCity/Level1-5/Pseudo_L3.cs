@@ -202,7 +202,7 @@ public class Pseudo_L3 : MonoBehaviour
         }
         if (safe)
         {
-            if (end == 0 && d == 25)
+            if (end == 0 && d == 28)
             {
                 dOutput.text = "Correct!";
                 num++;
