@@ -55,7 +55,7 @@ public class CSharpCodeCompiler : MonoBehaviour
                 // These variables will be globals that the player can use
 
                 // This function adds a script to the host object
-                // This script addition is required so that Unity can run
+                // This script addition is required so that Unity can
                 // run it during runtime.
                 public static RuntimeScript AddYourselfTo(GameObject host)
                 {
