@@ -23,33 +23,33 @@ public class Pseudo_L3 : MonoBehaviour
     public GameObject blockobject;//object block the ability to complete the level
     public void Code_Compiler()
     {
-        //A
+        
         int num = 0;//counts up everytime a try block receives valid input.
         int end;//get assigned a value to its related section.
         if (eContext.text == "Addition")//compares section titles
         {
-            end = 0;
+            end = 0;//Assigns the section value for addition
         }
         else if (eContext.text == "Subtraction")
         {
-            end = 1;
+            end = 1;//Assigns the section value for subtraction
         }
         else if (eContext.text == "Multiplication")
         {
-            end = 2;
+            end = 2;//Assigns the section value for multiplication
         }
         else if (eContext.text == "Division")
         {
-            end = 3;
+            end = 3;//Assigns the section value for division
         }
         else
         {
-            end = 4;
+            end = 4;//Assigns the section value for modulus
         }
         double a, b, c, d;//Input values
 
         a = b = c = d = 0;
-        
+        //A section
         bool safe = true;//goes false if the input in the try blocks is invalid
         try
         {// Save Text from input field into user input
@@ -64,28 +64,28 @@ public class Pseudo_L3 : MonoBehaviour
         }
         if (safe)
         {//Correct double inputed for section
-            if (end == 0 && a == 3.0)//new value for each section
-            {
+            if (end == 0 && a == 3.0)//new value for each section 
+            {//Addition Section
                 aOutput.text = "Correct!";
                 num++;
             }
             else if (end == 1 && a == 1)
-            {
+            {//Subtraction Section
                 aOutput.text = "Correct!";
                 num++;
             }
             else if (end == 2 && a == 49)
-            {
+            {//Multiplication Section
                 aOutput.text = "Correct!";
                 num++;
             }
             else if (end == 3 && a == .5)
-            {
+            {//Division Section
                 aOutput.text = "Correct!";
                 num++;
             }
             else if (end == 4 && a == 2)
-            {
+            {//Modulus Section
                 aOutput.text = "Correct!";
                 num++;
             }
@@ -95,7 +95,7 @@ public class Pseudo_L3 : MonoBehaviour
             }
 
         }
-        //B
+        //B section
         safe = true;//resets safe for next input
         try
         {
@@ -111,27 +111,27 @@ public class Pseudo_L3 : MonoBehaviour
         if (safe)
         {
             if (end == 0 && b == 6)
-            {
+            {//Addition Section
                 bOutput.text = "Correct!";
                 num++;
             }
             else if (end == 1 && b == 8)
-            {
+            {//Subtraction Section
                 bOutput.text = "Correct!";
                 num++;
             }
             else if (end == 2 && b == 37)
-            {
+            {//Multiplication Section
                 bOutput.text = "Correct!";
                 num++;
             }
             else if (end == 3 && b == 0)
-            {
+            {//Division Section
                 bOutput.text = "Correct!";
                 num++;
             }
             else if (end == 4 && b == 2)
-            {
+            {//Modulus Section
                 bOutput.text = "Correct!";
                 num++;
             }
@@ -141,7 +141,7 @@ public class Pseudo_L3 : MonoBehaviour
             }
 
         }
-        //C
+        //C section
         safe = true;
         try
         {
@@ -157,27 +157,27 @@ public class Pseudo_L3 : MonoBehaviour
         if (safe)
         {
             if (end == 0 && c == 3.3)
-            {
+            {//Addition Section
                 cOutput.text = "Correct!";
                 num++;
             }
             else if (end == 1 && c == -1.2)
-            {
+            {//Subtraction Section
                 cOutput.text = "Correct!";
                 num++;
             }
             else if (end == 2 && c == 9)
-            {
+            {//Multiplication Section
                 cOutput.text = "Correct!";
                 num++;
             }
             else if (end == 3 && c == 9.5)
-            {
+            {//Division Section
                 cOutput.text = "Correct!";
                 num++;
             }
             else if (end == 4 && c == 2)
-            {
+            {//Modulus Section
                 cOutput.text = "Correct!";
                 num++;
             }
@@ -187,7 +187,7 @@ public class Pseudo_L3 : MonoBehaviour
             }
 
         }
-        //D
+        //D section
         safe = true;
         try
         {
@@ -203,27 +203,27 @@ public class Pseudo_L3 : MonoBehaviour
         if (safe)
         {
             if (end == 0 && d == 28)
-            {
+            {//Addition Section
                 dOutput.text = "Correct!";
                 num++;
             }
             else if (end == 1 && d == 3.4)
-            {
+            {//Subtraction Section
                 dOutput.text = "Correct!";
                 num++;
             }
             else if (end == 2 && d == 52)
-            {
+            {//Multiplication Section
                 dOutput.text = "Correct!";
                 num++;
             }
             else if (end == 3 && d == 6)
-            {
+            {//Division Section
                 dOutput.text = "Correct!";
                 num++;
             }
             else if (end == 4 && d == 2)
-            {
+            {//Modulus Section
                 dOutput.text = "Correct!";
                 num++;
             }
@@ -238,7 +238,7 @@ public class Pseudo_L3 : MonoBehaviour
             Debug.Log("works");
             blockobject.SetActive(false); //hides the platform blocking level progress
         }
-        else if (num == 4 && end == 0)//Updates code text after first section is all correct.
+        else if (num == 4 && end == 0)//Updates code text to the subtraction section after the addition section is all correct.
         {
             aContext.text = "A. x= 2-1\noutput(x)\n\noutput:";
             bContext.text = "B. x= 20-5\ny= 3+4 \nx-=y\noutput(x)\n\noutput:";
@@ -246,7 +246,7 @@ public class Pseudo_L3 : MonoBehaviour
             dContext.text = "D. x= 10+5\ny= 5-3.3 \nz=x-y\ny= y-z+x\noutput(y)\n\noutput:";
             eContext.text = "Subtraction"; 
         }
-        else if (num == 4 && end == 1)//Updates code text after second section is all correct.
+        else if (num == 4 && end == 1)//Updates code text to the multiplication section after subtraction section is all correct.
         {
             aContext.text = "A. x= 2+5\ny= 10-3\nx*=y\noutput(x)\n\noutput:";
             bContext.text = "B. x= 5*3\ny= 10*2.2 \nx+=y\noutput(x)\n\noutput:";
@@ -254,7 +254,7 @@ public class Pseudo_L3 : MonoBehaviour
             dContext.text = "D. x= 3*4-1\ny= 4+1*5 \nz=2*2+2\ny= 2*(y+z+x)\noutput(y)\n\noutput:";
             eContext.text = "Multiplication";
         }
-        else if (num == 4 && end == 2)//Updates code text after third section is all correct.
+        else if (num == 4 && end == 2)//Updates code text to the division section after multiplication section is all correct.
         {
             aContext.text = "A. x= 2.0/4\noutput(x)\n\noutput:";
             bContext.text = "B. y= 2/4\noutput(y)\n\noutput:";
@@ -262,7 +262,7 @@ public class Pseudo_L3 : MonoBehaviour
             dContext.text = "D. x= 3*3\ny= 2+5 \nz= (x+y)*2\nz+=1\noutput(z/5)\n\noutput:";
             eContext.text = "Division";
         }
-        else if (num == 4 && end == 3)//Updates code text after fouth section is all correct.
+        else if (num == 4 && end == 3)//Updates code text to the modulus after division section is all correct.
         {
             aContext.text = "A. x= 2%4\noutput(x)\n\noutput:";
             bContext.text = "B. x= 3%2+1\noutput(x)\n\noutput:";
