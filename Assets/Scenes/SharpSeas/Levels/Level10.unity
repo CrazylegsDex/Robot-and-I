@@ -2231,6 +2231,7 @@ MonoBehaviour:
   groundObjects:
     serializedVersion: 2
     m_Bits: 64
+  textMeshInput: {fileID: 2140856164}
 --- !u!1 &2140856162
 GameObject:
   m_ObjectHideFlags: 0
