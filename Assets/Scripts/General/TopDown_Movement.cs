@@ -1,46 +1,50 @@
-// Unity Script for the Player
+// This script allows movement for the player in the topdown view
+//
+// Author: Robot and I Team
+// Last modification date: 10-28-2022
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TopDown_Movement : MonoBehaviour
+namespace PlayerControl
 {
-    // Public variables
-    public float moveSpeed;
-    public Rigidbody2D rb;
-
-    // Private variables
-    private Vector2 moveDirection;
-
-    // Update is called once per frame, therefore based on frame rate
-    void Update()
+    public class TopDown_Movement : MonoBehaviour
     {
-        // Use this function for processing inputs from the user
-        ProcessInputs();
-    }
+        // Public variables
+        public float moveSpeed;
+        public Rigidbody2D rb;
 
-    // FixedUpdate is called on a consistent basis.
-    // Results in less jaggy movement if used in physics calculations
-    void FixedUpdate()
-    {
-        // Use this function for processing physics calculations
-        Move();
-    }
+        // Private variables
+        private Vector2 moveDirection;
 
-    void ProcessInputs()
-    {
-        // Create two variables for current X,Y axis
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        // Update is called once per frame, therefore based on frame rate
+        void Update()
+        {
+            // Use this function for processing inputs from the user
+            ProcessInputs();
+        }
 
-        // Create a new variable for the move direction
-        moveDirection = new Vector2(moveX, moveY).normalized;
-    }
+        // FixedUpdate is called on a consistent basis.
+        // Results in less jaggy movement if used in physics calculations
+        void FixedUpdate()
+        {
+            // Use this function for processing physics calculations
+            Move();
+        }
 
-    void Move()
-    {
-        // Calculate where to move to
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        void ProcessInputs()
+        {
+            // Create two variables for current X,Y axis
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+
+            // Create a new variable for the move direction
+            moveDirection = new Vector2(moveX, moveY).normalized;
+        }
+
+        void Move()
+        {
+            // Calculate where to move to
+            rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        }
     }
 }
