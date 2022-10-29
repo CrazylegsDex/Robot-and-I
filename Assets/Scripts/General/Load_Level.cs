@@ -1,36 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
+/* This script allows us to change scenes based on
+ * the information in the scene manager.
+ * 
+ * Author: Robot and I team
+ * Date Modification: 10/28/2022
+ */
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Load_Level : MonoBehaviour
+namespace GameMechanics
 {
-    // Public variables
-    public int iLevelToLoad;
-    public string sLevelToLoad;
-    public bool userIntegerToLoadLevel = false;
-
-    // Will trigger when two objects collide
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class Load_Level : MonoBehaviour
     {
-        // collisionGameObject is the first object that moved into the second
-        // Effectively refers to the object that just ran into the object this script is attached.
-        GameObject collisionGameObject = collision.gameObject;
+        // Public variables
+        public int iLevelToLoad;
+        public string sLevelToLoad;
+        public bool userIntegerToLoadLevel = false;
 
-        if(collisionGameObject.tag == "Player")
+        // Will trigger when two objects collide
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            LoadScene();
-        }
+            // collisionGameObject is the first object that moved into the second
+            // Effectively refers to the object that just ran into the object this script is attached.
+            GameObject collisionGameObject = collision.gameObject;
 
-        void LoadScene()
-        {
-            if (userIntegerToLoadLevel)
+            if (collisionGameObject.tag == "Player")
             {
-                SceneManager.LoadScene(iLevelToLoad);
+                LoadScene();
             }
-            else
+
+            void LoadScene()
             {
-                SceneManager.LoadScene(sLevelToLoad);
+                if (userIntegerToLoadLevel)
+                {
+                    SceneManager.LoadScene(iLevelToLoad);
+                }
+                else
+                {
+                    SceneManager.LoadScene(sLevelToLoad);
+                }
             }
         }
     }
