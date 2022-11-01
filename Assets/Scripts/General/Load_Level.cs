@@ -2,20 +2,19 @@
  * the information in the scene manager.
  * 
  * Author: Robot and I team
- * Date Modification: 10/28/2022
+ * Date Modification: 11-01-2022
  */
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 namespace GameMechanics
 {
     public class Load_Level : MonoBehaviour
     {
         // Public variables
-        public int iLevelToLoad; // For the integer version
-        public string sLevelToLoad; // For the name version
-        public bool userIntegerToLoadLevel = false;
+        public string LevelToLoad;
 
         // Will trigger when two objects collide
         // Parameter is the object that the script is attached to (auto passed)
@@ -27,20 +26,24 @@ namespace GameMechanics
 
             if (collisionGameObject.tag == "Player") // Did the "Player" collide into the current object
             {
-                LoadScene();
+                // Use a coroutine to load the Scene in the background
+                StartCoroutine(SceneLoader(LevelToLoad));
             }
+        }
 
-            // Leave as a function for future updates to loading a scene
-            void LoadScene()
+        // Static method available to be used as a coroutine SceneLoader
+        public static IEnumerator SceneLoader(string SceneToLoad)
+        {
+            // The Application loads the Scene in the background as the current Scene runs.
+            // This is particularly good for creating loading screens.
+            // You could also load the Scene by using sceneBuildIndex.
+
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneToLoad);
+
+            // Wait until the asynchronous scene fully loads
+            while (!asyncLoad.isDone)
             {
-                if (userIntegerToLoadLevel) // Should we use the integer input
-                {
-                    SceneManager.LoadScene(iLevelToLoad);
-                }
-                else // Use the String level name
-                {
-                    SceneManager.LoadScene(sLevelToLoad);
-                }
+                yield return null;
             }
         }
     }

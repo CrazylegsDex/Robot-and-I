@@ -735,9 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7509010393f654da1940f2b76d6d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iLevelToLoad: 7
-  sLevelToLoad: 
-  userIntegerToLoadLevel: 1
+  LevelToLoad: CIsland
 --- !u!1 &1270641906
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,9 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7509010393f654da1940f2b76d6d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iLevelToLoad: 6
-  sLevelToLoad: 
-  userIntegerToLoadLevel: 1
+  LevelToLoad: PY_Level17
 --- !u!1 &1409718759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736464e1b214f634281fa97a4fcd87bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 15
   rb: {fileID: 1817339352}
 --- !u!1 &2052051525
 GameObject:

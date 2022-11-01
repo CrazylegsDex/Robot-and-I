@@ -3,7 +3,6 @@
  * input text for a TMP_InputField
  *
  * This script has two primary methods for doing this.
- * 
  * 1. Get the input from the InputTextBox and compile it
  * 2. Act upon the results from the compilation.
  * 

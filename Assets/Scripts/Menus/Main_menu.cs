@@ -1,17 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+/* This script is used on the main menu
+ * Its design is to act upon button presses
+ * for each respective menu option
+ * 
+ * Robot and I team
+ * 11-01-2022
+ */
 
-public class Main_menu : MonoBehaviour
+using UnityEngine;
+
+namespace GameMechanics
 {
-    public void NewGame()
+    public class Main_menu : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    public void QuitGame()
-    {
-        Debug.Log("QUIT");
-        Application.Quit();
+        public void NewGame()
+        {
+            // Use a coroutine to load the Scene in the background
+            StartCoroutine(Load_Level.SceneLoader("PseudoIsland"));
+        }
+
+        public void QuitGame()
+        {
+            Debug.Log("QUIT");
+            Application.Quit();
+        }
     }
 }

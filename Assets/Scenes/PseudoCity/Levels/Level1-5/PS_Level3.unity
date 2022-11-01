@@ -4583,9 +4583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7509010393f654da1940f2b76d6d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iLevelToLoad: 0
-  sLevelToLoad: 
-  userIntegerToLoadLevel: 1
+  LevelToLoad: PseudoIsland
 --- !u!61 &1786716004
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,24 +12,30 @@ EditorBuildSettings:
     path: Assets/Scenes/PseudoCity/PseudoIsland.unity
     guid: 3943f48196cb8fd449c6ef34c4bec9c9
   - enabled: 1
-    path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level1.unity
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level1.unity
     guid: e3f9990a831652249a057137fb398878
   - enabled: 1
-    path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level2.unity
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level2.unity
     guid: a48336fe27466a84da2a56045fccdabe
   - enabled: 1
-    path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level3.unity
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level3.unity
     guid: 96411c21402c9194486806cec14e191a
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level4.unity
+    guid: b1776d1bafb8d024c8d24f53b06a735d
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level5.unity
+    guid: 2eb684cb340b4654a941ad4f44960959
   - enabled: 1
     path: Assets/Scenes/PythonJungle/PythonIsland.unity
     guid: 2f7f96d191455d842bad6df89653c202
   - enabled: 1
-    path: Assets/Scenes/PythonJungle/Levels/Level10.unity
+    path: Assets/Scenes/PythonJungle/Levels/PY_Level17.unity
     guid: 5cb10cbf87eba924ebbc3d6446183c05
   - enabled: 1
-    path: Assets/Scenes/SharpSeas/SharpSeas.unity
+    path: Assets/Scenes/SharpSeas/CIsland.unity
     guid: ece9351c77008084cb4fcce3a115cbf3
   - enabled: 1
-    path: Assets/Scenes/SharpSeas/Levels/Level10.unity
+    path: Assets/Scenes/SharpSeas/Levels/CS_Level12.unity
     guid: f8f9ccf1dabd8b546a32ad4000ae8cc1
   m_configObjects: {}
