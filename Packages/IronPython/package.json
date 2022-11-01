@@ -1,0 +1,12 @@
+{
+  "name": "net.robotandi.ironpython",
+  "version": "1.0.0",
+  "displayName": "IronPython",
+  "description": "This package holds the .dll for our project",
+  "unity": "2022.1",
+  "author":
+  {
+    "name": "Dexter W. Downey",
+    "email": "dwdowney1@buffs.wtamu.edu"
+  }
+}
