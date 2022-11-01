@@ -13,7 +13,13 @@ EditorBuildSettings:
     guid: 3943f48196cb8fd449c6ef34c4bec9c9
   - enabled: 1
     path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level1.unity
-    guid: ba322565918b4f44fbd6777b472bcc7f
+    guid: e3f9990a831652249a057137fb398878
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level2.unity
+    guid: a48336fe27466a84da2a56045fccdabe
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level1-5/Level3.unity
+    guid: 96411c21402c9194486806cec14e191a
   - enabled: 1
     path: Assets/Scenes/PythonJungle/PythonIsland.unity
     guid: 2f7f96d191455d842bad6df89653c202
