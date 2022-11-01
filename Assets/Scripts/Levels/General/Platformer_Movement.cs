@@ -4,6 +4,7 @@
 // Last modification date: 10-28-2022
 
 using UnityEngine;
+using TMPro;
 
 namespace PlayerControl
 {

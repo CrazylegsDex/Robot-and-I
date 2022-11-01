@@ -10,8 +10,8 @@ namespace PlayerControl
     public class TopDown_Movement : MonoBehaviour
     {
         // Public variables
-        public float moveSpeed;
-        public Rigidbody2D rb;
+        public float moveSpeed; // Inspector view modifiable
+        public Rigidbody2D rb; // Associated sprite object
 
         // Private variables
         private Vector2 moveDirection;

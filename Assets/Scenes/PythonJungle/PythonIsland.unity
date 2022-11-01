@@ -671,7 +671,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 791351512, guid: a00e1c346421e554187bbe5418b78892, type: 3}
+  m_Sprite: {fileID: -4896452150530583312, guid: a00e1c346421e554187bbe5418b78892, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -799,7 +799,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1062075185, guid: a00e1c346421e554187bbe5418b78892, type: 3}
+  m_Sprite: {fileID: 5084661014962647745, guid: a00e1c346421e554187bbe5418b78892, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7509010393f654da1940f2b76d6d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iLevelToLoad: 5
+  iLevelToLoad: 6
   sLevelToLoad: 
   userIntegerToLoadLevel: 1
 --- !u!1 &1409718759
