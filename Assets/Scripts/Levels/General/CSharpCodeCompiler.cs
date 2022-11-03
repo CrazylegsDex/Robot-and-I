@@ -9,7 +9,7 @@
  * Author: Robot and I Team
  * Credits: DMGregory at Stackexchange.com - His helpful code example
  *     allowed this project to succeed in its efforts.
- * Last modification date: 10-28-2022
+ * Last modification date: 11-03-2022
  */
 
 using UnityEngine;
@@ -112,7 +112,7 @@ namespace GameMechanics
             GameObject myTestObject;
             myTestObject = GameObject.FindWithTag("ObjectMove");
             if (myTestObject != null)
-                myTestObject.transform.Translate(-5, 0, 0); // Move 5 units to the left
+                myTestObject.transform.Translate(0, -1, 0); // Move 5 units to the left
         }
 
         /*
@@ -139,10 +139,29 @@ namespace GameMechanics
              * NOTE: Path locations may vary based on install. WILL encounter errors on build.
              * Refer to the C# compiler documentation for what to do in this instance.
              */
-            parameters.ReferencedAssemblies.Add("System.dll");
-            parameters.ReferencedAssemblies.Add(@"C:\Program Files\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Managed\UnityEngine.dll");
-            parameters.ReferencedAssemblies.Add("Microsoft.CSharp.dll");
-            parameters.ReferencedAssemblies.Add(@"C:\Program Files\Unity\Hub\Editor\2022.1.17f1\Editor\Data\MonoBleedingEdge\lib\mono\4.8-api\Facades\netstandard.dll");
+            if (Application.isEditor)
+            {
+                string path1 = @"Data\PlaybackEngines\windowsstandalonesupport\Variations\win32_player_development_mono\Data\Managed\";
+                string path2 = @"Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-7.0.1\ScriptAssemblies\";
+                string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
+                string win32Location = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
+                string engineLocation = assemblyLocation.Substring(0, assemblyLocation.IndexOf("Data")); // Extract base location for Data folder
+                parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
+                parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
+                parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
+                parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
+                parameters.ReferencedAssemblies.Add(win32Location + "Facades\\netstandard.dll");
+            }
+            else
+            {
+                string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
+                string folderPath = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
+                parameters.ReferencedAssemblies.Add(folderPath + "System.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.CoreModule.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.UI.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "Microsoft.CSharp.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "netstandard.dll");
+            }
 
             // Set compiler parameters
             // NOTE: Set "IncludeDebugInformation" to false when pushed into production
@@ -150,9 +169,7 @@ namespace GameMechanics
             parameters.GenerateInMemory = true;
             parameters.IncludeDebugInformation = true;
 
-            // Compile the sourceCode 
             result = provider.CompileAssemblyFromSource(parameters, sourceCode);
-
             // Check if there were compilation errors
             if (result.Errors.HasErrors)
             {
@@ -199,7 +216,7 @@ namespace GameMechanics
         {
             if (displayLog) // Prevents duplicate error prints with compile time and log print
             {
-                programOutput.text += logString;
+                programOutput.text += logString + "\n\n";
             }
         }
     }
