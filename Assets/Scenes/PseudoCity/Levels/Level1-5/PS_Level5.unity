@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B. \t    \n\n\nz = x<3 || x>3\nz = y>=7 || y<=5\nz = z || a\noutput(z)\noutput:
+  m_text: "B. \t    \n\n\nz = x<3 || x>3\na = y>=7 || y<=5\nz = z || a\noutput(z)\noutput:
     \nfalse"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

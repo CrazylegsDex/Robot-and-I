@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Pseudo_L2 : MonoBehaviour
+public class Csharp_L2 : MonoBehaviour
 {
     public TMP_InputField aInput; // References the User's Input Field
     public TMP_InputField bInput;
     public TMP_InputField cInput;
     public TMP_InputField dInput;
     public TextMeshProUGUI aOutput; // References the TMP Output Field
-    public TextMeshProUGUI bOutput; 
+    public TextMeshProUGUI bOutput;
     public TextMeshProUGUI cOutput;
     public TextMeshProUGUI dOutput;
     public GameObject blockobject;//object block the ability to complete the level
@@ -22,8 +22,8 @@ public class Pseudo_L2 : MonoBehaviour
         int num = 0;//counts up everytime a try block receives valid input.
         int a, b, c, d;//Input values
         a = b = c = d = 0;
-        
-        bool safe = true;//goes false if the input in the try blocks is invalid
+
+       bool safe = true;//goes false if the input in the try blocks is invalid
         if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
         {
             try
@@ -104,7 +104,7 @@ public class Pseudo_L2 : MonoBehaviour
             }
             if (safe)
             {
-                if (c == 1)
+                if (c == 97)
                 {
                     cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                     cOutput.text = "Correct!";
@@ -136,7 +136,7 @@ public class Pseudo_L2 : MonoBehaviour
             }
             if (safe)
             {
-                if (d == 3)
+                if (d == 15)
                 {
                     dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                     dOutput.text = "Correct!";
@@ -151,7 +151,7 @@ public class Pseudo_L2 : MonoBehaviour
             }
         }
 
-            if (num == 4)
+        if (num == 4)
         {
             Debug.Log("works");
             blockobject.SetActive(false); //hides the platform blocking level progress

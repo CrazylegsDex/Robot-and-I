@@ -73,23 +73,43 @@ public class Pseudo_L5 : MonoBehaviour
                     // Great one-liner so you don't have to create three different variables
 			        TMP_Text object1 = GameObject.Find(""OutputBoxA"").GetComponent<TMP_Text>();
 
-                    int x = 4;
-                    int y = 5;
+                    int x = 0;
+                    int y = 0;
                     int num = 0;
+                    bool a;
+                    bool z;
+                    bool safe = true;
+                    double state = 0;
                     
 			        " + playerInput1.text + @";
                     " + playerInput8.text + @";
-                    bool z = x>3 && x<5;
-                    bool a = y<7 && y>3;
-			        if (z&&a){
-				        object1.text = ""correct!"";
-                        num++;
+                    try{
+                        state = 2/x;
+                        state = 2/y;
                     }
-			        else{
-                        
-				        object1.text = ""incorrect"";
+                    catch(Exception ex){
+                        object1.text = """";
+                        safe = false; 
+                    }
+
+
+                    if(safe){
+                        z = x>3 && x<5;
+                        a = y<7 && y>3;
+			            if (z&&a){
+                            object1.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object1.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object1.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object1.text = ""incorrect"";
+                        }
                     }
                     
+                    x = 0;
+                    y = 0;
+                    safe = true;
                     
                     // Great one-liner so you don't have to create three different variables
 			        TMP_Text object2 = GameObject.Find(""OutputBoxB"").GetComponent<TMP_Text>();
@@ -97,52 +117,91 @@ public class Pseudo_L5 : MonoBehaviour
                     " + playerInput2.text + @";
                     " + playerInput3.text + @";
 
-			        z = x<3 || x>3;
-                    a = y>=7 || y<=5;
+                    try{
+                        state = 2/x;
+                        state = 2/y;
+                    }
+                    catch(Exception ex){
+                        object2.text = """";
+                        safe = false; 
+                    }
 
-			        if (!(z||a)){
-				        object2.text = ""correct!"";
-                        num++;
+                    if(safe){
+			            z = x<3 || x>3;
+                        a = y>=7 || y<=5;
+
+			            if (!(z||a)){
+                            object2.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object2.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object2.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object2.text = ""incorrect"";
+                        }
                     }
-			        else{
-                        
-				        object2.text = ""incorrect"";
-                    }
-                    x = 4;
-                    y = 5;
+                    x = 0;
+                    y = 0;
+                    safe = true;
                     TMP_Text object3 = GameObject.Find(""OutputBoxC"").GetComponent<TMP_Text>();
-
+                    
                     " + playerInput4.text + @";
                     " + playerInput5.text + @";
 
-                    z= x!=y && x>2 && x<5;
-			        a = y>3 && y<6 && y!=5;
-			        if (z){
-				        object3.text = ""correct!"";
-                        num++;
+                    try{
+                        state = 2/x;
+                        state = 2/y;
                     }
-			        else{
-                        
-				        object3.text = ""incorrect"";
+                    catch(Exception ex){
+                        object3.text = """";
+                        safe = false; 
                     }
-                    x = 4;
-                    y = 5;
-                    TMP_Text object4 = GameObject.Find(""OutputBoxD"").GetComponent<TMP_Text>();
 
+                    if(safe){
+                        z= x!=y && x>2 && x<5;
+			            a = y>3 && y<6 && y!=5;
+			            if (z){
+                            object3.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object3.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object3.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object3.text = ""incorrect"";
+                        }
+                    }
+                    x = 0;
+                    y = 0;
+                    safe = true;
+                    TMP_Text object4 = GameObject.Find(""OutputBoxD"").GetComponent<TMP_Text>();
+                    
                     " + playerInput6.text + @";
                     " + playerInput7.text + @";
 
-                    z = x%4==3 && x>4;
-                    a = y/x==5 || y+x==9;
-                    print(z);
-                    print(a);
-			        if (z||a){
-				        object4.text = ""correct!"";
-                        num++;
+                    try{
+                        state = 2/x;
+                        state = 2/y;
                     }
-			        else{
-                        
-				        object4.text = ""incorrect"";
+                    catch(Exception ex){
+                        object4.text = """";
+                        safe = false; 
+                    }
+
+
+                    if(safe){
+                        z = x%4==3 && x>4;
+                        a = y/x==5 || y+x==9;
+                        print(z);
+                        print(a);
+			            if (z||a){
+                            object4.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object4.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object4.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object4.text = ""incorrect"";
+                        }
                     }
                     
                     if(num == 4){

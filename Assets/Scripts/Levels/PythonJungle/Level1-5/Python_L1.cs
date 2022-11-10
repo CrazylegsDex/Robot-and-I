@@ -5,23 +5,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Pseudo_L1 : MonoBehaviour
+public class Python_L1 : MonoBehaviour
 {
     public TMP_InputField userInput; // References the User's Input Field
     public TMP_InputField stringInput;
     public TMP_InputField boolInput;
     public TMP_InputField floatInput;
     public TextMeshProUGUI programOutput; // References the TMP Output Field
-    public TextMeshProUGUI stringOutput; 
-    public TextMeshProUGUI boolOutput; 
-    public TextMeshProUGUI floatOutput; 
+    public TextMeshProUGUI stringOutput;
+    public TextMeshProUGUI boolOutput;
+    public TextMeshProUGUI floatOutput;
     public GameObject blockobject;//object block the ability to complete the level
     public void Code_Compiler()
     {
         //Ints
         int num = 0;//counts up everytime a try block receives valid input.
 
-        
+
         bool safe = true;//goes false if the input in the try blocks is invalid
         if (!(String.IsNullOrEmpty(userInput.text)))//Checks if values were inputed skips if no value
         {
@@ -45,7 +45,7 @@ public class Pseudo_L1 : MonoBehaviour
 
             }
         }
-        
+
         //String
         safe = true;//resets safe for next input
         if (!(String.IsNullOrEmpty(stringInput.text))) //Checks if values were inputed skips if no value
@@ -135,7 +135,7 @@ public class Pseudo_L1 : MonoBehaviour
                 num++;
             }
         }
-        
+
         if (num == 4)
         {
             Debug.Log("works");

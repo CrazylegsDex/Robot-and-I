@@ -77,70 +77,112 @@ public class Pseudo_L4 : MonoBehaviour
                     int y = 5;
                     int z = 0;
                     int num = 0;
-                    
-			        z = " + playerInput1.text + @";
-
-			        if (y > z){
-				        object1.text = ""correct!"";
-                        num++;
+                    bool safe = true;
+                    double state = 0;
+                    try{
+			            z = " + playerInput1.text + @"; 
                     }
-			        else{
-                        
-				        object1.text = ""incorrect"";
+                    catch(Exception ex){
+                        object1.text = """";
+                        safe = false; 
+                    }
+                    if(safe){
+			            if (y > z){
+                            object1.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object1.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object1.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object1.text = ""incorrect"";
+                        }
                     }
                     
                     print(z);
                     // Great one-liner so you don't have to create three different variables
 			        TMP_Text object2 = GameObject.Find(""OutputBoxB"").GetComponent<TMP_Text>();
-
-                    x = " + playerInput2.text + @";
-                    y = " + playerInput3.text + @";
-
-			        bool zBool = (y == x);
-
-			        if (zBool){
-				        object2.text = ""correct!"";
-                        num++;
+                    x=0;
+                    y=0;
+                    safe = true;
+                    " + playerInput2.text + @";
+                    " + playerInput3.text + @";
+                    try{
+                        state = 2/x;
+                        state = 2/y;
                     }
-			        else{
-                        
-				        object2.text = ""incorrect"";
+                    catch(Exception ex){
+                        object2.text = """";
+                        safe = false; 
                     }
-                    x = 4;
-                    y = 5;
+			        bool zBool;
+                    if(safe){
+			            if (y == x && y >0){
+                            object2.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object2.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object2.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object2.text = ""incorrect"";
+                        }
+                    }
                     TMP_Text object3 = GameObject.Find(""OutputBoxC"").GetComponent<TMP_Text>();
-
+                    x=0;
+                    y=0;
+                    safe = true;
                     " + playerInput4.text + @";
                     " + playerInput5.text + @";
-
-                    zBool = (x <= y);
-			        bool aBool = (x >= y);
-                    zBool = aBool;
-			        if (zBool){
-				        object3.text = ""correct!"";
-                        num++;
+                    try{
+                        state = 2/x;
+                        state = 2/y;
                     }
-			        else{
-                        
-				        object3.text = ""incorrect"";
+                    catch(Exception ex){
+                        object3.text = """";
+                        safe = false; 
                     }
-                    x = 4;
-                    y = 5;
+                    bool aBool;
+                    if(safe){
+                        zBool = (y > 0);
+			            aBool = (x >= y);
+			            if (zBool == aBool && aBool == true){
+                            object3.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object3.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object3.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object3.text = ""incorrect"";
+                        }
+                    }
+                    x = 0;
+                    y = 0;
+                    safe = true;
                     TMP_Text object4 = GameObject.Find(""OutputBoxD"").GetComponent<TMP_Text>();
 
                     " + playerInput6.text + @";
                     " + playerInput7.text + @";
-
-                    zBool = (x < 3);
-			        aBool = (y > 1);
-                    zBool = (zBool == aBool);
-			        if (zBool){
-				        object4.text = ""correct!"";
-                        num++;
+                    try{
+                        state = 2/x;
+                        state = 2/y;
                     }
-			        else{
-                        
-				        object4.text = ""incorrect"";
+                    catch(Exception ex){
+                        object4.text = """";
+                        safe = false; 
+                    }
+                    
+                    if(safe){
+                        zBool = (x < 3);
+			            aBool = (y > 1);
+                        zBool = (zBool == aBool);
+			            if (zBool){
+                            object4.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+				            object4.text = ""correct!"";
+                            num++;
+                        }
+			            else{
+                            object4.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+				            object4.text = ""incorrect"";
+                        }
                     }
                     
                     if(num == 4){
@@ -191,6 +233,7 @@ public class Pseudo_L4 : MonoBehaviour
              * Refer to the C# compiler documentation for what to do in this instance.
              */
             parameters.ReferencedAssemblies.Add("System.dll");
+            //parameters.ReferencedAssemblies.Add("System.Runtime.dll"); 
             parameters.ReferencedAssemblies.Add("Microsoft.CSharp.dll");
             //parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Managed\UnityEngine.dll");
             parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll");

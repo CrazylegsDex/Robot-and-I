@@ -5,23 +5,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Pseudo_L1 : MonoBehaviour
+public class Csharp_L1 : MonoBehaviour
 {
     public TMP_InputField userInput; // References the User's Input Field
     public TMP_InputField stringInput;
+    public TMP_InputField charInput;
     public TMP_InputField boolInput;
     public TMP_InputField floatInput;
+    public TMP_InputField doubleInput;
+    
     public TextMeshProUGUI programOutput; // References the TMP Output Field
-    public TextMeshProUGUI stringOutput; 
-    public TextMeshProUGUI boolOutput; 
-    public TextMeshProUGUI floatOutput; 
+    public TextMeshProUGUI stringOutput;
+    public TextMeshProUGUI charOutput;
+    public TextMeshProUGUI boolOutput;
+    public TextMeshProUGUI floatOutput;
+    public TextMeshProUGUI doubleOutput;
     public GameObject blockobject;//object block the ability to complete the level
     public void Code_Compiler()
     {
         //Ints
         int num = 0;//counts up everytime a try block receives valid input.
 
-        
+        Debug.Log(userInput.text);
         bool safe = true;//goes false if the input in the try blocks is invalid
         if (!(String.IsNullOrEmpty(userInput.text)))//Checks if values were inputed skips if no value
         {
@@ -31,7 +36,7 @@ public class Pseudo_L1 : MonoBehaviour
             }
             catch (Exception ex)//activates when the input is invalid
             {
-                programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow //R,G,B, Transparency. 
+                programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                 programOutput.text = "Incorrect";
                 safe = false;
                 Debug.Log(ex.Message);
@@ -45,7 +50,7 @@ public class Pseudo_L1 : MonoBehaviour
 
             }
         }
-        
+
         //String
         safe = true;//resets safe for next input
         if (!(String.IsNullOrEmpty(stringInput.text))) //Checks if values were inputed skips if no value
@@ -56,7 +61,7 @@ public class Pseudo_L1 : MonoBehaviour
             }
             catch (Exception ex)
             {
-                stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                 stringOutput.text = "Incorrect";
                 safe = false;
                 Debug.Log(ex.Message);
@@ -76,6 +81,38 @@ public class Pseudo_L1 : MonoBehaviour
                 {
                     stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     stringOutput.text = "Incorrect";
+                }
+            }
+        }
+        //Char
+        safe = true;//resets safe for next input
+        if (!(String.IsNullOrEmpty(charInput.text))) //Checks if values were inputed skips if no value
+        {
+            try
+            {
+                string c = charInput.text;//tests for strings
+            }
+            catch (Exception ex)
+            {
+                stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                charOutput.text = "Incorrect";
+                safe = false;
+                Debug.Log(ex.Message);
+
+            }
+            if (safe)
+            {
+                string c = charInput.text;
+                if (c.StartsWith("\'") && c.EndsWith("\'") && c.Length == 3)
+                {
+                    stringOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    charOutput.text = "Correct!";
+                    num++;
+                }
+                else
+                {
+                    stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                    charOutput.text = "Incorrect";
                 }
             }
         }
@@ -135,8 +172,31 @@ public class Pseudo_L1 : MonoBehaviour
                 num++;
             }
         }
-        
-        if (num == 4)
+        //Char
+        safe = true;//resets safe for next input
+        if (!(String.IsNullOrEmpty(doubleInput.text))) //Checks if values were inputed skips if no value
+        {
+            try
+            {
+                double d = double.Parse(doubleInput.text);//tests for strings
+            }
+            catch (Exception ex)
+            {
+                doubleOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                doubleOutput.text = "Incorrect";
+                safe = false;
+                Debug.Log(ex.Message);
+
+            }
+            if (safe)
+            {
+                doubleOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                doubleOutput.text = "Correct!";
+                num++;
+            }
+        }
+
+        if (num == 6)
         {
             Debug.Log("works");
             blockobject.SetActive(false); //hides the platform blocking level progress
