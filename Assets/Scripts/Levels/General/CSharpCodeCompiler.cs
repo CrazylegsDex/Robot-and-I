@@ -9,7 +9,7 @@
  * Author: Robot and I Team
  * Credits: DMGregory at Stackexchange.com - His helpful code example
  *     allowed this project to succeed in its efforts.
- * Last modification date: 10-28-2022
+ * Last modification date: 11-10-2022
  */
 
 using UnityEngine;
@@ -102,17 +102,6 @@ namespace GameMechanics
 
             // Invoke the script, indirectly running the Start() method
             runtimeDelegate.Invoke(gameObject);
-
-            // The below code demonstrates how to allow the player to write
-            // code and move in-game objects.
-            // The below code moves the platform with tag "ObjectMove" 5 units to the left
-            // Example malicious code the player "may" input:
-            // GameObject evil = GameObject.FindWithTag("Player");
-            // Destroy(evil); // Also can access any attributes of player
-            GameObject myTestObject;
-            myTestObject = GameObject.FindWithTag("ObjectMove");
-            if (myTestObject != null)
-                myTestObject.transform.Translate(-5, 0, 0); // Move 5 units to the left
         }
 
         /*
