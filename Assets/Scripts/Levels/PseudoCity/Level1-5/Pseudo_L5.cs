@@ -146,9 +146,8 @@ public class Pseudo_L5 : MonoBehaviour
                     }
                     
                     if(num == 4){
-                        GameObject blockobject = GameObject.Find(""blocker"");
-                        blockobject.SetActive(false);
-                        print(""works"");
+                        //GameObject NPC = GameObject.FindWithTag(""ObjectMove"");
+                        //NPC.GetComponent<BoxCollider2D>().isTrigger = true;
                     }
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }              
@@ -192,13 +191,17 @@ public class Pseudo_L5 : MonoBehaviour
          * NOTE: Path locations may vary based on install. WILL encounter errors on build.
          * Refer to the C# compiler documentation for what to do in this instance.
          */
-        parameters.ReferencedAssemblies.Add("System.dll");
-        parameters.ReferencedAssemblies.Add("Microsoft.CSharp.dll");
-        //parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Managed\UnityEngine.dll");
-        parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll");
-        parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\MonoBleedingEdge\lib\mono\4.8-api\Facades\netstandard.dll");
-        parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-7.0.1\ScriptAssemblies\UnityEngine.UI.dll");
-        parameters.ReferencedAssemblies.Add(@"D:\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-7.0.1\ScriptAssemblies\Unity.TextMeshPro.dll");
+        string path1 = @"Data\PlaybackEngines\windowsstandalonesupport\Variations\win32_player_development_mono\Data\Managed\";
+        string path2 = @"Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-7.0.1\ScriptAssemblies\";
+        string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
+        string win32Location = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
+        string engineLocation = assemblyLocation.Substring(0, assemblyLocation.IndexOf("Data")); // Extract base location for Data folder
+        parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
+        parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
+        parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
+        parameters.ReferencedAssemblies.Add(engineLocation + path2 + "Unity.TextMeshPro.dll");
+        parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
+        parameters.ReferencedAssemblies.Add(win32Location + "Facades\\netstandard.dll");
 
 
         // Set compiler parameters
