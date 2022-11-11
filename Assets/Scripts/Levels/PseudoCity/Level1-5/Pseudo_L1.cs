@@ -114,7 +114,6 @@ public class Pseudo_L1 : MonoBehaviour
         }
         if (num == 4)
         {
-            Debug.Log("works");
             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
         }
     }

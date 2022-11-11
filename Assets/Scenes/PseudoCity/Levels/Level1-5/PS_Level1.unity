@@ -2496,7 +2496,7 @@ GameObject:
   - component: {fileID: 487892025}
   - component: {fileID: 487892024}
   - component: {fileID: 487892023}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: SideR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2930,7 +2930,7 @@ GameObject:
   - component: {fileID: 631169411}
   - component: {fileID: 631169410}
   - component: {fileID: 631169409}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: SideL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
