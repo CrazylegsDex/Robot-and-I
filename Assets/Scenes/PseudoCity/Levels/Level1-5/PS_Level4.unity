@@ -3348,13 +3348,13 @@ MonoBehaviour:
 
 
 
-    z = x <=y
+    z = y > 0
 
     a = x>= y
 
-    z = a
+    a = a == z
 
-    output (z)
+    output (a != false)
 
 
     What

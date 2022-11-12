@@ -51,187 +51,227 @@ public class Pseudo_L3 : MonoBehaviour
         a = b = c = d = 0;
         //A section
         bool safe = true;//goes false if the input in the try blocks is invalid
-        try
-        {// Save Text from input field into user input
-            a = double.Parse(aInput.text);//tests for doubles
-        }
-        catch (Exception ex)//activates when the input is invalid
+        if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
         {
-            aOutput.text = "Invalid";
-            safe = false;
-            Debug.Log(ex.Message);
-
-        }
-        if (safe)
-        {//Correct double inputed for section
-            if (end == 0 && a == 3.0)//new value for each section 
-            {//Addition Section
-                aOutput.text = "Correct!";
-                num++;
+            try
+            {// Save Text from input field into user input
+                a = double.Parse(aInput.text);//tests for doubles
             }
-            else if (end == 1 && a == 1)
-            {//Subtraction Section
-                aOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 2 && a == 49)
-            {//Multiplication Section
-                aOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 3 && a == .5)
-            {//Division Section
-                aOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 4 && a == 2)
-            {//Modulus Section
-                aOutput.text = "Correct!";
-                num++;
-            }
-            else//Wrong double inputed in sectiion
+            catch (Exception ex)//activates when the input is invalid
             {
-                aOutput.text = "Incorrect";
-            }
+                aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                aOutput.text = "Invalid";
+                safe = false;
+                Debug.Log(ex.Message);
 
+            }
+            if (safe)
+            {//Correct double inputed for section
+                aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                if (end == 0 && a == 3.0)//new value for each section 
+                {//Addition Section
+                    aOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 1 && a == 1)
+                {//Subtraction Section
+                    aOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 2 && a == 49)
+                {//Multiplication Section
+                    aOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 3 && a == .5)
+                {//Division Section
+                    aOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 4 && a == 2)
+                {//Modulus Section
+                    aOutput.text = "Correct!";
+                    num++;
+                }
+                else//Wrong double inputed in sectiion
+                {
+                    aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                    aOutput.text = "Incorrect";
+                }
+
+            }
+        }
+        else
+        {
+            aOutput.text = "";
         }
         //B section
         safe = true;//resets safe for next input
-        try
+        if (!(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
         {
-            b = double.Parse(bInput.text);
-        }
-        catch (Exception ex)
-        {
-            bOutput.text = "Invalid";
-            safe = false;
-            Debug.Log(ex.Message);
-
-        }
-        if (safe)
-        {
-            if (end == 0 && b == 6)
-            {//Addition Section
-                bOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 1 && b == 8)
-            {//Subtraction Section
-                bOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 2 && b == 37)
-            {//Multiplication Section
-                bOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 3 && b == 0)
-            {//Division Section
-                bOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 4 && b == 2)
-            {//Modulus Section
-                bOutput.text = "Correct!";
-                num++;
-            }
-            else
+            try
             {
-                bOutput.text = "Incorrect";
+                b = double.Parse(bInput.text);
             }
+            catch (Exception ex)
+            {
+                bOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                bOutput.text = "Invalid";
+                safe = false;
+                Debug.Log(ex.Message);
 
+            }
+            if (safe)
+            {
+                bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                if (end == 0 && b == 6)
+                {//Addition Section
+                    bOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 1 && b == 8)
+                {//Subtraction Section
+                    bOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 2 && b == 37)
+                {//Multiplication Section
+                    bOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 3 && b == 0)
+                {//Division Section
+                    bOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 4 && b == 2)
+                {//Modulus Section
+                    bOutput.text = "Correct!";
+                    num++;
+                }
+                else
+                {
+                    bOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                    bOutput.text = "Incorrect";
+                }
+
+            }
+        }
+        else
+        {
+            bOutput.text = "";
         }
         //C section
         safe = true;
-        try
+        if (!(String.IsNullOrEmpty(cInput.text)))//Checks if values were inputed skips if no value
         {
-            c = double.Parse(cInput.text);
-        }
-        catch (Exception ex)
-        {
-            cOutput.text = "Invalid";
-            safe = false;
-            Debug.Log(ex.Message);
-
-        }
-        if (safe)
-        {
-            if (end == 0 && c == 3.3)
-            {//Addition Section
-                cOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 1 && c == -1.2)
-            {//Subtraction Section
-                cOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 2 && c == 9)
-            {//Multiplication Section
-                cOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 3 && c == 9.5)
-            {//Division Section
-                cOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 4 && c == 2)
-            {//Modulus Section
-                cOutput.text = "Correct!";
-                num++;
-            }
-            else
+            try
             {
-                cOutput.text = "Incorrect";
+                c = double.Parse(cInput.text);
             }
+            catch (Exception ex)
+            {
+                cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                cOutput.text = "Invalid";
+                safe = false;
+                Debug.Log(ex.Message);
 
+            }
+            if (safe)
+            {
+                cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                if (end == 0 && c == 3.3)
+                {//Addition Section
+                    cOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 1 && c == -1.2)
+                {//Subtraction Section
+                    cOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 2 && c == 9)
+                {//Multiplication Section
+                    cOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 3 && c == 9.5)
+                {//Division Section
+                    cOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 4 && c == 2)
+                {//Modulus Section
+                    cOutput.text = "Correct!";
+                    num++;
+                }
+                else
+                {
+                    cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                    cOutput.text = "Incorrect";
+                }
+
+            }
+        }
+        else
+        {
+            cOutput.text = "";
         }
         //D section
         safe = true;
-        try
+        if (!(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value
         {
-            d = double.Parse(dInput.text);
-        }
-        catch (Exception ex)
-        {
-            dOutput.text = "Invalid";
-            safe = false;
-            Debug.Log(ex.Message);
-
-        }
-        if (safe)
-        {
-            if (end == 0 && d == 28)
-            {//Addition Section
-                dOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 1 && d == 3.4)
-            {//Subtraction Section
-                dOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 2 && d == 52)
-            {//Multiplication Section
-                dOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 3 && d == 6)
-            {//Division Section
-                dOutput.text = "Correct!";
-                num++;
-            }
-            else if (end == 4 && d == 2)
-            {//Modulus Section
-                dOutput.text = "Correct!";
-                num++;
-            }
-            else
+            try
             {
-                dOutput.text = "Incorrect";
+                d = double.Parse(dInput.text);
             }
+            catch (Exception ex)
+            {
+                dOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                dOutput.text = "Invalid";
+                safe = false;
+                Debug.Log(ex.Message);
 
+            }
+            if (safe)
+            {
+                dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                if (end == 0 && d == 28)
+                {//Addition Section
+                    dOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 1 && d == 3.4)
+                {//Subtraction Section
+                    dOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 2 && d == 52)
+                {//Multiplication Section
+                    dOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 3 && d == 6)
+                {//Division Section
+                    dOutput.text = "Correct!";
+                    num++;
+                }
+                else if (end == 4 && d == 2)
+                {//Modulus Section
+                    dOutput.text = "Correct!";
+                    num++;
+                }
+                else
+                {
+                    cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                    dOutput.text = "Incorrect";
+                }
+
+            }
+        }
+        else
+        {
+            dOutput.text = "";
         }
         if (num == 4 && end == 4)//allows the level to be completed after last section is all correct.
         {
@@ -240,14 +280,16 @@ public class Pseudo_L3 : MonoBehaviour
         }
         else if (num == 4 && end == 0)//Updates code text to the subtraction section after the addition section is all correct.
         {
+            aContext.color = bContext.color = cContext.color = dContext.color = eContext.color= new Color32(0, 200, 255, 255); //R,G,B, Transparency. 
             aContext.text = "A. x= 2-1\noutput(x)\n\noutput:";
             bContext.text = "B. x= 20-5\ny= 3+4 \nx-=y\noutput(x)\n\noutput:";
-            cContext.text = "C. x= 5.5\ny= 6.7 \ny-=x\noutput(y)\n\noutput:";
+            cContext.text = "C. x= 5.5\ny= 6.7 \nx-=y\noutput(y)\n\noutput:";
             dContext.text = "D. x= 10+5\ny= 5-3.3 \nz=x-y\ny= y-z+x\noutput(y)\n\noutput:";
             eContext.text = "Subtraction"; 
         }
         else if (num == 4 && end == 1)//Updates code text to the multiplication section after subtraction section is all correct.
         {
+            aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(255, 128, 0, 255);
             aContext.text = "A. x= 2+5\ny= 10-3\nx*=y\noutput(x)\n\noutput:";
             bContext.text = "B. x= 5*3\ny= 10*2.2 \nx+=y\noutput(x)\n\noutput:";
             cContext.text = "C. x= 1+2*3\ny= (1+2)*3 \nz=-1*(1+2*3)\noutput(z+y+x)\n\noutput:";
@@ -256,6 +298,7 @@ public class Pseudo_L3 : MonoBehaviour
         }
         else if (num == 4 && end == 2)//Updates code text to the division section after multiplication section is all correct.
         {
+            aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(0, 255, 255, 255);
             aContext.text = "A. x= 2.0/4\noutput(x)\n\noutput:";
             bContext.text = "B. y= 2/4\noutput(y)\n\noutput:";
             cContext.text = "C. x= 1.1*3\ny= 2.2+5 \nz=  10.5-2\nz+= (x+y)\noutput(z/2)\n\noutput:";
@@ -264,6 +307,7 @@ public class Pseudo_L3 : MonoBehaviour
         }
         else if (num == 4 && end == 3)//Updates code text to the modulus after division section is all correct.
         {
+            aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(200, 200, 200, 255);
             aContext.text = "A. x= 2%4\noutput(x)\n\noutput:";
             bContext.text = "B. x= 3%2+1\noutput(x)\n\noutput:";
             cContext.text = "C. x= 3.3*3+3%2\ny= 20%7 \nz= x+y-.9\noutput(z/8)\n\noutput:";
