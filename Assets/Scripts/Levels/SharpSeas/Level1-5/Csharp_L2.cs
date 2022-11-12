@@ -1,159 +1,162 @@
+// This script provides control and completion for CSharp levels
+//
+// Author: Robot and I Team
+// Last modification date: 11-12-2022
+
 using System;
-using System.IO;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class CSharp_L2 : MonoBehaviour
+namespace CSharpLevels
 {
-    public TMP_InputField aInput; // References the User's Input Field
-    public TMP_InputField bInput;
-    public TMP_InputField cInput;
-    public TMP_InputField dInput;
-    public TextMeshProUGUI aOutput; // References the TMP Output Field
-    public TextMeshProUGUI bOutput;
-    public TextMeshProUGUI cOutput;
-    public TextMeshProUGUI dOutput;
-    public BoxCollider2D levelSprite;
-    public void Code_Compiler()
+    public class CSharp_L2 : MonoBehaviour
     {
-        //A
-        int num = 0;//counts up everytime a try block receives valid input.
-        int a, b, c, d;//Input values
-        a = b = c = d = 0;
+        public TMP_InputField aInput; // References the User's Input Field
+        public TMP_InputField bInput;
+        public TMP_InputField cInput;
+        public TMP_InputField dInput;
+        public TextMeshProUGUI aOutput; // References the TMP Output Field
+        public TextMeshProUGUI bOutput;
+        public TextMeshProUGUI cOutput;
+        public TextMeshProUGUI dOutput;
+        public BoxCollider2D levelSprite;
 
-       bool safe = true;//goes false if the input in the try blocks is invalid
-        if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
+        public void Code_Compiler()
         {
-            try
-            {// Save Text from input field into user input
-                a = int.Parse(aInput.text);//tests for only integers
-            }
-            catch (Exception ex)//activates when the input is invalid
-            {
-                aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                aOutput.text = "Invalid";
-                safe = false;
-                Debug.Log(ex.Message);
+            //A
+            int num = 0;//counts up everytime a try block receives valid input.
+            int a, b, c, d;//Input values
+            a = b = c = d = 0;
 
-            }
-            if (safe)
+            bool safe = true;//goes false if the input in the try blocks is invalid
+            if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
             {
-                if (a == 1)
-                { //Correct integer inputed
-                    aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    aOutput.text = "Correct!";
-                    num++;
+                try
+                {// Save Text from input field into user input
+                    a = int.Parse(aInput.text);//tests for only integers
                 }
-                else//Wrong integer inputed
+                catch (Exception ex)//activates when the input is invalid
                 {
-                    aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                    aOutput.text = "Incorrect";
+                    aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    aOutput.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
                 }
-
-            }
-        }
-        //B
-        safe = true;//resets safe for next input
-        if (!(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
-        {
-            try
-            {
-                b = int.Parse(bInput.text);//tests for only integers
-            }
-            catch (Exception ex)
-            {
-                bOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                bOutput.text = "Invalid";
-                safe = false;
-                Debug.Log(ex.Message);
-
-            }
-            if (safe)
-            {
-                if (b == 4)
+                if (safe)
                 {
-                    bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    bOutput.text = "Correct!";
-                    num++;
+                    if (a == 1)
+                    { //Correct integer inputed
+                        aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                        aOutput.text = "Correct!";
+                        num++;
+                    }
+                    else//Wrong integer inputed
+                    {
+                        aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        aOutput.text = "Incorrect";
+                    }
                 }
-                else
+            }
+            //B
+            safe = true;//resets safe for next input
+            if (!(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
+            {
+                try
                 {
-                    bOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                    bOutput.text = "Incorrect";
+                    b = int.Parse(bInput.text);//tests for only integers
                 }
-
-            }
-        }
-        //C
-        safe = true;
-        if (!(String.IsNullOrEmpty(cInput.text)))//Checks if values were inputed skips if no value
-        {
-            try
-            {
-                c = int.Parse(cInput.text);//tests for only integers
-            }
-            catch (Exception ex)
-            {
-                cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                cOutput.text = "Invalid";
-                safe = false;
-                Debug.Log(ex.Message);
-
-            }
-            if (safe)
-            {
-                if (c == 97)
+                catch (Exception ex)
                 {
-                    cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    cOutput.text = "Correct!";
-                    num++;
+                    bOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    bOutput.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
                 }
-                else
+                if (safe)
                 {
-                    cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                    cOutput.text = "Incorrect";
+                    if (b == 4)
+                    {
+                        bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                        bOutput.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        bOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        bOutput.text = "Incorrect";
+                    }
                 }
-
             }
-        }
-        //D
-        safe = true;
-        if (!(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value
-        {
-            try
+            //C
+            safe = true;
+            if (!(String.IsNullOrEmpty(cInput.text)))//Checks if values were inputed skips if no value
             {
-                d = int.Parse(dInput.text);//tests for only integers
-            }
-            catch (Exception ex)
-            {
-                dOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                dOutput.text = "Invalid";
-                safe = false;
-                Debug.Log(ex.Message);
-
-            }
-            if (safe)
-            {
-                if (d == 15)
+                try
                 {
-                    dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    dOutput.text = "Correct!";
-                    num++;
+                    c = int.Parse(cInput.text);//tests for only integers
                 }
-                else
+                catch (Exception ex)
                 {
-                    dOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                    dOutput.text = "Incorrect";
+                    cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    cOutput.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
                 }
-
+                if (safe)
+                {
+                    if (c == 97)
+                    {
+                        cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                        cOutput.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        cOutput.text = "Incorrect";
+                    }
+                }
             }
-        }
+            //D
+            safe = true;
+            if (!(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    d = int.Parse(dInput.text);//tests for only integers
+                }
+                catch (Exception ex)
+                {
+                    dOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    dOutput.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    if (d == 15)
+                    {
+                        dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                        dOutput.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        dOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        dOutput.text = "Incorrect";
+                    }
 
-        if (num == 4)
-        {
-            levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                }
+            }
+
+            if (num == 4)
+            {
+                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+            }
+            else
+            {
+                levelSprite.isTrigger = false;
+            }
         }
     }
 }
