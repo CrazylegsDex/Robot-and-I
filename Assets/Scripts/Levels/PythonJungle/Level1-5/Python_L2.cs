@@ -15,7 +15,7 @@ public class Python_L2 : MonoBehaviour
     public TextMeshProUGUI bOutput;
     public TextMeshProUGUI cOutput;
     public TextMeshProUGUI dOutput;
-    public GameObject blockobject;//object block the ability to complete the level
+    public BoxCollider2D levelSprite;
     public void Code_Compiler()
     {
         //A
@@ -166,8 +166,7 @@ public class Python_L2 : MonoBehaviour
 
         if (num == 4)
         {
-            Debug.Log("works");
-            blockobject.SetActive(false); //hides the platform blocking level progress
+            levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
         }
     }
 }

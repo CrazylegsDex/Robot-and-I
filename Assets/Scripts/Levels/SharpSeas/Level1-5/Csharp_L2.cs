@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Csharp_L2 : MonoBehaviour
+public class CSharp_L2 : MonoBehaviour
 {
     public TMP_InputField aInput; // References the User's Input Field
     public TMP_InputField bInput;
@@ -15,7 +15,7 @@ public class Csharp_L2 : MonoBehaviour
     public TextMeshProUGUI bOutput;
     public TextMeshProUGUI cOutput;
     public TextMeshProUGUI dOutput;
-    public GameObject blockobject;//object block the ability to complete the level
+    public BoxCollider2D levelSprite;
     public void Code_Compiler()
     {
         //A
@@ -153,8 +153,7 @@ public class Csharp_L2 : MonoBehaviour
 
         if (num == 4)
         {
-            Debug.Log("works");
-            blockobject.SetActive(false); //hides the platform blocking level progress
+            levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
         }
     }
 }

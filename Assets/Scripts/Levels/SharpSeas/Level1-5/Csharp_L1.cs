@@ -5,22 +5,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Csharp_L1 : MonoBehaviour
+public class CSharp_L1 : MonoBehaviour
 {
     public TMP_InputField userInput; // References the User's Input Field
-    public TMP_InputField stringInput;
     public TMP_InputField charInput;
+    public TMP_InputField stringInput;
     public TMP_InputField boolInput;
     public TMP_InputField floatInput;
     public TMP_InputField doubleInput;
     
     public TextMeshProUGUI programOutput; // References the TMP Output Field
-    public TextMeshProUGUI stringOutput;
     public TextMeshProUGUI charOutput;
+    public TextMeshProUGUI stringOutput;
     public TextMeshProUGUI boolOutput;
     public TextMeshProUGUI floatOutput;
     public TextMeshProUGUI doubleOutput;
-    public GameObject blockobject;//object block the ability to complete the level
+    public BoxCollider2D levelSprite;
     public void Code_Compiler()
     {
         //Ints
@@ -198,8 +198,7 @@ public class Csharp_L1 : MonoBehaviour
 
         if (num == 6)
         {
-            Debug.Log("works");
-            blockobject.SetActive(false); //hides the platform blocking level progress
+            levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
         }
     }
 }
