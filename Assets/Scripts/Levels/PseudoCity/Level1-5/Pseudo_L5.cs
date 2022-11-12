@@ -188,8 +188,8 @@ namespace PseudoLevels
                     }
                     
                     if(num == 4){
-                        //GameObject NPC = GameObject.FindWithTag(""ObjectMove"");
-                        //NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+                        GameObject NPC = GameObject.FindWithTag(""LevelChange"");
+                        NPC.GetComponent<BoxCollider2D>().isTrigger = true;
                     }
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
@@ -240,6 +240,7 @@ namespace PseudoLevels
             parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
             parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
             parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
+            parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.Physics2DModule.dll");
             parameters.ReferencedAssemblies.Add(engineLocation + path2 + "Unity.TextMeshPro.dll");
             parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
             parameters.ReferencedAssemblies.Add(win32Location + "Facades\\netstandard.dll");
