@@ -87,6 +87,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2711205377394073032}
+  - component: {fileID: 3055326755527807230}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -115,6 +116,18 @@ Transform:
   m_Father: {fileID: 2711205377140246051}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3055326755527807230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711205377394073039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ebce07a30dc304385ff3b2506721fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2711205377570961009
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +580,18 @@ PrefabInstance:
     - target: {fileID: 1211154277190226653, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278199513
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3055326755527807230}
+    - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToWorld
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Level_Pop_Up, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6196886639432804931, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_Name

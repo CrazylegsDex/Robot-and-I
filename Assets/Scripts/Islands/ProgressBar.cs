@@ -1,3 +1,10 @@
+/* This script operates the
+ * progress barin the overworld
+ * showing the total game progress
+ * 
+ * Robot and I team
+ * 11-11-2022
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
