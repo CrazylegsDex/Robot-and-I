@@ -7,6 +7,9 @@ using TMPro;
 
 public class Pseudo_L1 : MonoBehaviour
 {
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private TMP_Text textLabel;
+
     public TMP_InputField userInput; // References the User's Input Field
     public TMP_InputField stringInput;
     public TMP_InputField boolInput;
@@ -116,4 +119,5 @@ public class Pseudo_L1 : MonoBehaviour
             blockobject.SetActive(false); //hides the platform blocking level progress
         }
     }
+
 }
