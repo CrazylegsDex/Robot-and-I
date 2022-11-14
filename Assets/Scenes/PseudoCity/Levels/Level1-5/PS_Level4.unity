@@ -234,6 +234,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6802393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6802395}
+  - component: {fileID: 6802394}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6802394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd7b5f0fc1d1864b9fa61d5b0bcbade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameOutput: {fileID: 617991621}
+  dialogueOutput: {fileID: 1515277155}
+--- !u!4 &6802395
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 969.1902, y: 439.10965, z: -0.6923481}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &30337760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,7 +3220,6 @@ GameObject:
   - component: {fileID: 743855270}
   - component: {fileID: 743855269}
   - component: {fileID: 743855268}
-  - component: {fileID: 743855267}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -3203,20 +3248,6 @@ RectTransform:
   m_AnchoredPosition: {x: -79.2, y: -3.7307}
   m_SizeDelta: {x: 22, y: 7.4614}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &743855267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743855265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd7b5f0fc1d1864b9fa61d5b0bcbade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOutput: {fileID: 0}
-  dialogueOutput: {fileID: 0}
 --- !u!114 &743855268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3261,7 +3292,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 743855267}
+      - m_Target: {fileID: 6802394}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: DisplayNextSentence
         m_Mode: 1
@@ -3541,57 +3572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &806355503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 806355504}
-  - component: {fileID: 806355505}
-  m_Layer: 5
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &806355504
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806355503}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 840899343}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15014648, y: 37.5}
-  m_SizeDelta: {x: 26.494003, y: 1.4449997}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &806355505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806355503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd7b5f0fc1d1864b9fa61d5b0bcbade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOutput: {fileID: 617991621}
-  dialogueOutput: {fileID: 1515277155}
 --- !u!1 &840899342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3623,6 @@ RectTransform:
   - {fileID: 1602503704}
   - {fileID: 58961235}
   - {fileID: 1405593264}
-  - {fileID: 806355504}
   - {fileID: 1739434933}
   - {fileID: 743855266}
   m_Father: {fileID: 0}
@@ -6033,8 +6012,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405593263}
   m_LocalRotation: {x: -0, y: -1e-45, z: -0, w: 1}
-  m_LocalPosition: {x: -92.1, y: 21.1, z: 0}
-  m_LocalScale: {x: 42.4395, y: 39.21373, z: 5}
+  m_LocalPosition: {x: -92.1, y: 23.2996, z: 0}
+  m_LocalScale: {x: 42.4395, y: 41.81166, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 617991620}
@@ -6847,8 +6826,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.06
-  m_fontSizeBase: 0.06
+  m_fontSize: 0.05
+  m_fontSizeBase: 0.05
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7906,7 +7885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Nick
+    name: The Duke
     sentences:
     - Relational operators are operators that are used to compare two or more variables.
       Relational operators will work every type of variable. There are 6 different
@@ -7945,42 +7924,63 @@ MonoBehaviour:
 '
     - '== - This operator is the equal to operator. This is used to see if two variables
       are equal to each other. When the two variables are equal, this operator will
-      produce a true value. When the two variables are not equal, this operator will
-      produce a false value. Example:
+      produce a true value. '
+    - 'When the two variables are not equal, this operator will produce a false value.
+      Example:
 
       Int x = 42
 
       Int y = 41
 
-      Bool
-      i = x == y
+      Bool i = x == y
 
-      y ++
+      y
+      ++
 
       Bool j = x == y
 
-      Here, i = false and
-      j = true
+      Here, i = false and j = true
 
 '
     - '!= - This operator is the not equal to operator. This is used to see if two
       variables are not equal to each other. When the two variables are not equal,
-      this operator will produce a true value. When the two variables are equal,
-      this operator will produce a false value. Example:
+      this operator will produce a true value. '
+    - 'When the two variables are equal, this operator will produce a false value.
+      Example:
 
       Int x = 2
 
-      Int
-      y = 8
+      Int y = 8
 
       Bool i = x != y
 
-      X = x * 4
+      X
+      = x * 4
 
       Bool j = x != y
 
-      Here,
-      i = true and j = false
+      Here, i = true and j = false
+
+'
+    - '<= - This operator is the less than or equal to operator. This statement will
+      produce a true output when the left operator is less than or equal to the right
+      operator. Example:
+
+      Int x = -365
+
+      Int y = 365
+
+      Bool i = x
+      <= y
+
+      Bool j = y <= x
+
+      Y = y * -1 //This makes y = -365
+
+      Bool
+      k = x <= y
+
+      Here, i = true, j = false and k = true
 
 '
     - '>= - This operator is the greater than or equal to operator. This statement
@@ -8002,27 +8002,6 @@ MonoBehaviour:
 
       Here,
       i = true, j = false and k = true
-
-'
-    - '<= - This operator is the less than or equal to operator. This statement will
-      produce a true output when the left operator is less than or equal to the right
-      operator. Example:
-
-      Int x = -365
-
-      Int y = 365
-
-      Bool i
-      = x <= y
-
-      Bool j = y <= x
-
-      Y = y * -1 //This makes y = -365
-
-      Bool
-      k = x <= y
-
-      Here, i = true, j = false and k = true
 
 '
 --- !u!114 &1739434930
@@ -9306,7 +9285,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.2816753, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
