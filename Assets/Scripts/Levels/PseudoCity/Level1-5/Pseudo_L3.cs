@@ -1,7 +1,7 @@
 // This script provides control and completion for Pseudo levels
 //
 // Author: Robot and I Team
-// Last modification date: 11-12-2022
+// Last modification date: 11-14-2022
 
 using System;
 using UnityEngine;
@@ -11,304 +11,870 @@ namespace PseudoLevels
 {
     public class Pseudo_L3 : MonoBehaviour
     {
-        public TMP_InputField aInput; // References the User's Input Field
-        public TMP_InputField bInput;
-        public TMP_InputField cInput;
-        public TMP_InputField dInput;
-        public TextMeshProUGUI aOutput; // References the TMP Output Field
-        public TextMeshProUGUI bOutput;
-        public TextMeshProUGUI cOutput;
-        public TextMeshProUGUI dOutput;
-        public TextMeshProUGUI aContext; // References the code TMP Textboxes around each Field
-        public TextMeshProUGUI bContext;
-        public TextMeshProUGUI cContext;
-        public TextMeshProUGUI dContext;
-        public TextMeshProUGUI eContext;
+        // The Scene Objects
+        public GameObject CheckAnswer1;
+        public GameObject Subtraction;
+        public GameObject CheckAnswer2;
+        public GameObject Multiplication;
+        public GameObject CheckAnswer3;
+        public GameObject Division;
+        public GameObject CheckAnswer4;
+        public GameObject Modulus;
+        public GameObject CheckAnswer5;
+        public GameObject Gate1;
+        public GameObject Gate2;
+        public GameObject Gate3;
+        public GameObject Gate4;
+
+        // Input field boxes
+        private TMP_InputField InputA;
+        private TMP_InputField InputB;
+        private TMP_InputField InputC;
+        private TMP_InputField InputD;
+
+        // Output field boxes
+        private TextMeshProUGUI OutputA;
+        private TextMeshProUGUI OutputB;
+        private TextMeshProUGUI OutputC;
+        private TextMeshProUGUI OutputD;
+
+        // Level Collider
         public BoxCollider2D levelSprite;
 
-        public void Code_Compiler()
+        // Awake is called after all objects are initialized
+        // Used to initialize the TMP objects
+        private void Awake()
+        {
+            InputA = GameObject.Find("CodeBoxA1").GetComponent<TMP_InputField>();
+            InputB = GameObject.Find("CodeBoxB1").GetComponent<TMP_InputField>();
+            InputC = GameObject.Find("CodeBoxC1").GetComponent<TMP_InputField>();
+            InputD = GameObject.Find("CodeBoxD1").GetComponent<TMP_InputField>();
+            OutputA = GameObject.Find("OutputBoxA1").GetComponent<TextMeshProUGUI>();
+            OutputB = GameObject.Find("OutputBoxB1").GetComponent<TextMeshProUGUI>();
+            OutputC = GameObject.Find("OutputBoxC1").GetComponent<TextMeshProUGUI>();
+            OutputD = GameObject.Find("OutputBoxD1").GetComponent<TextMeshProUGUI>();
+        }
+
+        // Code for the Addition Area
+        public void Addition_Area()
         {
             int num = 0;//counts up everytime a try block receives valid input.
-            int end;//get assigned a value to its related section.
-            if (eContext.text == "Addition")//compares section titles
-            {
-                end = 0;//Assigns the section value for addition
-            }
-            else if (eContext.text == "Subtraction")
-            {
-                end = 1;//Assigns the section value for subtraction
-            }
-            else if (eContext.text == "Multiplication")
-            {
-                end = 2;//Assigns the section value for multiplication
-            }
-            else if (eContext.text == "Division")
-            {
-                end = 3;//Assigns the section value for division
-            }
-            else
-            {
-                end = 4;//Assigns the section value for modulus
-            }
             double a, b, c, d;//Input values
 
             a = b = c = d = 0;
             //A section
             bool safe = true;//goes false if the input in the try blocks is invalid
-            if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(InputA.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {// Save Text from input field into user input
-                    a = double.Parse(aInput.text);//tests for doubles
+                    a = double.Parse(InputA.text);//tests for doubles
                 }
                 catch (Exception ex)//activates when the input is invalid
                 {
-                    aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                    aOutput.text = "Invalid";
+                    OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputA.text = "Invalid";
                     safe = false;
                     Debug.Log(ex.Message);
                 }
                 if (safe)
                 {//Correct double inputed for section
-                    aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    if (end == 0 && a == 3.0)//new value for each section 
-                    {//Addition Section
-                        aOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 1 && a == 1)
-                    {//Subtraction Section
-                        aOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 2 && a == 49)
-                    {//Multiplication Section
-                        aOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 3 && a == .5)
-                    {//Division Section
-                        aOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 4 && a == 2)
-                    {//Modulus Section
-                        aOutput.text = "Correct!";
-                        num++;
-                    }
-                    else//Wrong double inputed in sectiion
+                    OutputA.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (a == 3.0)//new value for each section 
                     {
-                        aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                        aOutput.text = "Incorrect";
+                        OutputA.text = "Correct!";
+                        num++;
+                    }
+                    else//Wrong double inputed in section
+                    {
+                        OutputA.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputA.text = "Incorrect";
                     }
                 }
             }
             else
             {
-                aOutput.text = "";
+                OutputA.text = "";
             }
             //B section
             safe = true;//resets safe for next input
-            if (!(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(InputB.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {
-                    b = double.Parse(bInput.text);
+                    b = double.Parse(InputB.text);
                 }
                 catch (Exception ex)
                 {
-                    bOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                    bOutput.text = "Invalid";
+                    OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputB.text = "Invalid";
                     safe = false;
                     Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
-                    bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    if (end == 0 && b == 6)
-                    {//Addition Section
-                        bOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 1 && b == 8)
-                    {//Subtraction Section
-                        bOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 2 && b == 37)
-                    {//Multiplication Section
-                        bOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 3 && b == 0)
-                    {//Division Section
-                        bOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 4 && b == 2)
-                    {//Modulus Section
-                        bOutput.text = "Correct!";
+                    OutputB.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (b == 6)
+                    {
+                        OutputB.text = "Correct!";
                         num++;
                     }
                     else
                     {
-                        bOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                        bOutput.text = "Incorrect";
+                        OutputB.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputB.text = "Incorrect";
                     }
                 }
             }
             else
             {
-                bOutput.text = "";
+                OutputB.text = "";
             }
             //C section
             safe = true;
-            if (!(String.IsNullOrEmpty(cInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(InputC.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {
-                    c = double.Parse(cInput.text);
+                    c = double.Parse(InputC.text);
                 }
                 catch (Exception ex)
                 {
-                    cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                    cOutput.text = "Invalid";
+                    OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputC.text = "Invalid";
                     safe = false;
                     Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
-                    cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    if (end == 0 && c == 3.3)
-                    {//Addition Section
-                        cOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 1 && c == -1.2)
-                    {//Subtraction Section
-                        cOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 2 && c == 9)
-                    {//Multiplication Section
-                        cOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 3 && c == 9.5)
-                    {//Division Section
-                        cOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 4 && c == 2)
-                    {//Modulus Section
-                        cOutput.text = "Correct!";
+                    OutputC.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (c == 3.3)
+                    {
+                        OutputC.text = "Correct!";
                         num++;
                     }
                     else
                     {
-                        cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                        cOutput.text = "Incorrect";
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputC.text = "Incorrect";
                     }
                 }
             }
             else
             {
-                cOutput.text = "";
+                OutputC.text = "";
             }
             //D section
             safe = true;
-            if (!(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(InputD.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {
-                    d = double.Parse(dInput.text);
+                    d = double.Parse(InputD.text);
                 }
                 catch (Exception ex)
                 {
-                    dOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
-                    dOutput.text = "Invalid";
+                    OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputD.text = "Invalid";
                     safe = false;
                     Debug.Log(ex.Message);
 
                 }
                 if (safe)
                 {
-                    dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    if (end == 0 && d == 28)
-                    {//Addition Section
-                        dOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 1 && d == 3.4)
-                    {//Subtraction Section
-                        dOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 2 && d == 52)
-                    {//Multiplication Section
-                        dOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 3 && d == 6)
-                    {//Division Section
-                        dOutput.text = "Correct!";
-                        num++;
-                    }
-                    else if (end == 4 && d == 2)
-                    {//Modulus Section
-                        dOutput.text = "Correct!";
+                    OutputD.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (d == 28)
+                    {
+                        OutputD.text = "Correct!";
                         num++;
                     }
                     else
                     {
-                        cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                        dOutput.text = "Incorrect";
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.text = "Incorrect";
                     }
                 }
             }
             else
             {
-                dOutput.text = "";
+                OutputD.text = "";
             }
-            if (num == 4 && end == 4)//allows the level to be completed after last section is all correct.
+
+            // If player successfully input all correct values
+            if (num == 4)
             {
+                // Lift the gate (NOTE: Rotation is 90, therefore X = Y and Y = X
+                Gate1.transform.Translate(26, 0, 0); // X, Y, Z Translation move
+
+                // Deactivate this area, Activate the next area
+                CheckAnswer1.SetActive(false);
+                Subtraction.SetActive(true);
+
+                // Set Assign the TMP Objects
+                InputA = GameObject.Find("CodeBoxA2").GetComponent<TMP_InputField>();
+                InputB = GameObject.Find("CodeBoxB2").GetComponent<TMP_InputField>();
+                InputC = GameObject.Find("CodeBoxC2").GetComponent<TMP_InputField>();
+                InputD = GameObject.Find("CodeBoxD2").GetComponent<TMP_InputField>();
+                OutputA = GameObject.Find("OutputBoxA2").GetComponent<TextMeshProUGUI>();
+                OutputB = GameObject.Find("OutputBoxB2").GetComponent<TextMeshProUGUI>();
+                OutputC = GameObject.Find("OutputBoxC2").GetComponent<TextMeshProUGUI>();
+                OutputD = GameObject.Find("OutputBoxD2").GetComponent<TextMeshProUGUI>();
+            }
+        }
+
+        // Code for the Subtraction Area
+        public void Subtraction_Area()
+        {
+            int num = 0;//counts up everytime a try block receives valid input.
+            double a, b, c, d;//Input values
+
+            a = b = c = d = 0;
+            //A section
+            bool safe = true;//goes false if the input in the try blocks is invalid
+            if (!(String.IsNullOrEmpty(InputA.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {// Save Text from input field into user input
+                    a = double.Parse(InputA.text);//tests for doubles
+                }
+                catch (Exception ex)//activates when the input is invalid
+                {
+                    OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputA.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {//Correct double inputed for section
+                    OutputA.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (a == 1)
+                    {
+                        OutputA.text = "Correct!";
+                        num++;
+                    }
+                    else//Wrong double inputed in sectiion
+                    {
+                        OutputA.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputA.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputA.text = "";
+            }
+            //B section
+            safe = true;//resets safe for next input
+            if (!(String.IsNullOrEmpty(InputB.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    b = double.Parse(InputB.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputB.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputB.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (b == 8)
+                    {
+                        OutputB.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputB.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputB.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputB.text = "";
+            }
+            //C section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputC.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    c = double.Parse(InputC.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputC.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputC.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (c == -1.2)
+                    {
+                        OutputC.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputC.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputC.text = "";
+            }
+            //D section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputD.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    d = double.Parse(InputD.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputD.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+
+                }
+                if (safe)
+                {
+                    OutputD.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (d == 3.4)
+                    {
+                        OutputD.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputD.text = "";
+            }
+
+            // If player successfully input all correct values
+            if (num == 4)
+            {
+                // Lift the gate (NOTE: Rotation is 90, therefore X = Y and Y = X
+                Gate2.transform.Translate(26, 0, 0); // X, Y, Z Translation move
+
+                // Deactivate this area, Activate the next area
+                CheckAnswer2.SetActive(false);
+                Multiplication.SetActive(true);
+
+                // Set Assign the TMP Objects
+                InputA = GameObject.Find("CodeBoxA3").GetComponent<TMP_InputField>();
+                InputB = GameObject.Find("CodeBoxB3").GetComponent<TMP_InputField>();
+                InputC = GameObject.Find("CodeBoxC3").GetComponent<TMP_InputField>();
+                InputD = GameObject.Find("CodeBoxD3").GetComponent<TMP_InputField>();
+                OutputA = GameObject.Find("OutputBoxA3").GetComponent<TextMeshProUGUI>();
+                OutputB = GameObject.Find("OutputBoxB3").GetComponent<TextMeshProUGUI>();
+                OutputC = GameObject.Find("OutputBoxC3").GetComponent<TextMeshProUGUI>();
+                OutputD = GameObject.Find("OutputBoxD3").GetComponent<TextMeshProUGUI>();
+            }
+        }
+
+        // Code for the Multiplication Area
+        public void Multiplication_Area()
+        {
+            int num = 0;//counts up everytime a try block receives valid input.
+            double a, b, c, d;//Input values
+
+            a = b = c = d = 0;
+            //A section
+            bool safe = true;//goes false if the input in the try blocks is invalid
+            if (!(String.IsNullOrEmpty(InputA.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {// Save Text from input field into user input
+                    a = double.Parse(InputA.text);//tests for doubles
+                }
+                catch (Exception ex)//activates when the input is invalid
+                {
+                    OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputA.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {//Correct double inputed for section
+                    OutputA.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (a == 49)
+                    {
+                        OutputA.text = "Correct!";
+                        num++;
+                    }
+                    else//Wrong double inputed in sectiion
+                    {
+                        OutputA.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputA.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputA.text = "";
+            }
+            //B section
+            safe = true;//resets safe for next input
+            if (!(String.IsNullOrEmpty(InputB.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    b = double.Parse(InputB.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputB.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputB.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (b == 37)
+                    {//Multiplication Section
+                        OutputB.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputB.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputB.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputB.text = "";
+            }
+            //C section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputC.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    c = double.Parse(InputC.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputC.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputC.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (c == 9)
+                    {
+                        OutputC.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputC.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputC.text = "";
+            }
+            //D section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputD.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    d = double.Parse(InputD.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputD.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+
+                }
+                if (safe)
+                {
+                    OutputD.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (d == 52)
+                    {
+                        OutputD.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputD.text = "";
+            }
+
+            // If player successfully input all correct values
+            if (num == 4)
+            {
+                // Lift the gate (NOTE: Rotation is 90, therefore X = Y and Y = X
+                Gate3.transform.Translate(26, 0, 0); // X, Y, Z Translation move
+
+                // Deactivate this area, Activate the next area
+                CheckAnswer3.SetActive(false);
+                Division.SetActive(true);
+
+                // Set Assign the TMP Objects
+                InputA = GameObject.Find("CodeBoxA4").GetComponent<TMP_InputField>();
+                InputB = GameObject.Find("CodeBoxB4").GetComponent<TMP_InputField>();
+                InputC = GameObject.Find("CodeBoxC4").GetComponent<TMP_InputField>();
+                InputD = GameObject.Find("CodeBoxD4").GetComponent<TMP_InputField>();
+                OutputA = GameObject.Find("OutputBoxA4").GetComponent<TextMeshProUGUI>();
+                OutputB = GameObject.Find("OutputBoxB4").GetComponent<TextMeshProUGUI>();
+                OutputC = GameObject.Find("OutputBoxC4").GetComponent<TextMeshProUGUI>();
+                OutputD = GameObject.Find("OutputBoxD4").GetComponent<TextMeshProUGUI>();
+            }
+        }
+
+        // Code for the Division Area
+        public void Division_Area()
+        {
+            int num = 0;//counts up everytime a try block receives valid input.
+            double a, b, c, d;//Input values
+
+            a = b = c = d = 0;
+            //A section
+            bool safe = true;//goes false if the input in the try blocks is invalid
+            if (!(String.IsNullOrEmpty(InputA.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {// Save Text from input field into user input
+                    a = double.Parse(InputA.text);//tests for doubles
+                }
+                catch (Exception ex)//activates when the input is invalid
+                {
+                    OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputA.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {//Correct double inputed for section
+                    OutputA.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (a == .5)
+                    {
+                        OutputA.text = "Correct!";
+                        num++;
+                    }
+                    else//Wrong double inputed in sectiion
+                    {
+                        OutputA.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputA.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputA.text = "";
+            }
+            //B section
+            safe = true;//resets safe for next input
+            if (!(String.IsNullOrEmpty(InputB.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    b = double.Parse(InputB.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputB.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputB.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (b == 0)
+                    {
+                        OutputB.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputB.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputB.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputB.text = "";
+            }
+            //C section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputC.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    c = double.Parse(InputC.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputC.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputC.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (c == 9.5)
+                    {
+                        OutputC.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputC.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputC.text = "";
+            }
+            //D section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputD.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    d = double.Parse(InputD.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputD.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+
+                }
+                if (safe)
+                {
+                    OutputD.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (d == 6)
+                    {
+                        OutputD.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputD.text = "";
+            }
+
+            // If player successfully input all correct values
+            if (num == 4)
+            {
+                // Lift the gate (NOTE: Rotation is 90, therefore X = Y and Y = X
+                Gate4.transform.Translate(26, 0, 0); // X, Y, Z Translation move
+
+                // Deactivate this area, Activate the next area
+                CheckAnswer4.SetActive(false);
+                Modulus.SetActive(true);
+
+                // Set Assign the TMP Objects
+                InputA = GameObject.Find("CodeBoxA5").GetComponent<TMP_InputField>();
+                InputB = GameObject.Find("CodeBoxB5").GetComponent<TMP_InputField>();
+                InputC = GameObject.Find("CodeBoxC5").GetComponent<TMP_InputField>();
+                InputD = GameObject.Find("CodeBoxD5").GetComponent<TMP_InputField>();
+                OutputA = GameObject.Find("OutputBoxA5").GetComponent<TextMeshProUGUI>();
+                OutputB = GameObject.Find("OutputBoxB5").GetComponent<TextMeshProUGUI>();
+                OutputC = GameObject.Find("OutputBoxC5").GetComponent<TextMeshProUGUI>();
+                OutputD = GameObject.Find("OutputBoxD5").GetComponent<TextMeshProUGUI>();
+            }
+        }
+
+        // Code for the Modulus Area
+        public void Modulus_Area()
+        {
+            int num = 0;//counts up everytime a try block receives valid input.
+            double a, b, c, d;//Input values
+
+            a = b = c = d = 0;
+            //A section
+            bool safe = true;//goes false if the input in the try blocks is invalid
+            if (!(String.IsNullOrEmpty(InputA.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {// Save Text from input field into user input
+                    a = double.Parse(InputA.text);//tests for doubles
+                }
+                catch (Exception ex)//activates when the input is invalid
+                {
+                    OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputA.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {//Correct double inputed for section
+                    OutputA.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (a == 2)
+                    {
+                        OutputA.text = "Correct!";
+                        num++;
+                    }
+                    else//Wrong double inputed in sectiion
+                    {
+                        OutputA.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputA.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputA.text = "";
+            }
+            //B section
+            safe = true;//resets safe for next input
+            if (!(String.IsNullOrEmpty(InputB.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    b = double.Parse(InputB.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputB.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputB.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (b == 2)
+                    {
+                        OutputB.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputB.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputB.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputB.text = "";
+            }
+            //C section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputC.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    c = double.Parse(InputC.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputC.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+                }
+                if (safe)
+                {
+                    OutputC.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (c == 2)
+                    {
+                        OutputC.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputC.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputC.text = "";
+            }
+            //D section
+            safe = true;
+            if (!(String.IsNullOrEmpty(InputD.text)))//Checks if values were inputed skips if no value
+            {
+                try
+                {
+                    d = double.Parse(InputD.text);
+                }
+                catch (Exception ex)
+                {
+                    OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                    OutputD.text = "Invalid";
+                    safe = false;
+                    Debug.Log(ex.Message);
+
+                }
+                if (safe)
+                {
+                    OutputD.color = new Color32(0, 255, 255, 255);//changes font color to cyan
+                    if (d == 2)
+                    {
+                        OutputD.text = "Correct!";
+                        num++;
+                    }
+                    else
+                    {
+                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.text = "Incorrect";
+                    }
+                }
+            }
+            else
+            {
+                OutputD.text = "";
+            }
+
+            // If player successfully input all correct values
+            if (num == 4)
+            {
+                // Deactivate this area, Set level to complete
+                CheckAnswer5.SetActive(false);
+                
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-            }
-            else if (num == 4 && end == 0)//Updates code text to the subtraction section after the addition section is all correct.
-            {
-                aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(0, 200, 255, 255); //R,G,B, Transparency. 
-                aContext.text = "A. x= 2-1\noutput(x)\n\noutput:";
-                bContext.text = "B. x= 20-5\ny= 3+4 \nx-=y\noutput(x)\n\noutput:";
-                cContext.text = "C. x= 5.5\ny= 6.7 \nx-=y\noutput(y)\n\noutput:";
-                dContext.text = "D. x= 10+5\ny= 5-3.3 \nz=x-y\ny= y-z+x\noutput(y)\n\noutput:";
-                eContext.text = "Subtraction";
-            }
-            else if (num == 4 && end == 1)//Updates code text to the multiplication section after subtraction section is all correct.
-            {
-                aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(255, 128, 0, 255);
-                aContext.text = "A. x= 2+5\ny= 10-3\nx*=y\noutput(x)\n\noutput:";
-                bContext.text = "B. x= 5*3\ny= 10*2.2 \nx+=y\noutput(x)\n\noutput:";
-                cContext.text = "C. x= 1+2*3\ny= (1+2)*3 \nz=-1*(1+2*3)\noutput(z+y+x)\n\noutput:";
-                dContext.text = "D. x= 3*4-1\ny= 4+1*5 \nz=2*2+2\ny= 2*(y+z+x)\noutput(y)\n\noutput:";
-                eContext.text = "Multiplication";
-            }
-            else if (num == 4 && end == 2)//Updates code text to the division section after multiplication section is all correct.
-            {
-                aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(0, 255, 255, 255);
-                aContext.text = "A. x= 2.0/4\noutput(x)\n\noutput:";
-                bContext.text = "B. y= 2/4\noutput(y)\n\noutput:";
-                cContext.text = "C. x= 1.1*3\ny= 2.2+5 \nz=  10.5-2\nz+= (x+y)\noutput(z/2)\n\noutput:";
-                dContext.text = "D. x= 3*3\ny= 2+5 \nz= (x+y)*2\nz+=1\noutput(z/5)\n\noutput:";
-                eContext.text = "Division";
-            }
-            else if (num == 4 && end == 3)//Updates code text to the modulus after division section is all correct.
-            {
-                aContext.color = bContext.color = cContext.color = dContext.color = eContext.color = new Color32(200, 200, 200, 255);
-                aContext.text = "A. x= 2%4\noutput(x)\n\noutput:";
-                bContext.text = "B. x= 3%2+1\noutput(x)\n\noutput:";
-                cContext.text = "C. x= 3.3*3+3%2\ny= 20%7 \nz= x+y-.9\noutput(z/8)\n\noutput:";
-                dContext.text = "D. x= 24%5\ny= 15%2 \nz=5%x+y\noutput(z)\n\noutput:";
-                eContext.text = "Modulus";
             }
         }
     }
