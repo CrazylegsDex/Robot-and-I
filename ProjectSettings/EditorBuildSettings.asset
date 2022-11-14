@@ -30,13 +30,25 @@ EditorBuildSettings:
     path: Assets/Scenes/PythonJungle/PythonIsland.unity
     guid: 2f7f96d191455d842bad6df89653c202
   - enabled: 1
-    path: Assets/Scenes/PythonJungle/Levels/PY_Level17.unity
+    path: Assets/Scenes/PythonJungle/Levels/Level1-5/PY_Level1.unity
+    guid: 7d5c7a5b5769ffd4c8b528190f8b03d0
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level1-5/PY_Level2.unity
+    guid: 7dd9f5490d22c8c499a6ddf4cd04b175
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level16-20/PY_Level17.unity
     guid: 5cb10cbf87eba924ebbc3d6446183c05
   - enabled: 1
     path: Assets/Scenes/SharpSeas/CIsland.unity
     guid: ece9351c77008084cb4fcce3a115cbf3
   - enabled: 1
-    path: Assets/Scenes/SharpSeas/Levels/CS_Level12.unity
+    path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level1.unity
+    guid: 013a3c832e99ec34e8ddfe7609559f32
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level2.unity
+    guid: d9331df1c8f2a8c46aca66a31e2ad08e
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level11-15/CS_Level12.unity
     guid: f8f9ccf1dabd8b546a32ad4000ae8cc1
   - enabled: 1
     path: Assets/Scenes/PseudoCity/Levels/Pop-Up-Level.unity
