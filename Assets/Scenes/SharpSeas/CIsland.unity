@@ -647,7 +647,7 @@ Transform:
   - {fileID: 1306996355}
   - {fileID: 425312826}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &325731008
 GameObject:
@@ -683,7 +683,7 @@ Transform:
   - {fileID: 2059440792}
   - {fileID: 2014687578}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425312823
 GameObject:
