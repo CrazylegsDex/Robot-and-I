@@ -5,15 +5,17 @@
  * 11-11-2022
  */
 
+using System;
 using UnityEngine;
 
 namespace GameMechanics
 {
     public class Level_Pop_Up : MonoBehaviour
     {
+        public String QuitLocationLevel;
         public void QuitToWorld()
         {
-            StartCoroutine(Load_Level.SceneLoader("OverworldPopupTest"));
+            StartCoroutine(Load_Level.SceneLoader(QuitLocationLevel));
         }
     }
 }
