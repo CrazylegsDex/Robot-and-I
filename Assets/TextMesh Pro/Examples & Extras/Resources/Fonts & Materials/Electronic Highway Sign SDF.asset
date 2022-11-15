@@ -1625,6 +1625,10 @@ MonoBehaviour:
     m_Width: 58
     m_Height: 893
   - m_X: 459
+    m_Y: 390
+    m_Width: 564
+    m_Height: 390
+  - m_X: 459
     m_Y: 130
     m_Width: 16
     m_Height: 130
@@ -1644,6 +1648,10 @@ MonoBehaviour:
     m_Y: 390
     m_Width: 368
     m_Height: 633
+  - m_X: 557
+    m_Y: 260
+    m_Width: 466
+    m_Height: 763
   m_fontInfo:
     Name: Electronic Highway Sign
     PointSize: 144

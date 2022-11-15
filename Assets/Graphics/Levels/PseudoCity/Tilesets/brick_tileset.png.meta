@@ -103,6 +103,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1125,7 +1149,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      brick_tileset_2: -510017304
+      brick_tileset_11: 1459095370
       brick_tileset_4: 1417428511
       brick_tileset_24: 1672024332
       brick_tileset_6: -285987408
@@ -1170,8 +1194,8 @@ TextureImporter:
       brick_tileset_23: -1054065489
       brick_tileset_36: 360996998
       brick_tileset_47: 2076937530
+      brick_tileset_2: -510017304
       brick_tileset_17: -543513563
-      brick_tileset_11: 1459095370
       brick_tileset_44: 20410476
   spritePackingTag: 
   pSDRemoveMatte: 0

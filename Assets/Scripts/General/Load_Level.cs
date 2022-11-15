@@ -18,7 +18,12 @@ namespace GameMechanics
 
         // Will trigger when two objects collide
         // Parameter is the object that the script is attached to (auto passed)
-        private void OnTriggerEnter2D(Collider2D collision)
+		
+		public void startLevel(){
+			StartCoroutine(SceneLoader(LevelToLoad));
+		}
+		
+		private void OnTriggerEnter2D(Collider2D collision)
         {
             // collisionGameObject is the first object that moved into the second
             // Effectively refers to the object that just ran into the object this script is attached.
