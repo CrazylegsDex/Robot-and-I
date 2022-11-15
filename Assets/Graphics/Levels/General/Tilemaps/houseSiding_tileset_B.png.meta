@@ -103,6 +103,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1156,9 +1180,9 @@ TextureImporter:
       houseSiding_tileset_B_4: -371191533
       houseSiding_tileset_B_23: -204966022
       houseSiding_tileset_B_8: 313412120
-      houseSiding_tileset_B_9: 950291470
       houseSiding_tileset_B_35: -1393384416
       houseSiding_tileset_B_37: 814163302
+      houseSiding_tileset_B_9: 950291470
       houseSiding_tileset_B_40: -207382234
       houseSiding_tileset_B_47: -1978521616
       houseSiding_tileset_B_13: 1249768548
