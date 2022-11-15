@@ -12,8 +12,6 @@ namespace GameMechanics
 {
     public class Over_Pop_Up : MonoBehaviour
     {
-        public String ThisLocationLevel; // fill with current scene name
-
         // link with MenuButton in OverworldOverlay
         public void PauseWorld()
         {
