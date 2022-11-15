@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DT_overworld : MonoBehaviour
 {
+	// insalizes DialogueOver class
     public DialogueOver dialogue;
 	
-	public void DTOverworld(){
-		FindObjectOfType<DM_overworld>().startDialogue(dialogue);
-	}
-	
+	// when player runs into an npc this actives the startDialogue 
 	private void OnTriggerEnter2D(Collider2D collision)
     {
             // collisionGameObject is the first object that moved into the second
