@@ -1,11 +1,11 @@
 /*
- * This script checks the input text boxes and ensures that the player
- * put the correct code into the box
+ * This script allows the player the ability to use the
+ * CSharp compiler. This script will allow the player to
+ * type into a TMP text box and then it will use that
+ * information so the player can complete the level.
  * 
  * Author: Robot and I Team
- * Credits: DMGregory at Stackexchange.com - His helpful code example
- *     allowed this project to succeed in its efforts.
- * Last modification date: 11-12-2022
+ * Last modification date: 11-15-2022
  */
 using System;
 using System.CodeDom.Compiler;
@@ -240,7 +240,7 @@ namespace PseudoLevels
                 parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
-		parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.Physics2DModule.dll");
+		        parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.Physics2DModule.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path2 + "Unity.TextMeshPro.dll");
                 parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
                 parameters.ReferencedAssemblies.Add(win32Location + "Facades\\netstandard.dll");
@@ -252,7 +252,7 @@ namespace PseudoLevels
                 parameters.ReferencedAssemblies.Add(folderPath + "System.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.CoreModule.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.UI.dll");
-		parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.Physics2DModule.dll");
+		        parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.Physics2DModule.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "Microsoft.CSharp.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "netstandard.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "Unity.TextMeshPro.dll");
