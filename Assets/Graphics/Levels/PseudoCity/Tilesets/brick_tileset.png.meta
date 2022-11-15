@@ -1149,7 +1149,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      brick_tileset_11: 1459095370
+      brick_tileset_44: 20410476
       brick_tileset_4: 1417428511
       brick_tileset_24: 1672024332
       brick_tileset_6: -285987408
@@ -1194,9 +1194,9 @@ TextureImporter:
       brick_tileset_23: -1054065489
       brick_tileset_36: 360996998
       brick_tileset_47: 2076937530
-      brick_tileset_2: -510017304
       brick_tileset_17: -543513563
-      brick_tileset_44: 20410476
+      brick_tileset_2: -510017304
+      brick_tileset_11: 1459095370
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
