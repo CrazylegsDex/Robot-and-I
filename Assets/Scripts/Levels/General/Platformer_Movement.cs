@@ -1,7 +1,7 @@
 // This script allows movement for the player in the platformer view
 //
 // Author: Robot and I Team
-// Last modification date: 10-28-2022
+// Last modification date: 11-16-2022
 
 using UnityEngine;
 
@@ -21,18 +21,15 @@ namespace PlayerControl
         // Private variables
         private int jumpCount;
         private float moveDirection;
-        private bool faceRight = true;
         private bool isJumping = false;
         private bool isGrounded;
         private Rigidbody2D rb;
-        private SpriteRenderer sr;
 
         // Awake is called after all objects are initialized. Called in a random order with the rest.
         private void Awake()
         {
             // Get the elements in the current sprites Rigidbody2D and SpriteRenderer
             rb = GetComponent<Rigidbody2D>();
-            sr = GetComponent<SpriteRenderer>();
         }
 
         // Start is called before the first frame update
@@ -48,9 +45,6 @@ namespace PlayerControl
             {
                 // Get player inputs
                 processInputs();
-
-                // Animate player direction
-                Animate();
             }
         }
 
@@ -77,15 +71,6 @@ namespace PlayerControl
                 isJumping = true;
         }
 
-        private void Animate()
-        {
-            // Change the direction of the player if needed
-            if (moveDirection > 0 && !faceRight)
-                flipCharacter();
-            else if (moveDirection < 0 && faceRight)
-                flipCharacter();
-        }
-
         private void moveCharacter()
         {
             // Use the player inputs to move the character
@@ -96,15 +81,6 @@ namespace PlayerControl
                 --jumpCount;
                 isJumping = false;
             }
-        }
-
-        private void flipCharacter()
-        {
-            faceRight = !faceRight; // Invert the direction bool found in inspector view
-            if (sr.flipX)
-                sr.flipX = false;
-            else
-                sr.flipX = true;
         }
     }
 }

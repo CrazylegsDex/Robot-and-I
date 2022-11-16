@@ -33,13 +33,11 @@ namespace PseudoLevels
                 { // Saves Text from input field into user input
                     int i = int.Parse(userInput.text);//tests for only integers
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow //R,G,B, Transparency. 
                     programOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -58,13 +56,11 @@ namespace PseudoLevels
                 {
                     string s = stringInput.text;//tests for strings
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     stringOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -91,7 +87,7 @@ namespace PseudoLevels
                 {
                     bool i = bool.Parse(boolInput.text);//tests for bools
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {//below makes the use of 1 or 0 for bool acceptable.
                     if (1 == int.Parse(boolInput.text) || 0 == int.Parse(boolInput.text))
                     {
@@ -106,7 +102,6 @@ namespace PseudoLevels
 
                     }
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -123,12 +118,11 @@ namespace PseudoLevels
                 {
                     float i = float.Parse(floatInput.text);//tests for floats
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     floatOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     floatOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {

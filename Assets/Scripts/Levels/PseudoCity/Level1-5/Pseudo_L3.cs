@@ -84,12 +84,11 @@ namespace PseudoLevels
                 {// Save Text from input field into user input
                     a = double.Parse(InputA.text);//tests for doubles
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputA.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {//Correct double inputed for section
@@ -118,12 +117,11 @@ namespace PseudoLevels
                 {
                     b = double.Parse(InputB.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputB.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -152,12 +150,11 @@ namespace PseudoLevels
                 {
                     c = double.Parse(InputC.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputC.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -186,13 +183,11 @@ namespace PseudoLevels
                 {
                     d = double.Parse(InputD.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputD.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -252,12 +247,11 @@ namespace PseudoLevels
                 {// Save Text from input field into user input
                     a = double.Parse(InputA.text);//tests for doubles
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputA.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {//Correct double inputed for section
@@ -286,12 +280,11 @@ namespace PseudoLevels
                 {
                     b = double.Parse(InputB.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputB.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -320,12 +313,11 @@ namespace PseudoLevels
                 {
                     c = double.Parse(InputC.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputC.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -354,13 +346,11 @@ namespace PseudoLevels
                 {
                     d = double.Parse(InputD.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputD.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -420,12 +410,11 @@ namespace PseudoLevels
                 {// Save Text from input field into user input
                     a = double.Parse(InputA.text);//tests for doubles
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputA.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {//Correct double inputed for section
@@ -454,12 +443,11 @@ namespace PseudoLevels
                 {
                     b = double.Parse(InputB.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputB.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -488,12 +476,11 @@ namespace PseudoLevels
                 {
                     c = double.Parse(InputC.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputC.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -522,13 +509,11 @@ namespace PseudoLevels
                 {
                     d = double.Parse(InputD.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputD.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -588,12 +573,11 @@ namespace PseudoLevels
                 {// Save Text from input field into user input
                     a = double.Parse(InputA.text);//tests for doubles
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputA.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {//Correct double inputed for section
@@ -622,12 +606,11 @@ namespace PseudoLevels
                 {
                     b = double.Parse(InputB.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputB.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -656,12 +639,11 @@ namespace PseudoLevels
                 {
                     c = double.Parse(InputC.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputC.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -690,13 +672,11 @@ namespace PseudoLevels
                 {
                     d = double.Parse(InputD.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputD.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -756,12 +736,11 @@ namespace PseudoLevels
                 {// Save Text from input field into user input
                     a = double.Parse(InputA.text);//tests for doubles
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     OutputA.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputA.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {//Correct double inputed for section
@@ -790,12 +769,11 @@ namespace PseudoLevels
                 {
                     b = double.Parse(InputB.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputB.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputB.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -824,12 +802,11 @@ namespace PseudoLevels
                 {
                     c = double.Parse(InputC.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputC.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputC.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -858,13 +835,11 @@ namespace PseudoLevels
                 {
                     d = double.Parse(InputD.text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     OutputD.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     OutputD.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {

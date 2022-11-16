@@ -31,7 +31,6 @@ namespace CSharpLevels
             //Ints
             int num = 0;//counts up everytime a try block receives valid input.
 
-            Debug.Log(userInput.text);
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(userInput.text)))//Checks if values were inputed skips if no value
             {
@@ -39,12 +38,11 @@ namespace CSharpLevels
                 { // Saves Text from input field into user input
                     int i = int.Parse(userInput.text);//tests for only integers
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     programOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -62,12 +60,11 @@ namespace CSharpLevels
                 {
                     string s = stringInput.text;//tests for strings
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     stringOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -94,12 +91,11 @@ namespace CSharpLevels
                 {
                     string c = charInput.text;//tests for strings
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     charOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -125,7 +121,7 @@ namespace CSharpLevels
                 {
                     bool i = bool.Parse(boolInput.text);//tests for bools
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {//below makes the use of 1 or 0 for bool acceptable.
                     if (1 == int.Parse(boolInput.text) || 0 == int.Parse(boolInput.text))
                     {
@@ -140,7 +136,6 @@ namespace CSharpLevels
 
                     }
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -157,12 +152,11 @@ namespace CSharpLevels
                 {
                     float i = float.Parse(floatInput.text);//tests for floats
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     floatOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     floatOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -179,12 +173,11 @@ namespace CSharpLevels
                 {
                     double d = double.Parse(doubleInput.text);//tests for strings
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     doubleOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                     doubleOutput.text = "Incorrect";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {

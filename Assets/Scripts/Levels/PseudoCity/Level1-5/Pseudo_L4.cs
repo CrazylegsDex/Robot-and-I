@@ -82,7 +82,6 @@ namespace PseudoLevels
                         }
                     }
                     
-                    print(z);
 			        TMP_Text object2 = GameObject.Find(""OutputBoxB"").GetComponent<TMP_Text>();
                     x=0;
                     y=0;
@@ -251,6 +250,7 @@ namespace PseudoLevels
             result = provider.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
+            // TODO ---- Determine if keep or remove this from non-compiler type levels
             if (result.Errors.HasErrors)
             {
                 //displayLog = false;

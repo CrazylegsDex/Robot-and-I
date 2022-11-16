@@ -27,7 +27,6 @@ public class DialogueManager5 : MonoBehaviour
 	
 	public void StartDialogue (Dialogue_PC_L1 dialogue)
 	{
-		Debug.Log("Starting conversation with " + dialogue.name);
 		nameOutput.text = dialogue.name;
 		sentences.Clear();
 		foreach (string sentence in dialogue.sentences)
@@ -48,12 +47,10 @@ public class DialogueManager5 : MonoBehaviour
 		
 		string sentence = sentences.Dequeue();
 		dialogueOutput.text = sentence;
-		Debug.Log(sentence);
 	}	
 	
 	 void EndDialogue()
 	 {
-		Debug.Log("End of conversation");
 		DialogueObjects.SetActive(false);
 		LessonObjects.SetActive(true);
 	 }

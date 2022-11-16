@@ -37,12 +37,11 @@ namespace PythonLevels
                 {// Save Text from input field into user input
                     a = int.Parse(aInput.text);//tests for only integers
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     aOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -68,13 +67,11 @@ namespace PythonLevels
                 {
                     b = double.Parse(bInput.text);//tests for doubles
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     bOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     bOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {
@@ -100,19 +97,17 @@ namespace PythonLevels
                 {
                     c = int.Parse(cInput.text);//tests for only integers
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    Debug.Log(ex.Message);
                     try
                     {
                         x = char.Parse(cInput.text);//tests for characters
                     }
-                    catch (Exception ex1)
+                    catch (Exception)
                     {
                         cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                         cOutput.text = "Invalid";
                         safe = false;
-                        Debug.Log(ex1.Message);
                     }
                 }
                 if (safe)
@@ -139,13 +134,11 @@ namespace PythonLevels
                 {
                     d = int.Parse(dInput.text);//tests for only integers
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     dOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     dOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
-
                 }
                 if (safe)
                 {

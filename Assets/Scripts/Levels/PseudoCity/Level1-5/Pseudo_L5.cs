@@ -172,8 +172,6 @@ namespace PseudoLevels
                     if(safe){
                         z = x%4==3 && x>4;
                         a = y/x==5 || y+x==9;
-                        print(z);
-                        print(a);
 			            if (z||a){
                             object4.color = new Color32(0, 255, 255, 255);//changes font color to cyan
 				            object4.text = ""correct!"";

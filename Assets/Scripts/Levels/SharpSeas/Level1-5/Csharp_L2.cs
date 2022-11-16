@@ -35,12 +35,11 @@ namespace CSharpLevels
                 {// Save Text from input field into user input
                     a = int.Parse(aInput.text);//tests for only integers
                 }
-                catch (Exception ex)//activates when the input is invalid
+                catch (Exception)//activates when the input is invalid
                 {
                     aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     aOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -65,12 +64,11 @@ namespace CSharpLevels
                 {
                     b = int.Parse(bInput.text);//tests for only integers
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     bOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     bOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -95,12 +93,11 @@ namespace CSharpLevels
                 {
                     c = int.Parse(cInput.text);//tests for only integers
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     cOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
@@ -125,12 +122,11 @@ namespace CSharpLevels
                 {
                     d = int.Parse(dInput.text);//tests for only integers
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     dOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     dOutput.text = "Invalid";
                     safe = false;
-                    Debug.Log(ex.Message);
                 }
                 if (safe)
                 {
