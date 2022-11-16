@@ -1803,6 +1803,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1218941534}
+  - {fileID: 683512740}
   - {fileID: 1862207304}
   - {fileID: 644351808}
   - {fileID: 35628291}
@@ -2933,6 +2934,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+--- !u!1 &683512739 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1113520695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &683512740 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1113520695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &719391792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4379,6 +4390,17 @@ RectTransform:
   m_AnchoredPosition: {x: -0.36116773, y: 0.39596698}
   m_SizeDelta: {x: 0.274526, y: 0.203066}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &898794226 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1113520695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &912250940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,6 +4825,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1002254773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1113520695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed75f5d53fe5a342a75432a03af64fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1033211325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5159,6 +5192,240 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090077598}
   m_CullTransparentMesh: 1
+--- !u!1001 &1113520695
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 347094824}
+    m_Modifications:
+    - target: {fileID: 1380732494918471536, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_Name
+      value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 68.698
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 58.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495251368137, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 202.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495251368137, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1410598847}
+    - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayNextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506121, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 136.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506121, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -59.302513
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: "Logical operators are used to perform logical operations between two
+        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
+        boolean value of true or false. Let\u2019s dive in to make more sense of
+        this. \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: "Operator AND: This operator stands for and. The standard symbol for
+        AND is \u201C&&\u201D. This operator will be true when both statements on
+        either side of the \u201C&&\u201D are true. If anything is false on either
+        side or both, the result will be false. Press Continue to see an example."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: 'Example:
+
+        Int x = 15
+
+        Int y = 10
+
+        Bool result
+        = (x < y) && (x > 11) //This result will equal false
+
+        Bool result
+        = (x == y) && (x < 20) //This result will equal false
+
+        Bool result
+        = (x >= y) && (x < 20) //This result will equal true'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: "Operator OR: This operator stands for or. The standard symbol for OR
+        is \u201C||\u201D. This operator is true when there is a true statement on
+        one or both sides of \u201C||\u201D. The only time this operator will produce
+        a false reading is when both statements on each side of \u201C||\u201D is
+        false. Press Continue to see an example."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: 'Example:
+
+        Int x = 3
+
+        Int y = 4
+
+        Bool result
+        = (x < 2) || (x < y) //This result will equal true
+
+        Bool result =
+        (x > 2) || (y >= x) //This result will equal true
+
+        Bool result =
+        (x < 2) || (x > y) //This result will equal false
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
+        for XOR is \u201C^\u201D. This operator is only true when one side of the
+        operator is true and the other side is false. Every other combination of
+        operators will result in a false statement. Press continue to see an example."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[6]
+      value: "Operator NOT: This operator stands for not. The standard symbol for
+        NOT is \u201C!\u201D. This operator is usually used with the equals operator
+        (=). Together they would look like \u201C!=\u201D. This means not equal.
+        When this operator is used together with =, the value will either be true
+        if the values compared are not equal and false if they are equal.Press continue
+        to see an example. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[7]
+      value: 'Example:
+
+        Int x = 6
+
+        Int y = 8
+
+        Bool result
+        = (x != y) //Result would be true. This is true because 6 does not equal
+        8.
+
+        Int a  = 6
+
+        Int b = 6
+
+        Bool result = (a != b)
+        //Result would be false. This is false because 6 does equal 6.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1002254773}
+    - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TriggerDialogue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
 --- !u!1001 &1116220571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6690,9 +6957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd7b5f0fc1d1864b9fa61d5b0bcbade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOutput: {fileID: 869804759}
-  dialogueOutput: {fileID: 797764198}
-  DialogueObjects: {fileID: 1862207303}
+  nameOutput: {fileID: 1903574894}
+  dialogueOutput: {fileID: 898794226}
+  DialogueObjects: {fileID: 683512739}
   LessonObjects: {fileID: 644351807}
 --- !u!224 &1410598848
 RectTransform:
@@ -9103,12 +9370,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1862207304}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: Dialogue old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1862207304
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9267,6 +9534,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883574442}
   m_CullTransparentMesh: 1
+--- !u!114 &1903574894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1380732495148010783, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1113520695}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1913239313
 GameObject:
   m_ObjectHideFlags: 0
