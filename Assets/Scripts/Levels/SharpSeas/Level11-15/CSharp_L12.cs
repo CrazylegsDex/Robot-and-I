@@ -1,15 +1,15 @@
 /*
- * This script is the driver for checking and acting upon input text for a TMP_InputField
- * This script has two primary methods for doing this.
+ * This script allows the player the ability to use the
+ * CSharp compiler. This script will allow the player to
+ * use a prewritten function named "MoveBit" that will
+ * move Bit one unit to the right.
  * 
- * 1. Compile a template code that has the player's code in it.
- *     The compilation step will check for and display any errors.
- * 2. If no errors were found, run the code and act upon any gameplay objects needed.
+ * TODO: Use a coroutine. Inside the while-loop yield the function...
+ * Will need to parse and update the user's code to actually do that though.
+ * https://chris-carter.medium.com/coroutines-with-unity-9674be98d517
  * 
  * Author: Robot and I Team
- * Credits: DMGregory at Stackexchange.com - His helpful code example
- *     allowed this project to succeed in its efforts.
- * Last modification date: 11-10-2022
+ * Last modification date: 11-15-2022
  */
 
 using UnityEngine;
@@ -33,11 +33,11 @@ namespace CSharpLevels
         /*
          * This function is the driver to the sequence of events that are
          * required to:
-         * Get input from a TextMeshPro box (Update a template code string with this input)
-         * Parse/Compile the code written in the box
-         * Check for errors, and notify the player if any
-         * Display the output from the code to a TextMeshPro box
-         * If required, act upon a specific object in the level
+         * Get input from a TextMeshPro box (Update a template code string with this input).
+         * Parse/Compile the code written in the box.
+         * Check for errors, and notify the player if any.
+         * Display the output from the code to a TextMeshPro box if any.
+         * If required, act upon a specific object in the level.
          */
         public void MainDriver()
         {
@@ -53,8 +53,16 @@ namespace CSharpLevels
 
             public class RuntimeScript : MonoBehaviour
             {
-                // Define any in-level objects/variables here
-                // These variables will be globals that the player can use
+                // Reference to the Bit object
+                private GameObject Bit;
+
+                // This function, MoveBit, is designed to take the current
+                // Bit object and move him one unit to the right.
+                public void MoveBit()
+                {
+                    // Move bit forward by 1 X-Unit
+                    Bit.transform.Translate(1, 0, 0); // X, Y, Z Translation move
+                }
 
                 // This function adds a script to the host object
                 // This script addition is required so that Unity can
@@ -69,29 +77,19 @@ namespace CSharpLevels
                 // and invoked, run the following code
                 void Start()
                 {
+                    // Initialize Bit object reference
+                    Bit = GameObject.FindWithTag(""Player"");
+
                     // Run whatever code the player input
                     " + playerInput.text + @"
-                }
 
-                // Called after Start
-                void Update()
-                {
-                    // The dynamic RuntimeScript stays on the HostGameObject
-                    // until gameplay stops. This is undesirable in case the player
-                    // runs the script 50 times, and then moves to another level
-                    // in which he runs the script another 50 times.
-                    // To remove the dynamic script, simple delete it like below
-                    // NOTE: The player could possibly write a similiar line of
-                    // of code -> Destroy(gameObject) <- to ruin the mechanics
-                    // and workings of our game. This is all reset upon a game
-                    // restart and should have no lasting consequences.
+                    // Remove the added script from the object
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
             }";
 
             // Compile the player's code and check for syntax issues
             displayLog = true;
-            programOutput.text = ""; // Clear the current output box
             resultAssembly = CSharpCompile(playerCode);
 
             // Get the Start() method signature to invoke
@@ -128,10 +126,29 @@ namespace CSharpLevels
              * NOTE: Path locations may vary based on install. WILL encounter errors on build.
              * Refer to the C# compiler documentation for what to do in this instance.
              */
-            parameters.ReferencedAssemblies.Add("System.dll");
-            parameters.ReferencedAssemblies.Add(@"C:\Program Files\Unity\Hub\Editor\2022.1.17f1\Editor\Data\Managed\UnityEngine.dll");
-            parameters.ReferencedAssemblies.Add("Microsoft.CSharp.dll");
-            parameters.ReferencedAssemblies.Add(@"C:\Program Files\Unity\Hub\Editor\2022.1.17f1\Editor\Data\MonoBleedingEdge\lib\mono\4.8-api\Facades\netstandard.dll");
+            if (Application.isEditor)
+            {
+                string path1 = @"Data\PlaybackEngines\windowsstandalonesupport\Variations\win32_player_development_mono\Data\Managed\";
+                string path2 = @"Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-7.0.1\ScriptAssemblies\";
+                string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
+                string win32Location = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
+                string engineLocation = assemblyLocation.Substring(0, assemblyLocation.IndexOf("Data")); // Extract base location for Data folder
+                parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
+                parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
+                parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
+                parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
+                parameters.ReferencedAssemblies.Add(win32Location + "Facades\\netstandard.dll");
+            }
+            else
+            {
+                string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
+                string folderPath = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
+                parameters.ReferencedAssemblies.Add(folderPath + "System.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.CoreModule.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.UI.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "Microsoft.CSharp.dll");
+                parameters.ReferencedAssemblies.Add(folderPath + "netstandard.dll");
+            }
 
             // Set compiler parameters
             // NOTE: Set "IncludeDebugInformation" to false when pushed into production
@@ -146,6 +163,7 @@ namespace CSharpLevels
             if (result.Errors.HasErrors)
             {
                 displayLog = false;
+                programOutput.text = ""; // Clear the current output box
                 foreach (CompilerError error in result.Errors)
                 {
                     if (error.ErrorNumber == "CS1525")
@@ -156,6 +174,11 @@ namespace CSharpLevels
                         programOutput.text += error.ErrorText + "\n";
                 }
                 programOutput.text += playerInput.text;
+            }
+            else
+            {
+                programOutput.text = @"There is a function named ""MoveBit"" that will move bit forward by 1 foot.
+To complete this level, write code that will move Bit 227 feet to the NPC.";
             }
 
             // Return the assembly
@@ -188,7 +211,7 @@ namespace CSharpLevels
         {
             if (displayLog) // Prevents duplicate error prints with compile time and log print
             {
-                programOutput.text += logString;
+                programOutput.text += logString + "\n\n";
             }
         }
     }

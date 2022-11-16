@@ -70,3 +70,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Scripts/test.txt
+
+# TextMeshPro Fonts
+/[Aa]ssets/[Tt]extMesh*/Resources/Fonts*/LiberationSans*
+/[Aa]ssets/[Tt]extMesh*/Examples*/Resources/Fonts*/*
