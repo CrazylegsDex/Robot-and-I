@@ -116,7 +116,7 @@ def main():
             programOutput.text = stringData;
 
             // Allow the player to leave the level
-            if (stringData == "Congratualations")
+            if (stringData == "Congratulations")
             {
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
             }
