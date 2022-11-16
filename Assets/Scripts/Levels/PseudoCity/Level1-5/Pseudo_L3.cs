@@ -25,6 +25,10 @@ namespace PseudoLevels
         public GameObject Gate2;
         public GameObject Gate3;
         public GameObject Gate4;
+		public GameObject Dialogue2;
+		public GameObject Dialogue3;
+		public GameObject Dialogue4;
+		public GameObject Dialogue5;
 
         // Input field boxes
         private TMP_InputField InputA;
@@ -43,9 +47,24 @@ namespace PseudoLevels
 
         // Awake is called after all objects are initialized
         // Used to initialize the TMP objects
-        private void Awake()
+       // private void Awake()
+        //{
+         //   InputA = GameObject.Find("CodeBoxA1").GetComponent<TMP_InputField>();
+          //  InputB = GameObject.Find("CodeBoxB1").GetComponent<TMP_InputField>();
+          // InputC = GameObject.Find("CodeBoxC1").GetComponent<TMP_InputField>();
+       //     InputD = GameObject.Find("CodeBoxD1").GetComponent<TMP_InputField>();
+         //   OutputA = GameObject.Find("OutputBoxA1").GetComponent<TextMeshProUGUI>();
+         //   OutputB = GameObject.Find("OutputBoxB1").GetComponent<TextMeshProUGUI>();
+         //   OutputC = GameObject.Find("OutputBoxC1").GetComponent<TextMeshProUGUI>();
+         //   OutputD = GameObject.Find("OutputBoxD1").GetComponent<TextMeshProUGUI>();
+       // }
+
+        // Code for the Addition Area
+        public void Addition_Area()
         {
-            InputA = GameObject.Find("CodeBoxA1").GetComponent<TMP_InputField>();
+			
+			
+			InputA = GameObject.Find("CodeBoxA1").GetComponent<TMP_InputField>();
             InputB = GameObject.Find("CodeBoxB1").GetComponent<TMP_InputField>();
             InputC = GameObject.Find("CodeBoxC1").GetComponent<TMP_InputField>();
             InputD = GameObject.Find("CodeBoxD1").GetComponent<TMP_InputField>();
@@ -53,11 +72,6 @@ namespace PseudoLevels
             OutputB = GameObject.Find("OutputBoxB1").GetComponent<TextMeshProUGUI>();
             OutputC = GameObject.Find("OutputBoxC1").GetComponent<TextMeshProUGUI>();
             OutputD = GameObject.Find("OutputBoxD1").GetComponent<TextMeshProUGUI>();
-        }
-
-        // Code for the Addition Area
-        public void Addition_Area()
-        {
             int num = 0;//counts up everytime a try block receives valid input.
             double a, b, c, d;//Input values
 
@@ -208,23 +222,24 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer1.SetActive(false);
-                Subtraction.SetActive(true);
+                Dialogue2.SetActive(true);
 
-                // Set Assign the TMP Objects
-                InputA = GameObject.Find("CodeBoxA2").GetComponent<TMP_InputField>();
-                InputB = GameObject.Find("CodeBoxB2").GetComponent<TMP_InputField>();
-                InputC = GameObject.Find("CodeBoxC2").GetComponent<TMP_InputField>();
-                InputD = GameObject.Find("CodeBoxD2").GetComponent<TMP_InputField>();
-                OutputA = GameObject.Find("OutputBoxA2").GetComponent<TextMeshProUGUI>();
-                OutputB = GameObject.Find("OutputBoxB2").GetComponent<TextMeshProUGUI>();
-                OutputC = GameObject.Find("OutputBoxC2").GetComponent<TextMeshProUGUI>();
-                OutputD = GameObject.Find("OutputBoxD2").GetComponent<TextMeshProUGUI>();
             }
         }
 
         // Code for the Subtraction Area
         public void Subtraction_Area()
         {
+			// Set Assign the TMP Objects
+			InputA = GameObject.Find("CodeBoxA2").GetComponent<TMP_InputField>();
+            InputB = GameObject.Find("CodeBoxB2").GetComponent<TMP_InputField>();
+            InputC = GameObject.Find("CodeBoxC2").GetComponent<TMP_InputField>();
+            InputD = GameObject.Find("CodeBoxD2").GetComponent<TMP_InputField>();
+            OutputA = GameObject.Find("OutputBoxA2").GetComponent<TextMeshProUGUI>();
+            OutputB = GameObject.Find("OutputBoxB2").GetComponent<TextMeshProUGUI>();
+            OutputC = GameObject.Find("OutputBoxC2").GetComponent<TextMeshProUGUI>();
+            OutputD = GameObject.Find("OutputBoxD2").GetComponent<TextMeshProUGUI>();
+				
             int num = 0;//counts up everytime a try block receives valid input.
             double a, b, c, d;//Input values
 
@@ -375,23 +390,24 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer2.SetActive(false);
-                Multiplication.SetActive(true);
+				Dialogue3.SetActive(true);
 
-                // Set Assign the TMP Objects
-                InputA = GameObject.Find("CodeBoxA3").GetComponent<TMP_InputField>();
-                InputB = GameObject.Find("CodeBoxB3").GetComponent<TMP_InputField>();
-                InputC = GameObject.Find("CodeBoxC3").GetComponent<TMP_InputField>();
-                InputD = GameObject.Find("CodeBoxD3").GetComponent<TMP_InputField>();
-                OutputA = GameObject.Find("OutputBoxA3").GetComponent<TextMeshProUGUI>();
-                OutputB = GameObject.Find("OutputBoxB3").GetComponent<TextMeshProUGUI>();
-                OutputC = GameObject.Find("OutputBoxC3").GetComponent<TextMeshProUGUI>();
-                OutputD = GameObject.Find("OutputBoxD3").GetComponent<TextMeshProUGUI>();
             }
         }
 
         // Code for the Multiplication Area
         public void Multiplication_Area()
         {
+			// Set Assign the TMP Objects
+            InputA = GameObject.Find("CodeBoxA3").GetComponent<TMP_InputField>();
+            InputB = GameObject.Find("CodeBoxB3").GetComponent<TMP_InputField>();
+            InputC = GameObject.Find("CodeBoxC3").GetComponent<TMP_InputField>();
+            InputD = GameObject.Find("CodeBoxD3").GetComponent<TMP_InputField>();
+            OutputA = GameObject.Find("OutputBoxA3").GetComponent<TextMeshProUGUI>();
+            OutputB = GameObject.Find("OutputBoxB3").GetComponent<TextMeshProUGUI>();
+            OutputC = GameObject.Find("OutputBoxC3").GetComponent<TextMeshProUGUI>();
+            OutputD = GameObject.Find("OutputBoxD3").GetComponent<TextMeshProUGUI>();
+				
             int num = 0;//counts up everytime a try block receives valid input.
             double a, b, c, d;//Input values
 
@@ -542,23 +558,24 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer3.SetActive(false);
-                Division.SetActive(true);
-
-                // Set Assign the TMP Objects
-                InputA = GameObject.Find("CodeBoxA4").GetComponent<TMP_InputField>();
-                InputB = GameObject.Find("CodeBoxB4").GetComponent<TMP_InputField>();
-                InputC = GameObject.Find("CodeBoxC4").GetComponent<TMP_InputField>();
-                InputD = GameObject.Find("CodeBoxD4").GetComponent<TMP_InputField>();
-                OutputA = GameObject.Find("OutputBoxA4").GetComponent<TextMeshProUGUI>();
-                OutputB = GameObject.Find("OutputBoxB4").GetComponent<TextMeshProUGUI>();
-                OutputC = GameObject.Find("OutputBoxC4").GetComponent<TextMeshProUGUI>();
-                OutputD = GameObject.Find("OutputBoxD4").GetComponent<TextMeshProUGUI>();
+                Dialogue4.SetActive(true);
+                
             }
         }
 
         // Code for the Division Area
         public void Division_Area()
         {
+			// Set Assign the TMP Objects
+			InputA = GameObject.Find("CodeBoxA4").GetComponent<TMP_InputField>();
+            InputB = GameObject.Find("CodeBoxB4").GetComponent<TMP_InputField>();
+            InputC = GameObject.Find("CodeBoxC4").GetComponent<TMP_InputField>();
+            InputD = GameObject.Find("CodeBoxD4").GetComponent<TMP_InputField>();
+            OutputA = GameObject.Find("OutputBoxA4").GetComponent<TextMeshProUGUI>();
+            OutputB = GameObject.Find("OutputBoxB4").GetComponent<TextMeshProUGUI>();
+            OutputC = GameObject.Find("OutputBoxC4").GetComponent<TextMeshProUGUI>();
+            OutputD = GameObject.Find("OutputBoxD4").GetComponent<TextMeshProUGUI>();
+			
             int num = 0;//counts up everytime a try block receives valid input.
             double a, b, c, d;//Input values
 
@@ -709,23 +726,24 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer4.SetActive(false);
-                Modulus.SetActive(true);
-
-                // Set Assign the TMP Objects
-                InputA = GameObject.Find("CodeBoxA5").GetComponent<TMP_InputField>();
-                InputB = GameObject.Find("CodeBoxB5").GetComponent<TMP_InputField>();
-                InputC = GameObject.Find("CodeBoxC5").GetComponent<TMP_InputField>();
-                InputD = GameObject.Find("CodeBoxD5").GetComponent<TMP_InputField>();
-                OutputA = GameObject.Find("OutputBoxA5").GetComponent<TextMeshProUGUI>();
-                OutputB = GameObject.Find("OutputBoxB5").GetComponent<TextMeshProUGUI>();
-                OutputC = GameObject.Find("OutputBoxC5").GetComponent<TextMeshProUGUI>();
-                OutputD = GameObject.Find("OutputBoxD5").GetComponent<TextMeshProUGUI>();
+                Dialogue5.SetActive(true);
+                
             }
         }
 
         // Code for the Modulus Area
         public void Modulus_Area()
         {
+			// Set Assign the TMP Objects
+			InputA = GameObject.Find("CodeBoxA5").GetComponent<TMP_InputField>();
+            InputB = GameObject.Find("CodeBoxB5").GetComponent<TMP_InputField>();
+            InputC = GameObject.Find("CodeBoxC5").GetComponent<TMP_InputField>();
+            InputD = GameObject.Find("CodeBoxD5").GetComponent<TMP_InputField>();
+            OutputA = GameObject.Find("OutputBoxA5").GetComponent<TextMeshProUGUI>();
+            OutputB = GameObject.Find("OutputBoxB5").GetComponent<TextMeshProUGUI>();
+            OutputC = GameObject.Find("OutputBoxC5").GetComponent<TextMeshProUGUI>();
+            OutputD = GameObject.Find("OutputBoxD5").GetComponent<TextMeshProUGUI>();
+			
             int num = 0;//counts up everytime a try block receives valid input.
             double a, b, c, d;//Input values
 
