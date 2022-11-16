@@ -25,6 +25,10 @@ namespace PseudoLevels
         public GameObject Gate2;
         public GameObject Gate3;
         public GameObject Gate4;
+		public GameObject Dialogue2;
+		public GameObject Dialogue3;
+		public GameObject Dialogue4;
+		public GameObject Dialogue5;
 
         // Input field boxes
         private TMP_InputField InputA;
@@ -58,6 +62,8 @@ namespace PseudoLevels
         // Code for the Addition Area
         public void Addition_Area()
         {
+			
+			
 			InputA = GameObject.Find("CodeBoxA1").GetComponent<TMP_InputField>();
             InputB = GameObject.Find("CodeBoxB1").GetComponent<TMP_InputField>();
             InputC = GameObject.Find("CodeBoxC1").GetComponent<TMP_InputField>();
@@ -216,9 +222,7 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer1.SetActive(false);
-                
-
-                // Set Assign the TMP Objects
+                Dialogue2.SetActive(true);
 
             }
         }
@@ -226,7 +230,7 @@ namespace PseudoLevels
         // Code for the Subtraction Area
         public void Subtraction_Area()
         {
-			
+			// Set Assign the TMP Objects
 			InputA = GameObject.Find("CodeBoxA2").GetComponent<TMP_InputField>();
             InputB = GameObject.Find("CodeBoxB2").GetComponent<TMP_InputField>();
             InputC = GameObject.Find("CodeBoxC2").GetComponent<TMP_InputField>();
@@ -386,8 +390,7 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer2.SetActive(false);
-
-                // Set Assign the TMP Objects
+				Dialogue3.SetActive(true);
 
             }
         }
@@ -395,6 +398,7 @@ namespace PseudoLevels
         // Code for the Multiplication Area
         public void Multiplication_Area()
         {
+			// Set Assign the TMP Objects
             InputA = GameObject.Find("CodeBoxA3").GetComponent<TMP_InputField>();
             InputB = GameObject.Find("CodeBoxB3").GetComponent<TMP_InputField>();
             InputC = GameObject.Find("CodeBoxC3").GetComponent<TMP_InputField>();
@@ -554,9 +558,7 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer3.SetActive(false);
-                
-
-                // Set Assign the TMP Objects
+                Dialogue4.SetActive(true);
                 
             }
         }
@@ -564,6 +566,7 @@ namespace PseudoLevels
         // Code for the Division Area
         public void Division_Area()
         {
+			// Set Assign the TMP Objects
 			InputA = GameObject.Find("CodeBoxA4").GetComponent<TMP_InputField>();
             InputB = GameObject.Find("CodeBoxB4").GetComponent<TMP_InputField>();
             InputC = GameObject.Find("CodeBoxC4").GetComponent<TMP_InputField>();
@@ -723,9 +726,7 @@ namespace PseudoLevels
 
                 // Deactivate this area, Activate the next area
                 CheckAnswer4.SetActive(false);
-                
-
-                // Set Assign the TMP Objects
+                Dialogue5.SetActive(true);
                 
             }
         }
@@ -733,6 +734,7 @@ namespace PseudoLevels
         // Code for the Modulus Area
         public void Modulus_Area()
         {
+			// Set Assign the TMP Objects
 			InputA = GameObject.Find("CodeBoxA5").GetComponent<TMP_InputField>();
             InputB = GameObject.Find("CodeBoxB5").GetComponent<TMP_InputField>();
             InputC = GameObject.Find("CodeBoxC5").GetComponent<TMP_InputField>();
