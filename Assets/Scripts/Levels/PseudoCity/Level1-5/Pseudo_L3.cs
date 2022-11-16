@@ -192,7 +192,7 @@ namespace PseudoLevels
                 if (safe)
                 {
                     OutputD.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    if (d == 28)
+                    if (d == 7)
                     {
                         OutputD.text = "Correct!";
                         num++;
