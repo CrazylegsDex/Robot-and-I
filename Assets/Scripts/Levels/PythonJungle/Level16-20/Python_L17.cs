@@ -1,15 +1,11 @@
 /*
- * This script is the driver for checking and acting upon
- * input text for a TMP_InputField
- *
- * This script has two primary methods for doing this.
- * 1. Get the input from the InputTextBox and compile it
- * 2. Act upon the results from the compilation.
+ * This script allows the player the ability to use the
+ * IronPython compiler. This script will allow the player
+ * to write their own function and call it to test that
+ * the conditional is correct.
  * 
  * Author: Robot and I Team
- * Credits: All credit for the Python Engine goes to the developers
- * of the IronPython3 GitHub repository. Their work has helped this project succeed.
- * Last modification date: 10-28-2022
+ * Last modification date: 11-15-2022
  */
 
 using UnityEngine;
@@ -24,8 +20,10 @@ namespace PythonLevels
     public class Python_L17 : MonoBehaviour
     {
         // Public variables
-        public TMP_InputField playerInput; // References the Player's Input Field
-        public TextMeshProUGUI programOutput; // References the TMP Output Field
+        public TMP_InputField functionInput;
+        public TMP_InputField codeInput;
+        public TextMeshProUGUI programOutput;
+        public BoxCollider2D levelSprite;
 
         /*
          * This function is the driver to the sequence of events that are
@@ -40,17 +38,27 @@ namespace PythonLevels
             string newPlayerInput;
 
             // Modify the player's input code to have proper indentation
-            newPlayerInput = StringManipulation(playerInput.text);
+            newPlayerInput = StringManipulation(functionInput.text);
 
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 # Since Python delimits by whitespace, this is where code
 # must start for whitespace to be properly delimitted.
 
-# If letting the player define their own function,
-# simply use playerInput.text in replace of the below code
+# Define a function swap
+def swap(num1, num2):
+" + newPlayerInput + @"
+
+# Define code to start at main
 def main():
-" + newPlayerInput + "\n    return";
+    val1 = 777
+    val2 = 555
+    r1, r2 = " + codeInput.text + @"
+    if r1 == val2 and r2 == val1:
+        print(""Congratulations"")
+    else:
+        print(""Try again"")
+    return";
 
             // Create the engine, define a scope, and redirect print output
             scriptEngine = Python.CreateEngine();
@@ -59,7 +67,7 @@ def main():
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
             // Compile the player's code using the engine and scope
-            programOutput.text = ""; // Clear the current output box
+            //programOutput.text = ""; // Clear the current output box
             scriptEngine.Execute(playerCode, scriptScope);
 
             // Get a handle to the function, then execute the Python function
@@ -106,6 +114,12 @@ def main():
 
             // Display the printed message
             programOutput.text = stringData;
+
+            // Allow the player to leave the level
+            if (stringData == "Congratualations")
+            {
+                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+            }
         }
 
         /*
