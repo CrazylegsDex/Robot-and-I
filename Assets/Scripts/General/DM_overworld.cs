@@ -29,7 +29,6 @@ public class DM_overworld : MonoBehaviour
 		levelToLoadtext.text = dialogue.LevelToLoad;
 		// clears any thing left in dialogue box
 		sentences.Clear();
-		
 		//Enqueues each sentence
 		foreach(string sentence in dialogue.sentences){
 			sentences.Enqueue(sentence);
@@ -37,12 +36,13 @@ public class DM_overworld : MonoBehaviour
 		
 		// display for first sentence
 		displayNextSentence();
+		
 	}
 	
-	// this method is used wehn user hits continue button
+	// this method is used when user hits continue button
 	public void displayNextSentence(){
 		if( sentences.Count == 0){
-			endDialogue();
+			//endDialogue();
 			return;
 		}
 		

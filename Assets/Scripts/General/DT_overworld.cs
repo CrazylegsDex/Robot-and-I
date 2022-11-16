@@ -9,6 +9,7 @@ public class DT_overworld : MonoBehaviour
     public DialogueOver dialogue;
 	
 	// when player runs into an npc this actives the startDialogue 
+	
 	private void OnTriggerEnter2D(Collider2D collision)
     {
             // collisionGameObject is the first object that moved into the second

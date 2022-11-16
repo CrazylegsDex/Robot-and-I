@@ -12,4 +12,9 @@ public class DialogueOver
     public string name;
 	public string[] sentences;
 	public string LevelToLoad;
+	public int levelFinished = 0;
+	
+	public void setLevelFinished(int newLF){
+		levelFinished = newLF;
+	}
 }
