@@ -1785,7 +1785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3796450611332282583, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_Name
-      value: Capt'n Nemo
+      value: Capt'n Hector
       objectReference: {fileID: 0}
     - target: {fileID: 4053146395432402105, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_RootOrder
@@ -5306,7 +5306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3796450611332282583, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_Name
-      value: Capt'n Jack Sparrow
+      value: Capt'n Anthony
       objectReference: {fileID: 0}
     - target: {fileID: 4053146395432402105, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_RootOrder

@@ -1948,7 +1948,7 @@ MonoBehaviour:
 
     z = x<3 || x>3
 
-    z = y>=7 || y<=5
+    a = y>=7 || y<=5
 
     z = z || a
 
@@ -2290,7 +2290,7 @@ MonoBehaviour:
     a = y>3 && y<6 && y!=5
 
     Input
-    values to make z false.'
+    values to make z true.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5815,7 +5815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D.   \t\t\n\n\n\nz = x%4==3 && x>4\na = y/x==5 || y+x==9\nz = !z || !a\nInput
+  m_text: "D.   \t\t\n\n\n\nz = x%4==3 && x>4\na = y/x==5 || y+x==9\nz = z || a\nInput
     values to make z false"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
