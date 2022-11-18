@@ -4,10 +4,6 @@
  * use a prewritten function named "MoveBit" that will
  * move Bit one unit to the right.
  * 
- * TODO: Use a coroutine. Inside the while-loop yield the function...
- * Will need to parse and update the user's code to actually do that though.
- * https://chris-carter.medium.com/coroutines-with-unity-9674be98d517
- * 
  * Author: Robot and I Team
  * Last modification date: 11-15-2022
  */
@@ -29,6 +25,7 @@ namespace CSharpLevels
 
         // Private variables
         private bool displayLog;
+        private const int ExecutionTime = 6; // Time in Seconds before the script gets killed
 
         /*
          * This function is the driver to the sequence of events that are
@@ -47,22 +44,18 @@ namespace CSharpLevels
             MethodInfo runtimeFunction;
             Func<GameObject, MonoBehaviour> runtimeDelegate;
 
+            // Replace all references of MoveBit() to yield return MoveBit()
+            string playerText = playerInput.text.Replace("MoveBit()", "yield return MoveBit()");
+
             // Add the player's code to a template for runtime scripting
             string playerCode = @"
             using UnityEngine; // Access to unity objects
+            using System.Collections; // Access to coroutines
 
             public class RuntimeScript : MonoBehaviour
             {
                 // Reference to the Bit object
                 private GameObject Bit;
-
-                // This function, MoveBit, is designed to take the current
-                // Bit object and move him one unit to the right.
-                public void MoveBit()
-                {
-                    // Move bit forward by 1 X-Unit
-                    Bit.transform.Translate(1, 0, 0); // X, Y, Z Translation move
-                }
 
                 // This function adds a script to the host object
                 // This script addition is required so that Unity can
@@ -80,11 +73,53 @@ namespace CSharpLevels
                     // Initialize Bit object reference
                     Bit = GameObject.FindWithTag(""Player"");
 
-                    // Run whatever code the player input
-                    " + playerInput.text + @"
+                    // Start two coroutines
+                    // GameTimer - Starts a timer to destroy this script
+                    // MoveItMoveBit - Runs the player's code
+                    StartCoroutine(GameTimer());
+                    StartCoroutine(MoveItMoveBit());
+                }
+
+                // This function, GameTimer, times the execution of this script,
+                // until time has has been hit by ExecutionTime. If time is hit,
+                // this function removes the script from the ScriptController
+                // as a means of stopping infinite loops.
+                private IEnumerator GameTimer()
+                {
+                    // Wait for seconds
+                    yield return new WaitForSeconds(" + ExecutionTime + @");
+
+                    // At end of time, if script is still running,
+                    // display message and remove script
+                    print(""It seems your code has run for too long."");
+                    print(""Check to ensure that you are not running an infinite loop."");
+                    Destroy(gameObject.GetComponent<RuntimeScript>());
+                }
+
+                // This function, MoveItMoveBit, contains whatever the
+                // player wrote from the input box.
+                private IEnumerator MoveItMoveBit()
+                {
+                    // Updated string of player text
+                    " + playerText + @"
+
+                    // Required for coroutines to have a return
+                    // Waits 2 seconds, then will destroy the game object.
+                    yield return new WaitForSeconds(2.0f); 
 
                     // Remove the added script from the object
                     Destroy(gameObject.GetComponent<RuntimeScript>());
+                }
+
+                // This function, MoveBit, is designed to take the current
+                // Bit object and move him one unit to the right.
+                public IEnumerator MoveBit()
+                {
+                    // Move bit forward by 1 X-Unit
+                    Bit.transform.Translate(1, 0, 0); // X, Y, Z Translation move
+
+                    // Wait a single frame before returning
+                    yield return null;
                 }
             }";
 
@@ -178,7 +213,7 @@ namespace CSharpLevels
             else
             {
                 programOutput.text = @"There is a function named ""MoveBit"" that will move bit forward by 1 foot.
-To complete this level, write code that will move Bit 227 feet to the NPC.";
+To complete this level, write code that will move Bit 226 feet to the NPC.";
             }
 
             // Return the assembly
@@ -211,7 +246,7 @@ To complete this level, write code that will move Bit 227 feet to the NPC.";
         {
             if (displayLog) // Prevents duplicate error prints with compile time and log print
             {
-                programOutput.text += logString + "\n\n";
+                programOutput.text = logString + "\n\n";
             }
         }
     }
