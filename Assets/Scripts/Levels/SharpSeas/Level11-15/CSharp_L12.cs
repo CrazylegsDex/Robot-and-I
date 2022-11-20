@@ -30,11 +30,11 @@ namespace CSharpLevels
         /*
          * This function is the driver to the sequence of events that are
          * required to:
-         * Get input from a TextMeshPro box (Update a template code string with this input).
+         * Grabs the input from the TextMeshPro box.
+         * Add the player's input TextMeshPro input code to a template code string 
          * Parse/Compile the code written in the box.
          * Check for errors, and notify the player if any.
          * Display the output from the code to a TextMeshPro box if any.
-         * If required, act upon a specific object in the level.
          */
         public void MainDriver()
         {
@@ -44,8 +44,7 @@ namespace CSharpLevels
             MethodInfo runtimeFunction;
             Func<GameObject, MonoBehaviour> runtimeDelegate;
 
-            // Replace all references of MoveBit() to yield return MoveBit()
-            string playerText = playerInput.text.Replace("MoveBit()", "yield return MoveBit()");
+            string playerText = InputModification(playerInput.text);
 
             // Add the player's code to a template for runtime scripting
             string playerCode = @"
@@ -91,8 +90,8 @@ namespace CSharpLevels
 
                     // At end of time, if script is still running,
                     // display message and remove script
-                    print(""It seems your code has run for too long."");
-                    print(""Check to ensure that you are not running an infinite loop."");
+                    print(""It seems your code has run for too long.\r\n"" + 
+                          ""Check to ensure that you are not running an infinite loop."");
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
 
@@ -113,13 +112,10 @@ namespace CSharpLevels
 
                 // This function, MoveBit, is designed to take the current
                 // Bit object and move him one unit to the right.
-                public IEnumerator MoveBit()
+                public void MoveBit()
                 {
                     // Move bit forward by 1 X-Unit
                     Bit.transform.Translate(1, 0, 0); // X, Y, Z Translation move
-
-                    // Wait a single frame before returning
-                    yield return null;
                 }
             }";
 
@@ -208,7 +204,6 @@ namespace CSharpLevels
                         // String.Format("Error ({0}): ({1})", error.ErrorNumber, error.ErrorText)
                         programOutput.text += error.ErrorText + "\n";
                 }
-                programOutput.text += playerInput.text;
             }
             else
             {
@@ -218,6 +213,122 @@ To complete this level, write code that will move Bit 226 feet to the NPC.";
 
             // Return the assembly
             return result.CompiledAssembly;
+        }
+
+        /*
+         * This function, InputModification, modifies the player's input.
+         * This function will perform 4 checks on the player's input code.
+         * For each check that is true, this function will modify the input to prevent
+         * infinite loops, and correctly call the MoveBit procedure
+         */
+        private string InputModification(string playerCode)
+        {
+            // Create a string for the return
+            string newCode;
+            int startIndex, startCurlyBrace, endCurlyBrace;
+
+            // Check if the playerCode contains MoveBit()
+            // If it does, replace it with yield return MoveBit()
+            /*if (playerCode.Contains("MoveBit()"))
+                newCode = playerCode.Replace("MoveBit()", "yield return MoveBit()");
+            else*/
+                newCode = playerCode;
+
+            // If the player wrote a for-loop
+            if (newCode.Contains("for"))
+            {
+                // Append on the line after for -> yield return null
+                // Step 1: Find the starting index of the for-loop
+                startIndex = newCode.IndexOf("for");
+
+                // Step 2: Determine if the player wrote a curly brace (multi-line for-loop)
+                startCurlyBrace = newCode.IndexOf('{', startIndex);
+                if (startCurlyBrace != -1)
+                {
+                    // Step 3: Insert "yield return null" after the startCurlyBrace location
+                    newCode = newCode.Insert(startCurlyBrace + 1, "yield return null;");
+                }
+                else // Single lined for-loop
+                {
+                    // Step 4: Add in curly braces and the "yield return null" code
+                    // Left curlyBrace and the added code
+                    startCurlyBrace = newCode.IndexOf(')', startIndex) + 1;
+                    newCode = newCode.Insert(startCurlyBrace, "{yield return null;");
+
+                    // Get an index for the end of this line
+                    startIndex = newCode.IndexOf(';', startCurlyBrace) + 1;
+
+                    // Get an index for the next semicolon (Single-lined for-loop, this is where to insert '}')
+                    endCurlyBrace = newCode.IndexOf(';', startIndex) + 1;
+
+                    // Insert the ending curly brace
+                    newCode = newCode.Insert(endCurlyBrace, "}");
+                }
+            }
+
+            // If the player wrote a do-while loop
+            if (newCode.Contains("do"))
+            {
+                // Append on the line after do -> yield return null
+                // Step 1: Find the starting index of the do-while loop
+                startIndex = newCode.IndexOf("do");
+
+                // Step 2: Determine if the player wrote a curly brace (multi-line do-while loop)
+                startCurlyBrace = newCode.IndexOf('{', startIndex);
+                if (startCurlyBrace != -1)
+                {
+                    // Step 3: Insert "yield return null" after the startCurlyBrace location
+                    newCode = newCode.Insert(startCurlyBrace + 1, "yield return null;");
+                }
+                else // Single lined do-while loop
+                {
+                    // Step 4: Add in curly braces and the "yield return null" code
+                    // Left curlyBrace and the added code
+                    newCode = newCode.Insert(startIndex + 2, "{yield return null;");
+
+                    // Get an index for while part of the loop
+                    endCurlyBrace = newCode.IndexOf("while", startIndex);
+
+                    // Insert the ending curly brace before the while
+                    newCode = newCode.Insert(endCurlyBrace, "}");
+                }
+            }
+            else
+            {
+                // If the player wrote a while-loop
+                if (newCode.Contains("while"))
+                {
+                    // Append on the line after while -> yield return null
+                    // Step 1: Find the starting index of the while-loop
+                    startIndex = newCode.IndexOf("while");
+
+                    // Step 2: Determine if the player wrote a curly brace (multi-line while-loop)
+                    startCurlyBrace = newCode.IndexOf('{', startIndex);
+                    if (startCurlyBrace != -1)
+                    {
+                        // Step 3: Insert "yield return null" after the startCurlyBrace location
+                        newCode = newCode.Insert(startCurlyBrace + 1, "yield return null;");
+                    }
+                    else // Single lined while-loop
+                    {
+                        // Step 4: Add in curly braces and the "yield return null" code
+                        // Left curlyBrace and the added code
+                        startCurlyBrace = newCode.IndexOf(')', startIndex) + 1;
+                        newCode = newCode.Insert(startCurlyBrace, "{yield return null;");
+
+                        // Get an index for the end of this line
+                        startIndex = newCode.IndexOf(';', startCurlyBrace) + 1;
+
+                        // Get an index for the next semicolon (Single-lined while-loop, this is where to insert '}')
+                        endCurlyBrace = newCode.IndexOf(';', startIndex) + 1;
+
+                        // Insert the ending curly brace
+                        newCode = newCode.Insert(endCurlyBrace, "}");
+                    }
+                }
+            }
+
+            return newCode;
         }
 
         /*
