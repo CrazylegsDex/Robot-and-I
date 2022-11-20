@@ -224,15 +224,8 @@ To complete this level, write code that will move Bit 226 feet to the NPC.";
         private string InputModification(string playerCode)
         {
             // Create a string for the return
-            string newCode;
+            string newCode = playerCode;
             int startIndex, startCurlyBrace, endCurlyBrace;
-
-            // Check if the playerCode contains MoveBit()
-            // If it does, replace it with yield return MoveBit()
-            /*if (playerCode.Contains("MoveBit()"))
-                newCode = playerCode.Replace("MoveBit()", "yield return MoveBit()");
-            else*/
-                newCode = playerCode;
 
             // If the player wrote a for-loop
             if (newCode.Contains("for"))
