@@ -1089,6 +1089,7 @@ MonoBehaviour:
       continue to see an example. \n"
     - "Example:\r\nInt x = 24\r\nInt y = 5\r\nInt z = x % y. \r\nThe output for z
       here would be 4 as 24 / 5 gives you a remainder of 4.\r"
+    - The lesson is now complete! Press continue to answer the question!
 --- !u!1 &87488089
 GameObject:
   m_ObjectHideFlags: 0
@@ -12368,6 +12369,7 @@ MonoBehaviour:
       this.'
     - "Example\r:\nInt x = 4\r\nInt y = 8\r\nx *= y\r\nThe output for x here would
       be 32 as 4 * 8 = 32.\r\n"
+    - The lesson is now complete! Press continue to answer the question!
 --- !u!1 &1005598672
 GameObject:
   m_ObjectHideFlags: 0
@@ -22863,6 +22865,7 @@ MonoBehaviour:
       y would be -5 as 2 - 7 = -5.
 
 '
+    - The lesson is now complete! Press continue to answer the question!
 --- !u!1 &1525527830
 GameObject:
   m_ObjectHideFlags: 0
@@ -24650,6 +24653,7 @@ MonoBehaviour:
       of the operator to its own value. Press continue to see an example of this.
     - "Example\r:\nInt x = 8\nInt y = 4\r\nx /= y\r\nThe output for x here would
       be 2 as 8 / 4 = 2.\r\n"
+    - The lesson is now complete! Press continue to answer the question!
 --- !u!1 &1735268989
 GameObject:
   m_ObjectHideFlags: 0
@@ -29524,7 +29528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -29570,6 +29574,10 @@ PrefabInstance:
         = 10 and the output for y would be 8 and 7 + 1 = 8.
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[5]
+      value: The lesson is now complete! Press continue to answer the question!
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

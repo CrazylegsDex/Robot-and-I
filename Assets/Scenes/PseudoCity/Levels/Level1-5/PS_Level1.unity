@@ -6490,6 +6490,24 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -62.502525
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[8]
+      value: 'float: Single-precision floating point value. This variable is much
+        like double but holds less memory space with only 4 bytes (32 bits) of memory.
+        The range of Float variables in C language is -3.4e^38 to +3.4e^38. Example,
+        float f = 1.2345.
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: dialogue.sentences.Array.data[9]
+      value: The lesson is now complete! Press continue to answer the question!
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
