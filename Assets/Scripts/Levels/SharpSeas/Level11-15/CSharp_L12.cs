@@ -5,7 +5,7 @@
  * move Bit one unit to the right.
  * 
  * Author: Robot and I Team
- * Last modification date: 11-15-2022
+ * Last modification date: 11-28-2022
  */
 
 using UnityEngine;
@@ -44,6 +44,7 @@ namespace CSharpLevels
             MethodInfo runtimeFunction;
             Func<GameObject, MonoBehaviour> runtimeDelegate;
 
+            // Check and modify the player's input before ran
             string playerText = InputModification(playerInput.text);
 
             // Add the player's code to a template for runtime scripting
@@ -72,6 +73,9 @@ namespace CSharpLevels
                     // Initialize Bit object reference
                     Bit = GameObject.FindWithTag(""Player"");
 
+                    // Display a friendly message to the player
+                    print(""I am now processing your code input"");
+
                     // Start two coroutines
                     // GameTimer - Starts a timer to destroy this script
                     // MoveItMoveBit - Runs the player's code
@@ -90,8 +94,8 @@ namespace CSharpLevels
 
                     // At end of time, if script is still running,
                     // display message and remove script
-                    print(""It seems your code has run for too long.\r\n"" + 
-                          ""Check to ensure that you are not running an infinite loop."");
+                    print(""My CPU cannot handle long running code. Killing the execution process.\r\n"" + 
+                          ""Please check that your code reaches an ending point in a timely manner :)"");
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
 
@@ -104,9 +108,10 @@ namespace CSharpLevels
 
                     // Required for coroutines to have a return
                     // Waits 2 seconds, then will destroy the game object.
-                    yield return new WaitForSeconds(2.0f); 
+                    yield return new WaitForSeconds(0.5f); 
 
                     // Remove the added script from the object
+                    print(""Code execution has completed"");
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
 
@@ -207,8 +212,7 @@ namespace CSharpLevels
             }
             else
             {
-                programOutput.text = @"There is a function named ""MoveBit"" that will move bit forward by 1 foot.
-To complete this level, write code that will move Bit 226 feet to the NPC.";
+                programOutput.text = "";
             }
 
             // Return the assembly
@@ -216,10 +220,12 @@ To complete this level, write code that will move Bit 226 feet to the NPC.";
         }
 
         /*
-         * This function, InputModification, modifies the player's input.
+         * This function, InputModification, checks and modifies the player's input.
          * This function will perform 4 checks on the player's input code.
-         * For each check that is true, this function will modify the input to prevent
-         * infinite loops, and correctly call the MoveBit procedure
+         * 1. Check that the player has not written malicious code
+         *    If so, kill the code before it is ran.
+         * 2-4. If the player wrote a for, while, or do-while loop, properly
+         *      modify the input code to yield resources for the kill code check.
          */
         private string InputModification(string playerCode)
         {
@@ -227,6 +233,16 @@ To complete this level, write code that will move Bit 226 feet to the NPC.";
             string newCode = playerCode;
             int startIndex, startCurlyBrace, endCurlyBrace;
 
+            // Check for malicious code
+            if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
+            {
+                // Both are required due to Unity issues with display.
+                programOutput.text = @"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.";
+                throw new Exception(@"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.");
+            }
+            
             // If the player wrote a for-loop
             if (newCode.Contains("for"))
             {
