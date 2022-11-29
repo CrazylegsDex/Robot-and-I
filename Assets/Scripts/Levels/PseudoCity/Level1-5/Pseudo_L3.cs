@@ -199,7 +199,7 @@ namespace PseudoLevels
                     }
                     else
                     {
-                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         OutputD.text = "Incorrect";
                     }
                 }
@@ -362,7 +362,7 @@ namespace PseudoLevels
                     }
                     else
                     {
-                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         OutputD.text = "Incorrect";
                     }
                 }
@@ -525,7 +525,7 @@ namespace PseudoLevels
                     }
                     else
                     {
-                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         OutputD.text = "Incorrect";
                     }
                 }
@@ -688,7 +688,7 @@ namespace PseudoLevels
                     }
                     else
                     {
-                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         OutputD.text = "Incorrect";
                     }
                 }
@@ -851,7 +851,7 @@ namespace PseudoLevels
                     }
                     else
                     {
-                        OutputC.color = new Color32(255, 200, 0, 255);//changes font color to yellow
+                        OutputD.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         OutputD.text = "Incorrect";
                     }
                 }
