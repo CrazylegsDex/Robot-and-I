@@ -12,7 +12,7 @@ public class DM_overworld : MonoBehaviour
 	public TextMeshProUGUI dialoguetext;
 	public TextMeshProUGUI levelToLoadtext;
 	private Queue<string> sentences;
-	public Animator animationDialogueBox;
+	public GameObject DialogueBox;
 	
 	// Assigns sentences to a queue
     void Start()
@@ -23,7 +23,7 @@ public class DM_overworld : MonoBehaviour
 	// when player runs into npc this method starts the dialogue
 	public void startDialogue(DialogueOver dialogue){
 		// brings dialogue box where player can see
-		animationDialogueBox.SetBool("isOpen", true);
+		DialogueBox.SetActive(true);
 		// next two lines assigns where they move to in the dialogue box
 		nametext.text = dialogue.name;
 		levelToLoadtext.text = dialogue.LevelToLoad;
@@ -75,6 +75,6 @@ public class DM_overworld : MonoBehaviour
 	// this activates when start and back button are pressed and ended the 
 	// dialogue and moves the box out of the way
 	public void endDialogue(){
-		animationDialogueBox.SetBool("isOpen", false);
+		DialogueBox.SetActive(false);
 	}
 }
