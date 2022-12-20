@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1098042366}
+      objectReference: {fileID: 1365145309}
     - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NewGame
@@ -387,6 +387,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1098042365}
     m_Modifications:
+    - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6196886639432804931, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_Name
       value: ContinueButton
@@ -559,7 +563,7 @@ PrefabInstance:
     - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1098042366}
+      objectReference: {fileID: 1365145309}
     - target: {fileID: 4824752064869294173, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitGame
@@ -671,7 +675,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1098042365}
-  - component: {fileID: 1098042366}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -698,18 +701,6 @@ Transform:
   m_Father: {fileID: 1958553421}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1098042366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098042364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a15d873620091649b84fe17e2bb4ef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1203066223 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1983463562987598008, guid: c0f3c08667272b546889d254d5f7ad33, type: 3}
@@ -968,6 +959,50 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1203066223}
   m_SourcePrefab: {fileID: 100100000, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
+--- !u!1 &1365145308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1365145310}
+  - component: {fileID: 1365145309}
+  m_Layer: 0
+  m_Name: ScriptController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1365145309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365145308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a15d873620091649b84fe17e2bb4ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1365145310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365145308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1139.7064, y: 522.3137, z: -6.8256006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1514475137
 PrefabInstance:
   m_ObjectHideFlags: 0
