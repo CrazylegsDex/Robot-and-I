@@ -5,11 +5,11 @@
  * move Bit one unit to the right.
  * 
  * Author: Robot and I Team
- * Last modification date: 11-28-2022
+ * Last modification date: 12-19-2022
  */
 
 using UnityEngine;
-using Microsoft.CSharp;
+using Modified.Mono.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
@@ -148,19 +148,18 @@ namespace CSharpLevels
         private Assembly CSharpCompile(string sourceCode)
         {
             // Local variables for the compiler and compiler parameters
-            CSharpCodeProvider provider = new CSharpCodeProvider();
+            CSharpCodeCompiler compiler = new CSharpCodeCompiler();
             CompilerParameters parameters = new CompilerParameters();
             CompilerResults result;
 
             /* Add in the .dll files for the compilation to take place
              * 
-             * System.dll = System namespace for common types like collections
              * UnityEngine.dll = This contains methods from Unity namespaces
              * Microsoft.CSharp.dll = This assembly contains runtime C# code from your Assets folders
              * netstandard.dll = Other assembly that is required (.NetFramework specific)
              * 
-             * NOTE: Path locations may vary based on install. WILL encounter errors on build.
-             * Refer to the C# compiler documentation for what to do in this instance.
+             * NOTE: Path locations may vary based on install. Below code attempts to find these paths
+             * using path location of the System.dll assembly location.
              */
             if (Application.isEditor)
             {
@@ -169,7 +168,6 @@ namespace CSharpLevels
                 string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
                 string win32Location = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
                 string engineLocation = assemblyLocation.Substring(0, assemblyLocation.IndexOf("Data")); // Extract base location for Data folder
-                parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
                 parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
@@ -179,7 +177,6 @@ namespace CSharpLevels
             {
                 string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
                 string folderPath = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
-                parameters.ReferencedAssemblies.Add(folderPath + "System.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.CoreModule.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.UI.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "Microsoft.CSharp.dll");
@@ -193,7 +190,7 @@ namespace CSharpLevels
             parameters.IncludeDebugInformation = true;
 
             // Compile the sourceCode 
-            result = provider.CompileAssemblyFromSource(parameters, sourceCode);
+            result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
             if (result.Errors.HasErrors)

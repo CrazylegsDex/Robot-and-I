@@ -1,212 +1,489 @@
-/*
- * This script is the driver for checking and acting upon input text for a TMP_InputField
- * This script has two primary methods for doing this.
- * 
- * 1. Compile a template code that has the player's code in it.
- *     The compilation step will check for and display any errors.
- * 2. If no errors were found, run the code and act upon any gameplay objects needed.
- * 
- * Author: Robot and I Team
- * Credits: DMGregory at Stackexchange.com - His helpful code example
- *     allowed this project to succeed in its efforts.
- * Last modification date: 11-10-2022
- */
+//
+// Mono.CSharp CSharpCodeCompiler Class implementation
+//
+// Authors:
+//	Sean Kasun (seank@users.sf.net)
+//	Gonzalo Paniagua Javier (gonzalo@ximian.com)
+//
+// Copyright (c) Novell, Inc. (http://www.novell.com)
+//
+// Copied from:
+//  https://gist.github.com/aeroson/6e048367e137c18ea43d
+//  All Credit goes to Aeroson and his work with helping
+//  the build issue
+//
+// Modified by:
+//  Robot and I Team - Mainly comments and removed redundancies
+//
+// Permission is hereby granted, free of charge, to any person obtaining
+// a copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to
+// permit persons to whom the Software is furnished to do so, subject to
+// the following conditions:
+// 
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
 
-using UnityEngine;
-using Microsoft.CSharp;
-using System;
-using System.CodeDom.Compiler;
-using System.Reflection;
-using TMPro;
-
-namespace GameMechanics
+namespace Modified.Mono.CSharp
 {
-    public class CSharpCodeCompiler : MonoBehaviour
+    using System;
+    using System.CodeDom;
+    using System.CodeDom.Compiler;
+    using System.ComponentModel;
+    using System.IO;
+    using System.Text;
+    using System.Reflection;
+    using System.Collections.Specialized;
+    using System.Diagnostics;
+    using System.Text.RegularExpressions;
+    using System.Linq;
+
+    internal class CSharpCodeCompiler : ICodeCompiler
     {
-        // Public variables
-        public TMP_InputField playerInput; // References the Player's Input Field
-        public TextMeshProUGUI programOutput; // References the TMP Output Field
+        static string windowsMcsPath;
+        static string windowsMonoPath;
 
-        // Private variables
-        private bool displayLog;
-
-        /*
-         * This function is the driver to the sequence of events that are
-         * required to:
-         * Get input from a TextMeshPro box (Update a template code string with this input)
-         * Parse/Compile the code written in the box
-         * Check for errors, and notify the player if any
-         * Display the output from the code to a TextMeshPro box
-         * If required, act upon a specific object in the level
-         */
-        public void MainDriver()
+        static CSharpCodeCompiler()
         {
-            // Local variables
-            Assembly resultAssembly;
-            Type runtimeClass;
-            MethodInfo runtimeFunction;
-            Func<GameObject, MonoBehaviour> runtimeDelegate;
-
-            // Add the player's code to a template for runtime scripting
-            string playerCode = @"
-            using UnityEngine; // Access to unity objects
-
-            public class RuntimeScript : MonoBehaviour
+            if (Path.DirectorySeparatorChar == '\\')
             {
-                // Define any in-level objects/variables here
-                // These variables will be globals that the player can use
+                string monoFolderPath;
 
-                // This function adds a script to the host object
-                // This script addition is required so that Unity can
-                // run it during runtime.
-                public static RuntimeScript AddYourselfTo(GameObject host)
+                // If the application is in Editor Mode:
+                // Check mono path in unity editor install
+                //
+                // If the application is in Build Mode:
+                // Check mono path from application.executable
+                if (UnityEngine.Application.isEditor)
                 {
-                    // Add RuntimeScript to the host object
-                    return host.AddComponent<RuntimeScript>();
+                    CompilerParameters assemblies = new CompilerParameters();
+                    string assembliesLocation = assemblies.ReferencedAssemblies.GetType().Assembly.Location;
+                    monoFolderPath = assembliesLocation.Substring(0, assembliesLocation.IndexOf("lib")); // Snip off excess path info
+                    if (!Directory.Exists(monoFolderPath))
+                        throw new DirectoryNotFoundException("Mono folder path not found " + monoFolderPath);
+                }
+                else
+                {
+                    monoFolderPath = Path.Combine(Path.GetDirectoryName(UnityEngine.Application.dataPath), "Mono");
+                    if (!Directory.Exists(monoFolderPath))
+                        throw new DirectoryNotFoundException("Mono folder path not found " + monoFolderPath);
                 }
 
-                // When the script is added to the HostGameObject
-                // and invoked, run the following code
-                void Start()
-                {
-                    // Run whatever code the player input
-                    " + playerInput.text + @"
-                }
+                // Get mono.exe path
+                windowsMonoPath = Path.Combine(monoFolderPath, "bin\\mono.exe");
+                if (!File.Exists(windowsMonoPath))
+                    throw new FileNotFoundException("Windows mono path not found: " + windowsMonoPath);
 
-                // Called after Start
-                void Update()
-                {
-                    // The dynamic RuntimeScript stays on the HostGameObject
-                    // until gameplay stops. This is undesirable in case the player
-                    // runs the script 50 times, and then moves to another level
-                    // in which he runs the script another 50 times.
-                    // To remove the dynamic script, simple delete it like below
-                    // NOTE: The player could possibly write a similiar line of
-                    // of code -> Destroy(gameObject) <- to ruin the mechanics
-                    // and workings of our game. This is all reset upon a game
-                    // restart and should have no lasting consequences.
-                    Destroy(gameObject.GetComponent<RuntimeScript>());
-                }
-            }";
-
-            // Compile the player's code and check for syntax issues
-            displayLog = true;
-            programOutput.text = ""; // Clear the current output box
-            resultAssembly = CSharpCompile(playerCode);
-
-            // Get the Start() method signature to invoke
-            runtimeClass = resultAssembly.GetType("RuntimeScript");
-            runtimeFunction = runtimeClass.GetMethod("AddYourselfTo"); // Now references the dynamic RuntimeScript
-            runtimeDelegate = (Func<GameObject, MonoBehaviour>) // Typecast a delegate to whatever type this is
-                                Delegate.CreateDelegate(typeof(Func<GameObject, MonoBehaviour>), runtimeFunction);
-
-            // Invoke the script, indirectly running the Start() method
-            runtimeDelegate.Invoke(gameObject);
+                // Get mcs.exe path
+                windowsMcsPath = Path.Combine(monoFolderPath, "lib\\mono\\4.5\\mcs.exe");
+                if (!File.Exists(windowsMcsPath))
+                    throw new FileNotFoundException("Windows mcs path not found: " + windowsMcsPath);
+            }
         }
 
-        /*
-         * This function performs the compilation sequence for C# code.
-         * If the input code has syntax errors, this function will output
-         * all the errors to the supplied output TextMeshPro box.
-         * If the code is successfully compiled, control returns to
-         * the MainDriver function.
-         */
-        private Assembly CSharpCompile(string sourceCode)
-        {
-            // Local variables for the compiler and compiler parameters
-            CSharpCodeProvider provider = new CSharpCodeProvider();
-            CompilerParameters parameters = new CompilerParameters();
-            CompilerResults result;
+        // Empty Constructor
+        public CSharpCodeCompiler() {}
 
-            /* Add in the .dll files for the compilation to take place
-             * 
-             * System.dll = System namespace for common types like collections
-             * UnityEngine.dll = This contains methods from Unity namespaces
-             * Microsoft.CSharp.dll = This assembly contains runtime C# code from your Assets folders
-             * netstandard.dll = Other assembly that is required (.NetFramework specific)
-             * 
-             * NOTE: Path locations may vary based on install. WILL encounter errors on build.
-             * Refer to the C# compiler documentation for what to do in this instance.
-             */
-            if (Application.isEditor)
+        // Robot and I Team will not use this method
+        public CompilerResults CompileAssemblyFromDom(CompilerParameters options, CodeCompileUnit e)
+        {
+            return CompileAssemblyFromDomBatch(options, new CodeCompileUnit[] { e });
+        }
+
+        // Robot and I Team will not use this method
+        public CompilerResults CompileAssemblyFromDomBatch(CompilerParameters options, CodeCompileUnit[] ea)
+        {
+            if (options == null)
             {
-                string path1 = @"Data\PlaybackEngines\windowsstandalonesupport\Variations\win32_player_development_mono\Data\Managed\";
-                string path2 = @"Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-7.0.1\ScriptAssemblies\";
-                string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
-                string win32Location = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
-                string engineLocation = assemblyLocation.Substring(0, assemblyLocation.IndexOf("Data")); // Extract base location for Data folder
-                parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
-                parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
-                parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
-                parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
-                parameters.ReferencedAssemblies.Add(win32Location + "Facades\\netstandard.dll");
+                throw new ArgumentNullException("options");
+            }
+
+            try
+            {
+                return CompileFromDomBatch(options, ea);
+            }
+            finally
+            {
+                options.TempFiles.Delete();
+            }
+        }
+
+        // Robot and I Team will not use this method
+        public CompilerResults CompileAssemblyFromFile(CompilerParameters options, string fileName)
+        {
+            return CompileAssemblyFromFileBatch(options, new string[] { fileName });
+        }
+
+        // Robot and I Team will not use this method
+        public CompilerResults CompileAssemblyFromFileBatch(CompilerParameters options, string[] fileNames)
+        {
+            if (options == null)
+            {
+                throw new ArgumentNullException("options");
+            }
+
+            try
+            {
+                return CompileFromFileBatch(options, fileNames);
+            }
+            finally
+            {
+                options.TempFiles.Delete();
+            }
+        }
+
+        // 1st Entry from Robot and I Code
+        public CompilerResults CompileAssemblyFromSource(CompilerParameters options, string source)
+        {
+            return CompileAssemblyFromSourceBatch(options, new string[] { source });
+        }
+
+        // 2nd Method from Robot and I Code
+        public CompilerResults CompileAssemblyFromSourceBatch(CompilerParameters options, string[] sources)
+        {
+            if (options == null)
+            {
+                throw new ArgumentNullException("options");
+            }
+
+            try
+            {
+                return CompileFromSourceBatch(options, sources);
+            }
+            finally
+            {
+                options.TempFiles.Delete();
+            }
+        }
+
+        // 4th Method from Robot and I Code
+        // Executes the source code that has been sent to Method 1
+        private CompilerResults CompileFromFileBatch(CompilerParameters options, string[] fileNames)
+        {
+            if (null == options)
+                throw new ArgumentNullException("options");
+            if (null == fileNames)
+                throw new ArgumentNullException("fileNames");
+
+            CompilerResults results = new CompilerResults(options.TempFiles);
+            Process mcs = new Process();
+
+            string mcs_output;
+            string mcs_stdout;
+            string[] mcsOutput;
+
+            if (Path.DirectorySeparatorChar == '\\')
+            {
+                mcs.StartInfo.FileName = windowsMonoPath;
+                mcs.StartInfo.Arguments = "\"" + windowsMcsPath + "\" " +
+                BuildArgs(options, fileNames);
             }
             else
             {
-                string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
-                string folderPath = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
-                parameters.ReferencedAssemblies.Add(folderPath + "System.dll");
-                parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.CoreModule.dll");
-                parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.UI.dll");
-                parameters.ReferencedAssemblies.Add(folderPath + "Microsoft.CSharp.dll");
-                parameters.ReferencedAssemblies.Add(folderPath + "netstandard.dll");
+                mcs.StartInfo.FileName = "mcs";
+                mcs.StartInfo.Arguments = BuildArgs(options, fileNames);
             }
 
-            // Set compiler parameters
-            // NOTE: Set "IncludeDebugInformation" to false when pushed into production
-            parameters.GenerateExecutable = false;
-            parameters.GenerateInMemory = true;
-            parameters.IncludeDebugInformation = true;
+            string monoPath = Environment.GetEnvironmentVariable("MONO_PATH");
+            if (monoPath == null)
+                monoPath = String.Empty;
 
-            result = provider.CompileAssemblyFromSource(parameters, sourceCode);
-            // Check if there were compilation errors
-            if (result.Errors.HasErrors)
+            string privateBinPath = AppDomain.CurrentDomain.SetupInformation.PrivateBinPath;
+            if (privateBinPath != null && privateBinPath.Length > 0)
+                monoPath = String.Format("{0}:{1}", privateBinPath, monoPath);
+
+            if (monoPath.Length > 0)
             {
-                displayLog = false;
-                foreach (CompilerError error in result.Errors)
-                {
-                    if (error.ErrorNumber == "CS1525")
-                        programOutput.text += "Syntax error\n\n";
-                    else
-                        // Use the following if you want error codes along with the error text.
-                        // String.Format("Error ({0}): ({1})", error.ErrorNumber, error.ErrorText)
-                        programOutput.text += error.ErrorText + "\n";
-                }
-                programOutput.text += playerInput.text;
+                StringDictionary dict = mcs.StartInfo.EnvironmentVariables;
+                if (dict.ContainsKey("MONO_PATH"))
+                    dict["MONO_PATH"] = monoPath;
+                else
+                    dict.Add("MONO_PATH", monoPath);
             }
 
-            // Return the assembly
-            return result.CompiledAssembly;
+            mcs.StartInfo.CreateNoWindow = true;
+            mcs.StartInfo.UseShellExecute = false;
+            mcs.StartInfo.RedirectStandardOutput = true;
+            mcs.StartInfo.RedirectStandardError = true;
+
+            try
+            {
+                mcs.Start();
+            }
+            catch (Exception e)
+            {
+                Win32Exception exc = e as Win32Exception;
+                if (exc != null)
+                {
+                    throw new SystemException(String.Format("Error running {0}: {1}", mcs.StartInfo.FileName, exc.NativeErrorCode));
+                }
+                throw;
+            }
+
+            try
+            {
+                // If there are a few kB in stdout, we might lock
+                mcs_output = mcs.StandardError.ReadToEnd();
+                mcs_stdout = mcs.StandardOutput.ReadToEnd();
+
+                mcs.WaitForExit();
+
+                results.NativeCompilerReturnValue = mcs.ExitCode;
+            }
+            finally
+            {
+                mcs.Close();
+            }
+
+            mcsOutput = mcs_output.Split(System.Environment.NewLine.ToCharArray());
+            StringCollection sc = new StringCollection();
+
+            bool loadIt = true;
+            foreach (string error_line in mcsOutput)
+            {
+                sc.Add(error_line);
+
+                CompilerError error = CreateErrorFromString(error_line);
+                if (error != null)
+                {
+                    results.Errors.Add(error);
+                    if (!error.IsWarning)
+                        loadIt = false;
+                }
+            }
+
+            if (sc.Count > 0)
+            {
+                sc.Insert(0, mcs.StartInfo.FileName + " " + mcs.StartInfo.Arguments + Environment.NewLine);
+            }
+
+            if (loadIt)
+            {
+                if (!File.Exists(options.OutputAssembly))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (string s in sc)
+                        sb.Append(s + Environment.NewLine);
+
+                    throw new Exception("Compiler failed to produce the assembly. Output: '" + sb.ToString() + "'");
+                }
+
+                if (options.GenerateInMemory)
+                {
+                    using (FileStream fs = File.OpenRead(options.OutputAssembly))
+                    {
+                        byte[] buffer = new byte[fs.Length];
+                        fs.Read(buffer, 0, buffer.Length);
+                        results.CompiledAssembly = Assembly.Load(buffer);
+                        fs.Close();
+                    }
+                }
+                else
+                {
+                    // Avoid setting CompiledAssembly right now since the output might be a netmodule
+                    results.PathToAssembly = options.OutputAssembly;
+                }
+            }
+            else
+            {
+                results.CompiledAssembly = null;
+            }
+
+            return results;
         }
 
-        /*
-         * This function is called whenever Unity sends output to the
-         * log console, or whenever the player issues Debug.log()/print() statements.
-         * This function grabs the log and sends the information to the Handle
-         */
-        private void OnEnable() { Application.logMessageReceived += HandleLog; }
-
-        /*
-         * This function acts like a destructor for the Unity logs.
-         * This function effectively removes the messages from the handle that
-         * are captured during "OnEnable". This function is called whenever the
-         * object is disabled.
-         */
-        void OnDisable() { Application.logMessageReceived -= HandleLog; }
-
-        /*
-         * This function is called whenever text is put into or taken away from
-         * the Console logs. Essentially, this function will act like a runtime
-         * display to the player. Code that is printed using Debug.log() or print(),
-         * will be displayed. Any runtime messages from the compilation will also be
-         * displayed from this function.
-         */
-        private void HandleLog(string logString, string stackTrace, LogType type)
+        // 5th Method from Robot and I Code
+        // Creates the command line argument to run the mono.exe and mcs.exe
+        private static string BuildArgs(CompilerParameters options, string[] fileNames)
         {
-            if (displayLog) // Prevents duplicate error prints with compile time and log print
+            StringBuilder args = new StringBuilder();
+            if (options.GenerateExecutable)
+                args.Append("/target:exe ");
+            else
+                args.Append("/target:library ");
+
+            string privateBinPath = AppDomain.CurrentDomain.SetupInformation.PrivateBinPath;
+            if (privateBinPath != null && privateBinPath.Length > 0)
+                args.AppendFormat("/lib:\"{0}\" ", privateBinPath);
+
+            if (options.Win32Resource != null)
+                args.AppendFormat("/win32res:\"{0}\" ",
+                    options.Win32Resource);
+
+            if (options.IncludeDebugInformation)
+                args.Append("/debug+ /optimize- ");
+            else
+                args.Append("/debug- /optimize+ ");
+
+            if (options.TreatWarningsAsErrors)
+                args.Append("/warnaserror ");
+
+            if (options.WarningLevel >= 0)
+                args.AppendFormat("/warn:{0} ", options.WarningLevel);
+
+            if (options.OutputAssembly == null || options.OutputAssembly.Length == 0)
             {
-                programOutput.text += logString + "\n\n";
+                string extension = (options.GenerateExecutable ? "exe" : "dll");
+                options.OutputAssembly = GetTempFileNameWithExtension(options.TempFiles, extension,
+                    !options.GenerateInMemory);
             }
+            args.AppendFormat("/out:\"{0}\" ", options.OutputAssembly);
+
+            string[] mcsDefaultReferencedAssemblies = { "mscorlib.dll", "System.dll", "System.Xml.dll", "System.Core.dll" };
+
+            foreach (string import in options.ReferencedAssemblies)
+            {
+                if (mcsDefaultReferencedAssemblies.Contains(Path.GetFileName(import)))
+                    continue;
+
+                if (import == null || import.Length == 0)
+                    continue;
+
+                args.AppendFormat("/r:\"{0}\" ", import);
+            }
+
+            if (options.CompilerOptions != null)
+            {
+                args.Append(options.CompilerOptions);
+                args.Append(" ");
+            }
+
+            args.Append(" -- ");
+            foreach (string source in fileNames)
+                args.AppendFormat("\"{0}\" ", source);
+
+            return args.ToString();
+        }
+
+        // If Error, this function creates the error
+        // string to send to stdout
+        private static CompilerError CreateErrorFromString(string error_string)
+        {
+            if (error_string == null || error_string == "")
+                return null;
+
+            CompilerError error = new CompilerError();
+            Regex reg = new Regex(@"^(\s*(?<file>.*)\((?<line>\d*)(,(?<column>\d*))?\)(:)?\s+)*(?<level>\w+)\s*(?<number>.*):\s(?<message>.*)",
+                RegexOptions.Compiled | RegexOptions.ExplicitCapture);
+            Match match = reg.Match(error_string);
+            if (!match.Success)
+            {
+                // We had some sort of runtime crash
+                error.ErrorText = error_string;
+                error.IsWarning = false;
+                error.ErrorNumber = "";
+                return error;
+            }
+
+            if (String.Empty != match.Result("${file}"))
+                error.FileName = match.Result("${file}");
+            if (String.Empty != match.Result("${line}"))
+                error.Line = Int32.Parse(match.Result("${line}"));
+            if (String.Empty != match.Result("${column}"))
+                error.Column = Int32.Parse(match.Result("${column}"));
+
+            string level = match.Result("${level}");
+            if (level == "warning")
+                error.IsWarning = true;
+            else if (level != "error")
+                return null; // error CS8028 will confuse the regex.
+
+            error.ErrorNumber = match.Result("${number}");
+            error.ErrorText = match.Result("${message}");
+            return error;
+        }
+
+        // Robot and I Team will not use this method
+        private static string GetTempFileNameWithExtension(TempFileCollection temp_files, string extension, bool keepFile)
+        {
+            return temp_files.AddExtension(extension, keepFile);
+        }
+
+        // Returns the temp file with an added extension
+        private static string GetTempFileNameWithExtension(TempFileCollection temp_files, string extension)
+        {
+            return temp_files.AddExtension(extension);
+        }
+
+        // Robot and I Team will not use this method
+        private CompilerResults CompileFromDomBatch(CompilerParameters options, CodeCompileUnit[] ea)
+        {
+            if (options == null)
+            {
+                throw new ArgumentNullException("options");
+            }
+
+            if (ea == null)
+            {
+                throw new ArgumentNullException("ea");
+            }
+
+            string[] fileNames = new string[ea.Length];
+            StringCollection assemblies = options.ReferencedAssemblies;
+
+            for (int i = 0; i < ea.Length; i++)
+            {
+                CodeCompileUnit compileUnit = ea[i];
+                fileNames[i] = GetTempFileNameWithExtension(options.TempFiles, i + ".cs");
+                FileStream f = new FileStream(fileNames[i], FileMode.OpenOrCreate);
+                StreamWriter s = new StreamWriter(f, Encoding.UTF8);
+                if (compileUnit.ReferencedAssemblies != null)
+                {
+                    foreach (string str in compileUnit.ReferencedAssemblies)
+                    {
+                        if (!assemblies.Contains(str))
+                            assemblies.Add(str);
+                    }
+                }
+
+                ((ICodeGenerator)this).GenerateCodeFromCompileUnit(compileUnit, s, new CodeGeneratorOptions());
+                s.Close();
+                f.Close();
+            }
+
+            return CompileAssemblyFromFileBatch(options, fileNames);
+        }
+
+        // 3rd Method from Robot and I Code
+        // Creates a temp file "0.cs" in the player's
+        // "C:\\user\AppData\Local\Temp" directory
+        private CompilerResults CompileFromSourceBatch(CompilerParameters options, string[] sources)
+        {
+            if (options == null)
+            {
+                throw new ArgumentNullException("options");
+            }
+
+            if (sources == null)
+            {
+                throw new ArgumentNullException("sources");
+            }
+
+            string[] fileNames = new string[sources.Length];
+
+            for (int i = 0; i < sources.Length; i++)
+            {
+                fileNames[i] = GetTempFileNameWithExtension(options.TempFiles, i + ".cs");
+                FileStream f = new FileStream(fileNames[i], FileMode.OpenOrCreate);
+                using (StreamWriter s = new StreamWriter(f, Encoding.UTF8))
+                {
+                    s.Write(sources[i]);
+                    s.Close();
+                }
+                f.Close();
+            }
+            return CompileFromFileBatch(options, fileNames);
         }
     }
 }
