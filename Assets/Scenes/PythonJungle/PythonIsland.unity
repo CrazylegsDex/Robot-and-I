@@ -191,11 +191,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NPC_Name
+      value: Micky
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 1428484299}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 767100250}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: LevelToLoad
+      value: PY_Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 71510921}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Want to go to Level 1?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933346329101558879, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 6565130367035034685, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1771383569, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 739969069348700174, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
 --- !u!4 &5472831 stripped
@@ -976,7 +1005,7 @@ Transform:
   - {fileID: 2135743404}
   - {fileID: 122864490}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &249078273
 GameObject:
@@ -1159,7 +1188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7951572902257451736, guid: d79d23bdbbb1a4e478b0c639631949df, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7951572902257451736, guid: d79d23bdbbb1a4e478b0c639631949df, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1304,11 +1333,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NPC_Name
+      value: Virginia
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 1428484299}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 767100250}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: LevelToLoad
+      value: PY_Level17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 71510921}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Want to go to Level 17?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933346329101558879, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 6565130367035034685, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1818521503, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 739969069348700174, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
 --- !u!4 &395272907 stripped
@@ -1316,141 +1374,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4053146395432402105, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
   m_PrefabInstance: {fileID: 395272906}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &421164994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 421164997}
-  - component: {fileID: 421164996}
-  - component: {fileID: 421164995}
-  m_Layer: 5
-  m_Name: Level
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &421164995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421164994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Level
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7f0cbad2493398c4eb5a08b313506f24, type: 2}
-  m_sharedMaterial: {fileID: 3560781739206050801, guid: 7f0cbad2493398c4eb5a08b313506f24, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 0.1
-  m_fontSizeBase: 0.1
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &421164996
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421164994}
-  m_CullTransparentMesh: 1
---- !u!224 &421164997
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421164994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 767100251}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.953719, y: 0.4291056}
-  m_AnchorMax: {x: 0.953719, y: 0.4291056}
-  m_AnchoredPosition: {x: -0.07400131, y: -0.53100014}
-  m_SizeDelta: {x: 0.6099, y: 0.15104}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &422180978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1417,7 @@ Transform:
   m_Children:
   - {fileID: 1363432164}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &428652022
 GameObject:
@@ -1899,7 +1822,7 @@ Transform:
   - {fileID: 18178743}
   - {fileID: 1484106110}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &664526336
 GameObject:
@@ -2141,11 +2064,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NPC_Name
+      value: Meagan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 1428484299}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 767100250}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: LevelToLoad
+      value: PY_Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 71510921}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Want to go to Level 2?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933346329101558879, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933346329101558879, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.59
+      objectReference: {fileID: 0}
     - target: {fileID: 6565130367035034685, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5084661014962647745, guid: a00e1c346421e554187bbe5418b78892, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 739969069348700174, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
 --- !u!4 &718323261 stripped
@@ -2242,9 +2198,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2067671489}
-        m_TargetAssemblyTypeName: DM_overworld, Assembly-CSharp
-        m_MethodName: displayNextSentence
+      - m_Target: {fileID: 2063386738}
+        m_TargetAssemblyTypeName: GameMechanics.Canvas_Dialogue, Assembly-CSharp
+        m_MethodName: ContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2317,7 +2273,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767100250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2328,7 +2284,6 @@ RectTransform:
   - {fileID: 1327173785}
   - {fileID: 1428484297}
   - {fileID: 71510919}
-  - {fileID: 421164997}
   - {fileID: 1762488206}
   - {fileID: 748664108}
   - {fileID: 1577526970}
@@ -3002,7 +2957,7 @@ Transform:
   - {fileID: 718323261}
   - {fileID: 395272907}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1242341088
 GameObject:
@@ -47099,9 +47054,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2067671489}
-        m_TargetAssemblyTypeName: DM_overworld, Assembly-CSharp
-        m_MethodName: endDialogue
+      - m_Target: {fileID: 2063386738}
+        m_TargetAssemblyTypeName: GameMechanics.Canvas_Dialogue, Assembly-CSharp
+        m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47301,11 +47256,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NPC_Name
+      value: Alfred
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 1428484299}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 767100250}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: LevelToLoad
+      value: CIsland
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 71510921}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Want to go to the Sharp Seas?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933346329101558879, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5933346329101558879, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.58
+      objectReference: {fileID: 0}
     - target: {fileID: 6565130367035034685, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1705551420, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 739969069348700174, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
 --- !u!4 &1611959284 stripped
@@ -47616,9 +47604,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2067671489}
-        m_TargetAssemblyTypeName: DM_overworld, Assembly-CSharp
-        m_MethodName: startLevel
+      - m_Target: {fileID: 2063386738}
+        m_TargetAssemblyTypeName: GameMechanics.Canvas_Dialogue, Assembly-CSharp
+        m_MethodName: StartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47772,7 +47760,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1817339355
 BoxCollider2D:
@@ -48140,7 +48128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 99978746761271245, guid: 9de228c83174f8d429fb21a9fa625c23, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 99978746761271245, guid: 9de228c83174f8d429fb21a9fa625c23, type: 3}
       propertyPath: m_AnchorMax.x
@@ -48426,7 +48414,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063386734
 GameObject:
@@ -48437,6 +48425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2063386737}
+  - component: {fileID: 2063386738}
   - component: {fileID: 2063386736}
   - component: {fileID: 2063386735}
   m_Layer: 0
@@ -48484,56 +48473,20 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2067671488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2067671490}
-  - component: {fileID: 2067671489}
-  m_Layer: 0
-  m_Name: DM_overworld
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2067671489
+--- !u!114 &2063386738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067671488}
+  m_GameObject: {fileID: 2063386734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ea7324c7a118a842829923a01f1d095, type: 3}
+  m_Script: {fileID: 11500000, guid: a910de512a4484041916048b51bb8b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nametext: {fileID: 1428484299}
-  dialoguetext: {fileID: 71510921}
-  levelToLoadtext: {fileID: 421164995}
-  DialogueBox: {fileID: 767100250}
---- !u!4 &2067671490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067671488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1004, y: 533.2, z: -2.061464}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2097122126
 GameObject:
   m_ObjectHideFlags: 0
@@ -49021,7 +48974,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NPC_Name
+      value: Capt'n Crunch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 1428484299}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueBox
+      value: 
+      objectReference: {fileID: 767100250}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 71510921}
+    - target: {fileID: 4786540453052325451, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Want to go to Pseudo City?
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 739969069348700174, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 51216524bb369c043ad8b6d6449d077f, type: 3}
 --- !u!4 &7501820240448078751 stripped

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6565130367035034685}
   - component: {fileID: 4783774098348711731}
   - component: {fileID: 5933346329101558879}
-  - component: {fileID: 739969069348700174}
+  - component: {fileID: 4786540453052325451}
   m_Layer: 0
   m_Name: Bob Jr
   m_TagString: Untagged
@@ -134,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.58}
   m_EdgeRadius: 0
---- !u!114 &739969069348700174
+--- !u!114 &4786540453052325451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,11 +143,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3796450611332282583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1976ef6692bf6941a57a9e74bb631eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b8924b68368a8f47b113c0dffb092a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Bob Jr.
-    sentences:
-    - Type your sentence here
-    LevelToLoad: PseudoIsland
+  DialogueBox: {fileID: 0}
+  NameObject: {fileID: 0}
+  DialogueObject: {fileID: 0}
+  NPC_Name: Bob Jr.
+  LevelToLoad: PseudoIsland
+  levelComplete: 0
+  sentences:
+  - Type your sentence here
+  isActive: 0
