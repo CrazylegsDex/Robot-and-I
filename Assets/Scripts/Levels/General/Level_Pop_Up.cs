@@ -9,15 +9,14 @@
  * 11-15-2022
  */
 
-using System;
 using UnityEngine;
 
 namespace GameMechanics
 {
     public class Level_Pop_Up : MonoBehaviour
     {
-        public String ThisLocationLevel; // fill with current scene name
-        public String QuitLocationLevel; // fill with level's associated overworld
+        public string ThisLocationLevel; // fill with current scene name
+        public string QuitLocationLevel; // fill with level's associated overworld
 
         // link with ResetButton in LevelOverlay
         public void ResetLevel()
