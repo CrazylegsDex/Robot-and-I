@@ -7,7 +7,7 @@
  * Contains methods for the Back, Continue and Start buttons.
  * 
  * Author: Robot and I Team
- * Date Modification: 12-24-2022
+ * Date Modification: 12-28-2022
  */
 
 using UnityEngine;
@@ -27,14 +27,15 @@ namespace GameMechanics
         public string NPC_Name;
         public string LevelToLoad;
         public bool levelComplete = false; // TODO: Implement during save/load features
-        public string[] sentences;
+        // Text Area creates a wider text input box for the developer
+        [TextArea(5, 30)] public string[] sentences;
 
         // A public variable for Canvas_Dialogue to access, but the Developer cannot see
         [HideInInspector]
         public bool isActive;
 
         // Private queue for the sentences
-        private Queue<string> Dialogue = new Queue<string>();
+        private Queue<string> Dialogue;
 
         private void Start()
         {

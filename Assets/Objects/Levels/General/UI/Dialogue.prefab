@@ -242,8 +242,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1380732494918471536}
-  - {fileID: 1380732495251368137}
   - {fileID: 1380732495748506121}
+  - {fileID: 1380732495251368137}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 1380732495748506117}
   - component: {fileID: 1380732495748506116}
   - component: {fileID: 1380732495748506123}
+  - component: {fileID: 7755815015385650935}
   - component: {fileID: 1380732495748506122}
   m_Layer: 5
   m_Name: StartLessonButton
@@ -656,6 +657,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7755815015385650935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380732495748506120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f894b1305c0930d41a42dc30020f68d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueObject: {fileID: 0}
+  NameObject: {fileID: 0}
+  TMP_DialogueObject: {fileID: 0}
+  StartButton: {fileID: 0}
+  LessonObject: {fileID: 0}
+  ProfessorName: 
+  sentences: []
 --- !u!114 &1380732495748506122
 MonoBehaviour:
   m_ObjectHideFlags: 0
