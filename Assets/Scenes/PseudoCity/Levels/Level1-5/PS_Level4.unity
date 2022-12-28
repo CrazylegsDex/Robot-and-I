@@ -436,7 +436,7 @@ Transform:
   m_Children:
   - {fileID: 2099162516}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112931696
 GameObject:
@@ -1513,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: -88345064, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2459,7 +2459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711205377570961021, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2711205377570961021, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2602,7 +2602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2223254802140862252, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2223254802140862252, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3048,7 +3048,7 @@ RectTransform:
   - {fileID: 186206548}
   - {fileID: 1739819115}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3516,7 +3516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1002503874 stripped
 Transform:
@@ -3725,59 +3725,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &1153721930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1153721932}
-  - component: {fileID: 1153721931}
-  m_Layer: 5
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1153721931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153721930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd7b5f0fc1d1864b9fa61d5b0bcbade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOutput: {fileID: 263448992}
-  dialogueOutput: {fileID: 1501976856}
-  DialogueObjects: {fileID: 255144459}
-  LessonObjects: {fileID: 1415193688}
---- !u!224 &1153721932
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153721930}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1026.85, y: 469.5}
-  m_SizeDelta: {x: 26.494003, y: 1.4449997}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1184283362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4226,6 +4173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221709382}
   - component: {fileID: 1221709383}
+  - component: {fileID: 1221709386}
   - component: {fileID: 1221709384}
   - component: {fileID: 1221709385}
   m_Layer: 0
@@ -4248,7 +4196,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1221709383
 MonoBehaviour:
@@ -4295,6 +4243,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisLocationLevel: PS_Level4
   QuitLocationLevel: PseudoIsland
+--- !u!114 &1221709386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221709380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49abfd45b95fce842b5746fb6bf4668c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1297991983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,10 +5584,14 @@ PrefabInstance:
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1153721931}
+      objectReference: {fileID: 1221709386}
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayNextSentence
+      value: ContinueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Screen_Dialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506121, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5795,14 +5759,191 @@ PrefabInstance:
     - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1889847538}
+      objectReference: {fileID: 1221709386}
     - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
+      value: StartButton
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Screen_Dialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 263448992}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: StartButton
+      value: 
+      objectReference: {fileID: 1502500356}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: LessonObject
+      value: 
+      objectReference: {fileID: 1415193688}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: ProfessorName
+      value: The Duke
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 255144459}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: TMP_DialogueObject
+      value: 
+      objectReference: {fileID: 1501976856}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Relational operators are operators that are used to compare two or more
+        variables. Relational operators will work every type of variable. There are
+        6 different types of relational operators.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: '>  - This operator is the greater than operator. This statement will
+        produce a true output when the left operator is greater than the right operator.
+        Example:
+
+        Int x = 7
+
+        Int y = -1
+
+        Bool i = x > y
+
+        Bool
+        j = y > x
+
+        Here, i = true and j = false'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: '<  - This operator is the less than operator. This statement will produce
+        a true output when the left operator is less than the right operator. Example:
+
+        Int
+        x = 436
+
+        Int y = 289
+
+        Bool i = x < y
+
+        Bool j = y
+        < x
+
+        Here, i = false and j = true'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: == - This operator is the equal to operator. This is used to see if
+        two variables are equal to each other. When the two variables are equal,
+        this operator will produce a true value.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: 'When the two variables are not equal, this operator will produce a
+        false value. Example:
+
+        Int x = 42
+
+        Int y = 41
+
+        Bool
+        i = x == y
+
+        y ++
+
+        Bool j = x == y
+
+        Here, i = false
+        and j = true'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: '!= - This operator is the not equal to operator. This is used to see
+        if two variables are not equal to each other. When the two variables are
+        not equal, this operator will produce a true value.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: 'When the two variables are equal, this operator will produce a false
+        value. Example:
+
+        Int x = 2
+
+        Int y = 8
+
+        Bool i = x
+        != y
+
+        X = x * 4
+
+        Bool j = x != y
+
+        Here, i = true
+        and j = false'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[7]
+      value: '<= - This operator is the less than or equal to operator. This statement
+        will produce a true output when the left operator is less than or equal to
+        the right operator. Example:
+
+        Int x = -365
+
+        Int y = 365
+
+        Bool
+        i = x <= y
+
+        Bool j = y <= x
+
+        Y = y * -1 //This makes y =
+        -365
+
+        Bool k = x <= y
+
+        Here, i = true, j = false and k =
+        true'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[8]
+      value: '>= - This operator is the greater than or equal to operator. This statement
+        will produce a true output when the left operator is greater than or equal
+        to the right operator. Example:
+
+        Int x = 486
+
+        Int y = -87
+
+        Bool
+        i = x >= y
+
+        Bool j = y >= x
+
+        Y = 486
+
+        Bool k = x
+        >= y
+
+        Here, i = true, j = false and k = true'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[9]
+      value: The lesson is now complete! Press continue to answer the question!
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+--- !u!1 &1502500356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1380732495748506120, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1502500355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546947823
 GameObject:
   m_ObjectHideFlags: 3
@@ -7204,17 +7345,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1889847538 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-  m_PrefabInstance: {fileID: 1502500355}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed75f5d53fe5a342a75432a03af64fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1948890137
 GameObject:
   m_ObjectHideFlags: 0
@@ -7429,7 +7559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_LocalPosition.x

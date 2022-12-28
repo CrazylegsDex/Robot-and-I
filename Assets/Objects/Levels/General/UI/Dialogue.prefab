@@ -534,7 +534,6 @@ GameObject:
   - component: {fileID: 1380732495748506116}
   - component: {fileID: 1380732495748506123}
   - component: {fileID: 7755815015385650935}
-  - component: {fileID: 1380732495748506122}
   m_Layer: 5
   m_Name: StartLessonButton
   m_TagString: Untagged
@@ -674,65 +673,8 @@ MonoBehaviour:
   TMP_DialogueObject: {fileID: 0}
   StartButton: {fileID: 0}
   LessonObject: {fileID: 0}
-  ProfessorName: 
+  ProfessorName: The Duke
   sentences: []
---- !u!114 &1380732495748506122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380732495748506120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed75f5d53fe5a342a75432a03af64fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: The Duke
-    sentences:
-    - "Variables are stored in memory as bytes. Every variable needs their own amount
-      of byte space in memory. A byte consists of 8 bits. If a variable needs 4 bytes,
-      that is equivalent to 32 bits. \r\n"
-    - "You can create multiple variables at the same time if they\u2019re the same
-      type. Below are the different types of variables available for your use:\r\n"
-    - "int: This type of variable holds integer values either negative or positive
-      from -2,147,483,648 to 2,147,483,647. You can also put the word \u201Cunsigned\u201D
-      before the variable assignment to change the range from 0 to 4,294,967,295
-      only including positive numbers. "
-    - 'One int variable has 4 bytes (32 bits) of memory. Example: int a = -128 or
-      unsigned int a  = 145,458. An example of multiple variable assignment for int
-      would be: Int a,b.
-
-'
-    - "string: This type of variable holds multiple characters (letters) together
-      such as a sentence. Strings are enclosed with double quotations. Example, string
-      b = \u201CHello World\u201D. One string variable can contain up to 2 billion
-      characters. The memory size varies on the string as one character of the string
-      takes up 2 bytes (16 bits) of memory.\r\n"
-    - "char: This type of variable holds a character value like \u2018c\u2019, \u2018F\u2019,
-      \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character takes up 2 bytes
-      (16 bits) of memory. Characters are enclosed by a single quotation. Example,
-      char c = \u2018A\u2019.\r\n"
-    - 'bool: This type of variable holds a boolean value true or false. For a true
-      output, you can use the number 1 or the word true. For a false output, you
-      can use the number 0 or the word false. A boolean value holds 1 byte (8 bits)
-      of memory. Example, bool d = true or bool d = 1 (both of these values result
-      in the variable being true).
-
-'
-    - 'double: This variable holds a double-precision floating point value. This
-      means that it holds a number with a decimal. The range for a double number
-      is 1.7E - 308 to 1.7E + 308. It holds 8 bytes (64 bits) of memory. Example,
-      double e = 3.14.
-
-'
-    - 'float: Single-precision floating point value. This variable is much like double
-      but holds less memory space with only 4 bytes (32 bits) of memory. The range
-      of Float variables in C language is -3.4e^38 to +3.4e^38. Example, float f
-      = 1.2345.
-
-'
 --- !u!1 &1380732495936546885
 GameObject:
   m_ObjectHideFlags: 0

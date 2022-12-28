@@ -1808,7 +1808,7 @@ RectTransform:
   - {fileID: 35628291}
   - {fileID: 588205228}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2043,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 219736781, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2151,6 +2151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502451562}
   - component: {fileID: 502451563}
+  - component: {fileID: 502451566}
   - component: {fileID: 502451564}
   - component: {fileID: 502451565}
   m_Layer: 0
@@ -2173,7 +2174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &502451563
 MonoBehaviour:
@@ -2221,6 +2222,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisLocationLevel: PS_Level5
   QuitLocationLevel: PseudoIsland
+--- !u!114 &502451566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502451560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49abfd45b95fce842b5746fb6bf4668c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &531955919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,7 +2901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4195,7 +4208,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &926368968
 GameObject:
@@ -4554,17 +4567,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1002254773 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-  m_PrefabInstance: {fileID: 1113520695}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bed75f5d53fe5a342a75432a03af64fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1033211325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,10 +5034,14 @@ PrefabInstance:
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1410598847}
+      objectReference: {fileID: 502451566}
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayNextSentence
+      value: ContinueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Screen_Dialogue, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506121, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5151,14 +5157,149 @@ PrefabInstance:
     - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1002254773}
+      objectReference: {fileID: 502451566}
     - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDialogue
+      value: StartButton
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1380732495748506123, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Screen_Dialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: NameObject
+      value: 
+      objectReference: {fileID: 1903574894}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: StartButton
+      value: 
+      objectReference: {fileID: 1113520696}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: LessonObject
+      value: 
+      objectReference: {fileID: 644351807}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: ProfessorName
+      value: The Duke
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 683512739}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: TMP_DialogueObject
+      value: 
+      objectReference: {fileID: 898794226}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: "Logical operators are used to perform logical operations between two
+        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
+        boolean value of true or false. Let\u2019s dive in to make more sense of
+        this."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: "Operator AND: This operator stands for and. The standard symbol for
+        AND is \u201C&&\u201D. This operator will be true when both statements on
+        either side of the \u201C&&\u201D are true. If anything is false on either
+        side or both, the result will be false. Press Continue to see an example."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: 'Example:
+
+        Int x = 15
+
+        Int y = 10
+
+        Bool result
+        = (x < y) && (x > 11) //This result will equal false
+
+        Bool result
+        = (x == y) && (x < 20) //This result will equal false
+
+        Bool result
+        = (x >= y) && (x < 20) //This result will equal true'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "Operator OR: This operator stands for or. The standard symbol for OR
+        is \u201C||\u201D. This operator is true when there is a true statement on
+        one or both sides of \u201C||\u201D. The only time this operator will produce
+        a false reading is when both statements on each side of \u201C||\u201D is
+        false. Press Continue to see an example."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: 'Example:
+
+        Int x = 3
+
+        Int y = 4
+
+        Bool result
+        = (x < 2) || (x < y) //This result will equal true
+
+        Bool result =
+        (x > 2) || (y >= x) //This result will equal true
+
+        Bool result =
+        (x < 2) || (x > y) //This result will equal false
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
+        for XOR is \u201C^\u201D. This operator is only true when one side of the
+        operator is true and the other side is false. Every other combination of
+        operators will result in a false statement. Press continue to see an example."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: "Operator NOT: This operator stands for not. The standard symbol for
+        NOT is \u201C!\u201D. This operator is usually used with the equals operator
+        (=). Together they would look like \u201C!=\u201D. This means not equal.
+        When this operator is used together with =, the value will either be true
+        if the values compared are not equal and false if they are equal.Press continue
+        to see an example. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[7]
+      value: 'Example:
+
+        Int x = 6
+
+        Int y = 8
+
+        Bool result
+        = (x != y) //Result would be true. This is true because 6 does not equal
+        8.
+
+        Int a  = 6
+
+        Int b = 6
+
+        Bool result = (a != b)
+        //Result would be false. This is false because 6 does equal 6.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[8]
+      value: The lesson is now complete! Press continue to answer the question!
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+--- !u!1 &1113520696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1380732495748506120, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+  m_PrefabInstance: {fileID: 1113520695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1116220571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5181,7 +5322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711205377570961021, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2711205377570961021, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6213,7 +6354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2223254802140862252, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2223254802140862252, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6526,59 +6667,6 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
---- !u!1 &1410598846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1410598848}
-  - component: {fileID: 1410598847}
-  m_Layer: 5
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1410598847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410598846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd7b5f0fc1d1864b9fa61d5b0bcbade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOutput: {fileID: 1903574894}
-  dialogueOutput: {fileID: 898794226}
-  DialogueObjects: {fileID: 683512739}
-  LessonObjects: {fileID: 644351807}
---- !u!224 &1410598848
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410598846}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1026.85, y: 469.5}
-  m_SizeDelta: {x: 26.494003, y: 1.4449997}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1416773695
 GameObject:
   m_ObjectHideFlags: 0
@@ -8921,7 +9009,7 @@ Transform:
   m_Children:
   - {fileID: 173089235}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046265779
 GameObject:
