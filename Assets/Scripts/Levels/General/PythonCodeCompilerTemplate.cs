@@ -21,7 +21,7 @@ using TMPro;
 
 namespace GameMechanics
 {
-    public class PythonCodeCompiler : MonoBehaviour
+    public class PythonCodeCompilerTemplate : MonoBehaviour
     {
         // Public variables
         public TMP_InputField playerInput; // References the Player's Input Field
