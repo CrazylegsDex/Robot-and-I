@@ -1606,9 +1606,10 @@ GameObject:
   - component: {fileID: 819264850}
   - component: {fileID: 819264853}
   - component: {fileID: 819264854}
+  - component: {fileID: 819264855}
   m_Layer: 0
   m_Name: ScriptController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1640,7 +1641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04da087fb34a1f4fb4893621b277f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisScript: {fileID: 819264853}
   playerInput: {fileID: 1781996905}
   programOutput: {fileID: 569679746}
 --- !u!114 &819264854
@@ -1657,6 +1657,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ThisLocationLevel: CS_Level12
   QuitLocationLevel: CIsland
+--- !u!114 &819264855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819264848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb7509010393f654da1940f2b76d6d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1073740079
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3025,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7445809857292101537, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 819264854}
+    - target: {fileID: 7445809857292101537, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Save
+      objectReference: {fileID: 0}
+    - target: {fileID: 7445809857292101537, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Level_Pop_Up, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7445809857453724597, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3189,9 +3213,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4718686652554498300, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+      propertyPath: LevelToLoad
+      value: CIsland
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718686652554498300, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+      propertyPath: LevelToComplete
+      value: CS_Level12
+      objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223336, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: LevelToLoad
       value: CIsland
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_RootOrder
@@ -3252,10 +3288,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7782327375490643801, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_Name
       value: Bit

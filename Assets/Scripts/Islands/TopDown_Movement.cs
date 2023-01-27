@@ -1,23 +1,27 @@
 // This script allows movement for the player in the topdown view
 //
 // Author: Robot and I Team
-// Last modification date: 10-28-2022
+// Last modification date: 1/23/2023
 
 using UnityEngine;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PlayerControl
 {
-    public class TopDown_Movement : MonoBehaviour
+    public class TopDown_Movement : MonoBehaviour, DataPersistenceInterface
     {
         // Public variables
         public float moveSpeed; // Inspector view modifiable
         public Rigidbody2D rb; // Associated sprite object
 
+        // Hidden Public variables
+        [HideInInspector] public static Vector3 position = new Vector3();
+
         // Private variables
         private Vector2 moveDirection;
 
         // Update is called once per frame, therefore based on frame rate
-        void Update()
+        private void Update()
         {
             // Use this function for processing inputs from the user
             ProcessInputs();
@@ -25,13 +29,40 @@ namespace PlayerControl
 
         // FixedUpdate is called on a consistent basis.
         // Results in less jaggy movement if used in physics calculations
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             // Use this function for processing physics calculations
             Move();
         }
 
-        void ProcessInputs()
+        // LoadData method from the DataPersistenceInterface
+        public void LoadData(GameData data)
+        {
+            // Update Bit's location from the gameData
+            transform.position = data.playerPosition;
+        }
+
+        // SaveData method from the DataPersistenceInterface
+        public void SaveData(GameData data)
+        {
+            // Save Bit's location to the gameData
+            // Bit's location can either be his current location, or
+            // a new location based on the Ship's teleport
+            // If position is not set to 0's, this means that
+            // the saved position needs to be updated with "position"
+            // Else, set position with current position
+            if (position != new Vector3(0f, 0f, 0f))
+            {
+                data.playerPosition = position;
+                position = new Vector3(); // Reset position variable
+            }
+            else
+            {
+                data.playerPosition = transform.position;
+            }
+        }
+
+        private void ProcessInputs()
         {
             // Create two variables for current X,Y axis
             float moveX = Input.GetAxisRaw("Horizontal");
@@ -41,7 +72,7 @@ namespace PlayerControl
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        void Move()
+        private void Move()
         {
             // Calculate where to move to
             rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
