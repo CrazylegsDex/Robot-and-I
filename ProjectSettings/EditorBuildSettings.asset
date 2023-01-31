@@ -40,7 +40,7 @@ EditorBuildSettings:
     guid: 5cb10cbf87eba924ebbc3d6446183c05
   - enabled: 1
     path: Assets/Scenes/SharpSeas/CIsland.unity
-    guid: ece9351c77008084cb4fcce3a115cbf3
+    guid: b8071389c090a5c40ab1e112d111d602
   - enabled: 1
     path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level1.unity
     guid: 013a3c832e99ec34e8ddfe7609559f32
