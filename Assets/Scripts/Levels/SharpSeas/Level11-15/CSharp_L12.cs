@@ -4,16 +4,12 @@
  * use a prewritten function named "MoveBit" that will
  * move Bit one unit to the right.
  * 
- * TODO: Use a coroutine. Inside the while-loop yield the function...
- * Will need to parse and update the user's code to actually do that though.
- * https://chris-carter.medium.com/coroutines-with-unity-9674be98d517
- * 
  * Author: Robot and I Team
- * Last modification date: 11-15-2022
+ * Last modification date: 12-19-2022
  */
 
 using UnityEngine;
-using Microsoft.CSharp;
+using Modified.Mono.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
@@ -29,15 +25,16 @@ namespace CSharpLevels
 
         // Private variables
         private bool displayLog;
+        private const int ExecutionTime = 6; // Time in Seconds before the script gets killed
 
         /*
          * This function is the driver to the sequence of events that are
          * required to:
-         * Get input from a TextMeshPro box (Update a template code string with this input).
+         * Grabs the input from the TextMeshPro box.
+         * Add the player's input TextMeshPro input code to a template code string 
          * Parse/Compile the code written in the box.
          * Check for errors, and notify the player if any.
          * Display the output from the code to a TextMeshPro box if any.
-         * If required, act upon a specific object in the level.
          */
         public void MainDriver()
         {
@@ -47,22 +44,18 @@ namespace CSharpLevels
             MethodInfo runtimeFunction;
             Func<GameObject, MonoBehaviour> runtimeDelegate;
 
+            // Check and modify the player's input before ran
+            string playerText = InputModification(playerInput.text);
+
             // Add the player's code to a template for runtime scripting
             string playerCode = @"
             using UnityEngine; // Access to unity objects
+            using System.Collections; // Access to coroutines
 
             public class RuntimeScript : MonoBehaviour
             {
                 // Reference to the Bit object
                 private GameObject Bit;
-
-                // This function, MoveBit, is designed to take the current
-                // Bit object and move him one unit to the right.
-                public void MoveBit()
-                {
-                    // Move bit forward by 1 X-Unit
-                    Bit.transform.Translate(1, 0, 0); // X, Y, Z Translation move
-                }
 
                 // This function adds a script to the host object
                 // This script addition is required so that Unity can
@@ -80,11 +73,54 @@ namespace CSharpLevels
                     // Initialize Bit object reference
                     Bit = GameObject.FindWithTag(""Player"");
 
-                    // Run whatever code the player input
-                    " + playerInput.text + @"
+                    // Display a friendly message to the player
+                    print(""I am now processing your code input"");
+
+                    // Start two coroutines
+                    // GameTimer - Starts a timer to destroy this script
+                    // MoveItMoveBit - Runs the player's code
+                    StartCoroutine(GameTimer());
+                    StartCoroutine(MoveItMoveBit());
+                }
+
+                // This function, GameTimer, times the execution of this script,
+                // until time has has been hit by ExecutionTime. If time is hit,
+                // this function removes the script from the ScriptController
+                // as a means of stopping infinite loops.
+                private IEnumerator GameTimer()
+                {
+                    // Wait for seconds
+                    yield return new WaitForSeconds(" + ExecutionTime + @");
+
+                    // At end of time, if script is still running,
+                    // display message and remove script
+                    print(""My CPU cannot handle long running code. Killing the execution process.\r\n"" + 
+                          ""Please check that your code reaches an ending point in a timely manner :)"");
+                    Destroy(gameObject.GetComponent<RuntimeScript>());
+                }
+
+                // This function, MoveItMoveBit, contains whatever the
+                // player wrote from the input box.
+                private IEnumerator MoveItMoveBit()
+                {
+                    // Updated string of player text
+                    " + playerText + @"
+
+                    // Required for coroutines to have a return
+                    // Waits 2 seconds, then will destroy the game object.
+                    yield return new WaitForSeconds(0.5f); 
 
                     // Remove the added script from the object
+                    print(""Code execution has completed"");
                     Destroy(gameObject.GetComponent<RuntimeScript>());
+                }
+
+                // This function, MoveBit, is designed to take the current
+                // Bit object and move him one unit to the right.
+                public void MoveBit()
+                {
+                    // Move bit forward by 1 X-Unit
+                    Bit.transform.Translate(1, 0, 0); // X, Y, Z Translation move
                 }
             }";
 
@@ -112,19 +148,18 @@ namespace CSharpLevels
         private Assembly CSharpCompile(string sourceCode)
         {
             // Local variables for the compiler and compiler parameters
-            CSharpCodeProvider provider = new CSharpCodeProvider();
+            CSharpCodeCompiler compiler = new CSharpCodeCompiler();
             CompilerParameters parameters = new CompilerParameters();
             CompilerResults result;
 
             /* Add in the .dll files for the compilation to take place
              * 
-             * System.dll = System namespace for common types like collections
              * UnityEngine.dll = This contains methods from Unity namespaces
              * Microsoft.CSharp.dll = This assembly contains runtime C# code from your Assets folders
              * netstandard.dll = Other assembly that is required (.NetFramework specific)
              * 
-             * NOTE: Path locations may vary based on install. WILL encounter errors on build.
-             * Refer to the C# compiler documentation for what to do in this instance.
+             * NOTE: Path locations may vary based on install. Below code attempts to find these paths
+             * using path location of the System.dll assembly location.
              */
             if (Application.isEditor)
             {
@@ -133,7 +168,6 @@ namespace CSharpLevels
                 string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
                 string win32Location = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
                 string engineLocation = assemblyLocation.Substring(0, assemblyLocation.IndexOf("Data")); // Extract base location for Data folder
-                parameters.ReferencedAssemblies.Add(win32Location + "System.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path1 + "UnityEngine.CoreModule.dll");
                 parameters.ReferencedAssemblies.Add(engineLocation + path2 + "UnityEngine.UI.dll");
                 parameters.ReferencedAssemblies.Add(win32Location + "Microsoft.CSharp.dll");
@@ -143,7 +177,6 @@ namespace CSharpLevels
             {
                 string assemblyLocation = parameters.ReferencedAssemblies.GetType().Assembly.Location;
                 string folderPath = assemblyLocation.Substring(0, assemblyLocation.IndexOf("System.dll")); // Snip off the "System.dll" information
-                parameters.ReferencedAssemblies.Add(folderPath + "System.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.CoreModule.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "UnityEngine.UI.dll");
                 parameters.ReferencedAssemblies.Add(folderPath + "Microsoft.CSharp.dll");
@@ -157,7 +190,7 @@ namespace CSharpLevels
             parameters.IncludeDebugInformation = true;
 
             // Compile the sourceCode 
-            result = provider.CompileAssemblyFromSource(parameters, sourceCode);
+            result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
             if (result.Errors.HasErrors)
@@ -173,16 +206,135 @@ namespace CSharpLevels
                         // String.Format("Error ({0}): ({1})", error.ErrorNumber, error.ErrorText)
                         programOutput.text += error.ErrorText + "\n";
                 }
-                programOutput.text += playerInput.text;
             }
             else
             {
-                programOutput.text = @"There is a function named ""MoveBit"" that will move bit forward by 1 foot.
-To complete this level, write code that will move Bit 227 feet to the NPC.";
+                programOutput.text = "";
             }
 
             // Return the assembly
             return result.CompiledAssembly;
+        }
+
+        /*
+         * This function, InputModification, checks and modifies the player's input.
+         * This function will perform 4 checks on the player's input code.
+         * 1. Check that the player has not written malicious code
+         *    If so, kill the code before it is ran.
+         * 2-4. If the player wrote a for, while, or do-while loop, properly
+         *      modify the input code to yield resources for the kill code check.
+         */
+        private string InputModification(string playerCode)
+        {
+            // Create a string for the return
+            string newCode = playerCode;
+            int startIndex, startCurlyBrace, endCurlyBrace;
+
+            // Check for malicious code
+            if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
+            {
+                // Both are required due to Unity issues with display.
+                programOutput.text = @"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.";
+                throw new Exception(@"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.");
+            }
+            
+            // If the player wrote a for-loop
+            if (newCode.Contains("for"))
+            {
+                // Append on the line after for -> yield return null
+                // Step 1: Find the starting index of the for-loop
+                startIndex = newCode.IndexOf("for");
+
+                // Step 2: Determine if the player wrote a curly brace (multi-line for-loop)
+                startCurlyBrace = newCode.IndexOf('{', startIndex);
+                if (startCurlyBrace != -1)
+                {
+                    // Step 3: Insert "yield return null" after the startCurlyBrace location
+                    newCode = newCode.Insert(startCurlyBrace + 1, "yield return null;");
+                }
+                else // Single lined for-loop
+                {
+                    // Step 4: Add in curly braces and the "yield return null" code
+                    // Left curlyBrace and the added code
+                    startCurlyBrace = newCode.IndexOf(')', startIndex) + 1;
+                    newCode = newCode.Insert(startCurlyBrace, "{yield return null;");
+
+                    // Get an index for the end of this line
+                    startIndex = newCode.IndexOf(';', startCurlyBrace) + 1;
+
+                    // Get an index for the next semicolon (Single-lined for-loop, this is where to insert '}')
+                    endCurlyBrace = newCode.IndexOf(';', startIndex) + 1;
+
+                    // Insert the ending curly brace
+                    newCode = newCode.Insert(endCurlyBrace, "}");
+                }
+            }
+
+            // If the player wrote a do-while loop
+            if (newCode.Contains("do"))
+            {
+                // Append on the line after do -> yield return null
+                // Step 1: Find the starting index of the do-while loop
+                startIndex = newCode.IndexOf("do");
+
+                // Step 2: Determine if the player wrote a curly brace (multi-line do-while loop)
+                startCurlyBrace = newCode.IndexOf('{', startIndex);
+                if (startCurlyBrace != -1)
+                {
+                    // Step 3: Insert "yield return null" after the startCurlyBrace location
+                    newCode = newCode.Insert(startCurlyBrace + 1, "yield return null;");
+                }
+                else // Single lined do-while loop
+                {
+                    // Step 4: Add in curly braces and the "yield return null" code
+                    // Left curlyBrace and the added code
+                    newCode = newCode.Insert(startIndex + 2, "{yield return null;");
+
+                    // Get an index for while part of the loop
+                    endCurlyBrace = newCode.IndexOf("while", startIndex);
+
+                    // Insert the ending curly brace before the while
+                    newCode = newCode.Insert(endCurlyBrace, "}");
+                }
+            }
+            else
+            {
+                // If the player wrote a while-loop
+                if (newCode.Contains("while"))
+                {
+                    // Append on the line after while -> yield return null
+                    // Step 1: Find the starting index of the while-loop
+                    startIndex = newCode.IndexOf("while");
+
+                    // Step 2: Determine if the player wrote a curly brace (multi-line while-loop)
+                    startCurlyBrace = newCode.IndexOf('{', startIndex);
+                    if (startCurlyBrace != -1)
+                    {
+                        // Step 3: Insert "yield return null" after the startCurlyBrace location
+                        newCode = newCode.Insert(startCurlyBrace + 1, "yield return null;");
+                    }
+                    else // Single lined while-loop
+                    {
+                        // Step 4: Add in curly braces and the "yield return null" code
+                        // Left curlyBrace and the added code
+                        startCurlyBrace = newCode.IndexOf(')', startIndex) + 1;
+                        newCode = newCode.Insert(startCurlyBrace, "{yield return null;");
+
+                        // Get an index for the end of this line
+                        startIndex = newCode.IndexOf(';', startCurlyBrace) + 1;
+
+                        // Get an index for the next semicolon (Single-lined while-loop, this is where to insert '}')
+                        endCurlyBrace = newCode.IndexOf(';', startIndex) + 1;
+
+                        // Insert the ending curly brace
+                        newCode = newCode.Insert(endCurlyBrace, "}");
+                    }
+                }
+            }
+
+            return newCode;
         }
 
         /*
@@ -211,7 +363,7 @@ To complete this level, write code that will move Bit 227 feet to the NPC.";
         {
             if (displayLog) // Prevents duplicate error prints with compile time and log print
             {
-                programOutput.text += logString + "\n\n";
+                programOutput.text = logString + "\n\n";
             }
         }
     }

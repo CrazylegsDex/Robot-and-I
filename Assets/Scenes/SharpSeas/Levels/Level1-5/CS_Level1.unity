@@ -6921,6 +6921,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae086b496917a704980c16b98faee419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userInput: {fileID: 1441656484}
+  charInput: {fileID: 1920615717}
+  stringInput: {fileID: 313506270}
+  boolInput: {fileID: 1846165145}
+  floatInput: {fileID: 384512379}
+  doubleInput: {fileID: 1841022526}
+  programOutput: {fileID: 458995014}
+  charOutput: {fileID: 1267673569}
+  stringOutput: {fileID: 2023378371}
+  boolOutput: {fileID: 253927253}
+  floatOutput: {fileID: 1296491714}
+  doubleOutput: {fileID: 325986806}
+  levelSprite: {fileID: 735184047}
 --- !u!114 &1916993544
 MonoBehaviour:
   m_ObjectHideFlags: 0

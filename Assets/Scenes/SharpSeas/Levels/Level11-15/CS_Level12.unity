@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_text: 'There is a function named "MoveBit" that will move bit forward by 1 foot.
 
     To
-    complete this level, write code that will move Bit 227 feet to the NPC.'
+    complete this level, write code that will move Bit 226 feet to the NPC.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -1640,6 +1640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04da087fb34a1f4fb4893621b277f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ThisScript: {fileID: 819264853}
   playerInput: {fileID: 1781996905}
   programOutput: {fileID: 569679746}
 --- !u!114 &819264854

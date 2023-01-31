@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5a2aa4c91b2391458004ecaa8401785
+guid: 8bafdceaacc756241b33c12f9cb805fa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bab71a7f1650a044aebc8daf65fa884
-      internalID: 706611124
+      spriteID: 9ec1f3748387f774ca51ef014a1cb1da
+      internalID: 571145029
       vertices: []
       indices: 
       edges: []
@@ -142,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ddf5aad861f99f4d810182dfa8e85c8
-      internalID: -651967918
+      spriteID: 2068be6a1f3d387418483f796874aaa4
+      internalID: 1974520976
       vertices: []
       indices: 
       edges: []
@@ -163,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0d2982c71fbe104593534c1baa9021a
-      internalID: -755426567
+      spriteID: c76d7ca03b60e3a4e8c39ff642eb5130
+      internalID: 1514194301
       vertices: []
       indices: 
       edges: []
@@ -180,9 +180,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Level_BG_Pseudo_A_2: -755426567
-      Level_BG_Pseudo_A_0: 706611124
-      Level_BG_Pseudo_A_1: -651967918
+      Level_BG_Pseudo_A_2: 1514194301
+      Level_BG_Pseudo_A_0: 571145029
+      Level_BG_Pseudo_A_1: 1974520976
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

@@ -1122,7 +1122,7 @@ MonoBehaviour:
   functionInput: {fileID: 1086012734}
   codeInput: {fileID: 1520234728}
   programOutput: {fileID: 1952274281}
-  levelSprite: {fileID: 0}
+  levelSprite: {fileID: 1208044413}
 --- !u!114 &819264853
 MonoBehaviour:
   m_ObjectHideFlags: 0

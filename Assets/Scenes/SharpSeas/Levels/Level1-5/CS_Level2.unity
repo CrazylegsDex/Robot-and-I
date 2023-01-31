@@ -5143,6 +5143,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+--- !u!61 &1879695829 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+  m_PrefabInstance: {fileID: 1879695828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1881222646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5565,6 +5570,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedf16e0f9f1cfc4a92106907eb70cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aInput: {fileID: 103885285}
+  bInput: {fileID: 2126578943}
+  cInput: {fileID: 1909169726}
+  dInput: {fileID: 1708469860}
+  aOutput: {fileID: 426638697}
+  bOutput: {fileID: 1251106766}
+  cOutput: {fileID: 1805008741}
+  dOutput: {fileID: 562378977}
+  levelSprite: {fileID: 1879695829}
 --- !u!114 &1937714696
 MonoBehaviour:
   m_ObjectHideFlags: 0

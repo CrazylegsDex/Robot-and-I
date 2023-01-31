@@ -5,14 +5,14 @@
  * information so the player can complete the level.
  * 
  * Author: Robot and I Team
- * Last modification date: 11-15-2022
+ * Last modification date: 12-27-2022
  */
 
+using UnityEngine;
+using Modified.Mono.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
-using UnityEngine;
-using Microsoft.CSharp;
 using TMPro;
 
 namespace PseudoLevels
@@ -82,7 +82,6 @@ namespace PseudoLevels
                         }
                     }
                     
-                    print(z);
 			        TMP_Text object2 = GameObject.Find(""OutputBoxB"").GetComponent<TMP_Text>();
                     x=0;
                     y=0;
@@ -199,19 +198,18 @@ namespace PseudoLevels
         private Assembly CSharpCompile(string sourceCode)
         {
             // Local variables for the compiler and compiler parameters
-            CSharpCodeProvider provider = new CSharpCodeProvider();
+            CSharpCodeCompiler compiler = new CSharpCodeCompiler();
             CompilerParameters parameters = new CompilerParameters();
             CompilerResults result;
 
             /* Add in the .dll files for the compilation to take place
              * 
-             * System.dll = System namespace for common types like collections
              * UnityEngine.dll = This contains methods from Unity namespaces
              * Microsoft.CSharp.dll = This assembly contains runtime C# code from your Assets folders
              * netstandard.dll = Other assembly that is required (.NetFramework specific)
              * 
-             * NOTE: Path locations may vary based on install. WILL encounter errors on build.
-             * Refer to the C# compiler documentation for what to do in this instance.
+             * NOTE: Path locations may vary based on install. Below code attempts to find these paths
+             * using path location of the System.dll assembly location.
              */
             if (Application.isEditor)
             {
@@ -248,9 +246,10 @@ namespace PseudoLevels
             parameters.IncludeDebugInformation = false;
 
             // Compile the sourceCode 
-            result = provider.CompileAssemblyFromSource(parameters, sourceCode);
+            result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
+            // TODO ---- Determine if keep or remove this from non-compiler type levels
             if (result.Errors.HasErrors)
             {
                 //displayLog = false;

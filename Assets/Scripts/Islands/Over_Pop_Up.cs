@@ -5,7 +5,6 @@
  * 11-15-2022
  */
 
-using System;
 using UnityEngine;
 
 namespace GameMechanics
