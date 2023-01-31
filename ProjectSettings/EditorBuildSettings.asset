@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level5.unity
     guid: f9f3bafaf51c7cf428e912b32224d379
   - enabled: 1
-    path: Assets/Scenes/PseudoCity/Levels/PythonJungle/PythonIsland.unity
+    path: Assets/Scenes/PythonJungle/PythonIsland.unity
     guid: 2f7f96d191455d842bad6df89653c202
   - enabled: 1
     path: Assets/Scenes/PseudoCity/Levels/PythonJungle/Levels/Level1-5/PY_Level1.unity
