@@ -76,17 +76,17 @@ namespace GameMechanics
             // The destination values that Bit will return to on the Island are hardcoded
             // and must be updated if Ship locations change.
             if (previousIsland == "PseudoIsland" && destinationIsland == "PythonIsland")
-                return new Vector3(1007.56f, 540.9849f);
+                return new Vector3(1054.826f, 556.4346f);
             if (previousIsland == "PseudoIsland" && destinationIsland == "CIsland")
-                return new Vector3(1002.13f, 542.78f);
+                return new Vector3(963.8285f, 523.3897f);
             if (previousIsland == "PythonIsland" && destinationIsland == "PseudoIsland")
                 return new Vector3(1011.86f, 580.9894f);
             if (previousIsland == "PythonIsland" && destinationIsland == "CIsland")
-                return new Vector3(1012.614f, 537.0409f);
+                return new Vector3(1044.198f, 559.1546f);
             if (previousIsland == "CIsland" && destinationIsland == "PseudoIsland")
                 return new Vector3(922.588f, 611.5881f);
             if (previousIsland == "CIsland" && destinationIsland == "PythonIsland")
-                return new Vector3(999.8128f, 541.2603f);
+                return new Vector3(976.2f, 558.5659f);
 
             // Based on the check for when this function is called,
             // this statement should never execute. However, if it does,

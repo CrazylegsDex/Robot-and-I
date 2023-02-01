@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 3333137241996592039}
   m_Layer: 0
   m_Name: Bob Jr
-  m_TagString: Untagged
+  m_TagString: LevelChange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ Transform:
   m_Children:
   - {fileID: 3590572484270395131}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6565130367035034685
 SpriteRenderer:
