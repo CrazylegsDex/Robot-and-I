@@ -2,7 +2,7 @@
  * the Overworld Popup menu.
  * 
  * Robot and I team
- * 11-15-2022
+ * 01/23/2023
  */
 
 using UnityEngine;
@@ -21,6 +21,13 @@ namespace GameMechanics
         public void UnpauseWorld()
         {
             Time.timeScale = 1;
+        }
+
+        // Save the current games data
+        public void Save()
+        {
+            DataPersistenceManager.Instance.SaveGame();
+            Debug.Log("Game has been Saved"); // TODO - replace with SaveGame popup
         }
 
         // link with ExitLevelButton in MainMenu in LevelMenuOverlay

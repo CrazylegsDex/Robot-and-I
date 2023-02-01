@@ -7,7 +7,7 @@
  * Contains methods for the Back, Continue and Start buttons.
  * 
  * Author: Robot and I Team
- * Date Modification: 12-28-2022
+ * Date Modification: 01/24/2023
  */
 
 using UnityEngine;
@@ -26,13 +26,12 @@ namespace GameMechanics
         // Variables to be filled in by the developer
         public string NPC_Name;
         public string LevelToLoad;
-        public bool levelComplete = false; // TODO: Implement during save/load features
+        public bool ShipNPC = false;
         // Text Area creates a wider text input box for the developer
         [TextArea(5, 30)] public string[] sentences;
 
-        // A public variable for Canvas_Dialogue to access, but the Developer cannot see
-        [HideInInspector]
-        public bool isActive;
+        // A public variable for Canvas_Dialogue to access, but hidden in Inspector view
+        [HideInInspector] public bool isActive;
 
         // Private queue for the sentences
         private Queue<string> Dialogue;
@@ -96,7 +95,7 @@ namespace GameMechanics
         public void StartLevel()
         {
             DialogueBox.SetActive(false);
-            StartCoroutine(Load_Level.SceneLoader(LevelToLoad));
+            StartCoroutine(Load_Level.SceneLoader(LevelToLoad, ShipNPC));
         }
 
         // Closes the DialogueBox
