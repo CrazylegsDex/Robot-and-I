@@ -27,6 +27,42 @@ EditorBuildSettings:
     path: Assets/Scenes/PseudoCity/Levels/Level1-5/PS_Level5.unity
     guid: f9f3bafaf51c7cf428e912b32224d379
   - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level6-10/PS_Level6.unity
+    guid: 06bb152dc3681254eb1be1b7d2e5f47d
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level6-10/PS_Level7.unity
+    guid: a38220299148aa04d9748b14b5c6a30c
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level6-10/PS_Level8.unity
+    guid: e344613343e8ead4bbf66b7b51389ae1
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level6-10/PS_Level9.unity
+    guid: 5a8bf3e62dbb2634ca09d9f16e8351d2
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level6-10/PS_Level10.unity
+    guid: 629f8bb7a521a8b47be248ec3a8263c9
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level11-15/PS_Level11.unity
+    guid: eef9dc09d9824d345870c01d566860d9
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level11-15/PS_Level12.unity
+    guid: 32522eb090f8a204c85902f6a41800a8
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level11-15/PS_Level13.unity
+    guid: 8409e4faac928b042a2a2c60e0dc24e0
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level11-15/PS_Level14.unity
+    guid: c0b880dd45a4b82428648fc3504aff04
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level11-15/PS_Level15.unity
+    guid: 58be7ce74b667c1478e08debe47d9f9b
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level16-20/PS_Level16.unity
+    guid: b07b76454bf595b47aed4f00660e089a
+  - enabled: 1
+    path: Assets/Scenes/PseudoCity/Levels/Level16-20/PS_Level17.unity
+    guid: e9a2d60df3fc26947b68c54bdab5c021
+  - enabled: 1
     path: Assets/Scenes/PythonJungle/PythonIsland.unity
     guid: 516bc5207684723459eb1d89fbbaf494
   - enabled: 1
@@ -35,6 +71,48 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PythonJungle/Levels/Level1-5/PY_Level2.unity
     guid: 7dd9f5490d22c8c499a6ddf4cd04b175
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level1-5/PY_Level3.unity
+    guid: 4daa147ddab2d5f47883b907380a8745
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level1-5/PY_Level4.unity
+    guid: a00333cf6136b6940bd208e6ade3a769
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level1-5/PY_Level5.unity
+    guid: d2414f70f16140d40bd3da7e445c4680
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level6-10/PY_Level6.unity
+    guid: 2bf5a38a864af614487141bfae7fe6a0
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level6-10/PY_Level7.unity
+    guid: 7c1995841a5f68a4f915ac22c4bac6e5
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level6-10/PY_Level8.unity
+    guid: b7f9eb1e8044fb34bbfda0c6e98fcb1b
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level6-10/PY_Level9.unity
+    guid: 4845929ed237dc849bf27f1e2c8e113d
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level6-10/PY_Level10.unity
+    guid: 4c7b0bcad1602f14ba809273b5116b14
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level11-15/PY_Level11.unity
+    guid: cb1d3dfff4cbb5942904711c4635a4c2
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level11-15/PY_Level12.unity
+    guid: e493462c400a066468db001cc75c5f4e
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level11-15/PY_Level13.unity
+    guid: 1569d6cac0baf424c9c55baed549c853
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level11-15/PY_Level14.unity
+    guid: 9fecd68286d6cb74587eaf8260164e1f
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level11-15/PY_Level15.unity
+    guid: 1708d53526cbb764f949c887e9dee9f1
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/Levels/Level16-20/PY_Level16.unity
+    guid: 8cd1cc83064cd034fb1efc673b7797cc
   - enabled: 1
     path: Assets/Scenes/PythonJungle/Levels/Level16-20/PY_Level17.unity
     guid: 5cb10cbf87eba924ebbc3d6446183c05
@@ -48,8 +126,53 @@ EditorBuildSettings:
     path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level2.unity
     guid: d9331df1c8f2a8c46aca66a31e2ad08e
   - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level3.unity
+    guid: 2ca9afc7d714d704d9a62402a96bbcfe
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level4.unity
+    guid: c8f995bdd11899e4f9c9613b3c072633
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level1-5/CS_Level5.unity
+    guid: ede81a1869509f04f81b67ebc799389a
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level6-10/CS_Level6.unity
+    guid: 20068469f9dfbbc40ba3053b919d4014
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level6-10/CS_Level7.unity
+    guid: 4e6810b748553fb4b907d0baf5a0fb1d
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level6-10/CS_Level8.unity
+    guid: 031aef424ae055a488d65a968f9ae588
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level6-10/CS_Level10.unity
+    guid: e3aa0e44487422446a236c6806a9504e
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level11-15/CS_Level11.unity
+    guid: 0d176a55bd0edce4d9df45c6d792333b
+  - enabled: 1
     path: Assets/Scenes/SharpSeas/Levels/Level11-15/CS_Level12.unity
     guid: f8f9ccf1dabd8b546a32ad4000ae8cc1
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level11-15/CS_Level13.unity
+    guid: c3de36429b8054743a3ff7cba3168ad4
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level11-15/CS_Level14.unity
+    guid: 24c403c79f58c1e438eeb69894f35892
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level11-15/CS_Level15.unity
+    guid: 4f50463fb15526e4a8dbc256f5d8f719
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level16-20/CS_Level16.unity
+    guid: 909034970a877e54cba83bc235585d3f
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level16-20/CS_Level17.unity
+    guid: 8f7b50e6d8278804aa43d9b47a72a69c
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level16-20/CS_Level18.unity
+    guid: 6c3bdf8d8bf9ff642990a8e37c42d608
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/Levels/Level16-20/CS_Level20.unity
+    guid: 811f7b8d1fe7473438fadd240506b14d
   - enabled: 0
     path: Assets/Scenes/Testing/TestPopups/Pop-Up-Level.unity
     guid: bc91b7ac607cd2041987e3ab9625afba
