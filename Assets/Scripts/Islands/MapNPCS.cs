@@ -26,16 +26,7 @@ namespace GameMechanics
             // The ships to PY and CS are only active once PS_Level1 is complete
             if (id == "PS_Level1" || id == "PY_Level1" || id == "CS_Level1")
             {
-				if (data.gameLevels.ContainsKey("PS_Level1")) // If we can access the key yet (first save)
-				{
-					if (data.gameLevels["PS_Level1"]) // If level 1 is complete
-					{
-                        LevelName.color = new Color(0,0,255,255);
-						spriteRenderer.sprite = check;
-					}else{
-						LevelName.color = new Color(255,255,0,255);
-					}
-				}
+				LevelName.color = new Color(255,255,0,255);
             }
             else
             {
@@ -104,12 +95,17 @@ namespace GameMechanics
 
                             if (checkComplete) // PY Level exists and was complete
                             {
-                                if (id == ("PY_Level" + (i + 1))) // Next level id with current
-                                {
+                                if(id == ("PY_Level" + (i))){
+									LevelName.color = new Color(0,0,255,255);
+									spriteRenderer.sprite = check;
+								}else if (id == ("PY_Level" + (i + 1))) // Next level id with current
+								{
 									spriteRenderer.sprite = cirlce;
 									LevelName.color = new Color(255,225,0,255);
-                                    break; // Only one level will open each completion
-                                }
+								}else{
+									LevelName.color = new Color(255,0,0,255);
+									spriteRenderer.sprite = Xmarker;
+								}
                             }
                         }
                     }
@@ -121,7 +117,7 @@ namespace GameMechanics
                     for (int i = 1; i <= data.gameLevels.Count; ++i)
                     {
                         // Test if level exists
-                        data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
+                        data.gameLevels.TryGetValue("CS_Level" + i, out checkComplete);
 
                         if (checkComplete) // PS Level exists and was complete
                         {
@@ -130,12 +126,17 @@ namespace GameMechanics
 
                             if (checkComplete) // CS Level exists and was complete
                             {
-                                if (id == ("CS_Level" + (i + 1))) // Next level id with current
-                                {
+                                if(id == ("CS_Level" + (i))){
+									LevelName.color = new Color(0,0,255,255);
+									spriteRenderer.sprite = check;
+								}else if (id == ("CS_Level" + (i + 1))) // Next level id with current
+								{
 									spriteRenderer.sprite = cirlce;
-									LevelName.color = new Color(255,255,0,255);
-                                    break; // Only one level will open each completion
-                                }
+									LevelName.color = new Color(255,225,0,255);
+								}else{
+									LevelName.color = new Color(255,0,0,255);
+									spriteRenderer.sprite = Xmarker;
+								}
                             }
                         }
                     }

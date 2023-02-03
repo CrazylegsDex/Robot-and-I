@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PseudoCity/PseudoMap.unity
     guid: 6d33ced8e9796c94d824fb7a3967cc94
+  - enabled: 1
+    path: Assets/Scenes/PythonJungle/PythonMap.unity
+    guid: b8340a8cfd29744429adea4068c83541
   m_configObjects: {}
