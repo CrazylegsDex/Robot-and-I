@@ -27,7 +27,6 @@ namespace GameMechanics
         public void Save()
         {
             DataPersistenceManager.Instance.SaveGame();
-            Debug.Log("Game has been Saved"); // TODO - replace with SaveGame popup
         }
 
         // link with ExitLevelButton in MainMenu in LevelMenuOverlay

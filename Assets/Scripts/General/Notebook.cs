@@ -6,29 +6,36 @@
  * menu.
  * 
  * Author: Robot and I Team
- * Date: 01/23/2023
+ * Date: 02/02/2023
  */
 
 using UnityEngine;
+using TMPro;
 
 namespace GameMechanics
 {
     public class Notebook : MonoBehaviour, DataPersistenceInterface
     {
-        private string playerNotes; // Temp placeholder
+        public TMP_InputField Notes;
 
         // This function pulls data from the GameData class
         public void LoadData(GameData data)
         {
             // Placeholder code
-            playerNotes = data.notebook;
+            Notes.text = data.notebook;
         }
 
         // This function saves local data to persist through the game
         public void SaveData(GameData data)
         {
             // Placeholder code
-            data.notebook = playerNotes;
+            data.notebook = Notes.text;
+        }
+
+        // This function is used to save the text in the notebook
+        public void SaveText()
+        {
+            DataPersistenceManager.Instance.SaveGame();
         }
     }
 }
