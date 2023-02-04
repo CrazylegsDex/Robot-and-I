@@ -1067,6 +1067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1365145310}
   - component: {fileID: 1365145309}
+  - component: {fileID: 1365145313}
   - component: {fileID: 1365145312}
   m_Layer: 0
   m_Name: ScriptController
@@ -1116,6 +1117,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb7509010393f654da1940f2b76d6d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1365145313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365145308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1137ed820182436488b646095147eb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1514475137
@@ -1534,6 +1547,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1958553421}
     m_Modifications:
+    - target: {fileID: 5295609718483735503, guid: 91acbb8286b6b904086173c6a595122b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1365145313}
+    - target: {fileID: 5295609718483735503, guid: 91acbb8286b6b904086173c6a595122b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenManual
+      objectReference: {fileID: 0}
+    - target: {fileID: 5295609718483735503, guid: 91acbb8286b6b904086173c6a595122b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Manual, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5500638829805557434, guid: 91acbb8286b6b904086173c6a595122b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
