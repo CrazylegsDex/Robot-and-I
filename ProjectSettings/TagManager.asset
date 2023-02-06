@@ -6,15 +6,17 @@ TagManager:
   tags:
   - Enemy
   - LevelChange
+  - Box
+  - Button
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - object
   - Water
   - UI
   - ground
-  - 
+  - button
   - 
   - 
   - 
