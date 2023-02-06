@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PythonJungle/PythonMap.unity
     guid: b8340a8cfd29744429adea4068c83541
+  - enabled: 1
+    path: Assets/Scenes/SharpSeas/CIslandMap.unity
+    guid: 658a0be9f3bf4ac4382094173d7b686e
   m_configObjects: {}

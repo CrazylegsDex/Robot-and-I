@@ -62,7 +62,7 @@ namespace GameMechanics
 
                         if (checkComplete) // If level exists and was complete, set next level
                         {
-							if(id == ("PS_Level" + (i))){
+							if(id == ("PS_Level" + (i)) || id == "PS_Level1") {
 								LevelName.color = new Color(0,0,255,255);
 								spriteRenderer.sprite = check;
 							}else if (id == ("PS_Level" + (i + 1))) // Next level id with current
