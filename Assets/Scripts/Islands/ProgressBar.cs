@@ -1,37 +1,47 @@
 /* This script operates the
- * progress barin the overworld
+ * progress bar in the overworld
  * showing the total game progress
  * 
  * Robot and I team
- * 11-11-2022
+ * 02-06-2023
  */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode()]
-public class ProgressBar : MonoBehaviour
+namespace GameMechanics
 {
-    public int max; // Holds max progress amount
-    public int cur; // Holds current progress amount
-    public Image mask; // Layer that masks
-
-    // Start is called before the first frame update
-    void Start()
+    public class ProgressBar : MonoBehaviour, DataPersistenceInterface
     {
-        
-    }
+        public int MaximumLevels; // Holds the maximum number of levels to complete
+        public Image Mask; // The masking layer for the progress bar
+        private int CurrentLevels = 0; // Holds the current number of levels completed
 
-    // Update is called once per frame
-    void Update()
-    {
-        GetCurrentFill();
-    }
+        // DataPersistenceInterface implementation of LoadData
+        public void LoadData(GameData data)
+        {
+            // Check if the dictionary has been filled with data
+            if (data.gameLevels.ContainsKey("PS_Level1"))
+            {
+                // Loop through the keys in the dictionary
+                foreach (var key in data.gameLevels)
+                {
+                    if (key.Value) // If the key value is true (level completed)
+                    {
+                        ++CurrentLevels;
+                    }
+                }
+            }
 
-    void GetCurrentFill()
-    {
-        float fillAmount = (float)cur / (float)max;
-        mask.fillAmount = fillAmount;
+            // Fill the Progress Bar
+            Mask.fillAmount = (float) CurrentLevels / MaximumLevels;
+        }
+
+        // DataPersistenceinterface implementation of SaveData
+        public void SaveData(GameData data)
+        {
+            // Implementation of function required for Interface
+            // No data needs to be saved. Function will remain empty
+        }
     }
 }
