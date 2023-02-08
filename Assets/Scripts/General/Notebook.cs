@@ -6,7 +6,7 @@
  * menu.
  * 
  * Author: Robot and I Team
- * Date: 02/02/2023
+ * Date: 02/07/2023
  */
 
 using UnityEngine;
@@ -36,6 +36,18 @@ namespace GameMechanics
         public void SaveText()
         {
             DataPersistenceManager.Instance.SaveGame();
+        }
+
+        // Public function to set the notebook visible
+        public void SetVisible()
+        {
+            Notes.gameObject.SetActive(true);
+        }
+
+        // Public function to set the notebook invisible
+        public void SetInvisible()
+        {
+            Notes.gameObject.SetActive(false);
         }
     }
 }

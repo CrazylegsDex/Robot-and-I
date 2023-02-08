@@ -226,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6196886639432804931, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_Name
-      value: SaveNotesButton
+      value: NotesButton
       objectReference: {fileID: 0}
     - target: {fileID: 6882761272184251110, guid: 9f158a6e838c86943b58362349ec8fae, type: 3}
       propertyPath: m_Pivot.x
