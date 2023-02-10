@@ -11,9 +11,11 @@ namespace PlayerControl
     public class TopDown_Movement : MonoBehaviour, DataPersistenceInterface
     {
         // Public variables
+		public string mapName;
         public float moveSpeed; // Inspector view modifiable
         public Rigidbody2D rb; // Associated sprite object
         public Animator an; // Animations
+		public bool AllowMovement = true;
 
         // Hidden Public variables
         [HideInInspector] public static Vector3 position = new Vector3();
@@ -73,12 +75,22 @@ namespace PlayerControl
 
         private void ProcessInputs()
         {
-            // Create two variables for current X,Y axis
-            float moveX = Input.GetAxisRaw("Horizontal");
-            float moveY = Input.GetAxisRaw("Vertical");
+			if(Input.GetKeyDown(KeyCode.M))
+			{
+				StartCoroutine(Load_Level.SceneLoader(mapName));
+			}
+			else
+			{
+				if (AllowMovement)
+				{
+					// Create two variables for current X,Y axis
+					float moveX = Input.GetAxisRaw("Horizontal");
+					float moveY = Input.GetAxisRaw("Vertical");
 
-            // Create a new variable for the move direction
-            moveDirection = new Vector2(moveX, moveY).normalized;
+					// Create a new variable for the move direction
+					moveDirection = new Vector2(moveX, moveY).normalized;
+				}
+			}
         }
 
         private void Move()
