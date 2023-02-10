@@ -29,7 +29,12 @@ namespace GameMechanics
         public void SaveData(GameData data)
         {
             // Save the current scene to the playerScene variable (Do not save MainMenu)
-            if (ContinueGame != "MainMenu")
+            if (
+					ContinueGame != "MainMenu" &&
+					ContinueGame != "PseudoMap" &&
+					ContinueGame != "PythonMap" &&
+					ContinueGame != "CIslandMap"
+				)
             {
                 data.playerScene = ContinueGame;
             }
