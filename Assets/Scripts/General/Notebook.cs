@@ -21,20 +21,21 @@ namespace GameMechanics
         // This function pulls data from the GameData class
         public void LoadData(GameData data)
         {
-            // Placeholder code
+            // Load the text from the dictionary into the notebook
             Notes.text = data.notebook;
         }
 
         // This function saves local data to persist through the game
         public void SaveData(GameData data)
         {
-            // Placeholder code
+            // Save the current notebook text into the dictionary
             data.notebook = Notes.text;
         }
 
         // This function is used to save the text in the notebook
         public void SaveText()
         {
+            // Call the SaveGame function from the DataPersistenceManager
             DataPersistenceManager.Instance.SaveGame();
         }
 

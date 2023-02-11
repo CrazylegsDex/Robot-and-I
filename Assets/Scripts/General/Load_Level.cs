@@ -2,7 +2,7 @@
  * the information in the scene manager.
  * 
  * Author: Robot and I team
- * Date Modification: 01/23/2023
+ * Date Modification: 02/10/2023
  */
 
 using UnityEngine;
@@ -28,12 +28,13 @@ namespace GameMechanics
         // SaveData implementation for the DataPersistenceInterface
         public void SaveData(GameData data)
         {
-            // Save the current scene to the playerScene variable (Do not save MainMenu)
+            // Save the current scene to the playerScene variable
+            // DO NOT save the following scenes
             if (
 					ContinueGame != "MainMenu" &&
 					ContinueGame != "PseudoMap" &&
 					ContinueGame != "PythonMap" &&
-					ContinueGame != "CIslandMap"
+					ContinueGame != "CMap"
 				)
             {
                 data.playerScene = ContinueGame;

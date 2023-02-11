@@ -23,7 +23,7 @@ public class MapCameraZoom : MonoBehaviour
 	private void CheckZoom()
 	{
         // Check if the scroll move forward (zoom in)
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f && MapView.m_Lens.OrthographicSize > 1)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f && MapView.m_Lens.OrthographicSize > 4)
         {
             MapView.m_Lens.OrthographicSize -= 0.2f;
         }
