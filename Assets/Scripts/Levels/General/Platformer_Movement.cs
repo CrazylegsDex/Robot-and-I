@@ -92,14 +92,15 @@ namespace PlayerControl
 
                     float boxPos = Vector3.Distance(transform.position, go.transform.position);
 
-                    Debug.Log(boxPos / 100);
+                    //Debug.Log(boxPos / 100);
                     if (boxPos/100 >= .19 && boxPos / 100 <= 0.25)
                     {
 
                     //Transform trans = go.transform;
                         
-                        Debug.Log(boxPos/100);
+                        //Debug.Log(boxPos/100);
                         go.transform.parent = boxCheck.parent;
+                        go.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                         go.GetComponent<Rigidbody2D>().isKinematic = true;
                         boxChosen = go;
                     
