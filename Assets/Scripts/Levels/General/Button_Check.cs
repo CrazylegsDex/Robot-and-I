@@ -6,10 +6,12 @@ namespace PseudoLevels
 {
     public class Button_Check : MonoBehaviour
     {
-        public float checkRadius;
-        public Transform boxCheck;
-        public LayerMask boxObjects;
+        //public float checkRadius;
+        //public Transform boxCheck;
+        //public LayerMask boxObjects;
         public GameObject[] boxTests;
+        public GameObject leftArm;
+        public GameObject rightArm;
         public string boxFirstName;
         public int count;
 
@@ -27,12 +29,15 @@ namespace PseudoLevels
         void Update()
         {
             num = 0;
-            nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
+            //nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
             boxTests = GameObject.FindGameObjectsWithTag("Box");
             foreach (GameObject go in boxTests)//Searches for Gameobject with "Box" tag
             {
-                float boxPos = Vector3.Distance(transform.position, go.transform.position);
-                if (boxPos / 100 >= .19 && boxPos / 100 <= 0.25)
+                float boxPos = go.transform.position.x;
+                float leftPos = leftArm.transform.position.x;
+                float rightPos = rightArm.transform.position.x;
+                //Debug.Log(leftPos);
+                if (leftPos < boxPos && boxPos < rightPos)
                 {
 
                     if (go.name.StartsWith(boxFirstName)) {//Tests for correct first name. 
@@ -44,6 +49,7 @@ namespace PseudoLevels
             if (num == count)
             {
                 complete = true;
+                
             }
         }
     }

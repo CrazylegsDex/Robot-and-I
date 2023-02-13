@@ -2142,12 +2142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8134f431e59381a43b118956dd5e83e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRadius: 0.2
-  boxCheck: {fileID: 2016721019}
-  boxObjects:
-    serializedVersion: 2
-    m_Bits: 8
   boxTests: []
+  leftArm: {fileID: 1231438928}
+  rightArm: {fileID: 1210445346}
   boxFirstName: 2
   count: 1
   complete: 0
@@ -6744,12 +6741,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8134f431e59381a43b118956dd5e83e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkRadius: 0.2
-  boxCheck: {fileID: 475163050}
-  boxObjects:
-    serializedVersion: 2
-    m_Bits: 8
   boxTests: []
+  leftArm: {fileID: 1231438928}
+  rightArm: {fileID: 1210445346}
   boxFirstName: 1
   count: 1
   complete: 0
