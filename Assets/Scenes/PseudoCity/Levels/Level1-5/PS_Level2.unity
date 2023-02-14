@@ -1250,14 +1250,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Variable assignment is when you assign a value to a variable. For example,
-        int x = 1,456,839 or bool y = True. For these levels, we will show different
-        variable assignments and test if you know what is in those variables by the
-        time the variable is printed out.
+      value: "It\u2019s as simple as choosing the correct variable type and using
+        an equal sign to link the type to the value. This is called variable assignment.
+        For example, int x = 1,456,839 or bool y = True. For these levels, we will
+        show different variable assignments and test if you know what is in those
+        variables by the time the variable is printed out. \r\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: The lesson is now complete. Press continue to answer the questions.
+      value: "\rNow that we know how to assign a value to a variable, let\u2019s
+        teach Bit how to do it so he can help Matthew.\r"
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}

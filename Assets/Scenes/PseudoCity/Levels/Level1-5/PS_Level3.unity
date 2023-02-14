@@ -29809,15 +29809,27 @@ PrefabInstance:
       objectReference: {fileID: 1970608090}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Arithmetic operators are useful to perform arithmetic calculations such
-        as addition, subtraction, multiplication, division, ect.
+      value: 'int x = 25 % 4
+
+        double y = 4
+
+        y *=  2.5
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
+      value: Those are different arithmetic operators! Arithmetic operators are useful
+        to perform arithmetic calculations such as addition, subtraction, multiplication,
+        division, ect. There's a lot of them so we will take them one by one to understand
+        them better. Let's start with addition first!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[2]
       value: "\r+   is for addition. Example, a + b. This can be used for not only,
         int, double, and float but also strings.\nExample:\nstring x = \u201CHello\u201D
         \r\nString y = \u201CWorld!\u201D\r\nZ = x + \u201C \u201C + y\r\nHere we
@@ -29825,19 +29837,19 @@ PrefabInstance:
         output for Z here would be \u201CHello World!\u201D\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[2]
+      propertyPath: sentences.Array.data[3]
       value: "++  This increases numbers by 1. Examples of this being used,\r\nExample:\r\nInt
         x = 4\r\nx++\r\nThe output here for x would be 5.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
+      propertyPath: sentences.Array.data[4]
       value: "+=  This operator is a shortcut on how to add one variable to another.
         The variable on the left of the operator will add the variable on the right
         of the operator to  its own value. Press continue to see an example of this.
         \n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
+      propertyPath: sentences.Array.data[5]
       value: 'Example:
 
         Int x = 3
@@ -29855,7 +29867,7 @@ PrefabInstance:
         = 10 and the output for y would be 8 and 7 + 1 = 8.'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[5]
+      propertyPath: sentences.Array.data[6]
       value: The lesson is now complete! Press continue to answer the question!
       objectReference: {fileID: 0}
     m_RemovedComponents:
