@@ -556,10 +556,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxXSpeedG: 4
   maxXSpeedA: 6
-  jumpForce: 5
+  jumpForce: 4.5
   maxAirJumps: 1
   maxAirTime: 0.3
   termVel: -6
+  an: {fileID: 0}
   ceiCh1: {fileID: 609861112}
   ceiCh2: {fileID: 699074385}
   wallChL1: {fileID: 1543927336}
@@ -619,7 +620,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -979949040, guid: 8f721bd561b82bf4d92b2a259e4f445f, type: 3}
+  m_Sprite: {fileID: -1562483732, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -710,7 +711,7 @@ Animator:
   m_GameObject: {fileID: 362896235}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d58afcd56668e04788450aa30fafd6c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
