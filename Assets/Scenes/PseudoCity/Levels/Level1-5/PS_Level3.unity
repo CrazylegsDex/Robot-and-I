@@ -2157,7 +2157,7 @@ PrefabInstance:
       objectReference: {fileID: 983345373}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVisible
+      value: SetVisiblityStatus
       objectReference: {fileID: 0}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -7407,7 +7407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -7420,11 +7420,11 @@ PrefabInstance:
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 983345367}
+      objectReference: {fileID: 983345373}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 983345373}
+      objectReference: {fileID: 983345367}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -7439,15 +7439,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetTyping
-      objectReference: {fileID: 0}
-    - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
-      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SaveText
       objectReference: {fileID: 0}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetTyping
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetInvisible
+      value: SaveText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameMechanics.Notebook, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
+      propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerControl.TMP_Selection, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5755764388373722933, guid: ea555f3adfed4e543b5e0fd8ca280409, type: 3}
       propertyPath: m_OnDeselect.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName

@@ -10,10 +10,22 @@ public class MapCameraZoom : MonoBehaviour
 {
     // Public variable that holds the camera
     public CinemachineVirtualCamera MapView;
+	public GameObject Player;
 	public float speed = 10f;
 
+	// Start is called when the object is initialized
+	// Used to set the starting position of the camera
+    private void Start()
+    {
+		// Assign the camera to the Player's location
+		MapView.transform.position = Player.transform.position;
+
+		// Move the camera 10 units back in the scene
+		MapView.transform.position += new Vector3(0, 0, -10);
+    }
+
     // Update is called once per frame
-    // Update will check for mouse scroll, and will update accordingly
+    // Update will check for mouse scroll, and key presses
     private void Update()
     {
 		CheckZoom();

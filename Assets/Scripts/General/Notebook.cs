@@ -17,6 +17,7 @@ namespace GameMechanics
     public class Notebook : MonoBehaviour, DataPersistenceInterface
     {
         public TMP_InputField Notes;
+        private bool SetStatus = false;
 
         // This function pulls data from the GameData class
         public void LoadData(GameData data)
@@ -39,16 +40,11 @@ namespace GameMechanics
             DataPersistenceManager.Instance.SaveGame();
         }
 
-        // Public function to set the notebook visible
-        public void SetVisible()
+        // Public function to set the notebook either visible or invisible
+        public void SetVisiblityStatus()
         {
-            Notes.gameObject.SetActive(true);
-        }
-
-        // Public function to set the notebook invisible
-        public void SetInvisible()
-        {
-            Notes.gameObject.SetActive(false);
+            SetStatus = !SetStatus; // Invert the status variable
+            Notes.gameObject.SetActive(SetStatus); // Set the status
         }
     }
 }
