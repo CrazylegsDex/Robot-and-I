@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: fef12651a241c7f47869c492cab755be
   - enabled: 1
-    path: Assets/Scenes/Level_0.unity
+    path: Assets/Scenes/PseudoCity/Level_0.unity
     guid: 7732a24b178ef0543bc8074bf2867bce
   - enabled: 1
     path: Assets/Scenes/PseudoCity/PseudoIsland.unity
