@@ -1,4 +1,5 @@
-// This script allows movement for the player in the platformer view
+// This script allows for advanced movement for
+// the player in the platformer view
 //
 // Author: Robot and I Team
 // Last modification date: 11-16-2022
@@ -7,7 +8,7 @@ using UnityEngine;
 
 namespace PlayerControl
 {
-    public class Platformer_Movement : MonoBehaviour
+    public class PS_Level6to8_Bit_Movement : MonoBehaviour
     {
         // Public variables - Inspector View modifiable
         public int maxJumpCount;
@@ -17,12 +18,22 @@ namespace PlayerControl
         public Transform ceilingCheck;
         public Transform groundCheck;
         public LayerMask groundObjects;
+        public Transform buttonCheck;
+        public LayerMask buttonObjects;
+        public Transform boxCheck;
+        public LayerMask boxObjects;
+        public GameObject[] boxTests;
+        public GameObject boxChosen;
+        
 
         // Private variables
         private int jumpCount;
         private float moveDirection;
         private bool isJumping = false;
+        private bool grab = false;
         private bool isGrounded;
+        private bool isOnButton; 
+        private bool nearBox;
         private Rigidbody2D rb;
 
         // Awake is called after all objects are initialized. Called in a random order with the rest.
@@ -56,7 +67,8 @@ namespace PlayerControl
             // Could possibly call right after hit spacebar and before left the ground.
             // Fix the positioning of the "groundCheck" object if having issues
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
-            if (isGrounded)
+            isOnButton = Physics2D.OverlapCircle(buttonCheck.position, checkRadius, buttonObjects);
+            if (isGrounded || isOnButton)
                 jumpCount = maxJumpCount; // Reset the jump count
 
             // Use the player inputs
@@ -69,6 +81,43 @@ namespace PlayerControl
             moveDirection = Input.GetAxis("Horizontal"); // Returns -1 to 1
             if (Input.GetButtonDown("Jump") && jumpCount > 0)
                 isJumping = true;
+            if (!grab) {
+                nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
+            }
+            //checkRadius = .2
+            if (nearBox && Input.GetKeyDown(KeyCode.E) && !grab)
+            {
+
+                boxTests = GameObject.FindGameObjectsWithTag("Box");
+                foreach (GameObject go in boxTests) {
+
+                    float boxPos = Vector3.Distance(transform.position, go.transform.position);
+
+                    //Debug.Log(boxPos / 100);
+                    if (boxPos/100 >= .19 && boxPos / 100 <= 0.25)
+                    {
+
+                    //Transform trans = go.transform;
+                        
+                        //Debug.Log(boxPos/100);
+                        go.transform.parent = boxCheck.parent;
+                        go.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        go.GetComponent<Rigidbody2D>().isKinematic = true;
+                        boxChosen = go;
+                    
+                    //trans.parent = "Bit";
+                    }
+                    grab = true;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                //Debug.Log("E key was pressed.");
+
+                boxChosen.transform.parent = null;
+                boxChosen.GetComponent<Rigidbody2D>().isKinematic = false;
+                grab = false;
+            }
         }
 
         private void moveCharacter()
