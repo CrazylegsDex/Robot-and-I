@@ -385,17 +385,10 @@ namespace LevelBit
                 }
             }
 
-            // if jump button pressed, setup for grounded jump
-            if (firstFixedJump && canJump)
-            {
-                isJumping = true;
-                airTime = maxAirTime;
-                firstFixedJump = false;
-            }
-
             // check if jumping already, if not jumping, ignore
             if (isJumping)
             {
+                canJump = false;
                 // check if any airtime remains
                 if (airTime > 0f)
                 {
@@ -408,7 +401,20 @@ namespace LevelBit
                     isJumping = false;
                 }
             }
+            else
+            {
+                canJump = true;
+            }
+
+            // if jump button pressed, setup for grounded jump
+            if (firstFixedJump && canJump)
+            {
+                isJumping = true;
+                airTime = maxAirTime;
+                firstFixedJump = false;
+            }
         }
+
 
 
         // Air Movement
@@ -455,6 +461,7 @@ namespace LevelBit
             // check if jumping from ground already
             if (isJumping)
             {
+                canJump = false;
                 // check if any airtime remains
                 if (airTime > 0f)
                 {
@@ -473,11 +480,16 @@ namespace LevelBit
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce * 1.2f); // set vertical velocity to jumpForce
                 isAirJumping = false;
             }
+            else
+            {
+                canJump = true;
+            }
 
             // if jump button pressed, setup
-            if (firstFixedJump && canJump)
+            if (firstFixedJump && canJump && (airJumpCount > 0))
             {
                 isAirJumping = true;
+                airJumpCount--;
                 firstFixedJump = false;
             }
 
@@ -491,6 +503,7 @@ namespace LevelBit
             if (hasBonked())
             {
                 isJumping = false;
+                isAirJumping = false;
                 rb.velocity = new Vector2(rb.velocity.x, 0f);
             }
         }
