@@ -24,6 +24,7 @@ namespace CSharpLevels
         public TMP_InputField playerInput;
 
         // Private variables
+        //private int problemNumber;
         private bool displayLog;
 
         /*
@@ -37,6 +38,9 @@ namespace CSharpLevels
             Type runtimeClass;
             MethodInfo runtimeFunction;
             Func<GameObject, MonoBehaviour> runtimeDelegate;
+
+            // Check and modify the player's input before ran
+            string playerText = InputModification(playerInput.text);
 
             // Add the player's code to a template for runtime scripting
             string playerCode = @"
@@ -53,22 +57,184 @@ namespace CSharpLevels
                     return host.AddComponent<RuntimeScript>();
                 }
 
-                // When the script is added to the HostGameObject
-                // and invoked, run the following code
+                // When the script is added to the HostGameObject and invoked, run the following code
                 void Start()
                 {
-                    // Get references to the output text boxes
+                    // Get references to the intput & output text boxes
                     TMP_Text problemStatement = GameObject.Find(""Problem Statement"").GetComponent<TMP_Text>();
-                    print(""problemStatement.text"");
                     TMP_Text programResults = GameObject.Find(""Results"").GetComponent<TMP_Text>();
-                    print(""programResults.text"");
-                    print(""" + playerInput.text + @""");
-                    problemStatement.text = ""Test1"";
-                    programResults.text = ""Correct"";
+                    TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
+
+                    // Test that the user used the variables in his/her code
+                    if (code.text.Contains(""a"") && code.text.Contains(""b"") && code.text.Contains(""result""))
+                    {
+                        // If-Statement to the correct Problem Statement. There are 6 total problems to complete
+                        // Reverse order due to simple if-statements instead of nested if
+                        // Problem 6
+                        if (problemStatement.text.Contains(""integer -33""))
+                        {
+                            // The problem statement is already displayed.
+                            // Create the variables
+                            int a = -1, b = 100, result = 0;
+
+                            // Insert the player's code into the program
+                            " + playerText + @"
+
+                            // Test the value of result
+                            if (result == -33)
+                            {
+                                // Set the input & output boxes
+                                programResults.text = ""Congratulations.\r\nLevel complete"";
+                                GameObject NPC = GameObject.FindWithTag(""LevelChange"");
+                                NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+                            }
+                            else
+                            {
+                                // The value of result is incorrect
+                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                            }
+                        }
+
+                        // Problem 5
+                        if (problemStatement.text.Contains(""integer 1250""))
+                        {
+                            // The problem statement is already displayed.
+                            // Create the variables
+                            int a = 5, b = 10, result = 0;
+
+                            // Insert the player's code into the program
+                            " + playerText + @"
+
+                            // Test the value of result
+                            if (result == 1250)
+                            {
+                                // Set the input & output boxes
+                                programResults.text = ""One more to go"";
+                                problemStatement.text = ""int a = -1, b = 100;\r\nName your variable result, and use a,b to get the resulting integer -33."";
+                                code.text = """";
+                            }
+                            else
+                            {
+                                // The value of result is incorrect
+                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                            }
+                        }
+
+                        // Problem 4
+                        if (problemStatement.text.Contains(""double 1.5""))
+                        {
+                            // The problem statement is already displayed.
+                            // Create the variables
+                            int a = 2;
+                            double b = 3.0, result = 0;
+
+                            // Insert the player's code into the program
+                            " + playerText + @"
+
+                            // Test the value of result
+                            if (result == 1.5)
+                            {
+                                // Set the input & output boxes
+                                programResults.text = ""Correct Again"";
+                                problemStatement.text = ""int a = 5, b = 10;\r\nName your variable result, and use a,b to get the resulting integer 1250."";
+                                code.text = """";
+                            }
+                            else
+                            {
+                                // The value of result is incorrect
+                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                            }
+                        }
+
+                        // Problem 3
+                        if (problemStatement.text.Contains(""integer 1.""))
+                        {
+                            // The problem statement is already displayed.
+                            // Create the variables
+                            int a = 2, b = 3, result = 0;
+
+                            // Insert the player's code into the program
+                            " + playerText + @"
+
+                            // Test the value of result
+                            if (result == 1)
+                            {
+                                // Set the input & output boxes
+                                programResults.text = ""Awesome Work"";
+                                problemStatement.text = ""int a = 2; double b = 3;\r\nName your variable result, and use a,b to get the resulting double 1.5."";
+                                code.text = """";
+                            }
+                            else
+                            {
+                                // The value of result is incorrect
+                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                            }
+                        }
+
+                        // Problem 2
+                        if (problemStatement.text.Contains(""double 0.62""))
+                        {
+                            // The problem statement is already displayed.
+                            // Create the variables
+                            double a = 9.4, b = 7.3, result = 0;
+
+                            // Insert the player's code into the program
+                            " + playerText + @"
+
+                            // Due to precision, round result off
+                            result = Math.Round(result, 2);
+
+                            // Test the value of result
+                            if (result == 0.62)
+                            {
+                                // Set the input & output boxes
+                                programResults.text = ""Great Job"";
+                                problemStatement.text = ""int a = 2, b = 3;\r\nName your variable result, and use a,b to get the resulting integer 1."";
+                                code.text = """";
+                            }
+                            else
+                            {
+                                // The value of result is incorrect
+                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                            }
+                        }
+
+                        // Problem 1
+                        if (problemStatement.text.Contains(""integer 35""))
+                        {
+                            // The problem statement is already displayed.
+                            // Create the variables
+                            int a = 26, b = 59, result = 0;
+
+                            // Insert the player's code into the program
+                            " + playerText + @"
+
+                            // Test the value of result
+                            if (result == 35)
+                            {
+                                // Set the input & output boxes
+                                programResults.text = ""Correct"";
+                                problemStatement.text = ""double a = 9.4, b = 7.3;\r\nName your variable result, and use a,b to get the resulting double 0.62."";
+                                code.text = """";
+                            }
+                            else
+                            {
+                                // The value of result is incorrect
+                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Inform the player they need to use the variables a and b and result in their program
+                        programResults.text = ""Sorry, but you must use the variables a, b and result in your program"";
+                    }
+
+                    // Keep runtime clean and speedy
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
             }";
-
+            
             // Compile the player's code and check for syntax issues
             displayLog = true;
             resultAssembly = CSharpCompile(playerCode);
@@ -146,19 +312,55 @@ namespace CSharpLevels
             {
                 displayLog = false;
                 programOutput.text = ""; // Clear the current output box
-                foreach (CompilerError error in result.Errors)
-                {
-                    if (error.ErrorNumber == "CS1525")
-                        programOutput.text += "Syntax error\n\n";
-                    else
-                        // Use the following if you want error codes along with the error text.
-                        // String.Format("Error ({0}): ({1})", error.ErrorNumber, error.ErrorText)
-                        programOutput.text += error.ErrorText + "\n";
-                }
+
+                // Display only 1 error
+                CompilerErrorCollection error = result.Errors;
+                if (error[0].ErrorNumber == "CS1525")
+                    programOutput.text = "Syntax error";
+                else
+                    programOutput.text = String.Format("Line: {0}\nError: {1}", error[0].Line, error[0].ErrorText);
             }
 
             // Return the assembly
             return result.CompiledAssembly;
+        }
+
+        /*
+         * This function, InputModification, checks and modifies the player's input.
+         * This function will check and remove the "int" or "double" declarations
+         * for the player input.
+         * This is required due to the pre-definition of the variables in the
+         * runtime code string
+         */
+        private string InputModification(string playerCode)
+        {
+            // Create a string for the return
+            string newCode = playerCode;
+
+            // Check for malicious code
+            if (newCode.Contains("GameObject") || newCode.Contains("sleep") ||
+                newCode.Contains("while")      || newCode.Contains("for"))
+            {
+                // Both are required due to Unity issues with display.
+                programOutput.text = @"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.";
+                //throw new Exception(@"I am not running code with that kind of language in it. " +
+                //    "You should consider trying not to overwrite my programming.");
+            }
+
+            // Check if the player typed int result
+            if (newCode.Contains("int result"))
+            {
+                newCode = newCode.Replace("int result", "result");
+            }
+
+            // Check if the player typed double result
+            if (newCode.Contains("double result"))
+            {
+                newCode = newCode.Replace("double result", "result");
+            }
+
+            return newCode;
         }
 
         /*
