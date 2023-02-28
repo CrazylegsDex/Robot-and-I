@@ -4,7 +4,7 @@
  * the player to create variables and add, subtract,
  * divide, multiply and modulus.
  * 
- * Date: 02/23/2023
+ * Date: 02/25/2023
  * Author: Robot and I Team
  */
 
@@ -69,7 +69,8 @@ namespace CSharpLevels
                     if (code.text.Contains(""a"") && code.text.Contains(""b"") && code.text.Contains(""result""))
                     {
                         // If-Statement to the correct Problem Statement. There are 6 total problems to complete
-                        // Reverse order due to simple if-statements instead of nested if
+                        // Reverse order due to changing to next if statement upon completion of previous.
+                        // Causes multiple if-statements to run if done linearly
                         // Problem 6
                         if (problemStatement.text.Contains(""integer -33""))
                         {
@@ -342,10 +343,8 @@ namespace CSharpLevels
                 newCode.Contains("while")      || newCode.Contains("for"))
             {
                 // Both are required due to Unity issues with display.
-                programOutput.text = @"I am not running code with that kind of language in it. " +
-                    "You should consider trying not to overwrite my programming.";
-                //throw new Exception(@"I am not running code with that kind of language in it. " +
-                //    "You should consider trying not to overwrite my programming.");
+                programOutput.text = @"I am not running code with that kind of language in it.";
+                throw new Exception(@"I am not running code with that kind of language in it.");
             }
 
             // Check if the player typed int result
