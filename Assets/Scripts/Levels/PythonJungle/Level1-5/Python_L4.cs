@@ -89,14 +89,14 @@ def main():
 def main():
 	correct = 0
 	eggs = 5
-	bitch = " + codeInput4.text + @"
-	cunt = " + codeInput5.text + @"
-	whore = " + codeInput6.text + @"
-	if(bitch == 1):
+	Bub = " + codeInput4.text + @"
+	Rango = " + codeInput5.text + @"
+	Loki = " + codeInput6.text + @"
+	if(Bub == 1):
 		correct = correct + 1
-	if(cunt == 1):
+	if(Rango == 1):
 		correct = correct + 1
-	if(whore == 0):
+	if(Loki == 0):
 		correct = correct + 1
 	if(correct == 3):
 		print(""Congratulations"")

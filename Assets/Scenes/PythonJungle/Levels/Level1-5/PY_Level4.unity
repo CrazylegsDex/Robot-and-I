@@ -1179,11 +1179,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'eggs = ???
 
-    bitch =
+    Bub =
 
-    cunt =
+    Rango =
 
-    whore = '
+    Loki = '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1798,12 +1798,12 @@ MonoBehaviour:
     eggs to to each snake.
 
 
-    My snake bitch only eats eggs larger than 5 in
+    My snake Bub only eats eggs larger than 5 in
 
     My
-    snake cunt will eat any egg that is not 3 in
+    snake Rango will eat any egg that is not 3 in
 
-    My snake whore only eats eggs
+    My snake Loki only eats eggs
     smaller than 2 in'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2685,8 +2685,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -112.721, y: 32}
-  m_SizeDelta: {x: 101.53, y: 7.849}
+  m_AnchoredPosition: {x: -107.086, y: 32}
+  m_SizeDelta: {x: 95.895, y: 7.849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466915412
 MonoBehaviour:
@@ -5290,8 +5290,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -109.25598, y: 13}
-  m_SizeDelta: {x: 98.065, y: 7.849}
+  m_AnchoredPosition: {x: -116.3, y: 13}
+  m_SizeDelta: {x: 105.109, y: 7.849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204601675
 MonoBehaviour:

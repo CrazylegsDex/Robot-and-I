@@ -56,7 +56,7 @@ def main():
 		correct = correct + 1
 	else:
 		print(""windows = incorrect"")
-	if(woodNeeded == 80):
+	if(woodNeeded == 32):
 		correct = correct + 1
 	else:
 		print(""woodNeeded = incorrect"")
