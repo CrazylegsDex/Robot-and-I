@@ -9,7 +9,7 @@ using TMPro;
 
 namespace PseudoLevels
 {
-    public class Pseudo_L7 : MonoBehaviour
+    public class Pseudo_L9 : MonoBehaviour
     {
         public TMP_InputField aInput; // References the User's Input Field
         public TMP_InputField bInput;
@@ -26,7 +26,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        private bool codeComp;
+        //private bool codeComp;
 
         public GameObject wall;
         public GameObject bit;
@@ -34,13 +34,19 @@ namespace PseudoLevels
         float camx, camy, camz;
 
         public GameObject[] boxTests;
+        public GameObject[] hairTests;
         private Button_Check button_Check;
         private bool button1;
         private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
-            codeComp = false;
+            hairTests = GameObject.FindGameObjectsWithTag("Box");
+            foreach (GameObject go in hairTests)//serches for "Box" objects
+            {
+                go.SetActive(false);
+            }
+            //codeComp = false;
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;
@@ -50,15 +56,6 @@ namespace PseudoLevels
         }
         void Update()
         {
-            /*if (codeComp)
-            {
-                boxTests = GameObject.FindGameObjectsWithTag("Box");
-                foreach (GameObject go in boxTests)//Searches for Gameobject with "Box" tag
-                {
-                    if (go.name.Contains("Box"))
-                        go.SetActive(true);
-                }
-            }*/
             cam.transform.position = new Vector3(camx + 485, camy, camz);//moves camera to new section
             //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
@@ -122,13 +119,20 @@ namespace PseudoLevels
             int a, b, c, d;//Input values
             int x, y;
             a = b = c = d = 0;
+            x = 5;
 
             bool safe = true;//goes false if the input in the try blocks is invalid
-            if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(aInput.text)) && !(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {// Save Text from input field into user input
                     a = int.Parse(aInput.text);//tests for only integers
+                    if (bInput.text != "x")
+                    {
+                        b = int.Parse(bInput.text);//tests for only integers
+                    }
+                    else if (bInput.text == "x")
+                        b = x;
                 }
                 catch (Exception)//activates when the input is invalid
                 {
@@ -138,7 +142,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (a <= 5 && a >= 1)
+                    if (a == 6 && b == 5)
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
@@ -153,49 +157,25 @@ namespace PseudoLevels
                 }
             }
             //B
-            int b2, b3, b4;
-            b2 = b3 = b4 = 0;
-            x = 5;
+            int b2; 
+            int b3;
+            
+            
+            b2 = b3 = 0;
             y = 7;
             safe = true;//resets safe for next input
-            if (!(String.IsNullOrEmpty(bInput.text)) && !(String.IsNullOrEmpty(b2Input.text)) &&
-                !(String.IsNullOrEmpty(b3Input.text)) && !(String.IsNullOrEmpty(b4Input.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(b2Input.text)) &&
+                !(String.IsNullOrEmpty(b3Input.text)) )//Checks if values were inputed skips if no value
             {
 
                 try
                 {
-                    if (bInput.text != "x" || bInput.text != "y")
-                    {
-                        b = int.Parse(bInput.text);//tests for only integers
-                    }
-                    else if (bInput.text == "x")
-                        b = x;
-                    else
-                        b = y;
-                    if (b2Input.text != "x" || b2Input.text != "y")
-                    {
-                        b2 = int.Parse(b2Input.text);
-                    }
-                    else if (bInput.text == "x")
-                        b2 = x;
-                    else
-                        b2 = y;
-                    if (b3Input.text != "x" || b3Input.text != "y")
-                    {
-                        b3 = int.Parse(b3Input.text);
-                    }
-                    else if (bInput.text == "x")
-                        b3 = x;
-                    else
-                        b3 = y;
-                    if (b4Input.text != "x" || b4Input.text != "y")
-                    {
-                        b4 = int.Parse(b4Input.text);
-                    }
-                    else if (b4Input.text == "x")
-                        b4 = x;
-                    else
-                        b4 = y;
+                    b2 = int.Parse(b2Input.text);
+                    
+                    if (b3Input.text != "y")
+                        b3 = int.Parse("w");
+                    y = b2;
+                    
                 }
                 catch (Exception)
                 {
@@ -205,9 +185,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    x = b;
-                    y = b2;
-                    if (x >= b3 && x < 5 && y >= 5 &&y < b4)
+                    if (b2 == 1 && y == b2)
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -222,12 +200,19 @@ namespace PseudoLevels
                 }
             }
             //C
+            int b4;
+            b4 = 0;
             safe = true;
-            if (!(String.IsNullOrEmpty(cInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(b4Input.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {
                     c = int.Parse(cInput.text);//tests for only integers
+                    if (b4Input.text !="break")
+                    {
+                        b4 = int.Parse("q");
+                    }
+                    
                 }
                 catch (Exception)
                 {
@@ -237,7 +222,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (c == 4)
+                    if (c == 5)
                     {
                         cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         cOutput.text = "Correct!";
@@ -259,34 +244,25 @@ namespace PseudoLevels
                 !(String.IsNullOrEmpty(d3Input.text)))//Checks if values were inputed skips if no value
             {
                 int d2, d3;
-                d2 = d3 = 0;
+                d = d2 = d3 = 0;
                 try
                 {
-                    if (dInput.text != "x" || dInput.text != "y")
+                    if (dInput.text != "switch")
                     {
-                        d = int.Parse(dInput.text);//tests for only integers
+                        d = int.Parse("q");//tests for only integers
                     }
-                    else if (dInput.text == "x")
-                        d = x;
-                    else
-                        d = y;
-                    if (d2Input.text != "x" || d2Input.text != "y")
-                    {
-                        d2 = int.Parse(d2Input.text);
-                    }
-                    else if (d2Input.text == "x")
-                        d2 = x;
-                    else
-                        d2 = y;
-                    if (d3Input.text != "x" || d3Input.text != "y")
-                    {
-                        d3 = int.Parse(d3Input.text);
-                    }
-                    else if (d3Input.text == "x")
-                        d3 = x;
-                    else
-                        d3 = y;
                     
+                    if (d2Input.text != "yes")
+                    {
+                        d2 = 3;
+                    }
+                    
+                    if (d3Input.text != "break")
+                    {
+                        d3 = int.Parse("q");
+                    }
+                    
+
                 }
                 catch (Exception)
                 {
@@ -296,16 +272,14 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if(y < d2)
-                    {
-                        y += 5;
-                    }
-                    
-                    if (x <= d && y == d3)
+
+
+                    if (d == d2 && d2 == d3)
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
                         num++;
+                        //Debug.Log(num);
                     }
                     else
                     {
@@ -316,12 +290,15 @@ namespace PseudoLevels
 
                 }
             }
-
+            //Debug.Log(num);
             if (num == 4)
             {
-                //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                //wall.SetActive(true);
-                codeComp = true;  
+                Debug.Log("Works!");
+                //hairTests = GameObject.FindGameObjectsWithTag("Box");
+                foreach (GameObject go in hairTests)//serches for "Box" objects
+                {
+                    go.SetActive(true);
+                }
             }
 
 
