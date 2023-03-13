@@ -1,10 +1,11 @@
 /*
- * This class uses the MonoCSharp Code Compiler to
- * check math input operations. This level will allow
- * the player to create variables and add, subtract,
- * divide, multiply and modulus.
+ * This class uses the MonoCSharp Code Compiler
+ * to check boolean truth values. This level
+ * will allow the player to use the &&, ||,
+ * and ^ operators and check those outputs with
+ * the desired output.
  * 
- * Date: 02/25/2023
+ * Date: 03/09/2023
  * Author: Robot and I Team
  */
 
@@ -17,19 +18,18 @@ using TMPro;
 
 namespace CSharpLevels
 {
-    public class CSharp_L3 : MonoBehaviour
+    public class CSharp_L5 : MonoBehaviour
     {
         // Public variables
         public TextMeshProUGUI programOutput;
         public TMP_InputField playerInput;
 
         // Private variables
-        //private int problemNumber;
         private bool displayLog;
 
         /*
          * This function drives the entire program. This function
-         * is ran when the user clicks Check Code.
+         * is ran when the user clicks Go Fish.
          */
         public void MainDriver()
         {
@@ -61,181 +61,274 @@ namespace CSharpLevels
                 void Start()
                 {
                     // Get references to the input & output text boxes
-                    TMP_Text problemStatement = GameObject.Find(""Problem Statement"").GetComponent<TMP_Text>();
-                    TMP_Text programResults = GameObject.Find(""Results"").GetComponent<TMP_Text>();
+                    TMP_Text problemStatement = GameObject.Find(""Restrictions"").GetComponent<TMP_Text>();
+                    TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
+                    // Get Transforms of the fish
+                    Transform Fish1 = GameObject.Find(""Fish1"").transform;
+                    Transform Fish2 = GameObject.Find(""Fish2"").transform;
+                    Transform Fish3 = GameObject.Find(""Fish3"").transform;
+                    Transform Fish4 = GameObject.Find(""Fish4"").transform;
+
                     // Test that the user used the variables in his/her code
-                    if (code.text.Contains(""a"") && code.text.Contains(""b"") && code.text.Contains(""result""))
+                    if ((code.text.Contains(""Pond1"") ||
+                        code.text.Contains(""Pond2"")  ||
+                        code.text.Contains(""Pond3"")  ||
+                        code.text.Contains(""Pond4"")) &&
+                        code.text.Contains(""GotEm""))
                     {
                         // If-Statement to the correct Problem Statement. There are 6 total problems to complete
                         // Reverse order due to changing to next if statement upon completion of previous.
                         // Causes multiple if-statements to run if done linearly
                         // Problem 6
-                        if (problemStatement.text.Contains(""integer -33""))
+                        if (problemStatement.text.Contains(""Logical ^ Operator""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            int a = -1, b = 100, result = 0;
+                            bool GotEm = false, Pond1 = false, Pond2 = false, Pond3 = false, Pond4 = false;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
                             // Test the value of result
-                            if (result == -33)
+                            if (GotEm)
                             {
-                                // Set the input & output boxes
-                                programResults.text = ""Congratulations.\r\nLevel complete"";
-                                GameObject NPC = GameObject.FindWithTag(""LevelChange"");
-                                NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+                                // Test that the operator used is valid
+                                if (code.text.Contains(""^""))
+                                {
+                                    // Set the input & output boxes
+                                    output.text = ""Epic Job!\r\nWell Done Bit!"";
+                                    GameObject NPC = GameObject.FindWithTag(""LevelChange"");
+                                    NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+                                    code.text = ""bool Bit_Is_Awesome = true;"";
+
+                                    // Set the Fish z-axis. (greater than 0 is invisible)
+                                    Fish1.position = new Vector3(997, 489, 0);  // Invisible
+                                    Fish2.position = new Vector3(1081, 489, 0); // Invisible
+                                    Fish3.position = new Vector3(1151, 489, 0); // Invisible
+                                    Fish4.position = new Vector3(1236, 489, 0); // Invisible
+                                }
+                                else
+                                {
+                                    // Display an appropriate message to the user
+                                    output.text = ""You must use \""^\"" for this problem.\r\nPlease try again."";
+                                }
                             }
                             else
                             {
-                                // The value of result is incorrect
-                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                                // The value of GotEm is incorrect
+                                output.text = ""The value of GotEm is not true."";
                             }
                         }
 
                         // Problem 5
-                        if (problemStatement.text.Contains(""integer 1250""))
+                        if (problemStatement.text.Contains(""Logical || Operator""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            int a = 5, b = 10, result = 0;
+                            bool GotEm = false, Pond1 = true, Pond2 = true, Pond3 = true, Pond4 = true;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
-                            // Test the value of result
-                            if (result == 1250)
+                            // Test the value of GotEm
+                            if (GotEm)
                             {
-                                // Set the input & output boxes
-                                programResults.text = ""One more to go"";
-                                problemStatement.text = ""int a = -1, b = 100;\r\nName your variable result, and use a,b to get the resulting integer -33."";
-                                code.text = """";
+                                // Test that the operator used is valid
+                                if (code.text.Contains(""||""))
+                                {
+                                    // Set the input & output boxes
+                                    output.text = ""Great Work!"";
+                                    problemStatement.text = ""For this problem, use the Logical ^ Operator."";
+                                    code.text = """";
+
+                                    // Set the Fish z-axis. (greater than 0 is invisible)
+                                    Fish1.position = new Vector3(997, 489, 1);  // Invisible
+                                    Fish2.position = new Vector3(1081, 489, 1); // Invisible
+                                    Fish3.position = new Vector3(1151, 489, 1); // Invisible
+                                    Fish4.position = new Vector3(1236, 489, 1); // Invisible
+                                }
+                                else
+                                {
+                                    // Display an appropriate message to the user
+                                    output.text = ""You must use \""||\"" for this problem.\r\nPlease try again."";
+                                }
                             }
                             else
                             {
-                                // The value of result is incorrect
-                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                                // The value of GotEm is incorrect
+                                output.text = ""The value of GotEm is not true."";
                             }
                         }
 
                         // Problem 4
-                        if (problemStatement.text.Contains(""double 1.5""))
+                        if (problemStatement.text.Contains(""Logical && Operator""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            int a = 2;
-                            double b = 3.0, result = 0;
+                            bool GotEm = false, Pond1 = true, Pond2 = false, Pond3 = false, Pond4 = false;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
-                            // Test the value of result
-                            if (result == 1.5)
+                            // Test the value of GotEm
+                            if (GotEm)
                             {
-                                // Set the input & output boxes
-                                programResults.text = ""Correct Again"";
-                                problemStatement.text = ""int a = 5, b = 10;\r\nName your variable result, and use a,b to get the resulting integer 1250."";
-                                code.text = """";
+                                // Test that the operator used is valid
+                                if (code.text.Contains(""&&""))
+                                {
+                                    // Set the input & output boxes
+                                    output.text = ""010101110110111101110111\r\nTranslating. . .\r\nWow"";
+                                    problemStatement.text = ""For this problem, use the Logical || Operator."";
+                                    code.text = """";
+
+                                    // Set the Fish z-axis. (greater than 0 is invisible)
+                                    Fish2.position = new Vector3(1081, 489, 0); // Visible
+                                    Fish3.position = new Vector3(1151, 489, 0); // Visible
+                                    Fish4.position = new Vector3(1236, 489, 0); // Visible
+                                }
+                                else
+                                {
+                                    // Display an appropriate message to the user
+                                    output.text = ""You must use \""&&\"" for this problem.\r\nPlease try again."";
+                                }
                             }
                             else
                             {
-                                // The value of result is incorrect
-                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                                // The value of GotEm is incorrect
+                                output.text = ""The value of GotEm is not true."";
                             }
                         }
 
                         // Problem 3
-                        if (problemStatement.text.Contains(""integer 1.""))
+                        if (problemStatement.text.Contains(""logical ^ operator""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            int a = 2, b = 3, result = 0;
+                            bool GotEm = false, Pond1 = false, Pond2 = true, Pond3 = true, Pond4 = true;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
-                            // Test the value of result
-                            if (result == 1)
+                            // Test the value of GotEm
+                            if (GotEm)
                             {
-                                // Set the input & output boxes
-                                programResults.text = ""Awesome Work"";
-                                problemStatement.text = ""int a = 2; double b = 3;\r\nName your variable result, and use a,b to get the resulting double 1.5."";
-                                code.text = """";
+                                // Test that the operator used is valid
+                                if (code.text.Contains(""^""))
+                                {
+                                    // Set the input & output boxes
+                                    output.text = ""Awesome!"";
+                                    problemStatement.text = ""For this problem, use the Logical && Operator."";
+                                    code.text = """";
+
+                                    // Set the Fish z-axis. (greater than 0 is invisible)
+                                    Fish1.position = new Vector3(997, 489, 0);  // Visible
+                                    Fish2.position = new Vector3(1081, 489, 1); // Invisible
+                                    Fish3.position = new Vector3(1151, 489, 1); // Invisible
+                                    Fish4.position = new Vector3(1236, 489, 1); // Invisible
+                                }
+                                else
+                                {
+                                    // Display an appropriate message to the user
+                                    output.text = ""You must use \""^\"" for this problem.\r\nPlease try again."";
+                                }
                             }
                             else
                             {
-                                // The value of result is incorrect
-                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                                // The value of GotEm is incorrect
+                                output.text = ""The value of GotEm is not true."";
                             }
                         }
 
                         // Problem 2
-                        if (problemStatement.text.Contains(""double 0.62""))
+                        if (problemStatement.text.Contains(""logical || operator""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            double a = 9.4, b = 7.3, result = 0;
+                            bool GotEm = false, Pond1 = false, Pond2 = false, Pond3 = true, Pond4 = false;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
-                            // Due to precision, round result off
-                            result = Math.Round(result, 2);
-
-                            // Test the value of result
-                            if (result == 0.62)
+                            // Test the value of GotEm
+                            if (GotEm)
                             {
-                                // Set the input & output boxes
-                                programResults.text = ""Great Job"";
-                                problemStatement.text = ""int a = 2, b = 3;\r\nName your variable result, and use a,b to get the resulting integer 1."";
-                                code.text = """";
+                                // Test that the operator used is valid
+                                if (code.text.Contains(""||""))
+                                {
+                                    // Set the input & output boxes
+                                    output.text = ""Congratulations!"";
+                                    problemStatement.text = ""For this problem, use the logical ^ operator."";
+                                    code.text = """";
+
+                                    // Set the Fish z-axis. (greater than 0 is invisible)
+                                    Fish2.position = new Vector3(1081, 489, 0); // Visible
+                                    Fish4.position = new Vector3(1236, 489, 0); // Visible
+                                }
+                                else
+                                {
+                                    // Display an appropriate message to the user
+                                    output.text = ""You must use \""||\"" for this problem.\r\nPlease try again."";
+                                }
                             }
                             else
                             {
-                                // The value of result is incorrect
-                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                                // The value of GotEm is incorrect
+                                output.text = ""The value of GotEm is not true."";
                             }
                         }
 
                         // Problem 1
-                        if (problemStatement.text.Contains(""integer 35""))
+                        if (problemStatement.text.Contains(""logical && operator""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            int a = 26, b = 59, result = 0;
+                            bool GotEm = false, Pond1 = true, Pond2 = false, Pond3 = false, Pond4 = true;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
-                            // Test the value of result
-                            if (result == 35)
+                            // Test the value of GotEm
+                            if (GotEm)
                             {
-                                // Set the input & output boxes
-                                programResults.text = ""Correct"";
-                                problemStatement.text = ""double a = 9.4, b = 7.3;\r\nName your variable result, and use a,b to get the resulting double 0.62."";
-                                code.text = """";
+                                // Test that the operator used is valid
+                                if (code.text.Contains(""&&""))
+                                {
+                                    // Set the input & output boxes
+                                    output.text = ""Good Job Bit!"";
+                                    problemStatement.text = ""For this problem, use the logical || operator."";
+                                    code.text = """";
+
+                                    // Set the Fish z-axis. (greater than 0 is invisible)
+                                    Fish1.position = new Vector3(997, 489, 1);  // Invisible
+                                    Fish4.position = new Vector3(1236, 489, 1); // Invisible
+                                    Fish3.position = new Vector3(1151, 489, 0); // Visible
+                                }
+                                else
+                                {
+                                    // Display an appropriate message to the user
+                                    output.text = ""You must use \""&&\"" for this problem.\r\nPlease try again."";
+                                }
                             }
                             else
                             {
-                                // The value of result is incorrect
-                                programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+                                // The value of GotEm is incorrect
+                                output.text = ""The value of GotEm is not true."";
                             }
                         }
                     }
                     else
                     {
-                        // Inform the player they need to use the variables a and b and result in their program
-                        programResults.text = ""Sorry, but you must use the variables a, b and result in your program"";
+                        // Inform the player they need to use the variables PondX and GotEm in their program
+                        output.text = ""Sorry, but you must use the variables PondX (where X is 1-4) and GotEm in your program"";
                     }
 
                     // Keep runtime clean and speedy
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
             }";
-            
+
             // Compile the player's code and check for syntax issues
             displayLog = true;
             resultAssembly = CSharpCompile(playerCode);
@@ -328,7 +421,7 @@ namespace CSharpLevels
 
         /*
          * This function, InputModification, checks and modifies the player's input.
-         * This function will check and remove the "int" or "double" declarations
+         * This function will check and remove the "bool" declarations
          * for the player input.
          * This is required due to the pre-definition of the variables in the
          * runtime code string
@@ -340,23 +433,19 @@ namespace CSharpLevels
 
             // Check for malicious code
             if (newCode.Contains("GameObject") || newCode.Contains("sleep") ||
-                newCode.Contains("while")      || newCode.Contains("for"))
+                newCode.Contains("while") || newCode.Contains("for"))
             {
                 // Both are required due to Unity issues with display.
-                programOutput.text = @"I am not running code with that kind of language in it.";
-                throw new Exception(@"I am not running code with that kind of language in it.");
+                programOutput.text = @"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.";
+                throw new Exception(@"I am not running code with that kind of language in it. " +
+                    "You should consider trying not to overwrite my programming.");
             }
 
-            // Check if the player typed int result
-            if (newCode.Contains("int result"))
+            // Check if the player typed bool result
+            if (newCode.Contains("bool GotEm"))
             {
-                newCode = newCode.Replace("int result", "result");
-            }
-
-            // Check if the player typed double result
-            if (newCode.Contains("double result"))
-            {
-                newCode = newCode.Replace("double result", "result");
+                newCode = newCode.Replace("bool GotEm", "GotEm");
             }
 
             return newCode;

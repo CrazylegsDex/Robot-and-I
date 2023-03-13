@@ -60,7 +60,7 @@ namespace CSharpLevels
                 // When the script is added to the HostGameObject and invoked, run the following code
                 void Start()
                 {
-                    // Get references to the intput & output text boxes
+                    // Get references to the input & output text boxes
                     TMP_Text problemStatement = GameObject.Find(""Problem Statement"").GetComponent<TMP_Text>();
                     TMP_Text result = GameObject.Find(""Result"").GetComponent<TMP_Text>();
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
