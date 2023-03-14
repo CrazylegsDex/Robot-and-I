@@ -51,6 +51,8 @@ namespace PseudoLevels
                 complete = true;
                 
             }
+            else
+                complete = false;
         }
     }
 }

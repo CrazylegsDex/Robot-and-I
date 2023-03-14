@@ -3733,7 +3733,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.9, y: 83}
+  m_AnchoredPosition: {x: 5.2, y: 82.843}
   m_SizeDelta: {x: 37.453, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483863054
@@ -5983,9 +5983,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B.\nx = 6\nif(x % 2 ==                 )\n    print(3)\n    if(x %2 ==                
-    )\n        print(4)\n    else\n        x-= \n        output(6)\n\nif(x ==                 
-    )\n    print(x)\n\noutput: 65"
+  m_text: "B.\nx = 6\nif(x % 2 ==                 )\n    output(3)\nif(x %2 ==                
+    )\n    output(4)\nelse\n    x-= \n        output(6)\n\nif(x ==                 
+    )\n    output(x)\n\noutput: 65"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10735,7 +10735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.7, y: 58.2}
+  m_AnchoredPosition: {x: -12, y: 56.4}
   m_SizeDelta: {x: 37.453, y: 13.5568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861580401

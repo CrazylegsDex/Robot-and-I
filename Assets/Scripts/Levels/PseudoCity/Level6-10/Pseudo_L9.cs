@@ -119,7 +119,7 @@ namespace PseudoLevels
             int a, b, c, d;//Input values
             int x, y;
             a = b = c = d = 0;
-            x = 5;
+            x = 6;
 
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)) && !(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
@@ -142,7 +142,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (a == 6 && b == 5)
+                    if (a == 6 && b == 6)
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
