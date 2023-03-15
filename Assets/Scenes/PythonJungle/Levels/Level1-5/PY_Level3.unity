@@ -717,13 +717,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 145266310}
+  - component: {fileID: 145266312}
   - component: {fileID: 145266308}
   - component: {fileID: 145266307}
   - component: {fileID: 145266306}
   - component: {fileID: 145266305}
   - component: {fileID: 145266304}
   - component: {fileID: 145266311}
-  - component: {fileID: 145266312}
   m_Layer: 0
   m_Name: ScriptController
   m_TagString: GameController
