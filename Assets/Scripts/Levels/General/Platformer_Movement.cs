@@ -2,7 +2,7 @@
 //
 // Author: Robot and I Team
 // Last modification date: 11-16-2022
-
+using System;
 using UnityEngine;
 
 namespace PlayerControl
@@ -34,6 +34,7 @@ namespace PlayerControl
         private bool isOnButton; 
         private bool nearBox;
         private Rigidbody2D rb;
+        private bool safe = true;
 
         // Awake is called after all objects are initialized. Called in a random order with the rest.
         private void Awake()
@@ -84,38 +85,48 @@ namespace PlayerControl
                 nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
             }
             //checkRadius = .2
-            if (nearBox && Input.GetKeyDown(KeyCode.E) && !grab)
+            try//incase there are no boxes in the level
             {
-
                 boxTests = GameObject.FindGameObjectsWithTag("Box");
-                foreach (GameObject go in boxTests) {
+            }
+            catch (Exception)
+            {
+                safe = false;
+            }
+            if (safe)
+            {
+                if (nearBox && Input.GetKeyDown(KeyCode.E) && !grab)
+                {
 
-                    float boxPos = Vector3.Distance(transform.position, go.transform.position);
 
-                    //Debug.Log(boxPos / 100);
-                    if (boxPos/100 >= .19 && boxPos / 100 <= 0.25)
+                    foreach (GameObject go in boxTests)
                     {
 
-                    //Transform trans = go.transform;
-                        
-                        //Debug.Log(boxPos/100);
-                        go.transform.parent = boxCheck.parent;
-                        go.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                        go.GetComponent<Rigidbody2D>().isKinematic = true;
-                        boxChosen = go;
-                    
-                    //trans.parent = "Bit";
-                    }
-                    grab = true;
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                //Debug.Log("E key was pressed.");
+                        float boxPos = Vector3.Distance(transform.position, go.transform.position);
 
-                boxChosen.transform.parent = null;
-                boxChosen.GetComponent<Rigidbody2D>().isKinematic = false;
-                grab = false;
+                        //Debug.Log(boxPos / 100);
+                        if (boxPos / 100 >= .19 && boxPos / 100 <= 0.25)
+                        {
+
+                            go.transform.parent = boxCheck.parent;
+                            go.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                            ///added below
+                            go.transform.position = new Vector3(boxCheck.transform.position.x + 6, boxCheck.transform.position.y, boxCheck.transform.position.z);
+                            //added above line to fix physics issue
+                            go.GetComponent<Rigidbody2D>().isKinematic = true;
+                            boxChosen = go;
+                        }
+                        grab = true;
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //Debug.Log("E key was pressed.");
+
+                    boxChosen.transform.parent = null;
+                    boxChosen.GetComponent<Rigidbody2D>().isKinematic = false;
+                    grab = false;
+                }
             }
         }
 

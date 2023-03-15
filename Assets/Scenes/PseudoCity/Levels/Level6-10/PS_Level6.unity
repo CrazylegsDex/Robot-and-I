@@ -2526,9 +2526,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B.\nx = 5\ny = 7\nif(x ==                 && y == 7)\n    print(3)\nif(x
-    < 4 && y <                   )\n    print(4)\nif(x <                   || y ==
-    7)\n    print(5)\nif(x == || y <                      )\n    print(6)\n\noutput:
+  m_text: "B.\nx = 5\ny = 7\nif(x ==                 && y == 7)\n    output(3)\nif(x
+    < 4 && y <                   )\n    output(4)\nif(x <                   || y
+    == 7)\n    output(5)\nif(x == || y <                      )\n    output(6)\n\noutput:
     356"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5036,7 +5036,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "D.   \t\t\nx = 8\ny = 3\nif(x !=                 && y < 7)\n    x/=2\nif(x
     < 4 || y >                   )\n    y-=1\nif(x <                   || y == 7)\n   
-    y*=2\n    x/=2\nif(x == 4 || y ==                      )\n    print(x*y)\noutput:
+    y*=2\n    x/=2\nif(x == 4 || y ==                      )\n    output(x*y)\noutput:
     16"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

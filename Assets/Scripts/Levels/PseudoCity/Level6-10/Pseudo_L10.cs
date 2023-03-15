@@ -9,23 +9,22 @@ using TMPro;
 
 namespace PseudoLevels
 {
-    public class Pseudo_L8 : MonoBehaviour
+    public class Pseudo_L10 : MonoBehaviour
     {
         public TMP_InputField aInput; // References the User's Input Field
         public TMP_InputField bInput;
         public TMP_InputField b2Input;
-        public TMP_InputField b3Input;
-        public TMP_InputField b4Input;
+        public TMP_InputField c2Input;
         public TMP_InputField cInput;
         public TMP_InputField dInput;
-        public TMP_InputField d2Input;
-        public TMP_InputField d3Input;
-        public TMP_InputField d4Input;
+
 
         public TextMeshProUGUI aOutput; // References the TMP Output Field
         public TextMeshProUGUI bOutput;
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
+
+        int[] road = new int[10];
 
         public GameObject wall;
         public GameObject bit;
@@ -33,14 +32,19 @@ namespace PseudoLevels
         float camx, camy, camz;
 
         public GameObject[] boxTests;
-        public GameObject hoseTest;
-        public GameObject[] hoseTests;
+        public GameObject[] hairTests;
         private Button_Check button_Check;
         private bool button1;
         private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
+            hairTests = GameObject.FindGameObjectsWithTag("Box");
+            foreach (GameObject go in hairTests)//serches for "Box" objects
+            {
+                go.SetActive(false);
+            }
+            //codeComp = false;
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;
@@ -50,48 +54,69 @@ namespace PseudoLevels
         }
         void Update()
         {
-            cam.transform.position = new Vector3(camx + 485, camy, camz);
+            cam.transform.position = new Vector3(camx + 485, camy, camz);//moves camera to new section
             //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
-                //Debug.Log("Works!");
-
-                cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
+                cam.transform.position = new Vector3(camx + 505, camy, camz);
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
-                
-                if (Input.GetKeyDown(KeyCode.E) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true)
-                {
-                    
-                    for(int i = 0; i < hoseTest.transform.childCount; i++)
-                    {
-                        Transform water = hoseTest.transform.GetChild(i);
-                        water.gameObject.SetActive(true);
-                    }
-                }
-                else if(Input.GetKeyDown(KeyCode.E)) {
-                    for (int i = 0; i < hoseTest.transform.childCount; i++)
-                    {
-                        Transform water = hoseTest.transform.GetChild(i);
-                        water.gameObject.SetActive(false);
-                    }
-                }
                 foreach (GameObject go in boxTests)//serches for "Button" objects
                 {
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                       
+                        if (button_Check.complete)
                         {
-
-                            if (button_Check.complete)
+                            var goRenderer = go.GetComponent<Renderer>();
+                            goRenderer.material.SetColor("_Color", Color.gray);
+                            if (go.name.Contains("(0)"))
                             {
-                                button1 = true;
-                                //Debug.Log(" 1 Works!");
+                                road[0] = 1;
                             }
-                            else
-                                button1 = false;
+                            if (go.name.Contains("(1)"))
+                            {
+                                road[1] = 1;
+                            }
+                            else if (go.name.Contains("(2)"))
+                            {
+                                road[2] = 1;
+                            }
+                            else if (go.name.Contains("(3)"))
+                            {
+                                road[3] = 1;
+                            }
+                            else if (go.name.Contains("(4)"))
+                            {
+                                road[4] = 1;
+                            }
+                            else if (go.name.Contains("(5)"))
+                            {
+                                road[5] = 1;
+                            }
+                            else if (go.name.Contains("(6)"))
+                            {
+                                road[6] = 1;
+                            }
+                            else if (go.name.Contains("(7)"))
+                            {
+                                road[7] = 1;
+                            }
+                            else if (go.name.Contains("(8)"))
+                            {
+                                road[8] = 1;
+                            }
+                            else if (go.name.Contains("(9)"))
+                            {
+                                road[9] = 1;
+                            }
                         }
-                        if (button1)
+                        string roadCount = "";
+                        for (int i = 0; i < 10; i++)
+                        {
+                            roadCount += road[i];
+                        }
+                        if (roadCount == "1111111111")
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
@@ -121,6 +146,7 @@ namespace PseudoLevels
             int a, b, c, d;//Input values
             int x, y;
             a = b = c = d = 0;
+            x = 5;
 
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
@@ -128,6 +154,7 @@ namespace PseudoLevels
                 try
                 {// Save Text from input field into user input
                     a = int.Parse(aInput.text);//tests for only integers
+                    
                 }
                 catch (Exception)//activates when the input is invalid
                 {
@@ -137,7 +164,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (a == 6)
+                    if (a == 1234)
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
@@ -152,49 +179,28 @@ namespace PseudoLevels
                 }
             }
             //B
-            int b2, b3, b4;
-            b2 = b3 = b4 = 0;
-            x = 5;
-            y = 7;
+            int b2;
+
+
+            b2 = 0;
+            y = 9;
             safe = true;//resets safe for next input
-            if (!(String.IsNullOrEmpty(bInput.text)) && !(String.IsNullOrEmpty(b2Input.text)) &&
-                !(String.IsNullOrEmpty(b3Input.text)) && !(String.IsNullOrEmpty(b4Input.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(bInput.text)) &&
+                !(String.IsNullOrEmpty(b2Input.text)))//Checks if values were inputed skips if no value
             {
 
                 try
                 {
-                    if (bInput.text != "x" || bInput.text != "y")
-                    {
-                        b = int.Parse(bInput.text);//tests for only integers
-                    }
-                    else if (bInput.text == "x")
-                        b = x;
+                    if (bInput.text != "y")
+                        b = int.Parse(bInput.text);
                     else
                         b = y;
-                    if (bInput.text != "x" || bInput.text != "y")
-                    {
+
+                    if (b2Input.text != "y")
                         b2 = int.Parse(b2Input.text);
-                    }
-                    else if (bInput.text == "x")
-                        b2 = x;
                     else
                         b2 = y;
-                    if (bInput.text != "x" || bInput.text != "y")
-                    {
-                        b3 = int.Parse(b3Input.text);
-                    }
-                    else if (bInput.text == "x")
-                        b3 = x;
-                    else
-                        b3 = y;
-                    if (bInput.text != "x" || bInput.text != "y")
-                    {
-                        b4 = int.Parse(b4Input.text);
-                    }
-                    else if (bInput.text == "x")
-                        b4 = x;
-                    else
-                        b4 = y;
+
                 }
                 catch (Exception)
                 {
@@ -204,7 +210,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (b == 0 && b2 == 0 && b3 == 1 && b4 == 5)
+                    if (bInput.text == "y" && b2 == 3)
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -219,13 +225,24 @@ namespace PseudoLevels
                 }
             }
             //C
+            int c2;
+            c2 = 0;
             safe = true;
-            if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)))//Checks if values were inputed skips if no value
             {
                 try
                 {
-                    c = int.Parse(cInput.text);//tests for only integers
-                    d = int.Parse(dInput.text);//tests for only integers
+                    
+                    if (cInput.text != "while" && cInput.text != "if")
+                    {
+                        c = int.Parse(cInput.text);
+                    }
+                    if (c2Input.text != "if")
+                    {
+                        c2 = int.Parse(c2Input.text);//tests for only integers
+                    }
+                    
+
                 }
                 catch (Exception)
                 {
@@ -235,7 +252,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (c == 6 && d == 8)
+                    if (cInput.text == "while")
                     {
                         cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         cOutput.text = "Correct!";
@@ -250,41 +267,20 @@ namespace PseudoLevels
                 }
             }
             //D
-            x = 8;
-            y = 3;
+            x = 4;
+            y = 2;
             safe = true;
-            if (!(String.IsNullOrEmpty(d2Input.text)) &&
-                !(String.IsNullOrEmpty(d3Input.text)) && !(String.IsNullOrEmpty(d4Input.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value
             {
-                int d2, d3, d4;
-                d2 = d3 = d4 = 0;
+                d = 0;
                 try
                 {
-                    
-                    if (d2Input.text != "x" || d2Input.text != "y")
+                    if (dInput.text != "ADBABC")
                     {
-                        d2 = int.Parse(d2Input.text);
+                        d = 1;//tests for only integers
                     }
-                    else if (d2Input.text == "x")
-                        d2 = x;
-                    else
-                        d2 = y;
-                    if (d3Input.text != "x" || d3Input.text != "y")
-                    {
-                        d3 = int.Parse(d3Input.text);
-                    }
-                    else if (d3Input.text == "x")
-                        d3 = x;
-                    else
-                        d3 = y;
-                    if (d4Input.text != "x" || d4Input.text != "y")
-                    {
-                        d4 = int.Parse(d4Input.text);
-                    }
-                    else if (d4Input.text == "x")
-                        d4 = x;
-                    else
-                        d4 = y;
+
+
                 }
                 catch (Exception)
                 {
@@ -294,15 +290,14 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    x = d2;
 
-                    y = d3;
 
-                    if (x == 2 && y == 4 && d4 == x)
+                    if (d == 0)
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
                         num++;
+                        //Debug.Log(num);
                     }
                     else
                     {
@@ -313,13 +308,16 @@ namespace PseudoLevels
 
                 }
             }
-
+            //Debug.Log(num);
             if (num == 4)
             {
-                //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                hoseTest.SetActive(true);
+                Debug.Log("Works!");
+                //hairTests = GameObject.FindGameObjectsWithTag("Box");
+                foreach (GameObject go in hairTests)//serches for "Box" objects
+                {
+                    go.SetActive(true);
+                }
             }
-            //
 
 
         }
