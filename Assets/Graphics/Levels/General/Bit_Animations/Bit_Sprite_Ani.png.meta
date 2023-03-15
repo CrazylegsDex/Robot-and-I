@@ -111,7 +111,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -132,7 +132,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -153,7 +153,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -174,7 +174,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -195,7 +195,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -216,7 +216,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -237,7 +237,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -258,7 +258,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -279,7 +279,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 768
+        y: 1024
         width: 128
         height: 128
       alignment: 0
@@ -299,8 +299,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_9
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 768
+        x: 0
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -320,8 +320,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_10
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 768
+        x: 128
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -341,8 +341,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_11
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 768
+        x: 256
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -362,8 +362,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_12
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 768
+        x: 384
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -383,8 +383,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 640
+        x: 512
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -404,8 +404,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_14
       rect:
         serializedVersion: 2
-        x: 128
-        y: 640
+        x: 640
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -425,8 +425,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_15
       rect:
         serializedVersion: 2
-        x: 256
-        y: 640
+        x: 768
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -446,8 +446,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_16
       rect:
         serializedVersion: 2
-        x: 384
-        y: 640
+        x: 896
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -467,8 +467,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_17
       rect:
         serializedVersion: 2
-        x: 512
-        y: 640
+        x: 1024
+        y: 896
         width: 128
         height: 128
       alignment: 0
@@ -488,8 +488,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_18
       rect:
         serializedVersion: 2
-        x: 640
-        y: 640
+        x: 0
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -509,8 +509,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_19
       rect:
         serializedVersion: 2
-        x: 768
-        y: 640
+        x: 128
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -530,8 +530,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 256
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -551,8 +551,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_21
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 384
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -572,8 +572,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_22
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 512
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -593,8 +593,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_23
       rect:
         serializedVersion: 2
-        x: 384
-        y: 256
+        x: 640
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -614,8 +614,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_24
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 768
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -635,8 +635,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_25
       rect:
         serializedVersion: 2
-        x: 640
-        y: 256
+        x: 896
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -656,8 +656,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_26
       rect:
         serializedVersion: 2
-        x: 768
-        y: 256
+        x: 1024
+        y: 768
         width: 128
         height: 128
       alignment: 0
@@ -677,8 +677,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_27
       rect:
         serializedVersion: 2
-        x: 896
-        y: 256
+        x: 0
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -698,8 +698,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_28
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 256
+        x: 128
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -719,8 +719,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_29
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 256
+        x: 256
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -740,8 +740,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_30
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 256
+        x: 384
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -761,8 +761,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_31
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 256
+        x: 512
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -782,8 +782,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_32
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 256
+        x: 640
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -803,8 +803,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_33
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 768
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -824,8 +824,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_34
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 896
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -845,8 +845,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_35
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
+        x: 1024
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -866,8 +866,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_36
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
+        x: 0
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -887,8 +887,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_37
       rect:
         serializedVersion: 2
-        x: 512
-        y: 128
+        x: 128
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -908,8 +908,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_38
       rect:
         serializedVersion: 2
-        x: 640
-        y: 128
+        x: 256
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -929,8 +929,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_39
       rect:
         serializedVersion: 2
-        x: 768
-        y: 128
+        x: 384
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -950,8 +950,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_40
       rect:
         serializedVersion: 2
-        x: 896
-        y: 128
+        x: 512
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -971,8 +971,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_41
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 128
+        x: 640
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -992,8 +992,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_42
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 128
+        x: 768
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -1013,8 +1013,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_43
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 128
+        x: 896
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -1034,8 +1034,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_44
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 128
+        x: 1024
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -1055,8 +1055,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_45
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 128
+        x: 0
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1076,8 +1076,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_46
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 128
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1097,8 +1097,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_47
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
+        x: 256
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1118,8 +1118,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_48
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
+        x: 384
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1139,8 +1139,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_49
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
+        x: 512
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1160,8 +1160,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_50
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
+        x: 640
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1181,8 +1181,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_51
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
+        x: 768
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1202,8 +1202,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_52
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
+        x: 896
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1223,8 +1223,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_53
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
+        x: 1024
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -1244,8 +1244,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_54
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
+        x: 0
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -1265,8 +1265,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_55
       rect:
         serializedVersion: 2
-        x: 1152
-        y: 0
+        x: 128
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -1286,8 +1286,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_56
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
+        x: 256
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -1307,8 +1307,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_57
       rect:
         serializedVersion: 2
-        x: 1408
-        y: 0
+        x: 384
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -1328,8 +1328,8 @@ TextureImporter:
       name: Bit_Sprite_Ani_58
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 0
+        x: 512
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -1341,6 +1341,468 @@ TextureImporter:
       bones: []
       spriteID: 501cc1c46fb243346a36a014cb617f6b
       internalID: 1340409909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_59
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8191f2a6c04f2a1458406e9e02bdfe68
+      internalID: -1146419699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_60
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2952b01e6f146354cbd3c980e9806e05
+      internalID: 631583374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_61
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6d1fc933a7e644fb1af155a7685b15
+      internalID: -85446410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_62
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62e7293c209fb140b5d4cd31375d0fe
+      internalID: -390701333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621e50c81fb382f4b94fd8a8ec0f8bdc
+      internalID: -2096174554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_64
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2335c26a23dbd4a4d962cc838a261903
+      internalID: 330589993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_65
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b057728f4ff974148b4978283a631a56
+      internalID: 1647347192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_66
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5129a6ff8fd952c4bba9185b162b6a98
+      internalID: -1262966793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_67
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95790ffe0e677094ebce1e1022a98168
+      internalID: -1540431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_68
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3f922fd65573c4b8f04cc93a2b5998
+      internalID: -483821584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_69
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c13618bc7fc084f8d84ba6154ccfcb
+      internalID: -368881724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_70
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68e0a81def7ecf499665c9d4d8b65a0
+      internalID: -1200247482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_71
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2036e7db94f40084b8700d15291b8bdf
+      internalID: 2143427230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3dfc848c5705545b3bf49794cd675b
+      internalID: 44102674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_73
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b44c0816ae79124cae7a75e6263f9b7
+      internalID: -1745659031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_74
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a70b995d2fd724c871968c7ec98780
+      internalID: 1780670697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_75
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19e745155b9ba14abc4a9e7c6dc3811
+      internalID: 986501428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_76
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7cf342158eb53d47abcce3b8eb7b556
+      internalID: -2110591544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_77
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c989bd0408496409c608fc890b86ed
+      internalID: -1520262228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_78
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd2506d3f3c45d4e8a9240dbd9020f6
+      internalID: 2065855228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_79
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d837f9f0698f2504ea50cead57121f2d
+      internalID: -128154996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bit_Sprite_Ani_80
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fc088defecb3c498c86b9630f9640f
+      internalID: 824624459
       vertices: []
       indices: 
       edges: []
@@ -1358,27 +1820,36 @@ TextureImporter:
     nameFileIdTable:
       Bit_Sprite_Ani_39: 1948874862
       Bit_Sprite_Ani_27: 1955302923
+      Bit_Sprite_Ani_72: 44102674
       Bit_Sprite_Ani_24: -832364922
       Bit_Sprite_Ani_57: -1303316747
       Bit_Sprite_Ani_26: -4477106
+      Bit_Sprite_Ani_61: -85446410
       Bit_Sprite_Ani_46: 645599783
       Bit_Sprite_Ani_55: -1270029513
       Bit_Sprite_Ani_13: -1920661535
       Bit_Sprite_Ani_28: -872875331
+      Bit_Sprite_Ani_62: -390701333
       Bit_Sprite_Ani_6: 2083850671
+      Bit_Sprite_Ani_64: 330589993
       Bit_Sprite_Ani_19: 1357131590
       Bit_Sprite_Ani_53: 56095150
+      Bit_Sprite_Ani_73: -1745659031
       Bit_Sprite_Ani_51: 1649712433
       Bit_Sprite_Ani_8: -294504518
+      Bit_Sprite_Ani_65: 1647347192
       Bit_Sprite_Ani_1: -1166752649
       Bit_Sprite_Ani_35: -208855919
+      Bit_Sprite_Ani_75: 986501428
       Bit_Sprite_Ani_22: -1685863630
       Bit_Sprite_Ani_5: 927441769
+      Bit_Sprite_Ani_78: 2065855228
       Bit_Sprite_Ani_30: -2105829177
       Bit_Sprite_Ani_43: -886697871
       Bit_Sprite_Ani_32: -189893709
       Bit_Sprite_Ani_38: 618430155
       Bit_Sprite_Ani_12: -1223663295
+      Bit_Sprite_Ani_63: -2096174554
       Bit_Sprite_Ani_41: 517018962
       Bit_Sprite_Ani_31: 1718131982
       Bit_Sprite_Ani_47: -686090249
@@ -1396,15 +1867,28 @@ TextureImporter:
       Bit_Sprite_Ani_14: 2025229392
       Bit_Sprite_Ani_29: 1730679876
       Bit_Sprite_Ani_42: 1272429568
+      Bit_Sprite_Ani_68: -483821584
       Bit_Sprite_Ani_52: 711329569
       Bit_Sprite_Ani_49: 906613352
       Bit_Sprite_Ani_34: 509585340
+      Bit_Sprite_Ani_74: 1780670697
       Bit_Sprite_Ani_25: 930830431
+      Bit_Sprite_Ani_79: -128154996
+      Bit_Sprite_Ani_76: -2110591544
+      Bit_Sprite_Ani_71: 2143427230
+      Bit_Sprite_Ani_80: 824624459
       Bit_Sprite_Ani_36: 304508992
       Bit_Sprite_Ani_44: 1328381585
+      Bit_Sprite_Ani_59: -1146419699
+      Bit_Sprite_Ani_67: -1540431
+      Bit_Sprite_Ani_77: -1520262228
+      Bit_Sprite_Ani_66: -1262966793
       Bit_Sprite_Ani_33: 1761440386
+      Bit_Sprite_Ani_69: -368881724
       Bit_Sprite_Ani_45: -1388434761
       Bit_Sprite_Ani_18: -1486940630
+      Bit_Sprite_Ani_70: -1200247482
+      Bit_Sprite_Ani_60: 631583374
       Bit_Sprite_Ani_48: -1342059335
       Bit_Sprite_Ani_50: 1803886268
       Bit_Sprite_Ani_4: 191480509
