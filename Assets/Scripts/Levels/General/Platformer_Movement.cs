@@ -23,7 +23,7 @@ namespace PlayerControl
         public LayerMask boxObjects;
         public GameObject[] boxTests;
         public GameObject boxChosen;
-        
+
 
         // Private variables
         private int jumpCount;
@@ -31,7 +31,7 @@ namespace PlayerControl
         private bool isJumping = false;
         private bool grab = false;
         private bool isGrounded;
-        private bool isOnButton; 
+        private bool isOnButton;
         private bool nearBox;
         private Rigidbody2D rb;
         private bool safe = true;
@@ -81,7 +81,8 @@ namespace PlayerControl
             moveDirection = Input.GetAxis("Horizontal"); // Returns -1 to 1
             if (Input.GetButtonDown("Jump") && jumpCount > 0)
                 isJumping = true;
-            if (!grab) {
+            if (!grab)
+            {
                 nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
             }
             //checkRadius = .2

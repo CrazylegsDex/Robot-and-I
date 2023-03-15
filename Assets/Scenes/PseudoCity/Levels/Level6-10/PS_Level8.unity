@@ -543,7 +543,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
 --- !u!1 &67709675 stripped
@@ -556,6 +557,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
   m_PrefabInstance: {fileID: 67709674}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &67709677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3971167535113967686, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+  m_PrefabInstance: {fileID: 67709674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &67709678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8911107533941144888, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+  m_PrefabInstance: {fileID: 67709674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &67709679 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7782327374311759639, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+  m_PrefabInstance: {fileID: 67709674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &67709680 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7782327375208553471, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+  m_PrefabInstance: {fileID: 67709674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &67709681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67709675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd747e1c11be70f4bacf8e71787850f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxJumpCount: 1
+  moveSpeed: 80
+  jumpForce: 5000
+  checkRadius: 0.2
+  ceilingCheck: {fileID: 67709680}
+  groundCheck: {fileID: 67709679}
+  groundObjects:
+    serializedVersion: 2
+    m_Bits: 64
+  buttonCheck: {fileID: 67709678}
+  buttonObjects:
+    serializedVersion: 2
+    m_Bits: 128
+  boxCheck: {fileID: 67709677}
+  boxObjects:
+    serializedVersion: 2
+    m_Bits: 64
+  boxTests: []
+  boxChosen: {fileID: 0}
 --- !u!1 &71954374
 GameObject:
   m_ObjectHideFlags: 0
