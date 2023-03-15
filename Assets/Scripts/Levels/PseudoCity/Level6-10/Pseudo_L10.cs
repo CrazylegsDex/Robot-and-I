@@ -34,8 +34,6 @@ namespace PseudoLevels
         public GameObject[] boxTests;
         public GameObject[] hairTests;
         private Button_Check button_Check;
-        private bool button1;
-        private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
@@ -45,8 +43,6 @@ namespace PseudoLevels
                 go.SetActive(false);
             }
             //codeComp = false;
-            button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -144,9 +140,8 @@ namespace PseudoLevels
             //A
             int num = 0;//counts up everytime a try block receives valid input.
             int a, b, c, d;//Input values
-            int x, y;
+            int y;
             a = b = c = d = 0;
-            x = 5;
 
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
@@ -267,7 +262,6 @@ namespace PseudoLevels
                 }
             }
             //D
-            x = 4;
             y = 2;
             safe = true;
             if (!(String.IsNullOrEmpty(dInput.text)))//Checks if values were inputed skips if no value

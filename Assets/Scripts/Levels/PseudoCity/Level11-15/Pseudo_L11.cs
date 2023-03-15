@@ -256,8 +256,8 @@ namespace PseudoLevels
             if (!(String.IsNullOrEmpty(dInput.text)) && !(String.IsNullOrEmpty(d2Input.text)) &&
                 !(String.IsNullOrEmpty(d3Input.text)))//Checks if values were inputed skips if no value
             {
-                int d2, d3;
-                d = d2 = d3 = 0;
+                int d2;
+                d = d2 = 0;
                 try
                 {
                     d = int.Parse(dInput.text);//tests for only integers

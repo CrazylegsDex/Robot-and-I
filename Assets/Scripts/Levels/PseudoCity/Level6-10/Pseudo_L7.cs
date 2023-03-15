@@ -37,7 +37,6 @@ namespace PseudoLevels
         public GameObject[] boxTests;
         public GameObject[] paintTests;
         public GameObject paintTest;
-        bool paint = false;
         private Button_Check button_Check;
         public BoxCollider2D levelSprite;
         void Start()
@@ -67,7 +66,6 @@ namespace PseudoLevels
                         if (go.GetComponent<Rigidbody2D>().isKinematic == true)
                         {
                             paintTest = go;
-                            paint = true;
                         }
                     }
 

@@ -37,12 +37,10 @@ namespace PseudoLevels
         public GameObject[] hoseTests;
         private Button_Check button_Check;
         private bool button1;
-        private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
             button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;

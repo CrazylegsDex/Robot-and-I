@@ -115,8 +115,8 @@ namespace PseudoLevels
         {
             //A
             int num = 0;//counts up everytime a try block receives valid input.
-            int a, b, c, d;//Input values
-            a = b = c = d = 0;
+            int c;//Input values
+            c = 0;
 
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
@@ -171,9 +171,8 @@ namespace PseudoLevels
                 }
             }
             //C
-            int c2;
             int c3;
-            c2 = c3 = 0;
+            c3 = 0;
             safe = true;//resets safe for next input
             if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)) &&
                 !(String.IsNullOrEmpty(c3Input.text)))//Checks if values were inputed skips if no value

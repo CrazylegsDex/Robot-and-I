@@ -10517,7 +10517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718686652554498300, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: LevelToComplete
-      value: PS_Level6
+      value: PS_Level8
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -10577,7 +10577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223341, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_Name
-      value: Dr Riddler
+      value: Dr Matchstick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

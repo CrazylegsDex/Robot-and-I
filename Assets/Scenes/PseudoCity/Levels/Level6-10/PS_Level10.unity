@@ -6033,8 +6033,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 719603781}
-  - component: {fileID: 719603779}
   - component: {fileID: 719603782}
+  - component: {fileID: 719603779}
   - component: {fileID: 719603778}
   - component: {fileID: 719603777}
   - component: {fileID: 719603776}
@@ -8779,7 +8779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718686652554498300, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: LevelToComplete
-      value: PS_Level6
+      value: PS_Level10
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -8839,7 +8839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223341, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_Name
-      value: Dr Riddler
+      value: Dr Hyde
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -9586,7 +9586,7 @@ GameObject:
   - component: {fileID: 1487249711}
   - component: {fileID: 1487249710}
   m_Layer: 0
-  m_Name: Level7 - Area1
+  m_Name: Level10 - Area1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
