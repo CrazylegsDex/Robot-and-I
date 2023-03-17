@@ -3351,7 +3351,7 @@ GameObject:
   - component: {fileID: 838828015}
   m_Layer: 3
   m_Name: 1BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9018,17 +9018,25 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3971167535113967686, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.75
+    - target: {fileID: 592734946558267347, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_Name
+      value: Obj_Check
+      objectReference: {fileID: 0}
+    - target: {fileID: 2754042535122360865, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be076af9395d2694189ae128d56ffe40, type: 3}
+    - target: {fileID: 2754042535122360865, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: obj.m_Bits
-      value: 8
+      propertyPath: scale
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: plat.m_Bits
-      value: 64
+      propertyPath: canGrab
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_Name
@@ -9037,14 +9045,6 @@ PrefabInstance:
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9086,12 +9086,52 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0.390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0.390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8621706807205074408, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8911107533941144888, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents:
+<<<<<<< Updated upstream
     - {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+=======
+    - {fileID: 2754042535122360865, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+>>>>>>> Stashed changes
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
 --- !u!4 &1369592474 stripped
@@ -10966,7 +11006,7 @@ MonoBehaviour:
   bOutput: {fileID: 687327978}
   cOutput: {fileID: 490080441}
   dOutput: {fileID: 1270155804}
-  wall: {fileID: 46035259}
+  wall: {fileID: 0}
   bit: {fileID: 1874903684}
   cam: {fileID: 2014949021}
   boxTests: []
@@ -11650,19 +11690,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2365825896014404955, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
       propertyPath: m_Color.b
-      value: 0.6392157
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2365825896014404955, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
       propertyPath: m_Color.g
-      value: 0.71960783
+      value: 0.38796118
       objectReference: {fileID: 0}
     - target: {fileID: 2365825896014404955, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
       propertyPath: m_Color.r
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2365825896014404956, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
       propertyPath: boxFirstName
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2365825896014404959, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
       propertyPath: m_Name
@@ -12811,7 +12851,7 @@ GameObject:
   - component: {fileID: 2090321313}
   m_Layer: 3
   m_Name: 2BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13305,25 +13345,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2365825896014404955, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365825896014404955, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365825896014404955, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365825896014404956, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
+      propertyPath: boxFirstName
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2365825896014404959, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
       propertyPath: m_Name
       value: 1Basket
-      objectReference: {fileID: 0}
-    - target: {fileID: 2365825896014404959, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2365825896657741808, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2365825896771608318, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2365825896799037529, guid: 9d0e4a69db964784b878ed6c7c9ce9c4, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
