@@ -1,10 +1,10 @@
 /*
  * This class uses the MonoCSharp Code Compiler
  * to allow the player to write full C# code.
- * This class will be used with simple teaching
+ * This class will be used with teaching
  * simple if-statements to the player.
  * 
- * Date: 03/10/2023
+ * Date: 03/21/2023
  * Author: Robot and I Team
  */
 
@@ -139,152 +139,10 @@ namespace CSharpLevels
                     if (code.text.Contains(""if"") && code.text.Contains(""chest"") && code.text.Contains(""found""))
                     {
                         // If-Statement to the correct Problem Statement. There are 7 total problems to complete
-                        // Problem 1
-                        if (code.text.Contains(""Smithy""))
-                        {
-                            // Create the variables
-                            int found = 0;
-
-                            // Insert the player's code into the program
-                            " + playerInput.text + @"
-
-                            // Test the value of result
-                            if (found == 1)
-                            {
-                                // Set the input code inactive and set the Chest
-                                // Sprite graphic to open
-                                lesson.SetActive(false);
-                                code.text = ""// Variable name is chest2\r\n"";
-                            }
-                            else
-                            {
-                                // The if-statement is incorrect
-                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
-                            }
-                        }
-
-                        // Problem 2
-                        if (code.text.Contains(""42""))
-                        {
-                            // Create the variables
-                            int found = 1;
-
-                            // Insert the player's code into the program
-                            " + playerInput.text + @"
-
-                            // Test the value of result
-                            if (found == 2)
-                            {
-                                // Set the input code inactive and set the Chest
-                                // Sprite graphic to open
-                                lesson.SetActive(false);
-                                code.text = ""// Variable name is chest3\r\n"";
-                            }
-                            else
-                            {
-                                // The if-statement is incorrect
-                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
-                            }
-                        }
-
-                        // Problem 3
-                        if (code.text.Contains(""Gold""))
-                        {
-                            // Create the variables
-                            int found = 2;
-
-                            // Insert the player's code into the program
-                            " + playerInput.text + @"
-
-                            // Test the value of result
-                            if (found == 3)
-                            {
-                                // Set the input code inactive and set the Chest
-                                // Sprite graphic to open
-                                lesson.SetActive(false);
-                                code.text = ""// Variable name is chest4\r\n"";
-                            }
-                            else
-                            {
-                                // The if-statement is incorrect
-                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
-                            }
-                        }
-
-                        // Problem 4
-                        if (code.text.Contains(""-4096""))
-                        {
-                            // Create the variables
-                            int found = 3;
-
-                            // Insert the player's code into the program
-                            " + playerInput.text + @"
-
-                            // Test the value of result
-                            if (found == 4)
-                            {
-                                // Set the input code inactive and set the Chest
-                                // Sprite graphic to open
-                                lesson.SetActive(false);
-                                code.text = ""// Variable name is chest5\r\n"";
-                            }
-                            else
-                            {
-                                // The if-statement is incorrect
-                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
-                            }
-                        }
-
-                        // Problem 5
-                        if (code.text.Contains(""Silver""))
-                        {
-                            // Create the variables
-                            int found = 4;
-
-                            // Insert the player's code into the program
-                            " + playerInput.text + @"
-
-                            // Test the value of result
-                            if (found == 5)
-                            {
-                                // Set the input code inactive and set the Chest
-                                // Sprite graphic to open
-                                lesson.SetActive(false);
-                                code.text = ""// Variable name is chest6\r\n"";
-                            }
-                            else
-                            {
-                                // The if-statement is incorrect
-                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
-                            }
-                        }
-
-                        // Problem 6
-                        if (code.text.Contains(""false""))
-                        {
-                            // Create the variables
-                            int found = 5;
-
-                            // Insert the player's code into the program
-                            " + playerInput.text + @"
-
-                            // Test the value of result
-                            if (found == 6)
-                            {
-                                // Set the input code inactive and set the Chest
-                                // Sprite graphic to open
-                                lesson.SetActive(false);
-                                code.text = ""// Variable name is chest7\r\n"";
-                            }
-                            else
-                            {
-                                // The if-statement is incorrect
-                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
-                            }
-                        }
-
+                        // Reverse order due to changing to next if statement upon completion of previous.
+                        // Causes multiple if-statements to run if done linearly
                         // Problem 7
-                        if (code.text.Contains(""1024""))
+                        if (code.text.Contains(""// int chest7 = 1024;""))
                         {
                             // Create the variables
                             int found = 6;
@@ -299,8 +157,152 @@ namespace CSharpLevels
                                 // Sprite graphic to open
                                 GameObject NPC = GameObject.FindWithTag(""LevelChange"");
                                 NPC.GetComponent<BoxCollider2D>().isTrigger = true;
-                                lesson.SetActive(false);
                                 code.text = """";
+                                output.text = ""Congratulations. You have found all the chests."";
+                            }
+                            else
+                            {
+                                // The if-statement is incorrect
+                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+                            }
+                        }
+
+                        // Problem 6
+                        if (code.text.Contains(""// bool chest6 = false;""))
+                        {
+                            // Create the variables
+                            int found = 5;
+
+                            // Insert the player's code into the program
+                            " + playerInput.text + @"
+
+                            // Test the value of result
+                            if (found == 6)
+                            {
+                                // Set the input code inactive and set the Chest
+                                // Sprite graphic to open
+                                lesson.SetActive(false);
+                                code.text = ""// int chest7 = 1024;\r\n"";
+                            }
+                            else
+                            {
+                                // The if-statement is incorrect
+                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+                            }
+                        }
+
+                        // Problem 5
+                        if (code.text.Contains(""// string chest5 = \""Silver\"";""))
+                        {
+                            // Create the variables
+                            int found = 4;
+
+                            // Insert the player's code into the program
+                            " + playerInput.text + @"
+
+                            // Test the value of result
+                            if (found == 5)
+                            {
+                                // Set the input code inactive and set the Chest
+                                // Sprite graphic to open
+                                lesson.SetActive(false);
+                                code.text = ""// bool chest6 = false;\r\n"";
+                            }
+                            else
+                            {
+                                // The if-statement is incorrect
+                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+                            }
+                        }
+
+                        // Problem 4
+                        if (code.text.Contains(""// int chest4 = -4096;""))
+                        {
+                            // Create the variables
+                            int found = 3;
+
+                            // Insert the player's code into the program
+                            " + playerInput.text + @"
+
+                            // Test the value of result
+                            if (found == 4)
+                            {
+                                // Set the input code inactive and set the Chest
+                                // Sprite graphic to open
+                                lesson.SetActive(false);
+                                code.text = ""// string chest5 = \""Silver\"";\r\n"";
+                            }
+                            else
+                            {
+                                // The if-statement is incorrect
+                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+                            }
+                        }
+
+                        // Problem 3
+                        if (code.text.Contains(""// string chest3 = \""Gold\"";""))
+                        {
+                            // Create the variables
+                            int found = 2;
+
+                            // Insert the player's code into the program
+                            " + playerInput.text + @"
+
+                            // Test the value of result
+                            if (found == 3)
+                            {
+                                // Set the input code inactive and set the Chest
+                                // Sprite graphic to open
+                                lesson.SetActive(false);
+                                code.text = ""// int chest4 = -4096;\r\n"";
+                            }
+                            else
+                            {
+                                // The if-statement is incorrect
+                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+                            }
+                        }
+
+                        // Problem 2
+                        if (code.text.Contains(""// int chest2 = 42;""))
+                        {
+                            // Create the variables
+                            int found = 1;
+
+                            // Insert the player's code into the program
+                            " + playerInput.text + @"
+
+                            // Test the value of result
+                            if (found == 2)
+                            {
+                                // Set the input code inactive and set the Chest
+                                // Sprite graphic to open
+                                lesson.SetActive(false);
+                                code.text = ""// string chest3 = \""Gold\"";\r\n"";
+                            }
+                            else
+                            {
+                                // The if-statement is incorrect
+                                output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+                            }
+                        }
+
+                        // Problem 1
+                        if (code.text.Contains(""// string chest1 = \""Smithy\"";""))
+                        {
+                            // Create the variables
+                            int found = 0;
+
+                            // Insert the player's code into the program
+                            " + playerInput.text + @"
+
+                            // Test the value of result
+                            if (found == 1)
+                            {
+                                // Set the input code inactive and set the Chest
+                                // Sprite graphic to open
+                                lesson.SetActive(false);
+                                code.text = ""// int chest2 = 42;\r\n"";
                             }
                             else
                             {
@@ -403,7 +405,12 @@ namespace CSharpLevels
                 if (error[0].ErrorNumber == "CS1525")
                     programOutput.text = "Syntax error";
                 else
-                    programOutput.text = String.Format("Line: {0}\nError: {1}", error[0].Line, error[0].ErrorText);
+                {
+                    if (error[0].ErrorNumber == "CS0019")
+                        programOutput.text = "Please make sure that you are comparing the right chest with the right data type (string, int, or bool)";
+                    else
+                        programOutput.text = String.Format("Line: {0}\nError: {1}", error[0].Line, error[0].ErrorText);
+                }
             }
 
             // Return the assembly
