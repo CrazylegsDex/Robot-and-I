@@ -6540,7 +6540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1696941252
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7003,7 +7003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Pivot.x
@@ -7158,7 +7158,7 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: LessonObject
       value: 
-      objectReference: {fileID: 1195352653}
+      objectReference: {fileID: 1696941251}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: ProfessorName
       value: The Duke
@@ -7177,14 +7177,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Use the prompts beside each chest to create the appropriate if-statement
-        such that the if-statement is true. Use the variable name "chest" to denote
-        that specific chest, and add 1 to the variable "found" inside the if-statement.
+      value: You are given the chest name and data type as a comment in the program.
+        You are also given that there is an integer named found. For each chest found,
+        write the if-condition to be true and add 1 to found.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "EX. -> secretText\nif (chest == \"secretText\")\n{\n    found = found
-        + 1;\n}"
+      value: "EX. -> //string chestName = \"secretText\";\nif (chestName == \"secretText\")\n{\n   
+        found = found + 1;\n}"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -7251,7 +7251,7 @@ PrefabInstance:
     - {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 865010943}
   m_SourcePrefab: {fileID: 100100000, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
 --- !u!224 &1819774296 stripped

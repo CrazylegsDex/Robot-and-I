@@ -104,10 +104,10 @@ namespace CSharpLevels
                                     code.text = ""bool Bit_Is_Awesome = true;"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish1.position = new Vector3(997, 489, -1);  // Invisible
-                                    Fish2.position = new Vector3(1081, 489, -1); // Invisible
-                                    Fish3.position = new Vector3(1151, 489, -1); // Invisible
-                                    Fish4.position = new Vector3(1236, 489, -1); // Invisible
+                                    Fish1.position = new Vector3(997, 489, -4);  // Visible
+                                    Fish2.position = new Vector3(1081, 489, -4); // Visible
+                                    Fish3.position = new Vector3(1151, 489, -4); // Visible
+                                    Fish4.position = new Vector3(1236, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -184,9 +184,9 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish2.position = new Vector3(1081, 489, -1); // Visible
-                                    Fish3.position = new Vector3(1151, 489, -1); // Visible
-                                    Fish4.position = new Vector3(1236, 489, -1); // Visible
+                                    Fish2.position = new Vector3(1081, 489, -4); // Visible
+                                    Fish3.position = new Vector3(1151, 489, -4); // Visible
+                                    Fish4.position = new Vector3(1236, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -223,7 +223,7 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish1.position = new Vector3(997, 489, -1); // Visible
+                                    Fish1.position = new Vector3(997, 489, -4); // Visible
                                     Fish2.position = new Vector3(1081, 489, 1); // Invisible
                                     Fish3.position = new Vector3(1151, 489, 1); // Invisible
                                     Fish4.position = new Vector3(1236, 489, 1); // Invisible
@@ -263,8 +263,8 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish2.position = new Vector3(1081, 489, -1); // Visible
-                                    Fish4.position = new Vector3(1236, 489, -1); // Visible
+                                    Fish2.position = new Vector3(1081, 489, -4); // Visible
+                                    Fish4.position = new Vector3(1236, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -303,7 +303,7 @@ namespace CSharpLevels
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish1.position = new Vector3(997, 489, 1);   // Invisible
                                     Fish4.position = new Vector3(1236, 489, 1);  // Invisible
-                                    Fish3.position = new Vector3(1151, 489, -1); // Visible
+                                    Fish3.position = new Vector3(1151, 489, -4); // Visible
                                 }
                                 else
                                 {
