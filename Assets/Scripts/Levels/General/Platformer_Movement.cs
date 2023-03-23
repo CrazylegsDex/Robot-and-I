@@ -72,15 +72,6 @@ namespace PlayerControl
 
         // Private variables
         private Rigidbody2D rb;     // Bit's rigidbody, will be used to change bits x and y velocity
-<<<<<<< Updated upstream
-        private Transform tf;       // used to update the position of the focalpoint to Bit's vicinity, (and therefore it helps keep the camera on Bit)
-        private Animator an;         // Animations
-        private bool aniLock = false;   // if true no new animation will start
-        private bool canAny = true; // when false Bit will be unable to do anything, used to stop controls when bit is dead
-        private bool canJump = true;// when false Bit will be unable to jump
-        private bool lastLookRigh;
-        private bool canAct;// when false 
-=======
         private Transform tf;       // used to keep track of Bit's Position for other objects to relate with
         private static Animator an;        // Animations for Bit
         private GameObject chec;    // Game Object for the
@@ -96,7 +87,6 @@ namespace PlayerControl
         //private bool isGrabbing = false;// 
         //private bool isHolding = false;
         //private bool isThrow = false;
->>>>>>> Stashed changes
         private int idleActs;       // keeps track of Bit's remaining idle actions
         private float idleTime;     // keeps track of how much time until Bit will perform another idle action
         private float moveStrength; // GetAxis of Horizontal controls, ranges from -1 to 1

@@ -9022,14 +9022,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obj_Check
       objectReference: {fileID: 0}
-    - target: {fileID: 2754042535122360865, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: be076af9395d2694189ae128d56ffe40, type: 3}
-    - target: {fileID: 2754042535122360865, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: scale
       value: 20
@@ -9126,34 +9118,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-<<<<<<< Updated upstream
-    - {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-=======
-    - {fileID: 2754042535122360865, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
->>>>>>> Stashed changes
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
---- !u!4 &1369592474 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3971167535113967686, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-  m_PrefabInstance: {fileID: 1369592473}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1369592475 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8911107533941144888, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-  m_PrefabInstance: {fileID: 1369592473}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1369592476 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7782327374311759639, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-  m_PrefabInstance: {fileID: 1369592473}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1369592477 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7782327375208553471, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
-  m_PrefabInstance: {fileID: 1369592473}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1388000369
 GameObject:
   m_ObjectHideFlags: 0
@@ -11792,37 +11759,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
   m_PrefabInstance: {fileID: 1369592473}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1874903685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874903684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd747e1c11be70f4bacf8e71787850f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxJumpCount: 1
-  moveSpeed: 80
-  jumpForce: 5000
-  checkRadius: 0.2
-  ceilingCheck: {fileID: 1369592477}
-  groundCheck: {fileID: 1369592476}
-  groundObjects:
-    serializedVersion: 2
-    m_Bits: 64
-  buttonCheck: {fileID: 1369592475}
-  buttonObjects:
-    serializedVersion: 2
-    m_Bits: 128
-  boxCheck: {fileID: 1369592474}
-  boxObjects:
-    serializedVersion: 2
-    m_Bits: 64
-  boxTests: []
-  boxChosen: {fileID: 0}
 --- !u!1 &1897692059
 GameObject:
   m_ObjectHideFlags: 0
