@@ -23,7 +23,8 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        //private bool codeComp;
+        public GameObject complete;
+        private int count = 0;
 
         public GameObject wall;
         public GameObject bit;
@@ -49,7 +50,7 @@ namespace PseudoLevels
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
@@ -67,34 +68,29 @@ namespace PseudoLevels
                         if (button_Check.boxFirstName == "1")
                         {
 
-                            if (button_Check.complete)
+                            if (button_Check.complete && Input.GetMouseButtonDown(0))
                             {
-                                button1 = true;
+                                count++;
+                                if (count >=5) {
+                                    button1 = true;
+                                }
                                 //Debug.Log(" 1 Works!");
                             }
                             else
                                 button1 = false;
                         }
-                        else if (button_Check.boxFirstName == "2")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button2 = true;
-                                //Debug.Log(" 2 Works!");
-                            }
-                            else
-                                button2 = false;
-                        }
-                        if (button1 && button2)
+                        
+                        if (button1)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);
                         }
                         else
                         {
                             //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
 

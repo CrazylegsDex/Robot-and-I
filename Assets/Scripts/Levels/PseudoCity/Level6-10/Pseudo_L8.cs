@@ -32,6 +32,12 @@ namespace PseudoLevels
         public GameObject cam;
         float camx, camy, camz;
 
+        bool active = false;
+        bool timeSet = false;
+        float startTime;
+        float endTime;
+        public GameObject complete;
+
         public GameObject[] boxTests;
         public GameObject hoseTest;
         public GameObject[] hoseTests;
@@ -44,7 +50,7 @@ namespace PseudoLevels
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
@@ -57,13 +63,23 @@ namespace PseudoLevels
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
                 
-                if (Input.GetKeyDown(KeyCode.E) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true)
+                if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && !active)
                 {
                     
                     for(int i = 0; i < hoseTest.transform.childCount; i++)
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(true);
+                        active = true;
+                    }
+                }
+                else if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && active)
+                {
+                    for (int i = 0; i < hoseTest.transform.childCount; i++)
+                    {
+                        Transform water = hoseTest.transform.GetChild(i);
+                        water.gameObject.SetActive(false);
+                        active = false;
                     }
                 }
                 else if(Input.GetKeyDown(KeyCode.E)) {
@@ -71,6 +87,7 @@ namespace PseudoLevels
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(false);
+                        active = false;
                     }
                 }
                 foreach (GameObject go in boxTests)//serches for "Button" objects
@@ -80,24 +97,38 @@ namespace PseudoLevels
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
                         if (button_Check.boxFirstName == "1")
                         {
-
-                            if (button_Check.complete)
+                            if(button_Check.complete && active && !timeSet)
                             {
-                                button1 = true;
+                                startTime = Time.time;
+                                timeSet = true;
+                            }
+
+                            else if (button_Check.complete && active && timeSet)
+                            {
+                                
                                 //Debug.Log(" 1 Works!");
+                                endTime = Time.time - startTime;
+                                if(endTime > 10)
+                                    button1 = true;
                             }
                             else
+                            {
                                 button1 = false;
+                                timeSet = false;
+                            }
+                                
                         }
                         if (button1)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);
                         }
                         else
                         {
                             //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
 

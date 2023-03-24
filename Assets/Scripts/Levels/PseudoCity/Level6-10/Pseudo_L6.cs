@@ -27,11 +27,13 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
+        public GameObject complete;
         public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
 
+        public GameObject[] tonTests;
         public GameObject[] boxTests;
         private Button_Check button_Check;
         private bool button1;
@@ -44,7 +46,12 @@ namespace PseudoLevels
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-            
+            complete.SetActive(false);
+            boxTests = GameObject.FindGameObjectsWithTag("Box");
+            foreach (GameObject go in boxTests)//serches for "Button" objects
+            {
+                go.SetActive(false);
+            }
         }
         void Update()
         {
@@ -55,8 +62,8 @@ namespace PseudoLevels
                 //Debug.Log("Works!");
                 
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
-                boxTests = GameObject.FindGameObjectsWithTag("Button");
-                foreach (GameObject go in boxTests)//serches for "Button" objects
+                tonTests = GameObject.FindGameObjectsWithTag("Button");
+                foreach (GameObject go in tonTests)//serches for "Button" objects
                 {
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
@@ -87,11 +94,13 @@ namespace PseudoLevels
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);
                         }
                         else
                         {
                             //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
 
@@ -325,7 +334,11 @@ namespace PseudoLevels
             if (num == 4)
             {
                 //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                wall.SetActive(false);
+                //wall.SetActive(false);
+                foreach (GameObject go in boxTests)//serches for "Button" objects
+                {
+                    go.SetActive(true);
+                }
             }
             //
             

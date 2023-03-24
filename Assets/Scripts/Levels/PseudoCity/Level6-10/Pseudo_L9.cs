@@ -26,7 +26,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        //private bool codeComp;
+        public GameObject complete;
 
         public GameObject wall;
         public GameObject bit;
@@ -36,8 +36,7 @@ namespace PseudoLevels
         public GameObject[] boxTests;
         public GameObject[] hairTests;
         private Button_Check button_Check;
-        private bool button1;
-        private bool button2;
+        private bool[] button;
         public BoxCollider2D levelSprite;
         void Start()
         {
@@ -47,12 +46,15 @@ namespace PseudoLevels
                 go.SetActive(false);
             }
             //codeComp = false;
-            button1 = false;
-            button2 = false;
+            button = new bool[9];
+            for (int i = 0; i < 9; i++)
+            {
+                button[i] = false;
+            }
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
@@ -72,32 +74,34 @@ namespace PseudoLevels
 
                             if (button_Check.complete)
                             {
-                                button1 = true;
+                                button[0] = true;
                                 //Debug.Log(" 1 Works!");
                             }
                             else
-                                button1 = false;
+                                button[0] = false;
                         }
                         else if (button_Check.boxFirstName == "2")
                         {
 
                             if (button_Check.complete)
                             {
-                                button2 = true;
+                                button[1] = true;
                                 //Debug.Log(" 2 Works!");
                             }
                             else
-                                button2 = false;
+                                button[1] = false;
                         }
-                        if (button1 && button2)
+                        if (button[0] && button[5])
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);
                         }
                         else
                         {
                             //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
 

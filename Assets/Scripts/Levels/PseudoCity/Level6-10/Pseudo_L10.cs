@@ -24,6 +24,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
+        public GameObject complete;
         int[] road = new int[10];
 
         public GameObject wall;
@@ -46,7 +47,7 @@ namespace PseudoLevels
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
@@ -62,7 +63,7 @@ namespace PseudoLevels
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
                        
-                        if (button_Check.complete)
+                        if (button_Check.complete && Input.GetMouseButtonDown(0))
                         {
                             var goRenderer = go.GetComponent<Renderer>();
                             goRenderer.material.SetColor("_Color", Color.gray);
@@ -116,11 +117,13 @@ namespace PseudoLevels
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);
                         }
                         else
                         {
                             //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
 
@@ -269,7 +272,7 @@ namespace PseudoLevels
                 d = 0;
                 try
                 {
-                    if (dInput.text != "ADBABC")
+                    if (dInput.text != "ADBABCD")
                     {
                         d = 1;//tests for only integers
                     }

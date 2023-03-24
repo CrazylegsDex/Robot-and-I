@@ -26,7 +26,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-
+        public GameObject complete;
         public GameObject wall;
         public GameObject bit;
         public GameObject cam;
@@ -49,7 +49,7 @@ namespace PseudoLevels
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
@@ -76,7 +76,7 @@ namespace PseudoLevels
                         {
                             //float boxPos = go.transform.position.x;
                             button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                            if (button_Check.complete && paintTest.name.Contains("Yell"))
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Yell"))
                             {
 
                                 var goRenderer = go.GetComponent<Renderer>();
@@ -120,7 +120,7 @@ namespace PseudoLevels
 
                             }
 
-                            if (button_Check.complete && paintTest.name.Contains("Black"))
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Black"))
                             {
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.black);
@@ -161,7 +161,7 @@ namespace PseudoLevels
                                     fences[8] = 2;
                                 }
                             }
-                            if (button_Check.complete && paintTest.name.Contains("Blue"))
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Blue"))
                             {
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.blue);
@@ -212,10 +212,12 @@ namespace PseudoLevels
                             {
                                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                                 Debug.Log("Good!");
+                                complete.SetActive(true);
                             }
                             else
                             {
                                 levelSprite.isTrigger = false;
+                                complete.SetActive(false);
                             }
                         }
 

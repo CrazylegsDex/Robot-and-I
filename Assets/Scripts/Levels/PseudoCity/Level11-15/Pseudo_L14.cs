@@ -25,7 +25,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        //private bool codeComp;
+        public GameObject complete;
 
         public GameObject wall;
         public GameObject bit;
@@ -37,6 +37,8 @@ namespace PseudoLevels
         private Button_Check button_Check;
         private bool button1;
         private bool button2;
+        private bool button3;
+        private bool button4;
         public BoxCollider2D levelSprite;
         void Start()
         {
@@ -88,7 +90,29 @@ namespace PseudoLevels
                             else
                                 button2 = false;
                         }
-                        if (button1 && button2)
+                        if (button_Check.boxFirstName == "3")
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button3 = true;
+                                //Debug.Log(" 1 Works!");
+                            }
+                            else
+                                button3 = false;
+                        }
+                        else if (button_Check.boxFirstName == "4")
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button4 = true;
+                                //Debug.Log(" 2 Works!");
+                            }
+                            else
+                                button4 = false;
+                        }
+                        if (button1 && button2 && button3 && button4)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
