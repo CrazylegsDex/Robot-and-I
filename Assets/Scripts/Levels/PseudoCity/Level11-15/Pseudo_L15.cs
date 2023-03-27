@@ -9,7 +9,7 @@ using TMPro;
 
 namespace PseudoLevels
 {
-    public class Pseudo_L14 : MonoBehaviour
+    public class Pseudo_L15 : MonoBehaviour
     {
         public TMP_InputField aInput; // References the User's Input Field
         public TMP_InputField bInput;
@@ -141,13 +141,14 @@ namespace PseudoLevels
             int num = 0;//counts up everytime a try block receives valid input.
             int c;//Input values
             c = 0;
+            
 
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
             {
                 if (safe)
                 {
-                    if (aInput.text == "3")
+                    if (aInput.text == "B6")
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
@@ -169,7 +170,7 @@ namespace PseudoLevels
 
                 if (safe)
                 {
-                    if (bInput.text == "7654")
+                    if (bInput.text == "5A5A5A5A")
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -184,9 +185,11 @@ namespace PseudoLevels
                 }
             }
             //C
-            int c3;
+            int c3,c2;
             c3 = 0;
+            c2 = 1;
             safe = true;//resets safe for next input
+            bool good = false;
             if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)) &&
                 !(String.IsNullOrEmpty(c3Input.text)))//Checks if values were inputed skips if no value
             {
@@ -194,13 +197,14 @@ namespace PseudoLevels
                 try
                 {
                     c = int.Parse(cInput.text);
+                    c2 = int.Parse(c2Input.text);
                     c3 = int.Parse(c3Input.text);
 
                 }
                 catch (Exception)
                 {
-                    if (cInput.text == "x[0]" || cInput.text == "x[1]" || cInput.text == "x[2]" || cInput.text == "x[3]")
-                        c = 2;
+                    if (cInput.text == "x")
+                        good = true;
                     else
                     {
                         cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
@@ -211,7 +215,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (c == 2 && c2Input.text == "a" && c3 == 4)
+                    if (good&& c2 == 3 && c3Input.text == "1")
                     {
                         cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         cOutput.text = "Correct!";
@@ -235,7 +239,7 @@ namespace PseudoLevels
                 {
 
 
-                    if (dInput.text == "i" && d2Input.text == "i" && d3Input.text == "x")
+                    if (dInput.text == "6" && d2Input.text == "5")
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";

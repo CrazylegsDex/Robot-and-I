@@ -9,7 +9,7 @@ using TMPro;
 
 namespace PseudoLevels
 {
-    public class Pseudo_L14 : MonoBehaviour
+    public class Pseudo_L16 : MonoBehaviour
     {
         public TMP_InputField aInput; // References the User's Input Field
         public TMP_InputField bInput;
@@ -145,9 +145,20 @@ namespace PseudoLevels
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
             {
+                /* try
+                 {// Save Text from input field into user input
+                     a = int.Parse(aInput.text);//tests for only integers
+
+                 }
+                 catch (Exception)//activates when the input is invalid
+                 {
+                     aOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+                     aOutput.text = "Invalid";
+                     safe = false;
+                 }*/
                 if (safe)
                 {
-                    if (aInput.text == "3")
+                    if (aInput.text == "yes!3")
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
@@ -169,7 +180,7 @@ namespace PseudoLevels
 
                 if (safe)
                 {
-                    if (bInput.text == "7654")
+                    if (bInput.text == "3")
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -185,7 +196,8 @@ namespace PseudoLevels
             }
             //C
             int c3;
-            c3 = 0;
+            int c2;
+            c3 = c2= 0;
             safe = true;//resets safe for next input
             if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)) &&
                 !(String.IsNullOrEmpty(c3Input.text)))//Checks if values were inputed skips if no value
@@ -199,8 +211,12 @@ namespace PseudoLevels
                 }
                 catch (Exception)
                 {
-                    if (cInput.text == "x[0]" || cInput.text == "x[1]" || cInput.text == "x[2]" || cInput.text == "x[3]")
+                    if (cInput.text == "part1" || cInput.text == "part2" )
                         c = 2;
+                    if (c2Input.text == "part1" || c2Input.text == "part2" || c2Input.text == "temp")
+                        c2 = 2;
+                    if (c3Input.text == "part1" || c3Input.text == "part2" || c3Input.text == "temp")
+                        c3 = 2;
                     else
                     {
                         cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
@@ -211,7 +227,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (c == 2 && c2Input.text == "a" && c3 == 4)
+                    if (cInput.text == "part1" && c2Input.text == "temp" && c3 == 14)
                     {
                         cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         cOutput.text = "Correct!";
@@ -235,7 +251,7 @@ namespace PseudoLevels
                 {
 
 
-                    if (dInput.text == "i" && d2Input.text == "i" && d3Input.text == "x")
+                    if (dInput.text == "j" && d2Input.text == "i" && d3Input.text == "min")
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";

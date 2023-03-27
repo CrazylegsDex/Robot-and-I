@@ -9,10 +9,12 @@ using TMPro;
 
 namespace PseudoLevels
 {
-    public class Pseudo_L14 : MonoBehaviour
+    public class Pseudo_L17 : MonoBehaviour
     {
         public TMP_InputField aInput; // References the User's Input Field
+        public TMP_InputField a2Input;
         public TMP_InputField bInput;
+        public TMP_InputField b2Input;
         public TMP_InputField cInput;
         public TMP_InputField c2Input;
         public TMP_InputField c3Input;
@@ -145,9 +147,10 @@ namespace PseudoLevels
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
             {
+
                 if (safe)
                 {
-                    if (aInput.text == "3")
+                    if (aInput.text == "&" && a2Input.text == "5")
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
@@ -169,7 +172,7 @@ namespace PseudoLevels
 
                 if (safe)
                 {
-                    if (bInput.text == "7654")
+                    if (bInput.text == "C" && bInput.text == "*")
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -185,7 +188,8 @@ namespace PseudoLevels
             }
             //C
             int c3;
-            c3 = 0;
+            int c2;
+            c3 = c2 = 0;
             safe = true;//resets safe for next input
             if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)) &&
                 !(String.IsNullOrEmpty(c3Input.text)))//Checks if values were inputed skips if no value
@@ -194,12 +198,12 @@ namespace PseudoLevels
                 try
                 {
                     c = int.Parse(cInput.text);
-                    c3 = int.Parse(c3Input.text);
+                    c2 = int.Parse(c3Input.text);
 
                 }
                 catch (Exception)
                 {
-                    if (cInput.text == "x[0]" || cInput.text == "x[1]" || cInput.text == "x[2]" || cInput.text == "x[3]")
+                    if (cInput.text == "x")
                         c = 2;
                     else
                     {
@@ -211,7 +215,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (c == 2 && c2Input.text == "a" && c3 == 4)
+                    if (cInput.text == "x" && c2 == 0 && c3Input.text == "9876")
                     {
                         cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         cOutput.text = "Correct!";
@@ -235,7 +239,7 @@ namespace PseudoLevels
                 {
 
 
-                    if (dInput.text == "i" && d2Input.text == "i" && d3Input.text == "x")
+                    if (dInput.text == "y" && d2Input.text == "ptr" && d3Input.text == "ptr2")
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
@@ -255,7 +259,6 @@ namespace PseudoLevels
             if (num == 4)
             {
                 Debug.Log("Works!");
-                //hairTests = GameObject.FindGameObjectsWithTag("Box");
                 foreach (GameObject go in hairTests)//serches for "Box" objects
                 {
                     go.SetActive(true);

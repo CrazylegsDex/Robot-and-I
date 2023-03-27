@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245, y: 1.194}
+  m_AnchoredPosition: {x: 245, y: 115}
   m_SizeDelta: {x: 72.2347, y: 12.388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &17903706
@@ -346,7 +346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.32, y: 1.194}
+  m_AnchoredPosition: {x: 124.32, y: 116}
   m_SizeDelta: {x: 74.0358, y: 15.225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &166939159
@@ -758,7 +758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -108, y: 28.6}
+  m_AnchoredPosition: {x: -108, y: 6.3}
   m_SizeDelta: {x: 56, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &224857886
@@ -1111,8 +1111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 68.69849, y: 58.3}
-  m_SizeDelta: {x: 976.1379, y: 322.5482}
+  m_AnchoredPosition: {x: 68.69849, y: 47.383495}
+  m_SizeDelta: {x: 976.1379, y: 366.2142}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281162812
 MonoBehaviour:
@@ -1594,8 +1594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 175.99857, y: 58.549988}
-  m_SizeDelta: {x: 13, y: 272}
+  m_AnchoredPosition: {x: 175.99857, y: 47.2166}
+  m_SizeDelta: {x: 13, y: 317.3337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540428088
 MonoBehaviour:
@@ -1797,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495251368137, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -59
+      value: -82.397
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1817,7 +1817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506121, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -59.302513
+      value: -82.7
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495748506122, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: dialogue.sentences.Array.size
@@ -2666,7 +2666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.4, y: 4.9}
+  m_AnchoredPosition: {x: -23.2, y: -15.3}
   m_SizeDelta: {x: 57.598, y: 15.225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &642525734
@@ -3336,11 +3336,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
---- !u!61 &756998986 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
-  m_PrefabInstance: {fileID: 756998985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767328428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,7 +3373,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 233.1, y: 39.5}
+  m_AnchoredPosition: {x: 257.2, y: 29}
   m_SizeDelta: {x: 37.484, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767328430
@@ -3706,7 +3701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 785980150}
-  - component: {fileID: 785980149}
+  - component: {fileID: 785980151}
   - component: {fileID: 785980148}
   - component: {fileID: 785980147}
   - component: {fileID: 785980146}
@@ -3768,37 +3763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49abfd45b95fce842b5746fb6bf4668c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &785980149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785980144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706f0764c57abe44886f39dd01a3d0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aInput: {fileID: 224857888}
-  bInput: {fileID: 1704801521}
-  cInput: {fileID: 1321175745}
-  c2Input: {fileID: 1095093929}
-  c3Input: {fileID: 1815623612}
-  dInput: {fileID: 2023821167}
-  d2Input: {fileID: 1666963439}
-  d3Input: {fileID: 767328432}
-  aOutput: {fileID: 1957040553}
-  bOutput: {fileID: 642525735}
-  cOutput: {fileID: 166939160}
-  dOutput: {fileID: 17903707}
-  complete: {fileID: 1722526625}
-  wall: {fileID: 1530142173}
-  bit: {fileID: 1365591091}
-  cam: {fileID: 571243930}
-  boxTests: []
-  hairTests: []
-  levelSprite: {fileID: 756998986}
 --- !u!4 &785980150
 Transform:
   m_ObjectHideFlags: 0
@@ -3814,6 +3778,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &785980151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785980144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e5a33b6455a7845ac00508d8bdddd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aInput: {fileID: 224857888}
+  bInput: {fileID: 1704801521}
+  cInput: {fileID: 1321175745}
+  c2Input: {fileID: 1095093929}
+  c3Input: {fileID: 1815623612}
+  dInput: {fileID: 2023821167}
+  d2Input: {fileID: 1666963439}
+  d3Input: {fileID: 0}
+  aOutput: {fileID: 1957040553}
+  bOutput: {fileID: 642525735}
+  cOutput: {fileID: 166939160}
+  dOutput: {fileID: 17903707}
+  complete: {fileID: 1722526625}
+  wall: {fileID: 1530142173}
+  bit: {fileID: 1365591091}
+  cam: {fileID: 571243930}
+  boxTests: []
+  hairTests: []
+  levelSprite: {fileID: 0}
 --- !u!1 &793672752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4037,7 +4032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.8, y: 64.2}
+  m_AnchoredPosition: {x: 124.9, y: 47}
   m_SizeDelta: {x: 35.9588, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095093927
@@ -4236,8 +4231,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -56.001495, y: 58.627502}
-  m_SizeDelta: {x: 13, y: 273}
+  m_AnchoredPosition: {x: -56.001495, y: 47.738525}
+  m_SizeDelta: {x: 13, y: 316.5559}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135179889
 MonoBehaviour:
@@ -6193,7 +6188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 124.32, y: 82.6}
+  m_AnchoredPosition: {x: 124.32, y: 65.9}
   m_SizeDelta: {x: 35.957, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321175743
@@ -6468,7 +6463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.44382, y: -198.7}
+  m_AnchoredPosition: {x: 51.44382, y: -215.5}
   m_SizeDelta: {x: 108.2739, y: 65.8173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1379701193
@@ -6491,9 +6486,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C.\n\nx = [9,8,7,6]\n\nfor(a=0, a<\t\t       , a++)\n    y = x[i]\n   
-    x[i] = x[\t\t   -1]\n    x[i - 1] = y\n\nfor(a=0, a<\t\t   ,a++)\n    ouput(x[a])\n\noutput:
-    6789"
+  m_text: "C.\n\nint fib(int num)\n    part1 = 0\n    part2 = 1\n    for(i =1, i
+    < num, i++)\n        temp = \n        part2 = part2 + part1\n        part1 =
+    \n    if(num != 0)\n         return part2\n    else\n        return part1\nint
+    main()\n    num = fib(\t\t))\n    output(num)\noutput: 377"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6873,7 +6869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.6681, y: -183.4}
+  m_AnchoredPosition: {x: -64.6681, y: -213.9}
   m_SizeDelta: {x: 105.7202, y: 78.014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487619912
@@ -6896,7 +6892,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B.\n\n\n\n\nb=[3,4,5,6,7]\nfor(i=4,i>0,i--)\n    output(b[i])\n\noutput: "
+  m_text: "B.\nint halfInt(int num)\n    if(num%2 != 0)\n        return num/2 + 1\n   
+    else\n        return num/2\n\nint main()\n    num = halfInt(5)\noutput: "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7062,8 +7059,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.098522, y: 58.450024}
-  m_SizeDelta: {x: 13, y: 273}
+  m_AnchoredPosition: {x: 59.098522, y: 47.11659}
+  m_SizeDelta: {x: 13, y: 318.3337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528265754
 MonoBehaviour:
@@ -7645,7 +7642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69.089355, y: -24.6}
+  m_AnchoredPosition: {x: 68.6, y: -46.5}
   m_SizeDelta: {x: 483.9615, y: 16.4259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627813854
@@ -7692,8 +7689,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 785980149}
-        m_TargetAssemblyTypeName: PseudoLevels.Pseudo_L14, Assembly-CSharp
+      - m_Target: {fileID: 785980151}
+        m_TargetAssemblyTypeName: PseudoLevels.Pseudo_L16, Assembly-CSharp
         m_MethodName: Code_Compiler
         m_Mode: 1
         m_Arguments:
@@ -7779,7 +7776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258.8, y: 67.00001}
+  m_AnchoredPosition: {x: 263.2, y: 45.7}
   m_SizeDelta: {x: 37.453, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666963437
@@ -8413,7 +8410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 39.5}
+  m_AnchoredPosition: {x: -3.6, y: 5.2}
   m_SizeDelta: {x: 37.4533, y: 13.5568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704801519
@@ -9268,7 +9265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 121.6, y: 37.8}
+  m_AnchoredPosition: {x: 132.7, y: -6.9}
   m_SizeDelta: {x: 35.955, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1815623610
@@ -9652,7 +9649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178.21576, y: -188.7}
+  m_AnchoredPosition: {x: -178.21576, y: -200}
   m_SizeDelta: {x: 102.6036, y: 78.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828830370
@@ -9675,7 +9672,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A. \n\n\n\n\n\na = [1,2,3,4]\n    output(a[2])\n\n\noutput:"
+  m_text: "A. \n\nvoid yes()\n    output(yes!)\n\nint count(int num)\n    return
+    num + 1\n\nint main()\n    yes()\n    count(2)\n    return 0\noutput:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10756,7 +10754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 5.6}
+  m_AnchoredPosition: {x: -115, y: -17}
   m_SizeDelta: {x: 75.447, y: 15.225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1957040552
@@ -10891,7 +10889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 172.40486, y: -195.7}
+  m_AnchoredPosition: {x: 172.40486, y: -212.5}
   m_SizeDelta: {x: 116.851, y: 73.1299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1997001544
@@ -10914,8 +10912,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D.   \n\t\t\nx = [0,0,0,0]\n\nfor(i = 0, i<4, i++)\n    x[\t\t   ]=                 
-    +1\n\nfor(a=0,a<4,a++)\n    output(\t\t  [i])\n\noutput: 1234"
+  m_text: "D.\nvoid sortArray(int [] a, int length)\n    for(i =0, i<length - 1,
+    i++)\n        min = i\n         for(j =0, j<length, j++)\n             if(a[j]
+    < a[min])\n                 min =\n\n             temp = a[\t\t     ]\n\n            
+    a[i] = a[                    ]\n             a[min] = a[temp]\nint main()\n   
+    b = [9,3,0,5,7,1]\n    sortArray() \nb contains: 0,1,3,5,7,9 "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11162,7 +11163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 213.9, y: 67}
+  m_AnchoredPosition: {x: 259.5, y: 63}
   m_SizeDelta: {x: 38.5431, y: 13.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023821165
