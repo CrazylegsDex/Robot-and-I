@@ -1,7 +1,7 @@
 // This script allows control of Bit to the player in the platformer view
 //
 // Author: Robot and I Team
-// Last modification date: 02-28-2023
+// Last modification date: 03-08-2023
 
 using UnityEngine;
 
@@ -45,7 +45,7 @@ namespace PlayerControl
             Off,
             Fatal
         } // Keeps track of all the animation states
-        PlayerStates currentState;
+        static PlayerStates curBitState;
 
         // Public variables - Inspector View modifiable
         //                          //Tested// Description
@@ -58,6 +58,7 @@ namespace PlayerControl
         public int maxIdleActs;     // 08.0 // number of idle actions Bit will perform before sleeping
         public float maxIdleTime;   // 08.5 // how long bit will wait between performing idle actions
         public bool isGlitched;     // determines if bit will produce glitched animation or not
+        public bool canGrab;        // if true bit can grab
         public Transform ceiCh1;    // for ceiling check rectangle
         public Transform ceiCh2;    // ^ same
         public Transform wallChL1;  // for left wall check rectangle
@@ -71,13 +72,21 @@ namespace PlayerControl
 
         // Private variables
         private Rigidbody2D rb;     // Bit's rigidbody, will be used to change bits x and y velocity
-        private Transform tf;       // used to update the position of the focalpoint to Bit's vicinity, (and therefore it helps keep the camera on Bit)
-        private Animator an;         // Animations
-        private bool aniLock = false;   // if true no new animation will start
-        private bool canAny = true; // when false Bit will be unable to do anything, used to stop controls when bit is dead
-        private bool canJump = true;// when false Bit will be unable to jump
-        private bool lastLookRigh;
-        private bool canAct;// when false 
+        private Transform tf;       // used to keep track of Bit's Position for other objects to relate with
+        private static Animator an;        // Animations for Bit
+        private GameObject chec;    // Game Object for the
+        private Transform checTf;   // transform for the 
+        private Vector3 checkOffset;
+        //private GameObject tool;    // animations for Bit's Tools
+        private static bool aniLock = false;   // if true no new Bit animation will start
+        public static bool canAny = true; // when false Bit will be unable to do anything, used to stop controls when bit is dead
+        private static bool canJump = true;// when false Bit will be unable to jump
+        private static bool lLRight = true;// True when bit is initialized or last looked right, fals when last looked left.
+        //private bool canAct = true; // when false Bit notice pressing of 'E' action: for grabbing bit can only do it while on ground and not jumping.
+        private bool isAct = false; // when true Bit is mid action and can't move or jump, ex. grabbing, but not holding
+        //private bool isGrabbing = false;// 
+        //private bool isHolding = false;
+        //private bool isThrow = false;
         private int idleActs;       // keeps track of Bit's remaining idle actions
         private float idleTime;     // keeps track of how much time until Bit will perform another idle action
         private float moveStrength; // GetAxis of Horizontal controls, ranges from -1 to 1
@@ -85,38 +94,44 @@ namespace PlayerControl
         private bool righKey;       // is true if 'D' or '->' are held down
         private bool actKey;        // is true if 'E' is held down
         private bool firstFixedJump = false;    // keeps track of first fixed update where 'spacebar' is pressed
+        private bool firstFixedAct = false;
         private int airJumpCount;   // keeps track of Bit's remaining air jumps
         private float airTime;      // keeps track of the time left in a jump
         private bool isJumping = false; // is true for the 1.5 block jump, that starts from the ground
         private bool isAirJumping = false;  // is true for the small air jumps, that starts in the air
         private bool firstFixedDeath = false;   // keeps track of first fixed update where Bit dies... dark
 
-        PlayerStates CurrentState
+        static PlayerStates CurBitState
         {
             set
             {
                 if (!aniLock)
                 {
-                    currentState = value;
-                    switch (currentState)
+                    curBitState = value;
+                    switch (curBitState)
                     {
                         case PlayerStates.LookC:
                             an.Play("LookC");
                             break;
                         case PlayerStates.LookL:
                             an.Play("LookL");
+                            lLRight = false;
                             break;
                         case PlayerStates.LookR:
                             an.Play("LookR");
+                            lLRight = true;
                             break;
                         case PlayerStates.WalkL:
                             an.Play("WalkL");
+                            lLRight = false;
                             break;
                         case PlayerStates.WalkR:
                             an.Play("WalkR");
+                            lLRight = true;
                             break;
                         case PlayerStates.PushL:
                             an.Play("PushL");
+                            lLRight = false;
                             break;
                         case PlayerStates.PushR:
                             an.Play("PushR");
@@ -126,33 +141,40 @@ namespace PlayerControl
                             break;
                         case PlayerStates.ReturnR:
                             an.Play("ReturnR");
+                            lLRight = true;
                             break;
                         case PlayerStates.JumpC:
                             an.Play("JumpC");
                             break;
                         case PlayerStates.JumpL:
                             an.Play("JumpL");
+                            lLRight = false;
                             break;
                         case PlayerStates.JumpR:
                             an.Play("JumpR");
+                            lLRight = true;
                             break;
                         case PlayerStates.AirAC:
                             an.Play("AirAC");
                             break;
                         case PlayerStates.AirAL:
                             an.Play("AirAL");
+                            lLRight = false;
                             break;
                         case PlayerStates.AirAR:
                             an.Play("AirAR");
+                            lLRight = true;
                             break;
                         case PlayerStates.AirDC:
                             an.Play("AirDC");
                             break;
                         case PlayerStates.AirDL:
                             an.Play("AirDL");
+                            lLRight = false;
                             break;
                         case PlayerStates.AirDR:
                             an.Play("AirDR");
+                            lLRight = true;
                             break;
                         case PlayerStates.LandedC:
                             an.Play("LandedC");
@@ -163,11 +185,13 @@ namespace PlayerControl
                             an.Play("LandedL");
                             aniLock = true;
                             canJump = false;
+                            lLRight = false;
                             break;
                         case PlayerStates.LandedR:
                             an.Play("LandedR");
                             aniLock = true;
                             canJump = false;
+                            lLRight = true;
                             break;
                         case PlayerStates.BonkCC:
                             an.Play("BonkCC");
@@ -176,18 +200,22 @@ namespace PlayerControl
                         case PlayerStates.BonkLC:
                             an.Play("BonkLC");
                             aniLock = true;
+                            lLRight = false;
                             break;
                         case PlayerStates.BonkRC:
                             an.Play("BonkRC");
                             aniLock = true;
+                            lLRight = true;
                             break;
                         case PlayerStates.BonkLW:
                             an.Play("BonkLW");
                             aniLock = true;
+                            lLRight = false;
                             break;
                         case PlayerStates.BonkRW:
                             an.Play("BonkRW");
                             aniLock = true;
+                            lLRight = true;
                             break;
                         case PlayerStates.Blink:
                             an.Play("Blink");
@@ -216,7 +244,9 @@ namespace PlayerControl
                     }
                 }
             }
-        } // sets what actions will be performed for each state change
+        } // sets what actions will be performed for each animation change
+
+
 
         // Awake is called after all objects are initialized. Called in a random order with the rest.
         private void Awake()
@@ -225,6 +255,9 @@ namespace PlayerControl
             rb = GetComponent<Rigidbody2D>();
             tf = GetComponent<Transform>();
             an = GetComponent<Animator>();
+            chec = GameObject.FindWithTag("Checker");
+            checTf = chec.GetComponent<Transform>();
+            //tool = gameObject.transform.GetChild(1).gameObject;
         }
 
         // Start is called before the first frame update
@@ -242,6 +275,8 @@ namespace PlayerControl
         {
             if (Input.GetButtonDown("Jump"))
                 firstFixedJump = true;
+            if (Input.GetKeyDown("e"))
+                firstFixedAct = true;
         }
 
         // Better for handling physics, can be called multiple times per frame: current fixed frame count set to 1000 fps
@@ -251,7 +286,7 @@ namespace PlayerControl
             // unintentional sideffect it also turn off the terminal velocity function, so Bit becomes Brick
             if (firstFixedDeath)
             {
-                CurrentState = PlayerStates.Off; // Triggers the "Off" animation once, before that triggers the looping "Fatal" animation
+                CurBitState = PlayerStates.Off; // Triggers the "Off" animation once, before that triggers the looping "Fatal" animation
             }
 
             // contains controls for bits key player functions movement, animations, idling or The the cursor is not currently in a TMP object
@@ -260,6 +295,41 @@ namespace PlayerControl
                 leftKey = Input.GetKey("a") || Input.GetKey("left"); // Checks for any left presses this frame
                 righKey = Input.GetKey("right") || Input.GetKey("d"); // Checks for any Right presses this frame
                 moveStrength = Input.GetAxis("Horizontal");
+
+                if (lLRight)
+                {
+                    checkOffset = new Vector3(15f, 0f, 0f);
+                    checTf.position = tf.position + checkOffset;
+                }
+                else
+                {
+                    checkOffset = new Vector3(-15f, 0f, 0f);
+                    checTf.position = tf.position + checkOffset;
+                }
+
+                if (firstFixedAct && canGrab)
+                {
+                    Tool_Animations.ToolAction();
+                    firstFixedAct = false;
+                }
+                else
+                {
+                    Tool_Animations.ToolUpdate(lLRight);
+                }
+                /*
+                if (Tool_Animations.CheCurToolAni("Grab"))
+                {
+                    Tool_Animations.GrabUpdate();
+                }
+                else if (Tool_Animations.CheCurToolAni("Hold"))
+                {
+                    Tool_Animations.HeldUpdate();
+                }
+                else if (Tool_Animations.CheCurToolAni("Drop") || Tool_Animations.CheCurToolAni("Throw"))
+                {
+                    Tool_Animations.ReleUpdate();
+                }
+                */
 
                 // checks if Bit is grounded or not, and decides what state they will go into
                 if (IsGrounded())
@@ -292,92 +362,95 @@ namespace PlayerControl
         private void ActOnGro()
         {
             airJumpCount = maxAirJumps; // reset air jumps because Bit is Grounded
-
-            if (leftKey)
+            if (!isAct)
             {
-                if (righKey) // Left and Right Press
+                // horizontal movement
+                if (leftKey)
                 {
-                    rb.velocity = new Vector2(0f, rb.velocity.y); // no movement
-                }
-                else //Left only press
-                {
-                    if (WallToLeft()) // Moving Right or Obstacle to Left
+                    if (righKey) // Left and Right Press
                     {
-                        rb.velocity = new Vector2(-1f, rb.velocity.y); // small x movement so bit can touch left walls
+                        rb.velocity = new Vector2(0f, rb.velocity.y); // no movement
                     }
-                    else // Moving Left or Stopped
+                    else //Left only press
                     {
-                        rb.velocity = new Vector2(-maxXSpeedG, rb.velocity.y); // speed is immeditly set to ground max, to the left
-                    }
-                }
-            }
-            else
-            {
-                if (righKey) // right only press
-                {
-                    if (WallToRight()) // Moving Left or Obstacle to Right
-                    {
-                        rb.velocity = new Vector2(1f, rb.velocity.y); // small x movement so bit can touch right walls
-                    }
-                    else // Moving Right or Stopped
-                    {
-                        rb.velocity = new Vector2(maxXSpeedG, rb.velocity.y); // speed is immeditly set to ground max, to the Right
-                    }
-                }
-                else // no press
-                {
-                    if (rb.velocity.x < 0f) // Moving Left
-                    {
-                        if (WallToLeft())
+                        if (WallToLeft()) // Moving Right or Obstacle to Left
                         {
                             rb.velocity = new Vector2(-1f, rb.velocity.y); // small x movement so bit can touch left walls
                         }
-                        else
+                        else // Moving Left or Stopped
                         {
-                            rb.velocity = new Vector2(maxXSpeedG * moveStrength, rb.velocity.y); //allows bit to slow to a stop rather than do so abbruptly
+                            rb.velocity = new Vector2(-maxXSpeedG, rb.velocity.y); // speed is immeditly set to ground max, to the left
                         }
                     }
-                    else if (rb.velocity.x > 0f) // Moving Right
+                }
+                else
+                {
+                    if (righKey) // right only press
                     {
-                        if (WallToRight())
+                        if (WallToRight()) // Moving Left or Obstacle to Right
                         {
                             rb.velocity = new Vector2(1f, rb.velocity.y); // small x movement so bit can touch right walls
                         }
-                        else
+                        else // Moving Right or Stopped
                         {
-                            rb.velocity = new Vector2(maxXSpeedG * moveStrength, rb.velocity.y); //allows bit to slow to a stop rather than do so abbruptly
+                            rb.velocity = new Vector2(maxXSpeedG, rb.velocity.y); // speed is immeditly set to ground max, to the Right
+                        }
+                    }
+                    else // no press
+                    {
+                        if (rb.velocity.x < 0f) // Moving Left
+                        {
+                            if (WallToLeft())
+                            {
+                                rb.velocity = new Vector2(-1f, rb.velocity.y); // small x movement so bit can touch left walls
+                            }
+                            else
+                            {
+                                rb.velocity = new Vector2(maxXSpeedG * moveStrength, rb.velocity.y); //allows bit to slow to a stop rather than do so abbruptly
+                            }
+                        }
+                        else if (rb.velocity.x > 0f) // Moving Right
+                        {
+                            if (WallToRight())
+                            {
+                                rb.velocity = new Vector2(1f, rb.velocity.y); // small x movement so bit can touch right walls
+                            }
+                            else
+                            {
+                                rb.velocity = new Vector2(maxXSpeedG * moveStrength, rb.velocity.y); //allows bit to slow to a stop rather than do so abbruptly
+                            }
                         }
                     }
                 }
-            }
 
-            // check if jumping already, if not jumping, ignore
-            if (isJumping)
-            {
-                canJump = false;
-                // check if any airtime remains
-                if (airTime > 0f)
+                // check if jumping already, if not jumping, ignore
+                if (isJumping)
                 {
-                    airTime -= Time.deltaTime; // remove air time
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce); // set vertical velocity to jumpForce
+                    canJump = false;
+                    // check if any airtime remains
+                    if (airTime > 0f)
+                    {
+                        airTime -= Time.deltaTime; // remove air time
+                        rb.velocity = new Vector2(rb.velocity.x, jumpForce); // set vertical velocity to jumpForce
+                    }
+                    // no more airtime, end jump
+                    else
+                    {
+                        isJumping = false;
+                    }
                 }
-                // no more airtime, end jump
                 else
                 {
-                    isJumping = false;
+                    canJump = true;
                 }
-            }
-            else
-            {
-                canJump = true;
-            }
 
-            // if jump button pressed, setup for grounded jump
-            if (firstFixedJump && canJump)
-            {
-                isJumping = true;
-                airTime = maxAirTime;
-                firstFixedJump = false;
+                // if jump button pressed, setup for grounded jump
+                if (firstFixedJump && canJump)
+                {
+                    isJumping = true;
+                    airTime = maxAirTime;
+                    firstFixedJump = false;
+                }
             }
         }
 
@@ -386,94 +459,96 @@ namespace PlayerControl
         // Air Movement
         private void ActInAir()
         {
-            // sets X velocity to be -maxXSpeedA, 0, or maxXSpeedA; for bunny hopping
-            if (leftKey)
+            if (!isAct)
             {
-                if (righKey) // Left and Right Press
+                // sets X velocity to be -maxXSpeedA, 0, or maxXSpeedA; for bunny hopping
+                if (leftKey)
                 {
-                    rb.velocity = new Vector2(0f, rb.velocity.y); // no move
-                }
-                else //Left only press
-                {
-                    if (WallToLeft()) // Moving Right or Obstacle to Left
+                    if (righKey) // Left and Right Press
                     {
-                        rb.velocity = new Vector2(-1f, rb.velocity.y); // small x movement so bit can touch left walls
+                        rb.velocity = new Vector2(0f, rb.velocity.y); // no move
                     }
-                    else // Moving Left or Stopped
+                    else //Left only press
                     {
-                        rb.velocity = new Vector2(-maxXSpeedA, rb.velocity.y); // speed is immeditly set to air max, to the left
-                    }
-                }
-            }
-            else
-            {
-                if (righKey) // right only press
-                {
-                    if (WallToRight()) // Moving Left or Obstacle to Right
-                    {
-                        rb.velocity = new Vector2(1f, rb.velocity.y); // small x movement so bit can touch right walls
-                    }
-                    else // Moving Right or Stopped
-                    {
-                        rb.velocity = new Vector2(maxXSpeedA, rb.velocity.y); // speed is immeditly set to air max, to the Right
+                        if (WallToLeft()) // Moving Right or Obstacle to Left
+                        {
+                            rb.velocity = new Vector2(-1f, rb.velocity.y); // small x movement so bit can touch left walls
+                        }
+                        else // Moving Left or Stopped
+                        {
+                            rb.velocity = new Vector2(-maxXSpeedA, rb.velocity.y); // speed is immeditly set to air max, to the left
+                        }
                     }
                 }
-                else // no press
-                {
-                    rb.velocity = new Vector2(0f, rb.velocity.y); // unlike on the ground it would be difficult to place jump if the player kept sliding in air
-                }
-            }
-
-            // check if jumping from ground already
-            if (isJumping)
-            {
-                canJump = false;
-                // check if any airtime remains
-                if (airTime > 0f)
-                {
-                    airTime -= Time.deltaTime; // remove air time
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce); // set vertical velocity to jumpForce
-                }
-                // no more airtime, end jump
                 else
                 {
+                    if (righKey) // right only press
+                    {
+                        if (WallToRight()) // Moving Left or Obstacle to Right
+                        {
+                            rb.velocity = new Vector2(1f, rb.velocity.y); // small x movement so bit can touch right walls
+                        }
+                        else // Moving Right or Stopped
+                        {
+                            rb.velocity = new Vector2(maxXSpeedA, rb.velocity.y); // speed is immeditly set to air max, to the Right
+                        }
+                    }
+                    else // no press
+                    {
+                        rb.velocity = new Vector2(0f, rb.velocity.y); // unlike on the ground it would be difficult to place jump if the player kept sliding in air
+                    }
+                }
+
+                // check if jumping from ground already
+                if (isJumping)
+                {
+                    canJump = false;
+                    // check if any airtime remains
+                    if (airTime > 0f)
+                    {
+                        airTime -= Time.deltaTime; // remove air time
+                        rb.velocity = new Vector2(rb.velocity.x, jumpForce); // set vertical velocity to jumpForce
+                    }
+                    // no more airtime, end jump
+                    else
+                    {
+                        isJumping = false;
+                    }
+                }
+                // check if preforming an air jump 
+                else if (isAirJumping)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce * 1.2f); // set vertical velocity to jumpForce
+                    isAirJumping = false;
+                }
+                else
+                {
+                    canJump = true;
+                }
+
+                // if jump button pressed, setup
+                if (firstFixedJump && canJump && (airJumpCount > 0))
+                {
+                    isAirJumping = true;
+                    airJumpCount--;
+                    firstFixedJump = false;
+                }
+
+                // maintains terminal velocity, this might be the only part that should be moved to FixedUpdate
+                if (rb.velocity.y < termVel)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, termVel);
+                }
+
+                // if Bit hits ceiling, end jump and set vertical velocity to zero
+                if (HasBonked())
+                {
                     isJumping = false;
+                    isAirJumping = false;
+                    rb.velocity = new Vector2(rb.velocity.x, 0f);
                 }
             }
-            // check if preforming an air jump 
-            else if (isAirJumping)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce * 1.2f); // set vertical velocity to jumpForce
-                isAirJumping = false;
-            }
-            else
-            {
-                canJump = true;
-            }
-
-            // if jump button pressed, setup
-            if (firstFixedJump && canJump && (airJumpCount > 0))
-            {
-                isAirJumping = true;
-                airJumpCount--;
-                firstFixedJump = false;
-            }
-
-            // maintains terminal velocity, this might be the only part that should be moved to FixedUpdate
-            if (rb.velocity.y < termVel)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, termVel);
-            }
-
-            // if Bit hits ceiling, end jump and set vertical velocity to zero
-            if (HasBonked())
-            {
-                isJumping = false;
-                isAirJumping = false;
-                rb.velocity = new Vector2(rb.velocity.x, 0f);
-            }
         }
-
 
         // Grounded Animations
         private void GroAnimation()
@@ -486,22 +561,22 @@ namespace PlayerControl
                 // if Bit is falling play the "LandedL" animation, temp disable jumping while animation plays
                 if (rb.velocity.y < -0.1f)
                 {
-                    CurrentState = PlayerStates.LandedL;
+                    CurBitState = PlayerStates.LandedL;
                 }
                 // if Bit is rising but close to the ground play the "JumpL" animation
                 else if (rb.velocity.y > 0.1f)
                 {
-                    CurrentState = PlayerStates.JumpL;
+                    CurBitState = PlayerStates.JumpL;
                 }
                 // if wall is to the left of bit Push it, unimplemented Left wall bonk animation go near here
                 else if (WallToLeft())
                 {
-                    CurrentState = PlayerStates.PushL;
+                    CurBitState = PlayerStates.PushL;
                 }
                 // if nothing special happening just walk
                 else
                 {
-                    CurrentState = PlayerStates.WalkL;
+                    CurBitState = PlayerStates.WalkL;
                 }
             }
             else if (moveStrength > 0) // Right
@@ -512,22 +587,22 @@ namespace PlayerControl
                 // if Bit is falling play the "LandedR" animation, temp disable jumping while animation plays
                 if (rb.velocity.y < -0.1f)
                 {
-                    CurrentState = PlayerStates.LandedR;
+                    CurBitState = PlayerStates.LandedR;
                 }
                 // if Bit is rising but close to the ground play the "JumpR" animation
                 else if (rb.velocity.y > 0.1f)
                 {
-                    CurrentState = PlayerStates.JumpR;
+                    CurBitState = PlayerStates.JumpR;
                 }
                 // if wall is to the right of Bit Push it, unimplemented Right wall bonk animation go near here
                 else if (WallToRight())
                 {
-                    CurrentState = PlayerStates.PushR;
+                    CurBitState = PlayerStates.PushR;
                 }
                 // if nothing special happening just walk
                 else
                 {
-                    CurrentState = PlayerStates.WalkR;
+                    CurBitState = PlayerStates.WalkR;
                 }
             }
             else // Centered/Idle
@@ -537,20 +612,20 @@ namespace PlayerControl
                 // if Bit is falling play the "LandedC" animation, temp disable jumping while animation plays
                 if (rb.velocity.y < -0.1f)
                 {
-                    CurrentState = PlayerStates.LandedC;
+                    CurBitState = PlayerStates.LandedC;
                 }
                 // if Bit is rising but close to the ground play the "JumpC" animation
                 else if (rb.velocity.y > 0.1f)
                 {
-                    CurrentState = PlayerStates.JumpC;
+                    CurBitState = PlayerStates.JumpC;
                 }
                 // if bit ends a "LandedC" or "BonkCC" animation while on the ground return to "LookC"
-                else if (rb.velocity.y >= -0.1f && rb.velocity.y <= 0.1f && (CheCurAni("LandedC") || CheCurAni("BonkCC")))
+                else if (rb.velocity.y >= -0.1f && rb.velocity.y <= 0.1f && (CheCurBitAni("LandedC") || CheCurBitAni("BonkCC")))
                 {
-                    CurrentState = PlayerStates.LookC;
+                    CurBitState = PlayerStates.LookC;
                 }
                 // Idle Animation controller
-                else if (CheCurAni("LookC"))
+                else if (CheCurBitAni("LookC"))
                 {
                     // when idleTime is up
                     if (idleTime <= 0)
@@ -558,56 +633,56 @@ namespace PlayerControl
                         // final idle bit will "Doze" once before entering the "Sleep" animations
                         if (idleActs == 0)
                         {
-                            CurrentState = PlayerStates.Doze;
+                            CurBitState = PlayerStates.Doze;
                         }
                         // every even number idle animation befor bit sleeps, as long as bit is glitched
                         else if (idleActs % 2 == 0 && isGlitched)
                         {
-                            CurrentState = PlayerStates.Glitch;
+                            CurBitState = PlayerStates.Glitch;
                         }
                         // every third idle animation before bit sleeps, no guarantee if bit is glitched
                         else if (idleActs % 3 == 0)
                         {
-                            CurrentState = PlayerStates.Smile;
+                            CurBitState = PlayerStates.Smile;
                         }
                         // all other idle animations bit blinks
                         else
                         {
-                            CurrentState = PlayerStates.Blink;
+                            CurBitState = PlayerStates.Blink;
                         }
                         idleActs--; // decrement idle actions
                         idleTime = maxIdleTime; // reset idle time
                     }
                 }
                 // if idle animation while LookL return bit to LookC
-                else if (CheCurAni("LookL"))
+                else if (CheCurBitAni("LookL"))
                 {
                     if (idleTime <= 0)
                     {
-                        CurrentState = PlayerStates.ReturnL;
+                        CurBitState = PlayerStates.ReturnL;
                         idleTime = maxIdleTime; // reset idle time
                     }
                 }
                 // if idle animation while LookR return bit to LookC
-                else if (CheCurAni("LookR"))
+                else if (CheCurBitAni("LookR"))
                 {
                     if (idleTime <= 0)
                     {
-                        CurrentState = PlayerStates.ReturnR;
+                        CurBitState = PlayerStates.ReturnR;
                         idleTime = maxIdleTime; // reset idle time
                     }
                 }
                 else
                 {
                     // if any of these left facing states LookL
-                    if (CheCurAni("LandedL") || CheCurAni("WalkL") || CheCurAni("PushL") || CheCurAni("BonkLW") || CheCurAni("BonkCL"))
+                    if (CheCurBitAni("LandedL") || CheCurBitAni("WalkL") || CheCurBitAni("PushL") || CheCurBitAni("BonkLW") || CheCurBitAni("BonkLC"))
                     {
-                        CurrentState = PlayerStates.LookL;
+                        CurBitState = PlayerStates.LookL;
                     }
                     // if any of these right facing states LookR
-                    else if (CheCurAni("LandedR") || CheCurAni("WalkR") || CheCurAni("PushR") || CheCurAni("BonkRW") || CheCurAni("BonkCR"))
+                    else if (CheCurBitAni("LandedR") || CheCurBitAni("WalkR") || CheCurBitAni("PushR") || CheCurBitAni("BonkRW") || CheCurBitAni("BonkRC"))
                     {
-                        CurrentState = PlayerStates.LookR;
+                        CurBitState = PlayerStates.LookR;
                     }
                 }
             }
@@ -623,17 +698,17 @@ namespace PlayerControl
                 // go down look down, feel these comments of a fading man (it's 4:31 A.M.)
                 if (rb.velocity.y < -0.1f)
                 {
-                    CurrentState = PlayerStates.AirDL;
+                    CurBitState = PlayerStates.AirDL;
                 }
                 // go up look up
                 else if (rb.velocity.y > 0.1f)
                 {
-                    CurrentState = PlayerStates.AirAL;
+                    CurBitState = PlayerStates.AirAL;
                 }
                 // hit ceiling go ow.
                 else if (HasBonked())
                 {
-                    CurrentState = PlayerStates.BonkLC;
+                    CurBitState = PlayerStates.BonkLC;
                 }
             }
             else if (moveStrength > 0) // Right
@@ -641,17 +716,17 @@ namespace PlayerControl
                 // go down look down
                 if (rb.velocity.y < -0.1f)
                 {
-                    CurrentState = PlayerStates.AirDR;
+                    CurBitState = PlayerStates.AirDR;
                 }
                 // go up look up
                 else if (rb.velocity.y > 0.1f)
                 {
-                    CurrentState = PlayerStates.AirAR;
+                    CurBitState = PlayerStates.AirAR;
                 }
                 // hit ceiling go oof.
                 else if (HasBonked())
                 {
-                    CurrentState = PlayerStates.BonkRC;
+                    CurBitState = PlayerStates.BonkRC;
                 }
             }
             else // Centered/Idle
@@ -659,19 +734,39 @@ namespace PlayerControl
                 // go down look down
                 if (rb.velocity.y < -0.1f)
                 {
-                    CurrentState = PlayerStates.AirDC;
+                    CurBitState = PlayerStates.AirDC;
                 }
                 // go up look up
                 else if (rb.velocity.y > 0.1f)
                 {
-                    CurrentState = PlayerStates.AirAC;
+                    CurBitState = PlayerStates.AirAC;
                 }
                 // hit ceiling go *Goofy Scream*.
                 else if (HasBonked())
                 {
-                    CurrentState = PlayerStates.BonkCC;
+                    CurBitState = PlayerStates.BonkCC;
                 }
             }
+        }
+
+        public static void PauseBit()
+        {
+            canAny = false;
+            if (lLRight)
+            {
+                CurBitState = PlayerStates.LookR;
+            }
+            else
+            {
+                CurBitState = PlayerStates.LookL;
+            }
+            aniLock = true;
+        }
+
+        public static void PlayBit()
+        {
+            aniLock = false;
+            canAny = true;
         }
 
         // returns true if Bit hurts their head
@@ -699,7 +794,7 @@ namespace PlayerControl
         }
 
         // give String of animation name, returns true if it is the current animation
-        private bool CheCurAni(string name)
+        private bool CheCurBitAni(string name)
         {
             return an.GetCurrentAnimatorStateInfo(0).IsName(name);
         }
@@ -720,21 +815,35 @@ namespace PlayerControl
         // at the end of an idle animation so just stand there {Menacingly!}, well until the next one plays
         private void EndIdleAni()
         {
-            CurrentState = PlayerStates.LookC;
+            CurBitState = PlayerStates.LookC;
         }
 
         // Bit is Programmed to dream of electric sheep until interupted, by movement, jumping or death... again dark
         private void BitIsSleep()
         {
-            CurrentState = PlayerStates.Dream;
+            CurBitState = PlayerStates.Dream;
+        }
+
+        // call to kill Bit; call this when bit colides with an obstacle
+        private void KillBit()
+        {
+            firstFixedDeath = true;
+        }
+
+        // call to revive Bit
+        private void HealBit()
+        {
+            firstFixedDeath = false;
         }
 
         // after shutting off unexpectedly, bit displays the last message "Error: A Fatal Excption has occrred at 0XJ985 \n *Press reset..."
         private void BitIsDead()
         {
             aniLock = false;
-            CurrentState = PlayerStates.Fatal;
+            CurBitState = PlayerStates.Fatal;
         }
+
+        // Am I what perfect is, because that's all you will say I am...
         /*
         // Public variables - Inspector View modifiable
         public int maxJumpCount;
