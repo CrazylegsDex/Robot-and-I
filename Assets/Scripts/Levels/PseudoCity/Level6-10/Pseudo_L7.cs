@@ -27,7 +27,6 @@ namespace PseudoLevels
         public TextMeshProUGUI dOutput;
 
         public GameObject complete;
-        public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
@@ -41,7 +40,7 @@ namespace PseudoLevels
         public BoxCollider2D levelSprite;
         void Start()
         {
-            paintTests = GameObject.FindGameObjectsWithTag("Box");
+            paintTests = GameObject.FindGameObjectsWithTag("Grabbable");
             foreach (GameObject go in paintTests)//serches for "Box" objects
             {
                 go.SetActive(false);
@@ -74,10 +73,9 @@ namespace PseudoLevels
                     {
                         if (!go.name.Contains("Arm"))//Button objects that don't use a script
                         {
-                            //float boxPos = go.transform.position.x;
                             button_Check = go.GetComponent<Button_Check>();//Gets variables from script
                             if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Yell"))
-                            {
+                            {//Paints each fence yellow
 
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.yellow);
@@ -121,7 +119,7 @@ namespace PseudoLevels
                             }
 
                             if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Black"))
-                            {
+                            {//Paints each fence black
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.black);
                                 if (go.name.Contains("(1)"))
@@ -162,7 +160,7 @@ namespace PseudoLevels
                                 }
                             }
                             if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Blue"))
-                            {
+                            {//Paints each fence blue
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.blue);
                                 if (go.name.Contains("(1)"))
@@ -203,16 +201,15 @@ namespace PseudoLevels
                                 }
                             }
                             string fenceCount = "";
-                            for(int i = 0; i<9; i++)
+                            for(int i = 0; i<9; i++)//Checks each fence color
                             {
                                 fenceCount += fences[i];
                             }
-                            //Debug.Log(fenceCount);
                             if (fenceCount == "123213123")
                             {
                                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                                 Debug.Log("Good!");
-                                complete.SetActive(true);
+                                complete.SetActive(true);// Displays completion icon above npc
                             }
                             else
                             {

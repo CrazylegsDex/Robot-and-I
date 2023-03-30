@@ -34,27 +34,24 @@ namespace PseudoLevels
         void Update()
         {
             num = 0;
-            //nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
-            boxTests = GameObject.FindGameObjectsWithTag("Box");
-            foreach (GameObject go in boxTests)//Searches for Gameobject with "Box" tag
+            boxTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            foreach (GameObject go in boxTests)//Searches for Gameobject with "Grabbable" tag
             {
                 float boxPos = go.transform.position.x;
                 float leftPos = leftArm.transform.position.x;
                 float rightPos = rightArm.transform.position.x;
-                //Debug.Log(leftPos);
+               
                 if (leftPos < boxPos && boxPos < rightPos)
                 {
-
                     if (go.name.StartsWith(boxFirstName)) {//Tests for correct first name. 
                         num = num + 1;//counter variable
+                        //Debug.Log(num);
                     }
-
                 }
             }
-            if (num == count)
+            if (num == count)//complete variable is true when correct amount of object are put into range
             {
                 complete = true;
-                
             }
             else
                 complete = false;

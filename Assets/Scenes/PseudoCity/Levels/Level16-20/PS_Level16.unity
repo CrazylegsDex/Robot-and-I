@@ -934,7 +934,7 @@ GameObject:
   - component: {fileID: 253966872}
   - component: {fileID: 253966871}
   - component: {fileID: 253966870}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket (1)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -1306,7 +1306,7 @@ GameObject:
   - component: {fileID: 427889201}
   m_Layer: 3
   m_Name: 1BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1437,7 +1437,7 @@ GameObject:
   - component: {fileID: 522795207}
   - component: {fileID: 522795206}
   - component: {fileID: 522795205}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -2100,6 +2100,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
   m_PrefabInstance: {fileID: 541054183}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &541509868 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+  m_PrefabInstance: {fileID: 756998985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &545731372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 578389654}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2515,7 @@ GameObject:
   - component: {fileID: 626630861}
   - component: {fileID: 626630860}
   - component: {fileID: 626630859}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -2778,7 +2783,7 @@ GameObject:
   - component: {fileID: 652719937}
   - component: {fileID: 652719936}
   - component: {fileID: 652719935}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -3136,7 +3141,7 @@ GameObject:
   - component: {fileID: 709622383}
   - component: {fileID: 709622382}
   - component: {fileID: 709622381}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -3797,18 +3802,17 @@ MonoBehaviour:
   c3Input: {fileID: 1815623612}
   dInput: {fileID: 2023821167}
   d2Input: {fileID: 1666963439}
-  d3Input: {fileID: 0}
+  d3Input: {fileID: 767328432}
   aOutput: {fileID: 1957040553}
   bOutput: {fileID: 642525735}
   cOutput: {fileID: 166939160}
   dOutput: {fileID: 17903707}
   complete: {fileID: 1722526625}
-  wall: {fileID: 1530142173}
   bit: {fileID: 1365591091}
   cam: {fileID: 571243930}
   boxTests: []
   hairTests: []
-  levelSprite: {fileID: 0}
+  levelSprite: {fileID: 541509868}
 --- !u!1 &793672752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,7 +3826,7 @@ GameObject:
   - component: {fileID: 793672755}
   - component: {fileID: 793672754}
   - component: {fileID: 793672753}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -3973,7 +3977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 969415843}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5875,7 +5879,7 @@ GameObject:
   - component: {fileID: 1259576774}
   - component: {fileID: 1259576773}
   - component: {fileID: 1259576772}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -6009,7 +6013,7 @@ GameObject:
   - component: {fileID: 1313866193}
   - component: {fileID: 1313866192}
   - component: {fileID: 1313866191}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: '2Basket '
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -6713,7 +6717,7 @@ GameObject:
   - component: {fileID: 1475048935}
   - component: {fileID: 1475048934}
   - component: {fileID: 1475048933}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -7308,117 +7312,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528743420}
   m_CullTransparentMesh: 1
---- !u!1 &1530142173
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1530142176}
-  - component: {fileID: 1530142175}
-  - component: {fileID: 1530142174}
-  m_Layer: 5
-  m_Name: SideR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1530142174
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530142173}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!212 &1530142175
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530142173}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3601523, g: 0.49056602, b: 0.3396938, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1530142176
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530142173}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 318, y: 35.9, z: 3}
-  m_LocalScale: {x: 226.54713, y: 8, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1792442159}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1570117154
 GameObject:
   m_ObjectHideFlags: 0
@@ -7486,7 +7379,7 @@ GameObject:
   - component: {fileID: 1624588165}
   m_Layer: 3
   m_Name: 4BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7951,7 +7844,7 @@ GameObject:
   - component: {fileID: 1672202689}
   - component: {fileID: 1672202688}
   - component: {fileID: 1672202687}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -8081,7 +7974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679207368}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8573,6 +8466,117 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 0
   m_LineLimit: 0
   m_InputValidator: {fileID: 0}
+--- !u!1 &1707144648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707144649}
+  - component: {fileID: 1707144651}
+  - component: {fileID: 1707144650}
+  m_Layer: 5
+  m_Name: SideR (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1707144649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707144648}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 318, y: 35.9, z: 3}
+  m_LocalScale: {x: 226.54713, y: 8, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1792442159}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!61 &1707144650
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707144648}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!212 &1707144651
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707144648}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.3601523, g: 0.49056602, b: 0.3396938, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1718602044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9154,10 +9158,10 @@ RectTransform:
   - {fileID: 281162811}
   - {fileID: 541054184}
   - {fileID: 307347522}
-  - {fileID: 1530142176}
   - {fileID: 1189010312}
   - {fileID: 1718602045}
   - {fileID: 1722526626}
+  - {fileID: 1707144649}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9495,7 +9499,7 @@ GameObject:
   - component: {fileID: 1822237607}
   m_Layer: 3
   m_Name: 3BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10190,7 +10194,7 @@ GameObject:
   - component: {fileID: 1920190149}
   - component: {fileID: 1920190148}
   - component: {fileID: 1920190147}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket (2)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -10341,7 +10345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1923766122}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10598,7 +10602,7 @@ GameObject:
   - component: {fileID: 1944081344}
   - component: {fileID: 1944081343}
   - component: {fileID: 1944081342}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -11007,7 +11011,7 @@ GameObject:
   - component: {fileID: 2010657829}
   m_Layer: 3
   m_Name: 2BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

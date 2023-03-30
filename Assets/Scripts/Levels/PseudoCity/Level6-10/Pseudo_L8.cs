@@ -27,7 +27,6 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
@@ -55,17 +54,12 @@ namespace PseudoLevels
         void Update()
         {
             cam.transform.position = new Vector3(camx + 485, camy, camz);
-            //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
-                //Debug.Log("Works!");
-
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
-                
                 if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && !active)
                 {
-                    
                     for(int i = 0; i < hoseTest.transform.childCount; i++)
                     {
                         Transform water = hoseTest.transform.GetChild(i);
@@ -102,11 +96,9 @@ namespace PseudoLevels
                                 startTime = Time.time;
                                 timeSet = true;
                             }
-
                             else if (button_Check.complete && active && timeSet)
                             {
                                 
-                                //Debug.Log(" 1 Works!");
                                 endTime = Time.time - startTime;
                                 if(endTime > 10)
                                     button1 = true;
@@ -115,8 +107,7 @@ namespace PseudoLevels
                             {
                                 button1 = false;
                                 timeSet = false;
-                            }
-                                
+                            }   
                         }
                         if (button1)
                         {
@@ -126,21 +117,17 @@ namespace PseudoLevels
                         }
                         else
                         {
-                            //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
                             complete.SetActive(false);
                         }
                     }
 
                 }
-                //cam.transform.position.x = camx + 485; 
 
             }
             else
             {
-                //Debug.Log("Not yet!");
                 cam.transform.position = new Vector3(camx, camy, camz);
-                //cam.transform.position.x = camx;
             }
         }
         public void Code_Compiler()
@@ -177,7 +164,6 @@ namespace PseudoLevels
                         aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         aOutput.text = "Incorrect";
                     }
-
                 }
             }
             //B
@@ -189,7 +175,6 @@ namespace PseudoLevels
             if (!(String.IsNullOrEmpty(bInput.text)) && !(String.IsNullOrEmpty(b2Input.text)) &&
                 !(String.IsNullOrEmpty(b3Input.text)) && !(String.IsNullOrEmpty(b4Input.text)))//Checks if values were inputed skips if no value
             {
-
                 try
                 {
                     if (bInput.text != "x" || bInput.text != "y")
@@ -335,22 +320,16 @@ namespace PseudoLevels
                     }
                     else
                     {
-
                         dOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         dOutput.text = "Incorrect";
                     }
 
                 }
             }
-
             if (num == 4)
             {
-                //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                 hoseTest.SetActive(true);
             }
-            //
-
-
         }
 
     }

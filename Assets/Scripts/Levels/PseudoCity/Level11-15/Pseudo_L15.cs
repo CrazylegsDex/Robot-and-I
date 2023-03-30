@@ -18,7 +18,6 @@ namespace PseudoLevels
         public TMP_InputField c3Input;
         public TMP_InputField dInput;
         public TMP_InputField d2Input;
-        public TMP_InputField d3Input;
 
         public TextMeshProUGUI aOutput; // References the TMP Output Field
         public TextMeshProUGUI bOutput;
@@ -26,8 +25,6 @@ namespace PseudoLevels
         public TextMeshProUGUI dOutput;
 
         public GameObject complete;
-
-        public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
@@ -42,23 +39,21 @@ namespace PseudoLevels
         public BoxCollider2D levelSprite;
         void Start()
         {
-            hairTests = GameObject.FindGameObjectsWithTag("Box");
-            foreach (GameObject go in hairTests)//serches for "Box" objects
+            hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            foreach (GameObject go in hairTests)//searches for "Grabbable" objects
             {
                 go.SetActive(false);
             }
-            //codeComp = false;
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
             cam.transform.position = new Vector3(camx + 485, camy, camz);//moves camera to new section
-            //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
                 cam.transform.position = new Vector3(camx + 505, camy, camz);
@@ -74,7 +69,6 @@ namespace PseudoLevels
                             if (button_Check.complete)
                             {
                                 button1 = true;
-                                //Debug.Log(" 1 Works!");
                             }
                             else
                                 button1 = false;
@@ -85,7 +79,6 @@ namespace PseudoLevels
                             if (button_Check.complete)
                             {
                                 button2 = true;
-                                //Debug.Log(" 2 Works!");
                             }
                             else
                                 button2 = false;
@@ -96,7 +89,6 @@ namespace PseudoLevels
                             if (button_Check.complete)
                             {
                                 button3 = true;
-                                //Debug.Log(" 1 Works!");
                             }
                             else
                                 button3 = false;
@@ -107,7 +99,6 @@ namespace PseudoLevels
                             if (button_Check.complete)
                             {
                                 button4 = true;
-                                //Debug.Log(" 2 Works!");
                             }
                             else
                                 button4 = false;
@@ -116,23 +107,19 @@ namespace PseudoLevels
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
                         {
-                            //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
-
                 }
-                //cam.transform.position.x = camx + 485; 
-
             }
             else
             {
-                //Debug.Log("Not yet!");
                 cam.transform.position = new Vector3(camx, camy, camz);
-                //cam.transform.position.x = camx;
             }
         }
         public void Code_Compiler()
@@ -141,8 +128,6 @@ namespace PseudoLevels
             int num = 0;//counts up everytime a try block receives valid input.
             int c;//Input values
             c = 0;
-            
-
             bool safe = true;//goes false if the input in the try blocks is invalid
             if (!(String.IsNullOrEmpty(aInput.text)))//Checks if values were inputed skips if no value
             {
@@ -159,15 +144,12 @@ namespace PseudoLevels
                         aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         aOutput.text = "Incorrect";
                     }
-
                 }
             }
             //B
-
             safe = true;
             if (!(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
             {
-
                 if (safe)
                 {
                     if (bInput.text == "5A5A5A5A")
@@ -181,7 +163,6 @@ namespace PseudoLevels
                         bOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         bOutput.text = "Incorrect";
                     }
-
                 }
             }
             //C
@@ -193,7 +174,6 @@ namespace PseudoLevels
             if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)) &&
                 !(String.IsNullOrEmpty(c3Input.text)))//Checks if values were inputed skips if no value
             {
-
                 try
                 {
                     c = int.Parse(cInput.text);
@@ -226,41 +206,32 @@ namespace PseudoLevels
                         cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         cOutput.text = "Incorrect";
                     }
-
                 }
             }
-
             //D
             safe = true;
-            if (!(String.IsNullOrEmpty(dInput.text)) && !(String.IsNullOrEmpty(d2Input.text)) &&
-                !(String.IsNullOrEmpty(d3Input.text)))//Checks if values were inputed skips if no value
+            if (!(String.IsNullOrEmpty(dInput.text)) && !(String.IsNullOrEmpty(d2Input.text)))//Checks if values were inputed skips if no value
             {
                 if (safe)
                 {
-
-
                     if (dInput.text == "6" && d2Input.text == "5")
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
                         num++;
-                        //Debug.Log(num);
                     }
                     else
                     {
-
                         dOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         dOutput.text = "Incorrect";
                     }
 
                 }
             }
-            //Debug.Log(num);
             if (num == 4)
             {
                 Debug.Log("Works!");
-                //hairTests = GameObject.FindGameObjectsWithTag("Box");
-                foreach (GameObject go in hairTests)//serches for "Box" objects
+                foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);
                 }

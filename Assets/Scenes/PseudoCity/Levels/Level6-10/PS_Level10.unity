@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 67352010}
   - component: {fileID: 67352009}
   - component: {fileID: 67352008}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 79444092}
   - component: {fileID: 79444091}
   - component: {fileID: 79444090}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 106640104}
   - component: {fileID: 106640103}
   - component: {fileID: 106640102}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 109231389}
   - component: {fileID: 109231388}
   - component: {fileID: 109231387}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -1289,7 +1289,7 @@ GameObject:
   - component: {fileID: 173899510}
   - component: {fileID: 173899509}
   - component: {fileID: 173899508}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -2157,7 +2157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 215421601}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3180,7 +3180,7 @@ GameObject:
   - component: {fileID: 316789784}
   - component: {fileID: 316789783}
   - component: {fileID: 316789782}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -3314,7 +3314,7 @@ GameObject:
   - component: {fileID: 334060743}
   - component: {fileID: 334060742}
   - component: {fileID: 334060741}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (4)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -3465,7 +3465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344537274}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3545,7 +3545,7 @@ GameObject:
   - component: {fileID: 365891101}
   - component: {fileID: 365891100}
   - component: {fileID: 365891099}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -4014,7 +4014,7 @@ GameObject:
   - component: {fileID: 444992735}
   - component: {fileID: 444992734}
   - component: {fileID: 444992733}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (1)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -4305,7 +4305,7 @@ GameObject:
   - component: {fileID: 485464633}
   m_Layer: 3
   m_Name: 2BoxObject
-  m_TagString: Box
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4984,7 +4984,7 @@ GameObject:
   - component: {fileID: 500309024}
   - component: {fileID: 500309023}
   - component: {fileID: 500309022}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -5114,7 +5114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 513871373}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5149,7 +5149,7 @@ GameObject:
   - component: {fileID: 521491388}
   - component: {fileID: 521491387}
   - component: {fileID: 521491386}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (9)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -5303,7 +5303,7 @@ GameObject:
   - component: {fileID: 521923416}
   - component: {fileID: 521923415}
   - component: {fileID: 521923414}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -5436,7 +5436,7 @@ GameObject:
   - component: {fileID: 526254243}
   - component: {fileID: 526254242}
   - component: {fileID: 526254241}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -5867,7 +5867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698634006}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6133,7 +6133,6 @@ MonoBehaviour:
   cOutput: {fileID: 1218304637}
   dOutput: {fileID: 490580783}
   complete: {fileID: 1669607991}
-  wall: {fileID: 1779181256}
   bit: {fileID: 577700442}
   cam: {fileID: 1487249709}
   boxTests: []
@@ -6204,7 +6203,7 @@ GameObject:
   - component: {fileID: 773081687}
   - component: {fileID: 773081686}
   - component: {fileID: 773081685}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -6633,7 +6632,7 @@ GameObject:
   - component: {fileID: 885663274}
   - component: {fileID: 885663273}
   - component: {fileID: 885663272}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -6763,7 +6762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 889112827}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7003,7 +7002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1017383608}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7034,7 +7033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049275806}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7068,7 +7067,7 @@ GameObject:
   - component: {fileID: 1056272456}
   - component: {fileID: 1056272455}
   - component: {fileID: 1056272454}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -7585,7 +7584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1151671643}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7672,7 +7671,7 @@ GameObject:
   - component: {fileID: 1199607692}
   - component: {fileID: 1199607691}
   - component: {fileID: 1199607690}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -8148,7 +8147,7 @@ GameObject:
   - component: {fileID: 1255964081}
   - component: {fileID: 1255964080}
   - component: {fileID: 1255964079}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -8693,7 +8692,6 @@ RectTransform:
   - {fileID: 157168115}
   - {fileID: 495181813}
   - {fileID: 1077818761}
-  - {fileID: 1779181259}
   - {fileID: 208832899}
   - {fileID: 1814880358}
   - {fileID: 1669607992}
@@ -8858,7 +8856,7 @@ GameObject:
   - component: {fileID: 1378428242}
   - component: {fileID: 1378428241}
   - component: {fileID: 1378428240}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -8991,7 +8989,7 @@ GameObject:
   - component: {fileID: 1390585959}
   - component: {fileID: 1390585958}
   - component: {fileID: 1390585957}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -9125,7 +9123,7 @@ GameObject:
   - component: {fileID: 1434546309}
   - component: {fileID: 1434546308}
   - component: {fileID: 1434546307}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (3)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -9280,7 +9278,7 @@ GameObject:
   - component: {fileID: 1450196893}
   - component: {fileID: 1450196892}
   - component: {fileID: 1450196891}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (6)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -9435,7 +9433,7 @@ GameObject:
   - component: {fileID: 1462059758}
   - component: {fileID: 1462059757}
   - component: {fileID: 1462059756}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (8)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -9652,7 +9650,7 @@ GameObject:
   - component: {fileID: 1537043193}
   - component: {fileID: 1537043192}
   - component: {fileID: 1537043191}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -9920,7 +9918,7 @@ GameObject:
   - component: {fileID: 1542448308}
   - component: {fileID: 1542448307}
   - component: {fileID: 1542448306}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -11398,7 +11396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1645759883}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11558,7 +11556,7 @@ GameObject:
   - component: {fileID: 1676555564}
   - component: {fileID: 1676555563}
   - component: {fileID: 1676555562}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (7)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -11934,7 +11932,7 @@ GameObject:
   - component: {fileID: 1775360316}
   - component: {fileID: 1775360315}
   - component: {fileID: 1775360314}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (5)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -12223,7 +12221,7 @@ GameObject:
   - component: {fileID: 1777301905}
   - component: {fileID: 1777301904}
   - component: {fileID: 1777301903}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -12344,117 +12342,6 @@ Transform:
   m_Father: {fileID: 444992737}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1779181256
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1779181259}
-  - component: {fileID: 1779181258}
-  - component: {fileID: 1779181257}
-  m_Layer: 5
-  m_Name: SideR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!61 &1779181257
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779181256}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!212 &1779181258
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779181256}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3601523, g: 0.49056602, b: 0.3396938, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1779181259
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779181256}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 318, y: 35.9, z: 3}
-  m_LocalScale: {x: 226.54713, y: 8, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1327801866}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1789967152
 GameObject:
   m_ObjectHideFlags: 0
@@ -14115,7 +14002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1947618159}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14286,7 +14173,7 @@ GameObject:
   - component: {fileID: 2004824006}
   - component: {fileID: 2004824005}
   - component: {fileID: 2004824004}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket  (2)
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -14441,7 +14328,7 @@ GameObject:
   - component: {fileID: 2102413910}
   - component: {fileID: 2102413909}
   - component: {fileID: 2102413908}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 2Basket (0)
   m_TagString: Button
   m_Icon: {fileID: 0}
