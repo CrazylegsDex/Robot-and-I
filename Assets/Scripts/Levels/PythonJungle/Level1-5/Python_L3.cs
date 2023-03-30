@@ -52,11 +52,11 @@ def main():
 		correct = correct + 1
 	else:
 		print(""concreteleftover = incorrect"")
-	if(windows == 6):
+	if(windows == 12):
 		correct = correct + 1
 	else:
 		print(""windows = incorrect"")
-	if(woodNeeded == 32):
+	if(woodNeeded == 80):
 		correct = correct + 1
 	else:
 		print(""woodNeeded = incorrect"")
