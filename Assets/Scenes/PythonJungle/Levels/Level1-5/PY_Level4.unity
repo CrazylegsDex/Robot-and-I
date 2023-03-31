@@ -2318,7 +2318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ebce07a30dc304385ff3b2506721fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisLocationLevel: PY_Level3
+  ThisLocationLevel: PY_Level4
   QuitLocationLevel: PythonIsland
 --- !u!114 &432963489
 MonoBehaviour:
@@ -2372,9 +2372,9 @@ MonoBehaviour:
     equal to each other.
   explanition2: Now that you found a whole bunch of eggs do you think you can help
     me fix my egg sorter? All I need you to do is use relational operators to set
-    which eggs to to each snake.  My snake bitch only eats eggs larger than 5 in
-    My snake cunt will eat any egg that is not 3 in My snake whore only eats eggs
-    smaller than 2 in
+    which eggs to to each snake.  My snake DAPHNE!! only eats eggs larger than 5
+    in My snake WHAT IS WRONG WITH YOU will eat any egg that is not 3 in My snake
+    DAPHNE PATE!!!! only eats eggs smaller than 2 in
   scanner: {fileID: 649915956}
   wall: {fileID: 290541679}
   levelSprite: {fileID: 374108972}

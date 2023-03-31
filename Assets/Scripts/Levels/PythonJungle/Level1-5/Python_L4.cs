@@ -18,8 +18,8 @@ namespace PythonLevels
 		public TMP_InputField codeInput6;
         public TextMeshProUGUI programOutput;
 		public TextMeshProUGUI programOutput2;
-		public string explanition;
-		public string explanition2;
+        [TextArea(5, 30)] public string explanition;
+        [TextArea(5, 30)] public string explanition2;
 		public GameObject scanner;
 		public GameObject wall;
         public BoxCollider2D levelSprite;
