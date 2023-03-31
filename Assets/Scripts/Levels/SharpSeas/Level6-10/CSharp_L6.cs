@@ -26,6 +26,7 @@ namespace CSharpLevels
         public Sprite ChestSprite;
         public List<GameObject> Chest;
         public TextMeshProUGUI programOutput;
+        public TextMeshProUGUI CompletionBox;
         public TMP_InputField playerInput;
 
         // Private variables
@@ -86,6 +87,39 @@ namespace CSharpLevels
                     Chest[6].transform.position = new Vector3(1708f, 340f);
                     break;
             }
+
+            // Perform actions based on the text in the CompletionBox
+            switch (CompletionBox.text)
+            {
+                case "Chest1":
+                    Chest[0].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+                case "Chest2":
+                    Chest[1].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+                case "Chest3":
+                    Chest[2].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+                case "Chest4":
+                    Chest[3].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+                case "Chest5":
+                    Chest[4].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+                case "Chest6":
+                    Chest[5].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+                case "Chest7":
+                    Chest[6].GetComponent<SpriteRenderer>().sprite = ChestSprite;
+                    CompletionBox.text = "";
+                    break;
+            }
         }
 
         /*
@@ -125,6 +159,7 @@ namespace CSharpLevels
                     // Get references to the input & output text boxes
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
                     output.text = """"; // Clear the output text box
+                    TMP_Text completionBox = GameObject.Find(""Completed"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // Get the LessonObject to set inactive
@@ -155,6 +190,7 @@ namespace CSharpLevels
                             {
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
+                                completionBox.text = ""Chest7"";
                                 GameObject NPC = GameObject.FindWithTag(""LevelChange"");
                                 NPC.GetComponent<BoxCollider2D>().isTrigger = true;
                                 code.text = """";
@@ -182,6 +218,7 @@ namespace CSharpLevels
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
                                 lesson.SetActive(false);
+                                completionBox.text = ""Chest6"";
                                 code.text = ""// int chest7 = 1024;\r\n"";
                             }
                             else
@@ -206,6 +243,7 @@ namespace CSharpLevels
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
                                 lesson.SetActive(false);
+                                completionBox.text = ""Chest5"";
                                 code.text = ""// bool chest6 = false;\r\n"";
                             }
                             else
@@ -230,6 +268,7 @@ namespace CSharpLevels
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
                                 lesson.SetActive(false);
+                                completionBox.text = ""Chest4"";
                                 code.text = ""// string chest5 = \""Silver\"";\r\n"";
                             }
                             else
@@ -254,6 +293,7 @@ namespace CSharpLevels
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
                                 lesson.SetActive(false);
+                                completionBox.text = ""Chest3"";
                                 code.text = ""// int chest4 = -4096;\r\n"";
                             }
                             else
@@ -278,6 +318,7 @@ namespace CSharpLevels
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
                                 lesson.SetActive(false);
+                                completionBox.text = ""Chest2"";
                                 code.text = ""// string chest3 = \""Gold\"";\r\n"";
                             }
                             else
@@ -302,6 +343,7 @@ namespace CSharpLevels
                                 // Set the input code inactive and set the Chest
                                 // Sprite graphic to open
                                 lesson.SetActive(false);
+                                completionBox.text = ""Chest1"";
                                 code.text = ""// int chest2 = 42;\r\n"";
                             }
                             else
@@ -402,15 +444,29 @@ namespace CSharpLevels
 
                 // Display only 1 error
                 CompilerErrorCollection error = result.Errors;
-                if (error[0].ErrorNumber == "CS1525")
-                    programOutput.text = "Syntax error";
-                else
+                programOutput.text = error[0].ErrorNumber switch
                 {
-                    if (error[0].ErrorNumber == "CS0019")
-                        programOutput.text = "Please make sure that you are comparing the right chest with the right data type (string, int, or bool)";
-                    else
-                        programOutput.text = String.Format("Line: {0}\nError: {1}", error[0].Line, error[0].ErrorText);
-                }
+                    // Syntax Errors
+                    "CS1525" => $"Error: You have made a Syntax Error in your code.",
+
+                    // Variable Name Unknown. EX. int spellMeRight; => spelMeRight = 0;
+                    "CS0103" => $"Error: You have typoed one of your variable names, or you never declared it.\n\n{error[0].ErrorText}",
+
+                    // Uninitialized Variable usage
+                    "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.",
+
+                    // Variable Type Mismatch. EX. if (string == int)
+                    "CS0019" => $"Error: You are cannot compare two different data types together.\n\n{error[0].ErrorText}",
+
+                    // Variable Type Mismatch. EX. int = double;
+                    "CS0266" => $"Error: You are trying to assign a Double data type into an Integer data type.\n\n{error[0].ErrorText}",
+
+                    // Variable Type Mismatch. EX. string = int;
+                    "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
+
+                    // All Other Errors
+                    _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
+                };
             }
 
             // Return the assembly
