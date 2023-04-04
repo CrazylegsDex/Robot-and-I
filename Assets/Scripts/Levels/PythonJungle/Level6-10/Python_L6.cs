@@ -1,6 +1,7 @@
 using UnityEngine;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
+using System;
 using System.IO;
 using System.Text;
 using TMPro;
@@ -20,15 +21,12 @@ namespace PythonLevels
 		public GameObject if_3;
 		public GameObject if_4;
 		public GameObject if_5;
-		public GameObject EB1;
-		public GameObject EB2;
-		public GameObject EB3;
-		public GameObject EB4;
-		public GameObject EB5;
         public TextMeshProUGUI programOutput;
 		public string explanition;
         public BoxCollider2D levelSprite;
+		public GameObject net;
 		private int count = 0;
+		
 		
 
         /*
@@ -44,10 +42,22 @@ namespace PythonLevels
 			if_3.SetActive(false);
 			if_4.SetActive(false);
 			if_5.SetActive(false);
-			EB2.SetActive(false);
-			EB3.SetActive(false);
-			EB4.SetActive(false);
-			EB5.SetActive(false);
+		}
+		
+		public void driverSelector(){
+			if(count == 0){
+				MainDriver1();
+			}else if(count == 1){
+				MainDriver2();
+			}else if(count == 2){
+				MainDriver3();
+			}else if(count == 3){
+				MainDriver4();
+			}else{
+				if(count == 4){
+					MainDriver5();
+				}
+			}
 		}
 		
         public void MainDriver1()
@@ -67,6 +77,8 @@ def main():
 	    catchable = True
 	if(catchable == True):
 		print(""Correct"")
+	else:
+	    print(""Incorrect 1"")
 	return";
 
             scriptEngine = Python.CreateEngine();
@@ -74,7 +86,6 @@ def main():
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-            
             
             scriptEngine.Execute(playerCode, scriptScope);
 
@@ -88,10 +99,6 @@ def main():
                 PythonPrint(codeOutput);
                 codeOutput.Close();
             }
-			if_1.SetActive(false);
-			if_2.SetActive(true);
-			EB1.SetActive(false);
-			EB2.SetActive(true);
         }
 		
 		public void MainDriver2()
@@ -112,7 +119,7 @@ def main():
 	if(catchable == True):
 		print(""Correct"")
 	else:
-	    print(""Incorrect"")
+	    print(""Incorrect 2"")
 	return";
 
             scriptEngine = Python.CreateEngine();
@@ -134,10 +141,6 @@ def main():
                 PythonPrint(codeOutput);
                 codeOutput.Close();
             }
-			if_2.SetActive(false);
-			if_3.SetActive(true);
-			EB2.SetActive(false);
-			EB3.SetActive(true);
         }
 		
 		public void MainDriver3()
@@ -158,7 +161,7 @@ def main():
 	if(catchable == True):
 		print(""Correct"")
 	else:
-	    print(""Incorrect"")
+	    print(""Incorrect 3"")
 	return";
 
             scriptEngine = Python.CreateEngine();
@@ -180,10 +183,6 @@ def main():
                 PythonPrint(codeOutput);
                 codeOutput.Close();
             }
-			if_3.SetActive(false);
-			if_4.SetActive(true);
-			EB3.SetActive(false);
-			EB4.SetActive(true);
         }
 		
 		public void MainDriver4()
@@ -210,7 +209,7 @@ def main():
 	if(catch == True):
 		print(""Correct"")
 	else:
-	    print(""Incorrect"")
+	    print(""Incorrect 4"")
 	return";
 
             scriptEngine = Python.CreateEngine();
@@ -232,10 +231,6 @@ def main():
                 PythonPrint(codeOutput);
                 codeOutput.Close();
             }
-			if_4.SetActive(false);
-			if_5.SetActive(true);
-			EB4.SetActive(false);
-			EB5.SetActive(true);
         }
 		
 		public void MainDriver5()
@@ -250,22 +245,13 @@ def main():
 def main():
 	firefly = 2
 	catchable = False
-	catch = False
-	if(" + codeInput1.text + @"):
-	    catchable = True
-	if(" + codeInput2.text + @"):
-	    catchable = True
-	if(" + codeInput3.text + @"):
-	    catchable = True
-	if(" + codeInput4.text + @"):
-	    catch = True
-	if(" + codeInput4.text + @"):
+	catch = True
+	if(" + codeInput5.text + @"):
 	    catch = False
-	if(catch == True):
-		print(""Correct"")
+	if(catch == False):
 		print(""Congratulations"")
 	else:
-	    print(""Incorrect"")
+	    print(""Incorrect 5"")
 	return";
 
             scriptEngine = Python.CreateEngine();
@@ -323,16 +309,34 @@ def main():
 
             // Display the printed message
             programOutput.text = stringData;
+			if(stringData == "Correct\r\n"){
+				count++;
+			}
+			if(count == 1){
+				if_1.SetActive(false);
+				if_2.SetActive(true);
+			}
+			if(count == 2){
+				if_2.SetActive(false);
+				if_3.SetActive(true);
+			}
+			if(count == 3){
+				if_3.SetActive(false);
+				if_4.SetActive(true);
+			}
+			if(count == 4){
+				if_4.SetActive(false);
+				if_5.SetActive(true);
+			}
 			
-			if (stringData == "Correct\r\n")
-            {
-                count++;
-            }
+			
+			//programOutput.text = Convert.ToString(count);
 			
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                levelSprite.isTrigger = true; 
+				net.SetActive(true);// Sets levelSprite to trigger complete
             }
         }
 
