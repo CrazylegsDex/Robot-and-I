@@ -8,7 +8,7 @@ using TMPro;
 
 namespace PythonLevels
 {
-    public class Python_L6 : MonoBehaviour
+    public class Python_L7 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField codeInput1;
@@ -16,17 +16,15 @@ namespace PythonLevels
 		public TMP_InputField codeInput3;
 		public TMP_InputField codeInput4;
 		public TMP_InputField codeInput5;
-		public GameObject if_1;
-		public GameObject if_2;
-		public GameObject if_3;
-		public GameObject if_4;
-		public GameObject if_5;
+		public TMP_InputField codeInput6;
         public TextMeshProUGUI programOutput;
 		public string explanition;
+		public GameObject lesson1;
+		public GameObject lesson2;
         public BoxCollider2D levelSprite;
-		public GameObject net;
+		public SpriteRenderer dirtReader;
+	    public Sprite red;
 		private int count = 0;
-		
 		
 
         /*
@@ -37,30 +35,13 @@ namespace PythonLevels
 			programOutput.text = explanition;
 		}
 		
-		public void startActives(){
-			if_2.SetActive(false);
-			if_3.SetActive(false);
-			if_4.SetActive(false);
-			if_5.SetActive(false);
+		public void setActives(){
+			lesson1.SetActive(true);
+			lesson2.SetActive(false);
 		}
 		
-		public void driverSelector(){
-			if(count == 0){
-				MainDriver1();
-			}else if(count == 1){
-				MainDriver2();
-			}else if(count == 2){
-				MainDriver3();
-			}else if(count == 3){
-				MainDriver4();
-			}else{
-				if(count == 4){
-					MainDriver5();
-				}
-			}
-		}
 		
-        public void MainDriver1()
+        public void MainDriver()
         {
             // Local variables
             ScriptEngine scriptEngine;
@@ -70,13 +51,14 @@ namespace PythonLevels
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	firefly = 2
-	catchable = False
-	catch = False
+	dirt = True
+	good = True
 	if(" + codeInput1.text + @"):
-	    catchable = True
-	if(catchable == True):
-		print(""Correct"")
+	    plantTree = " + codeInput2.text + @"
+	else:
+		plantTree = " + codeInput3.text + @"
+	if(plantTree == True):
+	    print(""Correct"")
 	else:
 	    print(""Incorrect"")
 	return";
@@ -101,49 +83,8 @@ def main():
             }
         }
 		
-		public void MainDriver2()
-        {
-            // Local variables
-            ScriptEngine scriptEngine;
-            ScriptScope scriptScope;
-            dynamic scriptFunction;
-            // Modify the player's input code to have proper indentation
-            // Add the player's code to a defined python function for runtime running
-            string playerCode = @"
-def main():
-	firefly = 2
-	catchable = False
-	catch = False
-	if(" + codeInput2.text + @"):
-	    catchable = True
-	if(catchable == True):
-		print(""Correct"")
-	else:
-	    print(""Incorrect"")
-	return";
-
-            scriptEngine = Python.CreateEngine();
-            scriptScope = scriptEngine.CreateScope();
-            MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
-            scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
-
-            
-            
-            scriptEngine.Execute(playerCode, scriptScope);
-
-            
-            scriptFunction = scriptScope.GetVariable("main");
-            scriptFunction(); // Execution of function "main"
-
-            // Test if the player used a print statement
-            if (codeOutput.Length > 0)
-            {
-                PythonPrint(codeOutput);
-                codeOutput.Close();
-            }
-        }
 		
-		public void MainDriver3()
+        public void MainDriver2()
         {
             // Local variables
             ScriptEngine scriptEngine;
@@ -153,113 +94,29 @@ def main():
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	firefly = 6
-	catchable = False
-	catch = False
-	if(" + codeInput3.text + @"):
-	    catchable = True
-	if(catchable == True):
-		print(""Correct"")
-	else:
-	    print(""Incorrect"")
-	return";
-
-            scriptEngine = Python.CreateEngine();
-            scriptScope = scriptEngine.CreateScope();
-            MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
-            scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
-
-            
-            
-            scriptEngine.Execute(playerCode, scriptScope);
-
-            
-            scriptFunction = scriptScope.GetVariable("main");
-            scriptFunction(); // Execution of function "main"
-
-            // Test if the player used a print statement
-            if (codeOutput.Length > 0)
-            {
-                PythonPrint(codeOutput);
-                codeOutput.Close();
-            }
-        }
-		
-		public void MainDriver4()
-        {
-            // Local variables
-            ScriptEngine scriptEngine;
-            ScriptScope scriptScope;
-            dynamic scriptFunction;
-            // Modify the player's input code to have proper indentation
-            // Add the player's code to a defined python function for runtime running
-            string playerCode = @"
-def main():
-	firefly = 2
-	catchable = False
-	catch = False
+	plantTree = False
+	dirt = 0
+	good = 0
+	yellow = 0
+	red = 1
+	green = 2
+	color = yellow
 	if(" + codeInput1.text + @"):
-	    catchable = True
-	if(" + codeInput2.text + @"):
-	    catchable = True
-	if(" + codeInput3.text + @"):
-	    catchable = True
-	if(" + codeInput4.text + @"):
-	    catch = True
-	if(catch == True):
-		print(""Correct"")
+	    color = " + codeInput2.text + @"
+	else:
+		color = " + codeInput3.text + @"
+	if(color == red):
+	    print(""Congratulations"")
 	else:
 	    print(""Incorrect"")
 	return";
+    
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-            
-            
-            scriptEngine.Execute(playerCode, scriptScope);
-
-            
-            scriptFunction = scriptScope.GetVariable("main");
-            scriptFunction(); // Execution of function "main"
-
-            // Test if the player used a print statement
-            if (codeOutput.Length > 0)
-            {
-                PythonPrint(codeOutput);
-                codeOutput.Close();
-            }
-        }
-		
-		public void MainDriver5()
-        {
-            // Local variables
-            ScriptEngine scriptEngine;
-            ScriptScope scriptScope;
-            dynamic scriptFunction;
-            // Modify the player's input code to have proper indentation
-            // Add the player's code to a defined python function for runtime running
-            string playerCode = @"
-def main():
-	firefly = 2
-	catchable = False
-	catch = True
-	if(" + codeInput5.text + @"):
-	    catch = False
-	if(catch == False):
-		print(""Congratulations"")
-	else:
-	    print(""Incorrect"")
-	return";
-
-            scriptEngine = Python.CreateEngine();
-            scriptScope = scriptEngine.CreateScope();
-            MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
-            scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
-
-            
             
             scriptEngine.Execute(playerCode, scriptScope);
 
@@ -309,34 +166,20 @@ def main():
 
             // Display the printed message
             programOutput.text = stringData;
+			
 			if(stringData == "Correct\r\n"){
-				count++;
+				if(count == 0){
+					lesson1.SetActive(false);
+					lesson2.SetActive(true);
+					count++;
+				}
 			}
-			if(count == 1){
-				if_1.SetActive(false);
-				if_2.SetActive(true);
-			}
-			if(count == 2){
-				if_2.SetActive(false);
-				if_3.SetActive(true);
-			}
-			if(count == 3){
-				if_3.SetActive(false);
-				if_4.SetActive(true);
-			}
-			if(count == 4){
-				if_4.SetActive(false);
-				if_5.SetActive(true);
-			}
-			
-			
-			//programOutput.text = Convert.ToString(count);
 			
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-                levelSprite.isTrigger = true; 
-				net.SetActive(true);// Sets levelSprite to trigger complete
+                levelSprite.isTrigger = true;
+				dirtReader.sprite = red; // Sets levelSprite to trigger complete
             }
         }
 
