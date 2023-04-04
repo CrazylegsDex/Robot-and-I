@@ -40,11 +40,11 @@ namespace GameMechanics
             // Initialization is required if there was already a file of data.
             // NewGame sets defaults, below variables will overwrite data
             // Reset these variables to defaults for true NewGame()
-            Load_Level.BitLocation = new Vector3(1001.57f, 532.18f, 0f); // x, y, z position of Bit at start new game
-            Load_Level.ContinueGame = "PseudoIsland"; // Starting Island/Scene for Bit
+            Load_Level.BitLocation = new Vector3(1001.749f, 532.373f, 0f); // x, y, z position of Bit at start new game
+            Load_Level.ContinueGame = "Level_0"; // Starting Scene for Bit
 
             // Use a coroutine to load the Scene in the background
-            StartCoroutine(Load_Level.SceneLoader("PseudoIsland"));
+            StartCoroutine(Load_Level.SceneLoader("Level_0"));
         }
 
         public void ContinueGame()

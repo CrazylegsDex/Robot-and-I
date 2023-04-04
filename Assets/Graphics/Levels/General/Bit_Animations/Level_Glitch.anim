@@ -20,28 +20,30 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -444122052, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.1
-      value: {fileID: 945353907, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.15
-      value: {fileID: -294504518, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.3
-      value: {fileID: 998321093, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.4
-      value: {fileID: -1562483732, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.45
-      value: {fileID: 281429224, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.6
-      value: {fileID: 498462146, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - time: 0.7
-      value: {fileID: -1223663295, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+      value: {fileID: 1730679876, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.083333336
+      value: {fileID: 337752846, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.125
+      value: {fileID: -2105829177, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.25
+      value: {fileID: 1718131982, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.375
+      value: {fileID: -189893709, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.45833334
+      value: {fileID: -872875331, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.5
+      value: {fileID: 1761440386, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.625
+      value: {fileID: 509585340, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - time: 0.7083333
+      value: {fileID: -832364922, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
     - time: 0.75
-      value: {fileID: -1223663295, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+      value: {fileID: -208855919, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 20
+  m_SampleRate: 24
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -57,21 +59,22 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: -444122052, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: 945353907, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: -294504518, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: 998321093, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: -1562483732, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: 281429224, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: 498462146, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: -1223663295, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
-    - {fileID: -1223663295, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: 1730679876, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: 337752846, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: -2105829177, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: 1718131982, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: -189893709, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: -872875331, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: 1761440386, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: 509585340, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: -832364922, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
+    - {fileID: -208855919, guid: 7406fe8da59c34d4385d696a1a86353a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8
+    m_StopTime: 0.8333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -90,4 +93,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.8333333
+    functionName: EndIdleAni
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

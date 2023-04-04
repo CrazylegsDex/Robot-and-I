@@ -1,3 +1,8 @@
+// This script allows Baskets to detect if they have an object in them, they can be picky
+//
+// Author: Robot and I Team
+// Last modification date: 02-28-2023
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,6 +56,8 @@ namespace PseudoLevels
                 complete = true;
                 
             }
+            else
+                complete = false;
         }
     }
 }

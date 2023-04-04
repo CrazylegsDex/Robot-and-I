@@ -26,20 +26,26 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
+
         public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
 
+        int[] fences = new int[9];
+
         public GameObject[] boxTests;
+        public GameObject[] paintTests;
+        public GameObject paintTest;
         private Button_Check button_Check;
-        private bool button1;
-        private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
-            button1 = false;
-            button2 = false;
+            paintTests = GameObject.FindGameObjectsWithTag("Box");
+            foreach (GameObject go in paintTests)//serches for "Box" objects
+            {
+                go.SetActive(false);
+            }
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -48,59 +54,178 @@ namespace PseudoLevels
         void Update()
         {
             cam.transform.position = new Vector3(camx + 485, camy, camz);//moves camera to new section
-            //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
+                
                 cam.transform.position = new Vector3(camx + 505, camy, camz);
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
-                foreach (GameObject go in boxTests)//serches for "Button" objects
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                    foreach (GameObject go in paintTests)//serches for "Box" objects
                     {
-                        button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                        if (go.GetComponent<Rigidbody2D>().isKinematic == true)
                         {
-
-                            if (button_Check.complete)
-                            {
-                                button1 = true;
-                                //Debug.Log(" 1 Works!");
-                            }
-                            else
-                                button1 = false;
-                        }
-                        else if (button_Check.boxFirstName == "2")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button2 = true;
-                                //Debug.Log(" 2 Works!");
-                            }
-                            else
-                                button2 = false;
-                        }
-                        if (button1 && button2)
-                        {
-                            levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
-                        }
-                        else
-                        {
-                            //Debug.Log("Not working!");
-                            levelSprite.isTrigger = false;
+                            paintTest = go;
                         }
                     }
 
-                }
-                //cam.transform.position.x = camx + 485; 
 
+                    foreach (GameObject go in boxTests)//serches for "Button" objects
+                    {
+                        if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                        {
+                            //float boxPos = go.transform.position.x;
+                            button_Check = go.GetComponent<Button_Check>();//Gets variables from script
+                            if (button_Check.complete && paintTest.name.Contains("Yell"))
+                            {
+
+                                var goRenderer = go.GetComponent<Renderer>();
+                                goRenderer.material.SetColor("_Color", Color.yellow);
+                                if (go.name.Contains("(1)"))
+                                {
+                                    fences[0] = 1;
+                                }
+                                else if (go.name.Contains("(2)"))
+                                {
+                                    fences[1] = 1;
+                                }
+                                else if (go.name.Contains("(3)"))
+                                {
+                                    fences[2] = 1;
+                                }
+                                else if (go.name.Contains("(4)"))
+                                {
+                                    fences[3] = 1;
+                                }
+                                else if (go.name.Contains("(5)"))
+                                {
+                                    fences[4] = 1;
+                                }
+                                else if (go.name.Contains("(6)"))
+                                {
+                                    fences[5] = 1;
+                                }
+                                else if (go.name.Contains("(7)"))
+                                {
+                                    fences[6] = 1;
+                                }
+                                else if (go.name.Contains("(8)"))
+                                {
+                                    fences[7] = 1;
+                                }
+                                else if (go.name.Contains("(9)"))
+                                {
+                                    fences[8] = 1;
+                                }
+
+                            }
+
+                            if (button_Check.complete && paintTest.name.Contains("Black"))
+                            {
+                                var goRenderer = go.GetComponent<Renderer>();
+                                goRenderer.material.SetColor("_Color", Color.black);
+                                if (go.name.Contains("(1)"))
+                                {
+                                    fences[0] = 2;
+                                }
+                                else if (go.name.Contains("(2)"))
+                                {
+                                    fences[1] = 2;
+                                }
+                                else if (go.name.Contains("(3)"))
+                                {
+                                    fences[2] = 2;
+                                }
+                                else if (go.name.Contains("(4)"))
+                                {
+                                    fences[3] = 2;
+                                }
+                                else if (go.name.Contains("(5)"))
+                                {
+                                    fences[4] = 2;
+                                }
+                                else if (go.name.Contains("(6)"))
+                                {
+                                    fences[5] = 2;
+                                }
+                                else if (go.name.Contains("(7)"))
+                                {
+                                    fences[6] = 2;
+                                }
+                                else if (go.name.Contains("(8)"))
+                                {
+                                    fences[7] = 2;
+                                }
+                                else if (go.name.Contains("(9)"))
+                                {
+                                    fences[8] = 2;
+                                }
+                            }
+                            if (button_Check.complete && paintTest.name.Contains("Blue"))
+                            {
+                                var goRenderer = go.GetComponent<Renderer>();
+                                goRenderer.material.SetColor("_Color", Color.blue);
+                                if (go.name.Contains("(1)"))
+                                {
+                                    fences[0] = 3;
+                                }
+                                else if (go.name.Contains("(2)"))
+                                {
+                                    fences[1] = 3;
+                                }
+                                else if (go.name.Contains("(3)"))
+                                {
+                                    fences[2] = 3;
+                                }
+                                else if (go.name.Contains("(4)"))
+                                {
+                                    fences[3] = 3;
+                                }
+                                else if (go.name.Contains("(5)"))
+                                {
+                                    fences[4] = 3;
+                                }
+                                else if (go.name.Contains("(6)"))
+                                {
+                                    fences[5] = 3;
+                                }
+                                else if (go.name.Contains("(7)"))
+                                {
+                                    fences[6] = 3;
+                                }
+                                else if (go.name.Contains("(8)"))
+                                {
+                                    fences[7] = 3;
+                                }
+                                else if (go.name.Contains("(9)"))
+                                {
+                                    fences[8] = 3;
+                                }
+                            }
+                            string fenceCount = "";
+                            for(int i = 0; i<9; i++)
+                            {
+                                fenceCount += fences[i];
+                            }
+                            //Debug.Log(fenceCount);
+                            if (fenceCount == "123213123")
+                            {
+                                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                                Debug.Log("Good!");
+                            }
+                            else
+                            {
+                                levelSprite.isTrigger = false;
+                            }
+                        }
+
+                    }
+
+                }
             }
             else
             {
-                //Debug.Log("Not yet!");
                 cam.transform.position = new Vector3(camx, camy, camz);
-                //cam.transform.position.x = camx;
             }
         }
         public void Code_Compiler()
@@ -160,7 +285,7 @@ namespace PseudoLevels
                         b = x;
                     else
                         b = y;
-                    if (bInput.text != "x" || bInput.text != "y")
+                    if (b2Input.text != "x" || b2Input.text != "y")
                     {
                         b2 = int.Parse(b2Input.text);
                     }
@@ -168,7 +293,7 @@ namespace PseudoLevels
                         b2 = x;
                     else
                         b2 = y;
-                    if (bInput.text != "x" || bInput.text != "y")
+                    if (b3Input.text != "x" || b3Input.text != "y")
                     {
                         b3 = int.Parse(b3Input.text);
                     }
@@ -176,11 +301,11 @@ namespace PseudoLevels
                         b3 = x;
                     else
                         b3 = y;
-                    if (bInput.text != "x" || bInput.text != "y")
+                    if (b4Input.text != "x" || b4Input.text != "y")
                     {
                         b4 = int.Parse(b4Input.text);
                     }
-                    else if (bInput.text == "x")
+                    else if (b4Input.text == "x")
                         b4 = x;
                     else
                         b4 = y;
@@ -307,10 +432,11 @@ namespace PseudoLevels
 
             if (num == 4)
             {
-                //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                wall.SetActive(false);
+                foreach (GameObject go in paintTests)//serches for "Box" objects
+                {
+                    go.SetActive(true);
+                }
             }
-            //
 
 
         }

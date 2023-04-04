@@ -33,14 +33,14 @@ namespace PseudoLevels
         float camx, camy, camz;
 
         public GameObject[] boxTests;
+        public GameObject hoseTest;
+        public GameObject[] hoseTests;
         private Button_Check button_Check;
         private bool button1;
-        private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
             button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -56,6 +56,23 @@ namespace PseudoLevels
 
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
+                
+                if (Input.GetKeyDown(KeyCode.E) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true)
+                {
+                    
+                    for(int i = 0; i < hoseTest.transform.childCount; i++)
+                    {
+                        Transform water = hoseTest.transform.GetChild(i);
+                        water.gameObject.SetActive(true);
+                    }
+                }
+                else if(Input.GetKeyDown(KeyCode.E)) {
+                    for (int i = 0; i < hoseTest.transform.childCount; i++)
+                    {
+                        Transform water = hoseTest.transform.GetChild(i);
+                        water.gameObject.SetActive(false);
+                    }
+                }
                 foreach (GameObject go in boxTests)//serches for "Button" objects
                 {
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
@@ -72,21 +89,10 @@ namespace PseudoLevels
                             else
                                 button1 = false;
                         }
-                        else if (button_Check.boxFirstName == "2")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button2 = true;
-                                //Debug.Log(" 2 Works!");
-                            }
-                            else
-                                button2 = false;
-                        }
-                        if (button1 && button2)
+                        if (button1)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            //Debug.Log("Good!");
+                            Debug.Log("Good!");
                         }
                         else
                         {
@@ -309,7 +315,7 @@ namespace PseudoLevels
             if (num == 4)
             {
                 //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                wall.SetActive(false);
+                hoseTest.SetActive(true);
             }
             //
 
