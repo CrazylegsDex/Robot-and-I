@@ -46,12 +46,13 @@ namespace PlayerControl
             Move();
         }
 
-        // Check if there is a collision. Play sound if so
+        // Check collision with another Collider2D
+        // If there is a collision, play the collision sound effect
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            // Play the sound attached to this script
-            Audio_Manager test = GameObject.Find("ScriptController").GetComponent<Audio_Manager>();
-            test.Play("Collision");
+            // Get a handle to the ScriptController and the Audio_Manager script
+            // Play the collision sound effect
+            GameObject.Find("ScriptController").GetComponent<Audio_Manager>().Play("Collision");
         }
 
         // LoadData method from the DataPersistenceInterface

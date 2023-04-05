@@ -74,6 +74,16 @@ namespace GameMechanics
             {
                 if (data.gameLevels["PS_Level1"]) // If level 1 is complete
                 {
+                    if (id == "PS_Level1") // On level 1's turn, change the dialogue
+                    {
+                        // Get an object of the Level1 NPC
+                        Island_Dialogue NPC = GameObject.Find("Sally").GetComponent<Island_Dialogue>();
+
+                        // Change the Dialogue that the NPC presents.
+                        NPC.sentences[0] = "This is a test";
+                        NPC.sentences[1] = "I am testing more";
+                        NPC.sentences[2] = "MASHED POTATOES!!!!";
+                    }
                     if (id == "Ship1" || id == "Ship2") // On the Ship's turn, set them active
                     {
                         gameObject.SetActive(true);
