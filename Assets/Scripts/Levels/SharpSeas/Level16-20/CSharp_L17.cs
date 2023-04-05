@@ -17,7 +17,7 @@ using TMPro;
 
 namespace CSharpLevels
 {
-    public class CSharp_L12 : MonoBehaviour
+    public class CSharp_L17 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField playerInput; // References the Player's Input Field
