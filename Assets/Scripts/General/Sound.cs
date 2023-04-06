@@ -1,3 +1,17 @@
+// Authors:
+//	Ordaricc on GitHub
+//  Ricky Dev on Youtube
+//
+// Copyright (c) Novell, Inc. (http://www.novell.com)
+//
+// Copied from:
+//  https://github.com/Ordaricc/Audio-Types
+//  All Credit goes to Ordaricc
+//
+// Modified by:
+//  Robot and I Team - Comments
+//
+
 using UnityEngine;
 
 namespace GameMechanics
