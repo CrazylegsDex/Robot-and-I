@@ -3674,7 +3674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475163050}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: boxChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6702,7 +6702,7 @@ GameObject:
   - component: {fileID: 1106833031}
   - component: {fileID: 1106833030}
   - component: {fileID: 1106833029}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -7147,7 +7147,7 @@ GameObject:
   - component: {fileID: 1210445350}
   - component: {fileID: 1210445349}
   - component: {fileID: 1210445348}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Right Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -7280,7 +7280,7 @@ GameObject:
   - component: {fileID: 1231438932}
   - component: {fileID: 1231438931}
   - component: {fileID: 1231438930}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: 1Basket Left Arm
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -7763,7 +7763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &1320133997
 Rigidbody2D:
   serializedVersion: 4

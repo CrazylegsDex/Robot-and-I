@@ -46,6 +46,11 @@ namespace PseudoLevels
         void Start()
         {
             button1 = false;
+            hoseTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            foreach (GameObject go in hoseTests)//serches for "Grabbable" objects
+            {
+                go.SetActive(false);
+            }
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -60,7 +65,7 @@ namespace PseudoLevels
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
                 if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && !active)
                 {
-                    for(int i = 0; i < hoseTest.transform.childCount; i++)
+                    for(int i = 0; i < hoseTest.transform.childCount; i++)//turns on the water
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(true);
@@ -69,7 +74,7 @@ namespace PseudoLevels
                 }
                 else if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && active)
                 {
-                    for (int i = 0; i < hoseTest.transform.childCount; i++)
+                    for (int i = 0; i < hoseTest.transform.childCount; i++)//turns off the water
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(false);
@@ -77,7 +82,7 @@ namespace PseudoLevels
                     }
                 }
                 else if(Input.GetKeyDown(KeyCode.E)) {
-                    for (int i = 0; i < hoseTest.transform.childCount; i++)
+                    for (int i = 0; i < hoseTest.transform.childCount; i++)//turns off the water
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(false);
@@ -102,6 +107,7 @@ namespace PseudoLevels
                                 endTime = Time.time - startTime;
                                 if(endTime > 10)
                                     button1 = true;
+                                Debug.Log(endTime);
                             }
                             else
                             {
@@ -114,11 +120,6 @@ namespace PseudoLevels
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
                             complete.SetActive(true);
-                        }
-                        else
-                        {
-                            levelSprite.isTrigger = false;
-                            complete.SetActive(false);
                         }
                     }
 
