@@ -8,9 +8,6 @@
 //  https://github.com/Ordaricc/Audio-Types
 //  All Credit goes to Ordaricc
 //
-// Modified by:
-//  Robot and I Team - Comments
-//
 
 using UnityEngine;
 

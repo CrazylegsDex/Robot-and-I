@@ -20,7 +20,7 @@ using UnityEngine.UI;
 namespace GameMechanics
 {
     public class AudioOptionsManager : MonoBehaviour
-    {
+    {	
 		//Access to volume of each sound
         public static float musicVolume { get; private set; }
         public static float soundEffectsVolume { get; private set; }
@@ -36,7 +36,6 @@ namespace GameMechanics
         [SerializeField] private TextMeshProUGUI musicSliderText;
         [SerializeField] private TextMeshProUGUI soundEffectsSliderText;
         
-
 		public void OnMasterSliderValueChange(float value)
         {
 			//assigns value to volume

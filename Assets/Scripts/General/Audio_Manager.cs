@@ -16,13 +16,15 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 namespace GameMechanics
 {
     public class Audio_Manager : MonoBehaviour
     {
         public static Audio_Manager Instance;
-
+		
 		//creates mixer groups to assign sounds/songs
         [SerializeField] private AudioMixerGroup masterMixerGroup;
         [SerializeField] private AudioMixerGroup musicMixerGroup;
@@ -30,6 +32,7 @@ namespace GameMechanics
 		
 		//access to the sounds/songs
         [SerializeField] private Sound[] sounds;
+		
 
         private void Awake()
         {
@@ -37,7 +40,8 @@ namespace GameMechanics
 
             foreach (Sound s in sounds)
             {
-				//creates audio source, clip, loop, and volume access
+				//creates audio source, clip, loop, and volume access and gets values
+				//	from unity
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.audioClip;
                 s.source.loop = s.isLoop;
@@ -58,10 +62,11 @@ namespace GameMechanics
                         s.source.outputAudioMixerGroup = musicMixerGroup;
                         break;
                 }
-
+			
 				//if assigned to play on awake, call play function
-                if (s.playOnAwake)
+                if (s.playOnAwake){
                     s.source.Play();
+				}
             }
         }
 
@@ -96,6 +101,5 @@ namespace GameMechanics
             musicMixerGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(AudioOptionsManager.musicVolume) * 20);
             soundEffectsMixerGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(AudioOptionsManager.soundEffectsVolume) * 20);
         }
-
     }
 }

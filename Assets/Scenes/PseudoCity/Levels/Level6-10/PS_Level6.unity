@@ -4205,7 +4205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792866543137303333, guid: ef61bc11df2808e4c84d1675de64cb61, type: 3}
       propertyPath: m_text
-      value: 
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7792866543137303333, guid: ef61bc11df2808e4c84d1675de64cb61, type: 3}
       propertyPath: m_fontSize
@@ -8704,7 +8704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792866543137303333, guid: ef61bc11df2808e4c84d1675de64cb61, type: 3}
       propertyPath: m_text
-      value: 
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7792866543137303333, guid: ef61bc11df2808e4c84d1675de64cb61, type: 3}
       propertyPath: m_fontSize
@@ -11564,7 +11564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792866543137303333, guid: ef61bc11df2808e4c84d1675de64cb61, type: 3}
       propertyPath: m_text
-      value: 
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7792866543137303333, guid: ef61bc11df2808e4c84d1675de64cb61, type: 3}
       propertyPath: m_fontSize
@@ -11623,7 +11623,6 @@ GameObject:
   - component: {fileID: 1712798654}
   - component: {fileID: 1712798653}
   - component: {fileID: 1712798652}
-  - component: {fileID: 1712798660}
   - component: {fileID: 1712798659}
   m_Layer: 0
   m_Name: ScriptController
@@ -11746,50 +11745,6 @@ MonoBehaviour:
   masterSliderText: {fileID: 1707411403}
   musicSliderText: {fileID: 1184365316}
   soundEffectsSliderText: {fileID: 885594405}
---- !u!114 &1712798660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1712798651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff18bc40169614468e1451b8e926e13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterMixerGroup: {fileID: 24300002, guid: a25ec3bc19e11044eb8c243b7c46fa21, type: 2}
-  musicMixerGroup: {fileID: -7082266894834661092, guid: a25ec3bc19e11044eb8c243b7c46fa21, type: 2}
-  soundEffectsMixerGroup: {fileID: 2694441781789919845, guid: a25ec3bc19e11044eb8c243b7c46fa21, type: 2}
-  sounds:
-  - audioType: 1
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 4fb2c2e675f183649b97e723749c3e62, type: 3}
-    isLoop: 1
-    playOnAwake: 1
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: 0a2f762b0e057884a806c60e3fafe4bf, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: ac5b4c0ad90bd524ea547ffffc57b5e8, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
-    clipName: 
-    audioClip: {fileID: 8300000, guid: c3a08ff5a8af5824992226a97cf9e188, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
 --- !u!1 &1733973452
 GameObject:
   m_ObjectHideFlags: 0
