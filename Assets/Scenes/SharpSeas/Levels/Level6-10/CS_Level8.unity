@@ -3094,7 +3094,7 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
       value: Bit, you will find this level is different than the previous ones. For
-        this level, when you click Run, your *input* variable will be asigned random
+        this level, when you click Run, your *input* variable will be assigned random
         values and your code will be run several times. Good Luck!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}

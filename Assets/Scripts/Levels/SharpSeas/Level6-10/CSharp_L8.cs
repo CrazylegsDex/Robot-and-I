@@ -113,7 +113,6 @@ namespace CSharpLevels
                         // Check Price with the calculated price
                         if (Price == answers[i])
                             grade += 1;
-                        Debug.Log(Price + "" | "" + answers[i] + "" | "" + grade);
                         Price = 0; // Reset price for next run
                     }
 
@@ -140,7 +139,6 @@ namespace CSharpLevels
 
             // Compile the player's code and check for syntax issues
             displayLog = true;
-            Debug.Log(playerCode);
             resultAssembly = CSharpCompile(playerCode);
 
             // Get the Start() method signature to invoke
