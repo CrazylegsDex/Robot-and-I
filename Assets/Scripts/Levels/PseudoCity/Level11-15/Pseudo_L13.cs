@@ -24,7 +24,6 @@ namespace PseudoLevels
         public TextMeshProUGUI dOutput;
 
         public GameObject complete;
-        private int count = 0;
 
         public GameObject bit;
         public GameObject cam;

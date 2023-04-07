@@ -179,8 +179,8 @@ namespace PseudoLevels
                 try
                 {
                     c = int.Parse(cInput.text);
+                    c2 = int.Parse(c2Input.text);
                     c3 = int.Parse(c3Input.text);
-
                 }
                 catch (Exception)
                 {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: beb1b8fb75b33ed4b883149a91d80fff
+guid: cc405d751d6f4fc46a4a322dcad7371b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fireflies_0
+      name: Fireflies_0
       rect:
         serializedVersion: 2
-        x: 207
-        y: 166
-        width: 8
-        height: 14
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,41 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dae05f7641f93de4fb26e1eec7f35550
-      internalID: 1990115762
+      spriteID: 5f369b5a0522a5a43b2a307ebc17e382
+      internalID: 1833491533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireflies_1
+      name: Fireflies_1
       rect:
         serializedVersion: 2
-        x: 217
-        y: 157
-        width: 22
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 6}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f27c07d1418cd064b98d380e90d68916
-      internalID: 105394265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fireflies_2
-      rect:
-        serializedVersion: 2
-        x: 245
-        y: 166
-        width: 8
-        height: 14
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2296fc13bc9195b45a223c2c8e4c1687
-      internalID: -646586288
+      spriteID: 1363011ce562dc04ba051323c7cb51f8
+      internalID: 1045747200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fireflies_3
+      name: Fireflies_2
       rect:
         serializedVersion: 2
-        x: 254
-        y: 155
-        width: 27
-        height: 22
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +163,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b66b4e999a22c694a8c4f811358dc538
-      internalID: 723595111
+      spriteID: 89e971d95da9caf49bfb050852de2bb6
+      internalID: -560634155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireflies_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ce11893caf16f419d1183d0119c572
+      internalID: 2092662661
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fireflies_3: 723595111
-      fireflies_1: 105394265
-      fireflies_0: 1990115762
-      fireflies_2: -646586288
+      Fireflies_1: 1045747200
+      Fireflies_3: 2092662661
+      Fireflies_2: -560634155
+      Fireflies_0: 1833491533
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
