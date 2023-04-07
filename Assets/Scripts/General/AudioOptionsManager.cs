@@ -20,11 +20,11 @@ using UnityEngine.UI;
 namespace GameMechanics
 {
     public class AudioOptionsManager : MonoBehaviour
-    {	
-		//Access to volume of each sound
-        public static float musicVolume { get; private set; }
-        public static float soundEffectsVolume { get; private set; }
-        public static float masterVolume { get; private set; }
+    {
+        //Access to volume of each sound
+        public static float masterVolume { get; private set; } = 0.50f;
+        public static float musicVolume { get; private set; } = 0.50f;
+        public static float soundEffectsVolume { get; private set; } = 0.50f;
 		
 		//Access to the Slider UI
 		[SerializeField] private Slider MasterSliderValue;
@@ -35,8 +35,19 @@ namespace GameMechanics
 		[SerializeField] private TextMeshProUGUI masterSliderText;
         [SerializeField] private TextMeshProUGUI musicSliderText;
         [SerializeField] private TextMeshProUGUI soundEffectsSliderText;
-        
-		public void OnMasterSliderValueChange(float value)
+
+        private void Awake()
+        {
+            // Update each scene with the current value of volumes
+            MasterSliderValue.value = masterVolume;
+            MusicSliderValue.value = musicVolume;
+            SoundEffectsSliderValue.value = soundEffectsVolume;
+            masterSliderText.text = ((int)(masterVolume * 100)).ToString();
+            musicSliderText.text = ((int)(musicVolume * 100)).ToString();
+            soundEffectsSliderText.text = ((int)(soundEffectsVolume * 100)).ToString();
+        }
+
+        public void OnMasterSliderValueChange(float value)
         {
 			//assigns value to volume
             masterVolume = value;
@@ -53,7 +64,7 @@ namespace GameMechanics
 			soundEffectsSliderText.text = ((int)(value * 100)).ToString();
 			
 			//updates mixer volume in the audio manager script
-            Audio_Manager.Instance.UpdateMixerVolume1();
+            Audio_Manager.Instance.UpdateMixerVolume();
         }
 
         public void OnMusicSliderValueChange(float value)
@@ -65,7 +76,7 @@ namespace GameMechanics
             musicSliderText.text = ((int)(value * 100)).ToString();
 			
 			//updates mixer volume in the audio manager script
-            Audio_Manager.Instance.UpdateMixerVolume1();
+            Audio_Manager.Instance.UpdateMixerVolume();
         }
 
         public void OnSoundEffectsSliderValueChange(float value)
@@ -77,90 +88,30 @@ namespace GameMechanics
             soundEffectsSliderText.text = ((int)(value * 100)).ToString();
 			
 			//updates mixer volume in the audio manager script
-            Audio_Manager.Instance.UpdateMixerVolume1();
+            Audio_Manager.Instance.UpdateMixerVolume();
         }
 		
-		public void OnMasterSliderValueMute(bool m_IsOn)
+		public void OnMasterSliderValueMute(bool mute)
         {
-            if (!m_IsOn)
-            {
-				//if not mute, set volume to 100
-                masterVolume = (float)1;
-				
-				//set slider to 100
-                MasterSliderValue.value = 1;
-            }
-            if (m_IsOn)
-            {
-				//if mute, set volume to 0
-                masterVolume = (float)0.0001;
-				
-				//set slider to 0
-                MasterSliderValue.value = (float)0.0001;
-            }
-
-			//updates text with the value of the masters new value
-            masterSliderText.text = ((int)(masterVolume * 100)).ToString();
-			
-			//updates mixer volume in the audio manager script
-            Audio_Manager.Instance.UpdateMixerVolume1();
-			
-			//call music and sound effects mute to equate the values with master volume, text, and slider values
-			OnMusicSliderValueMute(m_IsOn);
-			OnSoundEffectsSliderValueMute(m_IsOn);
+			// Calls Music and Sound Effects slider for mute
+			OnMusicSliderValueMute(mute);
+			OnSoundEffectsSliderValueMute(mute);
         }
 
-        public void OnMusicSliderValueMute(bool m_IsOn)
+        public void OnMusicSliderValueMute(bool mute)
         {
-            if (!m_IsOn)
-            {
-				//if not mute, set volume to 100
-                musicVolume = (float)1;
-				
-				//updates the slider placement of music
-                MusicSliderValue.value = 1;
-            }
-            if (m_IsOn)
-            {
-				//if mute, set volume to 0
-                musicVolume = (float)0.0001;
-				
-				//updates the slider placement of music to 0
-                MusicSliderValue.value = (float)0.0001;
-            }
-
-			//updates text with the value of the musics new value
-            musicSliderText.text = ((int)(musicVolume * 100)).ToString();
-			
-			//updates mixer volume in the audio manager script
-            Audio_Manager.Instance.UpdateMixerVolume1();
+            if (mute)
+                Audio_Manager.Instance.StopMusic();
+            else
+                Audio_Manager.Instance.PlayMusic();
         }
 
-        public void OnSoundEffectsSliderValueMute(bool m_IsOn)
+        public void OnSoundEffectsSliderValueMute(bool mute)
         {
-            if (!m_IsOn)
-            {
-				//if not mute, set volume to 100
-                soundEffectsVolume = (float)1;
-				
-				//updates the slider placement of sound effects to 100
-                SoundEffectsSliderValue.value = 1;
-            }
-            if (m_IsOn)
-            {
-				//if mute, set volume to 0
-                soundEffectsVolume = (float)0.0001;
-				
-				//updates the slider placement of sound effects to 0
-                SoundEffectsSliderValue.value = (float)0.0001;
-            }
-			
-			//updates text with the value of the sound efffects new value
-            soundEffectsSliderText.text = ((int)(soundEffectsVolume * 100)).ToString();
-			
-			//updates mixer volume in the audio manager script
-            Audio_Manager.Instance.UpdateMixerVolume1();
+            if (mute)
+                Audio_Manager.Instance.MuteSounds();
+            else
+                Audio_Manager.Instance.UnMuteSounds();
         }
-
     }
 }

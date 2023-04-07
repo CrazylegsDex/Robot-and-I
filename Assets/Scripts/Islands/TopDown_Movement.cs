@@ -52,7 +52,7 @@ namespace PlayerControl
         {
             // Get a handle to the ScriptController and the Audio_Manager script
             // Play the collision sound effect
-            GameObject.Find("ScriptController").GetComponent<Audio_Manager>().Play("Collision");
+            GameObject.Find("ScriptController").GetComponent<Audio_Manager>().PlaySound("Collision");
         }
 
         // LoadData method from the DataPersistenceInterface
