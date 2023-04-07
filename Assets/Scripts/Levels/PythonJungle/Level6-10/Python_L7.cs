@@ -1,13 +1,14 @@
 using UnityEngine;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
+using System;
 using System.IO;
 using System.Text;
 using TMPro;
 
 namespace PythonLevels
 {
-    public class Python_L3 : MonoBehaviour
+    public class Python_L7 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField codeInput1;
@@ -15,9 +16,15 @@ namespace PythonLevels
 		public TMP_InputField codeInput3;
 		public TMP_InputField codeInput4;
 		public TMP_InputField codeInput5;
+		public TMP_InputField codeInput6;
         public TextMeshProUGUI programOutput;
 		public string explanition;
+		public GameObject lesson1;
+		public GameObject lesson2;
         public BoxCollider2D levelSprite;
+		public SpriteRenderer dirtReader;
+	    public Sprite red;
+		private int count = 0;
 		
 
         /*
@@ -27,6 +34,12 @@ namespace PythonLevels
 		public void setText(){
 			programOutput.text = explanition;
 		}
+		
+		public void setActives(){
+			lesson1.SetActive(true);
+			lesson2.SetActive(false);
+		}
+		
 		
         public void MainDriver()
         {
@@ -38,38 +51,16 @@ namespace PythonLevels
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	correct = 0
-	glass = 4
-	woodForWindows = 2
-	bluePaint = 10
-	blueberries = 5
-	concreteleftover = " + codeInput1.text + @"
-	windows = " + codeInput2.text + @"
-	woodNeeded = " + codeInput3.text + @"
-	whitePaint = " + codeInput4.text + @"
-	bundlesNeeded = " + codeInput5.text + @"
-	if(concreteleftover == 57):
-		correct = correct + 1
+	dirt = True
+	good = True
+	if(" + codeInput1.text + @"):
+	    plantTree = " + codeInput2.text + @"
 	else:
-		print(""concreteleftover = incorrect"")
-	if(windows == 12):
-		correct = correct + 1
+		plantTree = " + codeInput3.text + @"
+	if(plantTree == True):
+	    print(""Correct"")
 	else:
-		print(""windows = incorrect"")
-	if(woodNeeded == 80):
-		correct = correct + 1
-	else:
-		print(""woodNeeded = incorrect"")
-	if(whitePaint == 5):
-		correct = correct + 1
-	else:
-		print(""whitePaint = incorrect"")
-	if(bundlesNeeded == 7):
-		correct = correct + 1
-	else:
-		print(""bundlesNeeded = incorrect"")
-	if(correct == 5):
-		print(""Congratulations"")
+	    print(""Incorrect"")
 	return";
 
             scriptEngine = Python.CreateEngine();
@@ -77,7 +68,6 @@ def main():
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-            
             
             scriptEngine.Execute(playerCode, scriptScope);
 
@@ -92,6 +82,56 @@ def main():
                 codeOutput.Close();
             }
         }
+		
+		
+        public void MainDriver2()
+        {
+            // Local variables
+            ScriptEngine scriptEngine;
+            ScriptScope scriptScope;
+            dynamic scriptFunction;
+            // Modify the player's input code to have proper indentation
+            // Add the player's code to a defined python function for runtime running
+            string playerCode = @"
+def main():
+	plantTree = False
+	dirt = 0
+	good = 0
+	yellow = 0
+	red = 1
+	green = 2
+	color = yellow
+	if(" + codeInput1.text + @"):
+	    color = " + codeInput2.text + @"
+	else:
+		color = " + codeInput3.text + @"
+	if(color == red):
+	    print(""Congratulations"")
+	else:
+	    print(""Incorrect"")
+	return";
+    
+
+            scriptEngine = Python.CreateEngine();
+            scriptScope = scriptEngine.CreateScope();
+            MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
+            scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
+
+            
+            scriptEngine.Execute(playerCode, scriptScope);
+
+            
+            scriptFunction = scriptScope.GetVariable("main");
+            scriptFunction(); // Execution of function "main"
+
+            // Test if the player used a print statement
+            if (codeOutput.Length > 0)
+            {
+                PythonPrint(codeOutput);
+                codeOutput.Close();
+            }
+        }
+		
 		
 
         /*
@@ -126,11 +166,20 @@ def main():
 
             // Display the printed message
             programOutput.text = stringData;
-
+			
+			if(stringData == "Correct\r\n"){
+				if(count == 0){
+					lesson1.SetActive(false);
+					lesson2.SetActive(true);
+					count++;
+				}
+			}
+			
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                levelSprite.isTrigger = true;
+				dirtReader.sprite = red; // Sets levelSprite to trigger complete
             }
         }
 
