@@ -17,7 +17,7 @@ using TMPro;
 
 namespace CSharpLevels
 {
-    public class CSharp_L12 : MonoBehaviour
+    public class CSharp_L16 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField playerInput; // References the Player's Input Field
@@ -199,12 +199,29 @@ namespace CSharpLevels
                 programOutput.text = ""; // Clear the current output box
                 foreach (CompilerError error in result.Errors)
                 {
-                    if (error.ErrorNumber == "CS1525")
-                        programOutput.text += "Syntax error\n\n";
-                    else
-                        // Use the following if you want error codes along with the error text.
-                        // String.Format("Error ({0}): ({1})", error.ErrorNumber, error.ErrorText)
-                        programOutput.text += error.ErrorText + "\n";
+                    programOutput.text += error.ErrorNumber switch
+                    {
+                        // Syntax Errors
+                        "CS1525" => $"Error: You have made a Syntax Error in your code.\n\n",
+
+                        // Variable Name Unknown. EX. int spellMeRight; => spelMeRight = 0;
+                        "CS0103" => $"Error: You have typoed one of your variable names, or you never declared it.\n\n",
+
+                        // Uninitialized Variable usage
+                        "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.\n\n",
+
+                        // Variable Type Mismatch. EX. if (string == int)
+                        "CS0019" => $"Error: You are cannot compare two different data types together.\n\n",
+
+                        // Variable Type Mismatch. EX. int = double;
+                        "CS0266" => $"Error: You are trying to assign a Double data type into an Integer data type.\n\n",
+
+                        // Variable Type Mismatch. EX. string = int;
+                        "CS0029" => $"Error: You are cannot assign two different data types together.\n\n",
+
+                        // All Other Errors
+                        _ => $"Error on Line ({error.Line}: {error.ErrorText}\n\n",
+                    };
                 }
             }
             else

@@ -104,10 +104,10 @@ namespace CSharpLevels
                                     code.text = ""bool Bit_Is_Awesome = true;"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish1.position = new Vector3(997, 489, 0);  // Invisible
-                                    Fish2.position = new Vector3(1081, 489, 0); // Invisible
-                                    Fish3.position = new Vector3(1151, 489, 0); // Invisible
-                                    Fish4.position = new Vector3(1236, 489, 0); // Invisible
+                                    Fish1.position = new Vector3(997, 489, -4);  // Visible
+                                    Fish2.position = new Vector3(1081, 489, -4); // Visible
+                                    Fish3.position = new Vector3(1151, 489, -4); // Visible
+                                    Fish4.position = new Vector3(1236, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -184,9 +184,9 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish2.position = new Vector3(1081, 489, 0); // Visible
-                                    Fish3.position = new Vector3(1151, 489, 0); // Visible
-                                    Fish4.position = new Vector3(1236, 489, 0); // Visible
+                                    Fish2.position = new Vector3(1081, 489, -4); // Visible
+                                    Fish3.position = new Vector3(1151, 489, -4); // Visible
+                                    Fish4.position = new Vector3(1236, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -223,7 +223,7 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish1.position = new Vector3(997, 489, 0);  // Visible
+                                    Fish1.position = new Vector3(997, 489, -4); // Visible
                                     Fish2.position = new Vector3(1081, 489, 1); // Invisible
                                     Fish3.position = new Vector3(1151, 489, 1); // Invisible
                                     Fish4.position = new Vector3(1236, 489, 1); // Invisible
@@ -263,8 +263,8 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish2.position = new Vector3(1081, 489, 0); // Visible
-                                    Fish4.position = new Vector3(1236, 489, 0); // Visible
+                                    Fish2.position = new Vector3(1081, 489, -4); // Visible
+                                    Fish4.position = new Vector3(1236, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -301,9 +301,9 @@ namespace CSharpLevels
                                     code.text = """";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
-                                    Fish1.position = new Vector3(997, 489, 1);  // Invisible
-                                    Fish4.position = new Vector3(1236, 489, 1); // Invisible
-                                    Fish3.position = new Vector3(1151, 489, 0); // Visible
+                                    Fish1.position = new Vector3(997, 489, 1);   // Invisible
+                                    Fish4.position = new Vector3(1236, 489, 1);  // Invisible
+                                    Fish3.position = new Vector3(1151, 489, -4); // Visible
                                 }
                                 else
                                 {
@@ -409,10 +409,29 @@ namespace CSharpLevels
 
                 // Display only 1 error
                 CompilerErrorCollection error = result.Errors;
-                if (error[0].ErrorNumber == "CS1525")
-                    programOutput.text = "Syntax error";
-                else
-                    programOutput.text = String.Format("Line: {0}\nError: {1}", error[0].Line, error[0].ErrorText);
+                programOutput.text = error[0].ErrorNumber switch
+                {
+                    // Syntax Errors
+                    "CS1525" => $"Error: You have made a Syntax Error in your code.",
+
+                    // Variable Name Unknown. EX. int spellMeRight; => spelMeRight = 0;
+                    "CS0103" => $"Error: You have typoed one of your variable names, or you never declared it.\n\n{error[0].ErrorText}",
+
+                    // Uninitialized Variable usage
+                    "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.",
+
+                    // Variable Type Mismatch. EX. if (string == int)
+                    "CS0019" => $"Error: You are cannot compare two different data types together.\n\n{error[0].ErrorText}",
+
+                    // Variable Type Mismatch. EX. int = double;
+                    "CS0266" => $"Error: You are trying to assign a Double data type into an Integer data type.\n\n{error[0].ErrorText}",
+
+                    // Variable Type Mismatch. EX. string = int;
+                    "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
+
+                    // All Other Errors
+                    _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
+                };
             }
 
             // Return the assembly

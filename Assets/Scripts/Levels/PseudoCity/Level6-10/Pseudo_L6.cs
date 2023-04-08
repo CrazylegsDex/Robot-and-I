@@ -27,11 +27,12 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        public GameObject wall;
+        public GameObject complete;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
 
+        public GameObject[] tonTests;
         public GameObject[] boxTests;
         private Button_Check button_Check;
         private bool button1;
@@ -44,19 +45,22 @@ namespace PseudoLevels
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-            
+            complete.SetActive(false);
+            boxTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+            {
+                go.SetActive(false);
+            }
         }
         void Update()
         {
             cam.transform.position = new Vector3(camx + 485, camy, camz);
-            //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
-                //Debug.Log("Works!");
                 
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
-                boxTests = GameObject.FindGameObjectsWithTag("Button");
-                foreach (GameObject go in boxTests)//serches for "Button" objects
+                tonTests = GameObject.FindGameObjectsWithTag("Button");
+                foreach (GameObject go in tonTests)//serches for "Button" objects
                 {
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
@@ -67,7 +71,6 @@ namespace PseudoLevels
                             if (button_Check.complete)
                             {
                                 button1 = true;
-                                //Debug.Log(" 1 Works!");
                             }
                             else
                                 button1 = false;
@@ -78,7 +81,6 @@ namespace PseudoLevels
                             if (button_Check.complete)
                             {
                                 button2 = true;
-                                //Debug.Log(" 2 Works!");
                             }
                             else
                                 button2 = false;
@@ -87,23 +89,21 @@ namespace PseudoLevels
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
                         {
-                            //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
 
                 }
-                    //cam.transform.position.x = camx + 485; 
 
             }
             else
             {
-                //Debug.Log("Not yet!");
-                cam.transform.position = new Vector3(camx, camy, camz);
-                //cam.transform.position.x = camx;
+                cam.transform.position = new Vector3(camx, camy, camz);//Forces Bounds to move camera to next scene
             }
         }
         public void Code_Compiler()
@@ -129,7 +129,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (a == 534)
+                    if (a == 534)//Tests to make sure the answer in the section is correct
                     { //Correct integer inputed
                         aOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         aOutput.text = "Correct!";
@@ -196,7 +196,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (b == x && y > b2 && x < b3 && y < b4)
+                    if (b == x && y > b2 && x < b3 && y < b4)//Tests to make sure every answer in the section is correct
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -226,7 +226,7 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-                    if (c == 5)
+                    if (c == 5)//Tests to make sure the answer in the section is correct
                     {
                         cOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         cOutput.text = "Correct!";
@@ -306,7 +306,7 @@ namespace PseudoLevels
                         x /= 2;
                         
                     }
-                    if (d == 8 && y == 4 && x == 4 && d4 == y)
+                    if (d == 8 && y == 4 && x == 4 && d4 == y)//Tests to make sure every answer in the section is correct
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
@@ -324,8 +324,10 @@ namespace PseudoLevels
 
             if (num == 4)
             {
-                //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                wall.SetActive(false);
+                foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+                {
+                    go.SetActive(true);
+                }
             }
             //
             

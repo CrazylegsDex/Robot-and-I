@@ -66,14 +66,12 @@ namespace GameMechanics
 						if(id == ("PS_Level" + (i)) || id == "PS_Level1") {
 							LevelName.color = new Color(0,0,255,255);
 							spriteRenderer.sprite = check;
-						}else if (id == ("PS_Level" + (i + 1))) // Next level id with current
+						}
+						if (id == ("PS_Level" + (i + 1))) // Next level id with current
                         {
 							spriteRenderer.sprite = cirlce;
                             LevelName.color = new Color(255,225,0,255);
-                        }else{
-							LevelName.color = new Color(255,0,0,255);
-							spriteRenderer.sprite = Xmarker;
-						}
+                        }
                     }
                 }
             }
@@ -99,13 +97,11 @@ namespace GameMechanics
                                 if(id == ("PY_Level" + (i))){
 									LevelName.color = new Color(0,0,255,255);
 									spriteRenderer.sprite = check;
-								}else if (id == ("PY_Level" + (i + 1))) // Next level id with current
+								}
+								if (id == ("PY_Level" + (i + 1))) // Next level id with current
 								{
 									spriteRenderer.sprite = cirlce;
 									LevelName.color = new Color(255,225,0,255);
-								}else{
-									LevelName.color = new Color(255,0,0,255);
-									spriteRenderer.sprite = Xmarker;
 								}
                             }
                         }
@@ -130,13 +126,11 @@ namespace GameMechanics
                                 if(id == ("CS_Level" + (i))){
 									LevelName.color = new Color(0,0,255,255);
 									spriteRenderer.sprite = check;
-								}else if (id == ("CS_Level" + (i + 1))) // Next level id with current
+								}
+								if (id == ("CS_Level" + (i + 1))) // Next level id with current
 								{
 									spriteRenderer.sprite = cirlce;
 									LevelName.color = new Color(255,225,0,255);
-								}else{
-									LevelName.color = new Color(255,0,0,255);
-									spriteRenderer.sprite = Xmarker;
 								}
                             }
                         }

@@ -23,7 +23,7 @@ namespace PlayerControl
         // Private variables
         private Vector2 moveDirection;
 
-	// Start is called when the object is initialized
+	    // Start is called when the object is initialized
         void Start()
         {
             // Initialize our animation component and set Bit's inital direction to front
@@ -44,6 +44,14 @@ namespace PlayerControl
         {
             // Use this function for processing physics calculations
             Move();
+        }
+
+        // Check collision with another Collider2D
+        // If there is a collision, play the collision sound effect
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            // Play the collision sound effect from the Audio_Manager Instance
+            Audio_Manager.Instance.PlaySound("Collision");
         }
 
         // LoadData method from the DataPersistenceInterface

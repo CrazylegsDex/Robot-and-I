@@ -27,10 +27,15 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
+
+        bool active = false;
+        bool timeSet = false;
+        float startTime;
+        float endTime;
+        public GameObject complete;
 
         public GameObject[] boxTests;
         public GameObject hoseTest;
@@ -41,36 +46,47 @@ namespace PseudoLevels
         void Start()
         {
             button1 = false;
+            hoseTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            foreach (GameObject go in hoseTests)//serches for "Grabbable" objects
+            {
+                go.SetActive(false);
+            }
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
             cam.transform.position = new Vector3(camx + 485, camy, camz);
-            //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
-                //Debug.Log("Works!");
-
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
-                
-                if (Input.GetKeyDown(KeyCode.E) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true)
+                if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && !active)
                 {
-                    
-                    for(int i = 0; i < hoseTest.transform.childCount; i++)
+                    for(int i = 0; i < hoseTest.transform.childCount; i++)//turns on the water
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(true);
+                        active = true;
                     }
                 }
-                else if(Input.GetKeyDown(KeyCode.E)) {
-                    for (int i = 0; i < hoseTest.transform.childCount; i++)
+                else if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && active)
+                {
+                    for (int i = 0; i < hoseTest.transform.childCount; i++)//turns off the water
                     {
                         Transform water = hoseTest.transform.GetChild(i);
                         water.gameObject.SetActive(false);
+                        active = false;
+                    }
+                }
+                else if(Input.GetKeyDown(KeyCode.E)) {
+                    for (int i = 0; i < hoseTest.transform.childCount; i++)//turns off the water
+                    {
+                        Transform water = hoseTest.transform.GetChild(i);
+                        water.gameObject.SetActive(false);
+                        active = false;
                     }
                 }
                 foreach (GameObject go in boxTests)//serches for "Button" objects
@@ -80,36 +96,39 @@ namespace PseudoLevels
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
                         if (button_Check.boxFirstName == "1")
                         {
-
-                            if (button_Check.complete)
+                            if(button_Check.complete && active && !timeSet)
                             {
-                                button1 = true;
-                                //Debug.Log(" 1 Works!");
+                                startTime = Time.time;
+                                timeSet = true;
+                            }
+                            else if (button_Check.complete && active && timeSet)
+                            {
+                                
+                                endTime = Time.time - startTime;
+                                if(endTime > 10)
+                                    button1 = true;
+                                Debug.Log(endTime);
                             }
                             else
+                            {
                                 button1 = false;
+                                timeSet = false;
+                            }   
                         }
                         if (button1)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
-                        }
-                        else
-                        {
-                            //Debug.Log("Not working!");
-                            levelSprite.isTrigger = false;
+                            complete.SetActive(true);
                         }
                     }
 
                 }
-                //cam.transform.position.x = camx + 485; 
 
             }
             else
             {
-                //Debug.Log("Not yet!");
                 cam.transform.position = new Vector3(camx, camy, camz);
-                //cam.transform.position.x = camx;
             }
         }
         public void Code_Compiler()
@@ -146,7 +165,6 @@ namespace PseudoLevels
                         aOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         aOutput.text = "Incorrect";
                     }
-
                 }
             }
             //B
@@ -158,7 +176,6 @@ namespace PseudoLevels
             if (!(String.IsNullOrEmpty(bInput.text)) && !(String.IsNullOrEmpty(b2Input.text)) &&
                 !(String.IsNullOrEmpty(b3Input.text)) && !(String.IsNullOrEmpty(b4Input.text)))//Checks if values were inputed skips if no value
             {
-
                 try
                 {
                     if (bInput.text != "x" || bInput.text != "y")
@@ -304,22 +321,16 @@ namespace PseudoLevels
                     }
                     else
                     {
-
                         dOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         dOutput.text = "Incorrect";
                     }
 
                 }
             }
-
             if (num == 4)
             {
-                //levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                 hoseTest.SetActive(true);
             }
-            //
-
-
         }
 
     }

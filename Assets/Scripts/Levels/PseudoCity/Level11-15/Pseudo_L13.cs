@@ -23,9 +23,8 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
-        //private bool codeComp;
+        public GameObject complete;
 
-        public GameObject wall;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
@@ -33,28 +32,32 @@ namespace PseudoLevels
         public GameObject[] boxTests;
         public GameObject[] hairTests;
         private Button_Check button_Check;
-        private bool button1;
-        private bool button2;
+        private int button1;
+        private int button2;
+        private int button3;
+        private int button4;
+        private int button5;
         public BoxCollider2D levelSprite;
         void Start()
         {
-            hairTests = GameObject.FindGameObjectsWithTag("Box");
-            foreach (GameObject go in hairTests)//serches for "Box" objects
+            hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            foreach (GameObject go in hairTests)//serches for "Grabbable" objects
             {
                 go.SetActive(false);
             }
-            //codeComp = false;
-            button1 = false;
-            button2 = false;
+            button1 = 0;
+            button2 = 0;
+            button3 = 0;
+            button4 = 0;
+            button5 = 0;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
-
+            complete.SetActive(false);
         }
         void Update()
         {
             cam.transform.position = new Vector3(camx + 485, camy, camz);//moves camera to new section
-            //Debug.Log(cam.transform.position.y);
             if (bit.transform.position.x > 1331)//gameplay section
             {
                 cam.transform.position = new Vector3(camx + 505, camy, camz);
@@ -64,49 +67,59 @@ namespace PseudoLevels
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                        if (go.name.StartsWith("1"))
                         {
 
-                            if (button_Check.complete)
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete )
                             {
-                                button1 = true;
-                                //Debug.Log(" 1 Works!");
+                                button1++;
                             }
-                            else
-                                button1 = false;
                         }
-                        else if (button_Check.boxFirstName == "2")
+                        if (go.name.StartsWith("2"))
                         {
-
-                            if (button_Check.complete)
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
                             {
-                                button2 = true;
-                                //Debug.Log(" 2 Works!");
+                                button2++;
                             }
-                            else
-                                button2 = false;
                         }
-                        if (button1 && button2)
+                        if (go.name.StartsWith("3"))
+                        {
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            {
+                                button3++;
+                            }
+                        }
+                        if (go.name.StartsWith("4"))
+                        {
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            {
+                                button4++;
+                            }
+                        }
+                        if (go.name.StartsWith("5"))
+                        {
+                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            {
+                                button5++;
+                            }
+                        }
+                        if (button1 > 4 && button2 > 4 && button3 > 4&& button4 > 4 && button5 > 4)//All trees are chopped down!
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
+                            complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
                         {
-                            //Debug.Log("Not working!");
                             levelSprite.isTrigger = false;
+                            complete.SetActive(false);
                         }
                     }
-
                 }
-                //cam.transform.position.x = camx + 485; 
-
             }
             else
             {
-                //Debug.Log("Not yet!");
                 cam.transform.position = new Vector3(camx, camy, camz);
-                //cam.transform.position.x = camx;
             }
         }
         public void Code_Compiler()
@@ -147,7 +160,6 @@ namespace PseudoLevels
                 }
             }
             //B
-
             safe = true;
             if (!(String.IsNullOrEmpty(bInput.text)))//Checks if values were inputed skips if no value
             {
@@ -172,15 +184,12 @@ namespace PseudoLevels
             safe = true;//resets safe for next input
             if (!(String.IsNullOrEmpty(cInput.text)) && !(String.IsNullOrEmpty(c2Input.text)))//Checks if values were inputed skips if no value
             {
-
                 try
                 {
                     c = int.Parse(cInput.text);
-
                 }
                 catch (Exception)
                 {
-
                     cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
                     cOutput.text = "Invalid";
                     safe = false;
@@ -198,7 +207,6 @@ namespace PseudoLevels
                         cOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         cOutput.text = "Incorrect";
                     }
-
                 }
             }
 
@@ -212,7 +220,6 @@ namespace PseudoLevels
                 {
                     d = int.Parse(dInput.text);
                     d2 = int.Parse(d2Input.text);
-
                 }
                 catch (Exception)
                 {
@@ -222,30 +229,23 @@ namespace PseudoLevels
                 }
                 if (safe)
                 {
-
-
                     if (d == 1 && d2 == 10)
                     {
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
                         num++;
-                        //Debug.Log(num);
                     }
                     else
                     {
-
                         dOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
                         dOutput.text = "Incorrect";
                     }
-
                 }
             }
-            //Debug.Log(num);
             if (num == 4)
             {
                 Debug.Log("Works!");
-                //hairTests = GameObject.FindGameObjectsWithTag("Box");
-                foreach (GameObject go in hairTests)//serches for "Box" objects
+                foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);
                 }

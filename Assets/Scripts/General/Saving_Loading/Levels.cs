@@ -41,8 +41,8 @@ namespace GameMechanics
         // Data persistence implementation of LoadGame
         public void LoadData(GameData data)
         {
-            // Load the current levels completed status
-            Completed = data.gameLevels[LevelToComplete];
+            // Try to get the levels completed status if it exists in the Dictionary
+            data.gameLevels.TryGetValue(LevelToComplete, out Completed);
         }
 
         // Data persistence implementation of SaveGame
