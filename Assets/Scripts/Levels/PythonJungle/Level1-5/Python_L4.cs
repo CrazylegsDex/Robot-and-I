@@ -11,32 +11,32 @@ namespace PythonLevels
     {
         // Public variables
         public TMP_InputField codeInput1;
-		public TMP_InputField codeInput2;
-		public TMP_InputField codeInput3;
-		public TMP_InputField codeInput4;
-		public TMP_InputField codeInput5;
-		public TMP_InputField codeInput6;
+        public TMP_InputField codeInput2;
+        public TMP_InputField codeInput3;
+        public TMP_InputField codeInput4;
+        public TMP_InputField codeInput5;
+        public TMP_InputField codeInput6;
         public TextMeshProUGUI programOutput;
-		public TextMeshProUGUI programOutput2;
+        public TextMeshProUGUI programOutput2;
         [TextArea(5, 30)] public string explanition;
         [TextArea(5, 30)] public string explanition2;
-		public GameObject scanner;
-		public GameObject wall;
+        public GameObject scanner;
+        public GameObject wall;
         public BoxCollider2D levelSprite;
-		
+        
 
         /*
          * This function is the driver to the sequence of events that are
          * required to compile and execute upon Python code
          */
-		public void setText(){
-			programOutput.text = explanition;
-		}
-		
-		public void setText2(){
-			programOutput2.text = explanition2;
-		}
-		
+        public void setText(){
+            programOutput.text = explanition;
+        }
+        
+        public void setText2(){
+            programOutput2.text = explanition2;
+        }
+        
         public void MainDriver()
         {
             // Local variables
@@ -47,14 +47,14 @@ namespace PythonLevels
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	input1 = " + codeInput1.text + @"
-	input2 = " + codeInput2.text + @"
-	scannerOn = " + codeInput3.text + @"
-	if(scannerOn == 1):
-		print(""Congratulations"")
-	else:
-		print(""Incorrect"")
-	return";
+    input1 = " + codeInput1.text + @"
+    input2 = " + codeInput2.text + @"
+    scannerOn = " + codeInput3.text + @"
+    if(scannerOn == 1):
+        print(""Congratulations"")
+    else:
+        print(""Incorrect"")
+    return";
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
@@ -87,22 +87,42 @@ def main():
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	correct = 0
-	eggs = 5
-	Bub = " + codeInput4.text + @"
-	Rango = " + codeInput5.text + @"
-	Loki = " + codeInput6.text + @"
-	if(Bub == 1):
-		correct = correct + 1
-	if(Rango == 1):
-		correct = correct + 1
-	if(Loki == 0):
-		correct = correct + 1
-	if(correct == 3):
-		print(""Congratulations"")
-	else:
-		print(""Incorrect"")
-	return";
+    correct = 0
+    eggs = 5
+    Bub = " + codeInput4.text + @"
+    Rango = " + codeInput5.text + @"
+    Loki = " + codeInput6.text + @"
+    if(Bub == 1):
+        correct = correct + 1
+    if(Rango == 1):
+        correct = correct + 1
+    if(Loki == 0):
+        correct = correct + 1
+    eggs = 3    #added section to make sure value is correct
+    Bub = " + codeInput4.text + @"
+    Rango = " + codeInput5.text + @"
+    Loki = " + codeInput6.text + @"
+    if(Bub == 0):
+        correct = correct + 1
+    if(Rango == 0):
+        correct = correct + 1
+    if(Loki == 0):
+        correct = correct + 1
+    eggs = 2    #added section to make sure value is correct
+    Bub = " + codeInput4.text + @"
+    Rango = " + codeInput5.text + @"
+    Loki = " + codeInput6.text + @"
+    if(Bub == 0):
+        correct = correct + 1
+    if(Rango == 1):
+        correct = correct + 1
+    if(Loki == 1):
+        correct = correct + 1
+    if(correct == 9):
+        print(""Congratulations"")
+    else:
+        print(""Incorrect"")
+    return";
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
@@ -124,7 +144,7 @@ def main():
                 codeOutput.Close();
             }
         }
-		
+        
 
         /*
          * This function executes if stdout data was found
@@ -163,11 +183,11 @@ def main():
             if (stringData == "Congratulations\r\n")
             {
                 scanner.SetActive(true); // Sets levelSprite to trigger complete
-				wall.SetActive(false);
+                wall.SetActive(false);
             }
         }
-		
-		private void PythonPrint2(MemoryStream data)
+        
+        private void PythonPrint2(MemoryStream data)
         {
             // Local variables
             ASCIIEncoding encoding = new ASCIIEncoding();
@@ -262,6 +282,6 @@ def main():
             programOutput.text = "";
             programOutput.text += logString;
         }
-		
+        
     }
 }

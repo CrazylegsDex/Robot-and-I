@@ -1793,18 +1793,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Now that you found a whole bunch of eggs do you think you can help me
-    fix my egg sorter? All I need you to do is use relational operators to set which
-    eggs to to each snake.
-
-
-    My snake Bub only eats eggs larger than 5 in
-
-    My
-    snake Rango will eat any egg that is not 3 in
-
-    My snake Loki only eats eggs
-    smaller than 2 in'
+  m_text: "Now that you found a whole bunch of eggs do you think you can help me
+    fix my egg sorter? \n\nMy snake Bub only eats eggs larger than 3 in\nMy snake
+    Rango will eat any egg that is not 3 in\nMy snake Loki only eats eggs smaller
+    than 3 in\n\nUse relational operators to set which eggs to to each snake.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2136,8 +2128,8 @@ MonoBehaviour:
     me?
 
 
-    Bits scanner has two inputs that must be equal to each other and must
-    equal to each other.'
+    Bits scanner has two inputs that must be equal to each other and the
+    scanner must be True.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2225,7 +2217,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1025060674}
   m_Father: {fileID: 591204839}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3184,7 +3177,6 @@ RectTransform:
   - {fileID: 695661120}
   - {fileID: 1422875431}
   - {fileID: 959044506}
-  - {fileID: 1025060674}
   - {fileID: 417641308}
   - {fileID: 1242598039}
   - {fileID: 1215354724}
@@ -4924,12 +4916,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1587838655}
-  m_Father: {fileID: 591204839}
+  m_Father: {fileID: 417641308}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.21471, y: 15.3}
+  m_AnchoredPosition: {x: -115.31468, y: 11.099988}
   m_SizeDelta: {x: 80.0384, y: 7.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1025060675
