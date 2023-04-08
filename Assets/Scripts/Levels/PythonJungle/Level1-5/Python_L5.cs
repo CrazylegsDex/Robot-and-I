@@ -16,7 +16,7 @@ namespace PythonLevels
 		public TMP_InputField codeInput4;
 		public TMP_InputField codeInput5;
         public TextMeshProUGUI programOutput;
-		public string explanition;
+        [TextArea(5, 30)] public string explanition;
 		public GameObject lawnmover;
         public BoxCollider2D levelSprite;
 		
