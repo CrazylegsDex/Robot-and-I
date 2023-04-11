@@ -6,6 +6,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PseudoLevels
 {
@@ -151,10 +153,12 @@ namespace PseudoLevels
             if (num == 4)
             {
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+				Audio_Manager.Instance.PlaySound("Correct");
             }
             else
             {
                 levelSprite.isTrigger = false;
+				Audio_Manager.Instance.PlaySound("Incorrect");
             }
         }
     }
