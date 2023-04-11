@@ -5008,7 +5008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973017198057725062, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2973017198057725062, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_MaxValue
