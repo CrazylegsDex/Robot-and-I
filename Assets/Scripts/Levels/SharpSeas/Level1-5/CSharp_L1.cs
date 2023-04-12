@@ -6,6 +6,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace CSharpLevels
 {
@@ -189,10 +191,12 @@ namespace CSharpLevels
 
             if (num == 6)
             {
+				Audio_Manager.Instance.PlaySound("Correct");
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
             }
             else
             {
+				Audio_Manager.Instance.PlaySound("Incorrect");
                 levelSprite.isTrigger = false;
             }
         }

@@ -6,6 +6,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PseudoLevels
 {
@@ -238,13 +240,15 @@ namespace PseudoLevels
             }
             if (num == 4)
             {
+				Audio_Manager.Instance.PlaySound("Correct");
                 Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//serches for "Grabbable" objects
                 {
                     go.SetActive(true);
                 }
             }
-
+			else
+				Audio_Manager.Instance.PlaySound("Incorrect");
 
         }
 

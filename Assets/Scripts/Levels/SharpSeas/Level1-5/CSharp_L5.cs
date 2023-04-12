@@ -10,11 +10,13 @@
  */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using Modified.Mono.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
 using TMPro;
+using GameMechanics;
 
 namespace CSharpLevels
 {
@@ -22,10 +24,35 @@ namespace CSharpLevels
     {
         // Public variables
         public TextMeshProUGUI programOutput;
+		public TextMeshProUGUI soundCheck;
         public TMP_InputField playerInput;
 
         // Private variables
         private bool displayLog;
+		
+		/* This function updates constantly to check if the text box
+		 * under the screen has the work correct, incorrect or a 
+		 * blank space. If it's correct, play the correlating sound
+		 * effect and change the text to a blank. If it's incorrect, 
+		 * play the correlating sound effect and change the text to a
+		 * blank. If it's blank, play nothing.
+		 */
+		private void Update()
+		{
+			if (soundCheck.text == "incorrect")
+			{
+				Audio_Manager.Instance.PlaySound("Incorrect");
+				soundCheck.text = " ";
+			}
+			else 
+			{
+				if (soundCheck.text == "correct")
+				{
+					Audio_Manager.Instance.PlaySound("Correct");
+					soundCheck.text = " ";
+				}
+			}
+		}
 
         /*
          * This function drives the entire program. This function
@@ -63,6 +90,7 @@ namespace CSharpLevels
                     // Get references to the input & output text boxes
                     TMP_Text problemStatement = GameObject.Find(""Restrictions"").GetComponent<TMP_Text>();
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // Get Transforms of the fish
@@ -102,6 +130,7 @@ namespace CSharpLevels
                                     GameObject NPC = GameObject.FindWithTag(""LevelChange"");
                                     NPC.GetComponent<BoxCollider2D>().isTrigger = true;
                                     code.text = ""bool Bit_Is_Awesome = true;"";
+									check.text = ""correct"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish1.position = new Vector3(997, 489, -4);  // Visible
@@ -113,12 +142,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You must use \""^\"" for this problem.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of GotEm is incorrect
                                 output.text = ""The value of GotEm is not true."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -142,6 +173,7 @@ namespace CSharpLevels
                                     output.text = ""Great Work!"";
                                     problemStatement.text = ""For this problem, use the Logical ^ Operator."";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish1.position = new Vector3(997, 489, 1);  // Invisible
@@ -153,12 +185,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You must use \""||\"" for this problem.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of GotEm is incorrect
                                 output.text = ""The value of GotEm is not true."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -182,6 +216,7 @@ namespace CSharpLevels
                                     output.text = ""010101110110111101110111\r\nTranslating. . .\r\nWow"";
                                     problemStatement.text = ""For this problem, use the Logical || Operator."";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish2.position = new Vector3(1081, 489, -4); // Visible
@@ -192,12 +227,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You must use \""&&\"" for this problem.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of GotEm is incorrect
                                 output.text = ""The value of GotEm is not true."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -221,6 +258,7 @@ namespace CSharpLevels
                                     output.text = ""Awesome!"";
                                     problemStatement.text = ""For this problem, use the Logical && Operator."";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish1.position = new Vector3(997, 489, -4); // Visible
@@ -232,12 +270,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You must use \""^\"" for this problem.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of GotEm is incorrect
                                 output.text = ""The value of GotEm is not true."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -261,6 +301,7 @@ namespace CSharpLevels
                                     output.text = ""Congratulations!"";
                                     problemStatement.text = ""For this problem, use the logical ^ operator."";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish2.position = new Vector3(1081, 489, -4); // Visible
@@ -270,12 +311,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You must use \""||\"" for this problem.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of GotEm is incorrect
                                 output.text = ""The value of GotEm is not true."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -299,6 +342,7 @@ namespace CSharpLevels
                                     output.text = ""Good Job Bit!"";
                                     problemStatement.text = ""For this problem, use the logical || operator."";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Set the Fish z-axis. (greater than 0 is invisible)
                                     Fish1.position = new Vector3(997, 489, 1);   // Invisible
@@ -309,12 +353,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You must use \""&&\"" for this problem.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of GotEm is incorrect
                                 output.text = ""The value of GotEm is not true."";
+								check.text = ""incorrect"";
                             }
                         }
                     }
@@ -322,6 +368,7 @@ namespace CSharpLevels
                     {
                         // Inform the player they need to use the variables PondX and GotEm in their program
                         output.text = ""Sorry, but you must use the variables PondX (where X is 1-4) and GotEm in your program"";
+						check.text = ""incorrect"";
                     }
 
                     // Keep runtime clean and speedy

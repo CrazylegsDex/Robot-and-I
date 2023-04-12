@@ -5,6 +5,8 @@ using System;
 using System.IO;
 using System.Text;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PythonLevels
 {
@@ -43,9 +45,11 @@ namespace PythonLevels
 				count++;
 			}
 			if(count == 5){
+				Audio_Manager.Instance.PlaySound("Correct");
 				programOutput.text = "Congratulations";
 				levelSprite.isTrigger = true;
 			}else{
+				Audio_Manager.Instance.PlaySound("Incorrect");
 				programOutput.text = "Incorrect";
 			}				
         }

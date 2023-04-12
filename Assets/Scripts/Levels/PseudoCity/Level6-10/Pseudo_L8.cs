@@ -6,6 +6,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PseudoLevels
 {
@@ -329,8 +331,11 @@ namespace PseudoLevels
             }
             if (num == 4)
             {
+				Audio_Manager.Instance.PlaySound("Correct");
                 hoseTest.SetActive(true);
             }
+			else
+				Audio_Manager.Instance.PlaySound("Incorrect");
         }
 
     }

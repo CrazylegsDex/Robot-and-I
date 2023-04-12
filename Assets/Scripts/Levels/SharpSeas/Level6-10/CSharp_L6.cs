@@ -9,12 +9,14 @@
  */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using Modified.Mono.CSharp;
 using System;
 using System.Collections.Generic;
 using System.CodeDom.Compiler;
 using System.Reflection;
 using TMPro;
+using GameMechanics;
 
 namespace CSharpLevels
 {
@@ -26,15 +28,39 @@ namespace CSharpLevels
         public Sprite ChestSprite;
         public List<GameObject> Chest;
         public TextMeshProUGUI programOutput;
+		public TextMeshProUGUI soundCheck;
         public TextMeshProUGUI CompletionBox;
         public TMP_InputField playerInput;
 
         // Private variables
         private bool displayLog;
+		
 
         // Use update to check Bit location on the map
         private void Update()
         {
+		/* Check if the text box
+		 * under the screen has the work correct, incorrect or a 
+		 * blank space. If it's correct, play the correlating sound
+		 * effect and change the text to a blank. If it's incorrect, 
+		 * play the correlating sound effect and change the text to a
+		 * blank. If it's blank, play nothing.
+		 */
+			if (soundCheck.text == "incorrect")
+			{
+				Audio_Manager.Instance.PlaySound("Incorrect");
+				soundCheck.text = " ";
+			}
+			else 
+			{
+				if (soundCheck.text == "correct")
+				{
+					Audio_Manager.Instance.PlaySound("Correct");
+					soundCheck.text = " ";
+				}
+			}
+			
+			
             // Perform actions based on Bit's location
             switch (Bit.transform.position.x)
             {
@@ -160,6 +186,7 @@ namespace CSharpLevels
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
                     output.text = """"; // Clear the output text box
                     TMP_Text completionBox = GameObject.Find(""Completed"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // Get the LessonObject to set inactive
@@ -195,11 +222,13 @@ namespace CSharpLevels
                                 NPC.GetComponent<BoxCollider2D>().isTrigger = true;
                                 code.text = """";
                                 output.text = ""Congratulations. You have found all the chests."";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -220,11 +249,13 @@ namespace CSharpLevels
                                 lesson.SetActive(false);
                                 completionBox.text = ""Chest6"";
                                 code.text = ""// int chest7 = 1024;\r\n"";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -245,11 +276,13 @@ namespace CSharpLevels
                                 lesson.SetActive(false);
                                 completionBox.text = ""Chest5"";
                                 code.text = ""// bool chest6 = false;\r\n"";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -270,11 +303,13 @@ namespace CSharpLevels
                                 lesson.SetActive(false);
                                 completionBox.text = ""Chest4"";
                                 code.text = ""// string chest5 = \""Silver\"";\r\n"";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -295,11 +330,13 @@ namespace CSharpLevels
                                 lesson.SetActive(false);
                                 completionBox.text = ""Chest3"";
                                 code.text = ""// int chest4 = -4096;\r\n"";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -320,11 +357,13 @@ namespace CSharpLevels
                                 lesson.SetActive(false);
                                 completionBox.text = ""Chest2"";
                                 code.text = ""// string chest3 = \""Gold\"";\r\n"";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -345,11 +384,13 @@ namespace CSharpLevels
                                 lesson.SetActive(false);
                                 completionBox.text = ""Chest1"";
                                 code.text = ""// int chest2 = 42;\r\n"";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The if-statement is incorrect
                                 output.text = ""Your if-statement is either false, or you are not incrementing found by 1."";
+								check.text = ""incorrect"";
                             }
                         }
                     }
@@ -357,6 +398,7 @@ namespace CSharpLevels
                     {
                         // Inform the player they need to use if-statement and the variables chest and found in their code
                         output.text = ""Sorry, but you must use an if-statement and the variables \""chest\"" and \""found\"" in your program."";
+						check.text = ""incorrect"";
                     }
 
                     // Keep runtime clean and speedy

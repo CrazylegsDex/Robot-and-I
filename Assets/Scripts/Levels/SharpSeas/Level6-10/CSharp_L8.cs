@@ -8,6 +8,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using Modified.Mono.CSharp;
 using System;
 using System.Collections;
@@ -15,6 +16,7 @@ using System.Collections.Generic;
 using System.CodeDom.Compiler;
 using System.Reflection;
 using TMPro;
+using GameMechanics;
 
 namespace CSharpLevels
 {
@@ -22,6 +24,7 @@ namespace CSharpLevels
     {
         // Public variables
         public TextMeshProUGUI programOutput;
+		public TextMeshProUGUI soundCheck;
         public TextMeshProUGUI completionBox;
         public TextMeshProUGUI priceBox;
         public TMP_InputField playerInput;
@@ -38,6 +41,27 @@ namespace CSharpLevels
         // Incorrect shows the incorrect prices
         private void Update()
         {
+		 /*	check if the text box
+		  * under the screen has the work correct, incorrect or a 
+		  * blank space. If it's correct, play the correlating sound
+		  * effect and change the text to a blank. If it's incorrect, 
+		  * play the correlating sound effect and change the text to a
+		  * blank. If it's blank, play nothing.
+		  */
+			if (soundCheck.text == "incorrect")
+			{
+				Audio_Manager.Instance.PlaySound("Incorrect");
+				soundCheck.text = " ";
+			}
+			else 
+			{
+				if (soundCheck.text == "correct")
+				{
+					Audio_Manager.Instance.PlaySound("Correct");
+					soundCheck.text = " ";
+				}
+			}
+			
             // Check if completionBox is correct
             if (completionBox.text == "Correct")
             {
@@ -88,6 +112,7 @@ namespace CSharpLevels
                     // Get references to the input & output text boxes
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
                     TMP_Text completionBox = GameObject.Find(""Completed"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // The problem statement is already displayed.
@@ -122,6 +147,7 @@ namespace CSharpLevels
                         // Display a message and set the completed text box
                         output.text = ""You have successfully sold all the fish at the right price.\n\nAWESOME JOB BIT!!"";
                         completionBox.text = ""Correct"";
+						check.text = ""correct"";
                         GameObject NPC = GameObject.FindWithTag(""LevelChange"");
                         NPC.GetComponent<BoxCollider2D>().isTrigger = true;
                     }
@@ -130,6 +156,7 @@ namespace CSharpLevels
                         // Display an appropriate message to the user and set the completed text box
                         output.text = ""Your code failed during one of the test cases. Don't forget to nest your if-else statements."";
                         completionBox.text = ""Incorrect"";
+						check.text = ""incorrect"";
                     }
 
                     // Keep runtime clean and speedy
