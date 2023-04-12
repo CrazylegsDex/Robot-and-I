@@ -17,7 +17,7 @@ using TMPro;
 
 namespace PythonLevels
 {
-    public class Python_L16 : MonoBehaviour
+    public class Python_L15 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField functionInput;

@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ebce07a30dc304385ff3b2506721fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisLocationLevel: CS_Level12
+  ThisLocationLevel: CS_Level16
   QuitLocationLevel: CIsland
 --- !u!114 &819264855
 MonoBehaviour:
@@ -3551,7 +3551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718686652554498300, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: LevelToComplete
-      value: CS_Level17
+      value: CS_Level16
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223336, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: LevelToLoad
