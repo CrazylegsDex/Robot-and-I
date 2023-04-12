@@ -4,6 +4,8 @@ using Microsoft.Scripting.Hosting;
 using System.IO;
 using System.Text;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PythonLevels
 {
@@ -130,8 +132,12 @@ def main():
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
+				Audio_Manager.Instance.PlaySound("Correct");
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
             }
+			else
+				Audio_Manager.Instance.PlaySound("Incorrect");
+
         }
 
         /*

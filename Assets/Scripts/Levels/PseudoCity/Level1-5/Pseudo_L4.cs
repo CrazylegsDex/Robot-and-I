@@ -29,7 +29,33 @@ namespace PseudoLevels
         public TMP_InputField playerInput5;
         public TMP_InputField playerInput6;
         public TMP_InputField playerInput7;
+		
+		public TextMeshProUGUI soundCheck;
 
+		/* This function updates constantly to check if the text box
+		 * under the screen has the work correct, incorrect or a 
+		 * blank space. If it's correct, play the correlating sound
+		 * effect and change the text to a blank. If it's incorrect, 
+		 * play the correlating sound effect and change the text to a
+		 * blank. If it's blank, play nothing.
+		 */
+		private void Update()
+		{
+			if (soundCheck.text == "incorrect")
+			{
+				Audio_Manager.Instance.PlaySound("Incorrect");
+				soundCheck.text = " ";
+			}
+			else 
+			{
+				if (soundCheck.text == "correct")
+				{
+					Audio_Manager.Instance.PlaySound("Correct");
+					soundCheck.text = " ";
+				}
+			}
+		}
+		
         // This function is the driver to the compilation sequence
         public void MainDriver()
         {
@@ -58,6 +84,7 @@ namespace PseudoLevels
                  void Start()
                 {
 			        TMP_Text object1 = GameObject.Find(""OutputBoxA"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
 
                     int x = 4;
                     int y = 5;
@@ -170,15 +197,16 @@ namespace PseudoLevels
                     }
                     
                     if(num == 4){
-						Audio_Manager.Instance.PlaySound("Correct");
+						check.text = ""correct"";
                         GameObject NPC = GameObject.FindWithTag(""LevelChange"");
-                        NPC.GetComponent<BoxCollider2D>().isTrigger = true;
-                    }
-					else
-						Audio_Manager.Instance.PlaySound("Incorrect");
-					
-                    Destroy(gameObject.GetComponent<RuntimeScript>());
-                }
+						NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+					}
+						
+					else{
+						check.text = ""incorrect"";
+						Destroy(gameObject.GetComponent<RuntimeScript>());
+					}
+                
             }";
 
             // Compile the player's code and check for syntax issues
@@ -192,6 +220,7 @@ namespace PseudoLevels
 
             // Invoke the script, indirectly running the Start() method
             runtimeDelegate.Invoke(gameObject);
+			
         }
 
         /*
