@@ -6,6 +6,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Audio;
+using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PseudoLevels
 {
@@ -283,14 +285,15 @@ namespace PseudoLevels
             //Debug.Log(num);
             if (num == 4)
             {
+				Audio_Manager.Instance.PlaySound("Correct");
                 Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//serches for "Box" objects
                 {
                     go.SetActive(true);
                 }
             }
-
-
+			else 
+				Audio_Manager.Instance.PlaySound("Incorrect");
         }
 
     }

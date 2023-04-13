@@ -10,11 +10,13 @@
  */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using Modified.Mono.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
 using TMPro;
+using GameMechanics;
 
 namespace CSharpLevels
 {
@@ -22,10 +24,35 @@ namespace CSharpLevels
     {
         // Public variables
         public TextMeshProUGUI programOutput;
+		public TextMeshProUGUI soundCheck;
         public TMP_InputField playerInput;
 
         // Private variables
         private bool displayLog;
+		
+		/* This function updates constantly to check if the text box
+		 * under the screen has the work correct, incorrect or a 
+		 * blank space. If it's correct, play the correlating sound
+		 * effect and change the text to a blank. If it's incorrect, 
+		 * play the correlating sound effect and change the text to a
+		 * blank. If it's blank, play nothing.
+		 */
+		private void Update()
+		{
+			if (soundCheck.text == "incorrect")
+			{
+				Audio_Manager.Instance.PlaySound("Incorrect");
+				soundCheck.text = " ";
+			}
+			else 
+			{
+				if (soundCheck.text == "correct")
+				{
+					Audio_Manager.Instance.PlaySound("Correct");
+					soundCheck.text = " ";
+				}
+			}
+		}
 
         /*
          * This function drives the entire program. This function
@@ -64,6 +91,7 @@ namespace CSharpLevels
                     TMP_Text problemStatement = GameObject.Find(""Problem Statement"").GetComponent<TMP_Text>();
                     TMP_Text result = GameObject.Find(""Result"").GetComponent<TMP_Text>();
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // Test that the user used the variables in his/her code
@@ -92,6 +120,7 @@ namespace CSharpLevels
                                 {
                                     // Set the input & output boxes
                                     output.text = ""You did it BIT!!!!\r\nYou have completed the level."";
+									check.text = ""correct"";
                                     GameObject NPC = GameObject.FindWithTag(""LevelChange"");
                                     NPC.GetComponent<BoxCollider2D>().isTrigger = true;
 
@@ -102,12 +131,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -134,6 +165,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = 42;\r\nint bowl = 64;"";
                                     result.text = ""true"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -142,12 +174,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -174,6 +208,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""double cup = 97.6;\r\ndouble bowl = 98.1;"";
                                     result.text = ""false"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -182,12 +217,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -214,6 +251,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = 1024;\r\nint bowl = -1024;"";
                                     result.text = ""true"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -222,12 +260,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -254,6 +294,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = 65536;\r\nint bowl = -4096;"";
                                     result.text = ""true"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -262,12 +303,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -294,6 +337,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""double cup = -77;\r\ndouble bowl = -99;"";
                                     result.text = ""false"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -302,12 +346,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -334,6 +380,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""double cup = 3.14;\r\ndouble bowl = 3.14;"";
                                     result.text = ""true"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -342,12 +389,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -374,6 +423,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = 255;\r\nint bowl = 22;"";
                                     result.text = ""false"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -382,12 +432,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -415,6 +467,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = -1;\r\nint bowl = 0;"";
                                     result.text = ""false"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -423,12 +476,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -455,6 +510,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = 105;\r\ndouble bowl = 104.9;"";
                                     result.text = ""false"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -463,12 +519,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -495,6 +553,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""double cup = 3.4;\r\ndouble bowl = 3.5;"";
                                     result.text = ""true"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -503,12 +562,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -535,6 +596,7 @@ namespace CSharpLevels
                                     problemStatement.text = ""int cup = -100;\r\nint bowl = 100;"";
                                     result.text = ""true"";
                                     code.text = """";
+									check.text = ""correct"";
 
                                     // Remove the Cup or Bowl
                                     trash.SetActive(false);
@@ -543,12 +605,14 @@ namespace CSharpLevels
                                 {
                                     // Display an appropriate message to the user
                                     output.text = ""You cannot use that relational operator anymore.\r\nPlease try again."";
+									check.text = ""incorrect"";
                                 }
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 output.text = ""The value of resultingLogic is incorrect."";
+								check.text = ""incorrect"";
                             }
                         }
                     }
@@ -556,6 +620,8 @@ namespace CSharpLevels
                     {
                         // Inform the player they need to use the variables cup and bowl and resultingLogic in their program
                         output.text = ""Sorry, but you must use the variables cup, bowl and resultingLogic in your program"";
+						check.text = ""incorrect"";
+						
                     }
 
                     // Keep runtime clean and speedy

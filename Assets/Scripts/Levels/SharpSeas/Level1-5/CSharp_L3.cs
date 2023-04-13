@@ -9,11 +9,13 @@
  */
 
 using UnityEngine;
+using UnityEngine.Audio;
 using Modified.Mono.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Reflection;
 using TMPro;
+using GameMechanics;
 
 namespace CSharpLevels
 {
@@ -21,11 +23,35 @@ namespace CSharpLevels
     {
         // Public variables
         public TextMeshProUGUI programOutput;
+		public TextMeshProUGUI soundCheck;
         public TMP_InputField playerInput;
 
         // Private variables
-        //private int problemNumber;
         private bool displayLog;
+		
+		/* This function updates constantly to check if the text box
+		 * under the screen has the work correct, incorrect or a 
+		 * blank space. If it's correct, play the correlating sound
+		 * effect and change the text to a blank. If it's incorrect, 
+		 * play the correlating sound effect and change the text to a
+		 * blank. If it's blank, play nothing.
+		 */
+		private void Update()
+		{
+			if (soundCheck.text == "incorrect")
+			{
+				Audio_Manager.Instance.PlaySound("Incorrect");
+				soundCheck.text = " ";
+			}
+			else 
+			{
+				if (soundCheck.text == "correct")
+				{
+					Audio_Manager.Instance.PlaySound("Correct");
+					soundCheck.text = " ";
+				}
+			}
+		}
 
         /*
          * This function drives the entire program. This function
@@ -63,6 +89,7 @@ namespace CSharpLevels
                     // Get references to the input & output text boxes
                     TMP_Text problemStatement = GameObject.Find(""Problem Statement"").GetComponent<TMP_Text>();
                     TMP_Text programResults = GameObject.Find(""Results"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // Test that the user used the variables in his/her code
@@ -88,11 +115,13 @@ namespace CSharpLevels
                                 programResults.text = ""Congratulations.\r\nLevel complete"";
                                 GameObject NPC = GameObject.FindWithTag(""LevelChange"");
                                 NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -113,11 +142,13 @@ namespace CSharpLevels
                                 programResults.text = ""One more to go"";
                                 problemStatement.text = ""int a = -1, b = 100;\r\nName your variable result, and use a,b to get the resulting integer -33."";
                                 code.text = """";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -139,11 +170,13 @@ namespace CSharpLevels
                                 programResults.text = ""Correct Again"";
                                 problemStatement.text = ""int a = 5, b = 10;\r\nName your variable result, and use a,b to get the resulting integer 1250."";
                                 code.text = """";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -164,11 +197,13 @@ namespace CSharpLevels
                                 programResults.text = ""Awesome Work"";
                                 problemStatement.text = ""int a = 2; double b = 3;\r\nName your variable result, and use a,b to get the resulting double 1.5."";
                                 code.text = """";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -192,11 +227,13 @@ namespace CSharpLevels
                                 programResults.text = ""Great Job"";
                                 problemStatement.text = ""int a = 2, b = 3;\r\nName your variable result, and use a,b to get the resulting integer 1."";
                                 code.text = """";
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+								check.text = ""incorrect"";
                             }
                         }
 
@@ -216,12 +253,14 @@ namespace CSharpLevels
                                 // Set the input & output boxes
                                 programResults.text = ""Correct"";
                                 problemStatement.text = ""double a = 9.4, b = 7.3;\r\nName your variable result, and use a,b to get the resulting double 0.62."";
-                                code.text = """";
+                                code.text = """";	
+								check.text = ""correct"";
                             }
                             else
                             {
                                 // The value of result is incorrect
                                 programResults.text = ""The value of result is incorrect.\r\nresult = "" + result;
+								check.text = ""incorrect"";
                             }
                         }
                     }
@@ -229,6 +268,7 @@ namespace CSharpLevels
                     {
                         // Inform the player they need to use the variables a and b and result in their program
                         programResults.text = ""Sorry, but you must use the variables a, b and result in your program"";
+						check.text = ""incorrect"";
                     }
 
                     // Keep runtime clean and speedy
