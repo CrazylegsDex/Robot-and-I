@@ -46,14 +46,6 @@ namespace PlayerControl
             Move();
         }
 
-        // Check collision with another Collider2D
-        // If there is a collision, play the collision sound effect
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            // Play the collision sound effect from the Audio_Manager Instance
-            Audio_Manager.Instance.PlaySound("Collision");
-        }
-
         // LoadData method from the DataPersistenceInterface
         public void LoadData(GameData data)
         {
