@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 24122348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 175.00003, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -539,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 47639956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 284.40005, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -586,7 +586,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -903,7 +903,7 @@ Transform:
   m_GameObject: {fileID: 192678027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 173.81082, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -950,7 +950,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1504,7 +1504,7 @@ Transform:
   m_GameObject: {fileID: 255099580}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 284.4, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -1551,7 +1551,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1588,7 +1588,7 @@ Transform:
   m_GameObject: {fileID: 277708572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 284.40005, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -1635,7 +1635,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1672,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 291758482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 284.40005, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -1719,7 +1719,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1756,7 +1756,7 @@ Transform:
   m_GameObject: {fileID: 294630994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 173.81082, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -1803,7 +1803,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2018,60 +2018,56 @@ PrefabInstance:
       objectReference: {fileID: 321028136}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
+      value: "Bubba - \u201CHello Bit,my name is Bubba. I lost which cans have dog
+        food and which have vegetables. Is there any way you could help me sort them?\u201C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: "Duke - \u201CThis is a job Bit was made for. Let\u2019s first teach
+        Bit if-else statements and the syntax needed for C# then we can help Bubba
+        sort these cans.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: "The syntax for if-else statements in C# is very similar to if statements.
+        The if section of the if-else statement is the exact same. Once that is created
+        to your liking, you\u2019ll then be able to start the else section. You will
+        first start with the word \u201Celse\u201D. If there are multiple lines of
+        code you would like to execute, remember that curly brackets will be needed
+        ({}). If there is only one line of code you would like to be run, you can
+        still use the curly brackets, but it is not required. To keep your code easily
+        readable, we recommend you indent your lines of code by 4 spaces. This makes
+        it easier to see what chunk of code belongs to which section. Don\u2019t
+        forget to add the semicolons when they are required. Let\u2019s look at an
+        example before we start coding Bit. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "if (x > y) {\r\n    y = x;\r\n    y ++;}\r\nelse {\r\n    x = 5;\r\n   
+        y = 6;}\r\nx \u2013-;\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "In this example, if x is greater than y, y will be set equal to the
+        value that is in x and will be incremented by one. If not, x will be set
+        to value 5 and y will be set to the value 6. The last line of code will execute
+        no matter what. It is not linked to either the if or else sections. So, at
+        the end of the if-else statement, x will be decremented by one. \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[5]
       value: Bit, you will find this level is different than the previous ones. For
         this level, when you click Sort, your *input* variable will be assigned random
         values and your code will be run several times. Good Luck!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[1]
-      value: Go Bit Go
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
-      value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
-        of the string takes up 2 bytes (16 bits) of memory."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
-      value: "char: This type of variable holds a character value like \u2018c\u2019,
-        \u2018F\u2019, \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character
-        takes up 2 bytes (16 bits) of memory. Characters are enclosed by a single
-        quotation. Example, char c = \u2018A\u2019"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[5]
-      value: 'bool: This type of variable holds a boolean value true or false. For
-        a true output, you can use the number 1 or the word true. For a false output,
-        you can use the number 0 or the word false. A boolean value holds 1 byte
-        (8 bits) of memory. Example, bool d = true or bool d = 1 (both of these values
-        result in the variable being true).
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: 'double: This variable holds a double-precision floating point value.
-        This means that it holds a number with a decimal. The range for a double
-        number is 1.7E - 308 to 1.7E + 308. It holds 8 bytes (64 bits) of memory.
-        Example, double e = 3.14
-
-'
+      value: "Now that we\u2019ve learned about if-else statements in C#, let\u2019s
+        help Bubba!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
@@ -2161,7 +2157,7 @@ Transform:
   m_GameObject: {fileID: 326288847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 285.21085, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -2208,7 +2204,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3042,7 +3038,7 @@ Transform:
   m_GameObject: {fileID: 367885964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 285.21085, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -3089,7 +3085,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3683,7 +3679,7 @@ Transform:
   m_GameObject: {fileID: 585512962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 175.00003, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -3730,7 +3726,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4148,7 +4144,7 @@ Transform:
   m_GameObject: {fileID: 886729290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 285.21085, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -4195,7 +4191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4296,7 +4292,7 @@ Transform:
   m_GameObject: {fileID: 955815039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 285.21085, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -4343,7 +4339,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4380,7 +4376,7 @@ Transform:
   m_GameObject: {fileID: 1064422697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 173.81082, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -4427,7 +4423,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5073,7 +5069,7 @@ Transform:
   m_GameObject: {fileID: 1469401970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 175.00003, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -5120,7 +5116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5413,7 +5409,7 @@ Transform:
   m_GameObject: {fileID: 1607809527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 175, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -5460,7 +5456,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5695,7 +5691,7 @@ Transform:
   m_GameObject: {fileID: 1728381515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 175.00003, y: 14.641846, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -5742,7 +5738,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: 950031000, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7329,7 +7325,7 @@ Transform:
   m_GameObject: {fileID: 1921179201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 173.81082, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -7376,7 +7372,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7413,7 +7409,7 @@ Transform:
   m_GameObject: {fileID: 1949984440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 284.40005, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 22388154}
@@ -7460,7 +7456,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7497,7 +7493,7 @@ Transform:
   m_GameObject: {fileID: 1973100150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 173.81082, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -7544,7 +7540,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7687,7 +7683,7 @@ Transform:
   m_GameObject: {fileID: 2010853731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 173.81082, y: 14.341858, z: -6}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1411559965}
@@ -7734,7 +7730,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 928172782, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1435914725, guid: 6a8464565aa20e24389212751b707e99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
