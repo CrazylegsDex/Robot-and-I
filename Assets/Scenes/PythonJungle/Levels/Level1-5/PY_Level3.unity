@@ -2770,97 +2770,62 @@ PrefabInstance:
       objectReference: {fileID: 517820086}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "NPC - \u201CHello Bit! My name is ******. I just came to town and haven\u2019t
+        found a home yet. Do you think you could help me build one home?\u201D\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: Duke - To help ***** build a home, you will have to help Bit understand
+        operators in Python, but be careful. Python has an extra arithmetic operator
+        and some rules to follow.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
+      value: 'Python has an extra operator that you can use! The operator is ** which
+        is used for exponents. An example of this being used is below,
 
-        Int x = 15
+        Int
+        x = 5
 
-        Int y = 10
+        Int y = 5 **2
 
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
+        The output for y would be 25 as 5
+        to the second power is 25.
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "Another thing you need to know is that Python is a language that uses
+        white space. This means that indentations and spaces are very important.
+        This plays into many things when writing code in Python. Some concepts in
+        Python require indentation and others cannot be run if there are indentations.
+        \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "The concepts we have learned so far, variables, variable assignments,
+        and now arithmetic operators need to all be lined up. \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "For example,\r\nint x = 4\r\n    int y = x + 3\r\nwould cause a syntax
+        error as this is not lined up. To fix this, you would need to change it to
+        this:\r\nint x = 4\r\nint y = x + 3\r\nThis would not cause any errors!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
+      value: "That\u2019s all for now! Now, let\u2019s use these arithmetic operators
+        to help ***** out!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'Example:
-
-        Int x = 6
-
-        Int y = 8
-
-        Bool result
-        = (x != y) //Result would be true. This is true because 6 does not equal
-        8.
-
-        Int a  = 6
-
-        Int b = 6
-
-        Bool result = (a != b)
-        //Result would be false. This is false because 6 does equal 6.'
+      value: "That\u2019s all for now! Now, let\u2019s use these arithmetic operators
+        to help ***** out!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]

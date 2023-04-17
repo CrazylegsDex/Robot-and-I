@@ -8179,69 +8179,51 @@ PrefabInstance:
       objectReference: {fileID: 1801609175}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "NPC - \u201CHello Bit! My name is *****. There\u2019s so many fireflies
+        out tonight! I\u2019ve always wanted to catch one. Can you help me catch
+        some fireflies?\u201D \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: "Hello there again! Do you remember talking about syntax in specific
+        programming languages? Well, Python has some of its own syntax rules too.
+        For this lesson, there are if-statement syntax rules for Python. First, we\u2019re
+        going to talk about how you should actually set up the if-statement. You
+        should first write the word if and the conditions you\u2019d like to have
+        met. You don\u2019t have to use any parentheses in Python, but you do have
+        to end the line with a colon (:). It should look like this:\r\nif x > y:\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "The syntax rule is about the next line. We have discussed that white
+        space is very important in Python. This is another example of that. After
+        the line with the conditions you\u2019d like met, the line should be indented
+        with 4 spaces like so:\r\nif x > y:\r\n    y = x\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "If you continue indenting on the next lines, Python will consider that
+        part of the if-statement. \r\nif x > y:\r\n    y = x\r\n    y ++ \r\nx =
+        5\r\nHere, if x is greater than y, y will now equal the value of x and then
+        will be incremented (add) by one. This will only happen if x is greater than
+        y. The last statement that sets x equal to 5 will happen no matter what.
+        The if statement does not interfere with that line. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Here, if x is greater than y, y will now equal the value of x and then
+        will be incremented (add) by one. This will only happen if x is greater than
+        y. The last statement that sets x equal to 5 will happen no matter what.
+        The if statement does not interfere with that line. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "Now that we\u2019ve gone over some syntax needed, let\u2019s get started
+        on the task at hand!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]

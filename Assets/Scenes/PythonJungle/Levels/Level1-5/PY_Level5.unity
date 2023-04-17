@@ -4740,35 +4740,27 @@ PrefabInstance:
       objectReference: {fileID: 769423069}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "NPC - \u201CHello Bit. My name is *****. Do you like my yard? It\u2019s
+        almost perfect. The grass is a little too long, but my lawnmower broke. Do
+        you think you could help me?\u201D\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: "Duke - \u201CTo help Bit cut ******\u2019s grass, help him learn logical
+        operators in Python.\u201D\r\n\u201CPython logical operators are a little
+        easier because the symbols for the operators are simply the word. The exception
+        here is XOR where the symbol in python is still \u201C^\u201D. The symbol
+        for AND in python is simply and. The same goes for OR and NOT being or and
+        not respectively.\u201D\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "\u201CNow that we\u2019ve seen how logical operators are different
+        in Python, can you help me program Bit to help ***** cut their grass?\u201D\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]

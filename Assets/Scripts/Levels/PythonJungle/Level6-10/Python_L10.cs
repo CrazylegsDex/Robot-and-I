@@ -31,13 +31,13 @@ namespace PythonLevels
         public void MainDriver()
         {
 			if(codeInput1.text == "input(\"Email Address : \")"){
-				count++;
+				count = count + 0;
 			}
 			if(codeInput2.text == "input(\"Subject Line : \")"){
-				count++;
+				count = count + 0;
 			}
 			if(codeInput3.text == "input(\"Body : \")"){
-				count++;
+				count = count + 0;
 			}
 			if(codeInput4.text == "email"){
 				count++;
@@ -48,9 +48,9 @@ namespace PythonLevels
 			if(codeInput6.text == "body"){
 				count++;
 			}
-			if(count == 6){
+			if(count == 3){
 				Audio_Manager.Instance.PlaySound("Correct");
-				programOutput.text = "Congratulations";
+				programOutput.text = "Email Address : \n Subject Line : \n Body : \n";
 				levelSprite.isTrigger = true;
 			}else{
 				Audio_Manager.Instance.PlaySound("Incorrect");

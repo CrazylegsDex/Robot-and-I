@@ -1382,78 +1382,58 @@ PrefabInstance:
       objectReference: {fileID: 237186625}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "NPC - \u201CHello Bit, my name is ****.  I just got a new pet snake,
+        but I lost him! Can you help me find him out of all of the other snakes?\u201D\r\nAfter
+        the level is finished - \u201C I can\u2019t figure out what to name him.
+        \u201C \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: "Duke - \u201CI think we can program Bit to help ***. But first, we\u2019ll
+        need to teach Bit how to use if-else statements in Python and the syntax
+        he\u2019ll need to know.\u201D\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "The syntax for if-else statements is very similar to if statements.
+        After you have finished what you would like to be a part of your if statement,
+        you then write the word \u201Celse\u201D and add a colon after it (:). You
+        then will start a new line, and write what you would like to happen if the
+        conditional statement is not met. When you are writing these lines on code,
+        remember to indent by 4 spaces. This lets the compiler know it is still a
+        part of the else statement. Here is an example,"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "if x > y:\r\n    y = x\r\n    y ++ \r\nelse:\r\n    x = 5\r\n    z
+        = 6\r\ny = 7\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "In this example, the condition is \u201Cx > y\u201D. If x is greater
+        than y, y will be set equal to x and y will be incremented by one (add one
+        to it). If x is not greater than y, x will be set to equal 5 and z will be
+        set equal to 6. The line where y is set equal to 7 is a line of code that
+        will be run no matter what the if-else statement is. It is not indented and
+        therefore, is not a part of the statements. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "Now that we\u2019ve gone over syntax, let\u2019s help **** find their
+        snake!\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
+      value: "In this example, the condition is \u201Cx > y\u201D. If x is greater
+        than y, y will be set equal to x and y will be incremented by one (add one
+        to it). If x is not greater than y, x will be set to equal 5 and z will be
+        set equal to 6. The line where y is set equal to 7 is a line of code that
+        will be run no matter what the if-else statement is. It is not indented and
+        therefore, is not a part of the statements. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
