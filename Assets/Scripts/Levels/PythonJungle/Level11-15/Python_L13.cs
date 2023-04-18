@@ -8,7 +8,7 @@ using TMPro;
 
 namespace PythonLevels
 {
-    public class Python_L12 : MonoBehaviour
+    public class Python_L13 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField codeInput1;
@@ -35,9 +35,9 @@ namespace PythonLevels
         public void setText()
         {
             if (count == 0)
-                programOutput.text = "load array \"a\" with values 1,2,3,4.\nNext, use a for loop to add every\n value in \"a\" by 1.\nThen, use a for loop to subtract every\n value in \"a\" by 2.";
+                programOutput.text = "Create a 2d array \"a\" with values 6,8,10,12\nin the first set and values 4,3,6,5\nin the second set.\n use a for loop to divide the values\nin the first set by 2. \n Then, multiply the second set by 3.";
             else
-                programOutput.text = "Given \"le\" as length of \"b\" array.\nUse a for loop to reverse the order of b.";
+                programOutput.text = "Given \"le\" as length of \"b\" array.\nUse a for loop to swap each value between b[0] and b[1].";
         }
 
         public void setActives()
@@ -63,14 +63,15 @@ def main():
     a = " + codeInput1.text + @"
     be = " + codeInput1.text + @"
     c = " + codeInput1.text + @"
-    go = c
+    go = c[0]
+    x = c[1]
     for " + codeInput2.text + @"
         go[j] = " + codeInput3.text + @"
-        a[j] = " + codeInput3.text + @"
+        a[0][j] = " + codeInput3.text + @"
     for " + codeInput4.text + @"
-        a[i] = " + codeInput5.text + @"
-    x = a
-    if be == [1,2,3,4] and go == [2,3,4,5] and x == [0,1,2,3]:
+        x[i] = " + codeInput5.text + @"
+        a[1][i] = " + codeInput5.text + @"
+    if be == [[6,8,10,12],[4,3,6,5]] and go == [3,4,5,6] and x == [12,9,18,15]:
         print(""Correct"")
     else:
         print(""Incorrect\n1st a = "" + str(be) + ""\n2nd a = "" + str(go) + ""\n3rd a = "" + str(x))
@@ -108,20 +109,20 @@ def main():
             string playerCode = @"
 def main():
     stripes = 8
-    snake = 2
+    snake = 0
     red = 1
-    a = [1,2,3,4,5]
+    a = [[1,2,3,4,5],[6,7,8,9,10]]
     b = a
-    le = len(b)
+    le = len(b[0])
     " + codeInput6.text + @"
         " + codeInput7.text + @"
         " + codeInput8.text + @"
         " + codeInput9.text + @"
         snake = snake + 1
-    if b == [5,4,3,2,1] and snake == 4:
+    if b == [[6,7,8,9,10],[1,2,3,4,5]] and snake == 5:
         print(""Congratulations"")
     else:
-        print(""Incorrect\nb = "" + str(b) + str(snake))
+        print(""Incorrect\nb = "" + str(b))
     return";
             Debug.Log(playerCode);
 
