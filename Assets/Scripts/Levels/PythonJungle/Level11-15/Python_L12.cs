@@ -5,47 +5,51 @@ using System;
 using System.IO;
 using System.Text;
 using TMPro;
-using UnityEngine.Audio;
-using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PythonLevels
 {
-    public class Python_L8 : MonoBehaviour
+    public class Python_L12 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField codeInput1;
-		public TMP_InputField codeInput2;
-		public TMP_InputField codeInput3;
-		public TMP_InputField codeInput4;
-		public TMP_InputField codeInput5;
-		public TMP_InputField codeInput6;
-		public TMP_InputField codeInput7;
-		public TMP_InputField codeInput8;
-		public TMP_InputField codeInput9;
+        public TMP_InputField codeInput2;
+        public TMP_InputField codeInput3;
+        public TMP_InputField codeInput4;
+        public TMP_InputField codeInput5;
+        public TMP_InputField codeInput6;
+        public TMP_InputField codeInput7;
+        public TMP_InputField codeInput8;
+        public TMP_InputField codeInput9;
         public TextMeshProUGUI programOutput;
-		public string explanition;
-		public GameObject lesson1;
-		public GameObject lesson2;
-		public BoxCollider2D levelSprite;
-		private int count = 0;
-		
+        public string explanition;
+        public GameObject lesson1;
+        public GameObject lesson2;
+        public BoxCollider2D levelSprite;
+        private int count = 0;
+
 
         /*
          * This function is the driver to the sequence of events that are
          * required to compile and execute upon Python code
          */
-		public void setText(){
-			programOutput.text = "if(snake == red): \n    go = 0 \nif else(snake == blue): \n    go = 1 \nelse: \n    go = 2 \nif(strips >= 8): \n    go = 0 \nelse:\n    go = 2 ";
-		}
-		
-		public void setActives(){
-			lesson1.SetActive(true);
-			lesson2.SetActive(false);
-		}
-		
-		
+        public void setText()
+        {
+            if (count == 0)
+                programOutput.text = "load array \"a\" with values 1,2,3,4.\nNext, use a for loop to add every\n value in \"a\" by 1.\nThen, use a for loop to subtract every\n value in \"a\" by 2.";
+            else
+                programOutput.text = "Given \"le\" as length of \"b\" array.\nUse a for loop to swap each value in b.";
+        }
+
+        public void setActives()
+        {
+            lesson1.SetActive(true);
+            lesson2.SetActive(false);
+        }
+
+
         public void MainDriver()
         {
+            //Debug.Log(playerCode);
             // Local variables
             ScriptEngine scriptEngine;
             ScriptScope scriptScope;
@@ -54,30 +58,33 @@ namespace PythonLevels
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	snake = 2
-	red = 1
-	blue = 2
-	if(" + codeInput1.text + @"):
-	    go = " + codeInput2.text + @"
-	elif(" + codeInput3.text + @"):
-	    go = " + codeInput4.text + @"
-	else:
-		go = " + codeInput5.text + @"
-	if(go == 1):
-	    print(""Correct"")
-	else:
-	    print(""Incorrect"")
-	return";
+    snake = 2
+    red = 1
+    a = " + codeInput1.text + @"
+    be = " + codeInput1.text + @"
+    c = " + codeInput1.text + @"
+    go = c
+    for " + codeInput2.text + @"
+        go[j] = " + codeInput3.text + @"
+        a[j] = " + codeInput3.text + @"
+    for " + codeInput4.text + @"
+        a[i] = " + codeInput5.text + @"
+    x = a
+    if be == [1,2,3,4] and go == [2,3,4,5] and x == [0,1,2,3]:
+        print(""Correct"")
+    else:
+        print(""Incorrect\n1st a = "" + str(be) + ""\n2nd a = "" + str(go) + ""\n3rd a = "" + str(x))
+    return";
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-            
+
             scriptEngine.Execute(playerCode, scriptScope);
 
-            
+
             scriptFunction = scriptScope.GetVariable("main");
             scriptFunction(); // Execution of function "main"
 
@@ -88,8 +95,8 @@ def main():
                 codeOutput.Close();
             }
         }
-		
-		
+
+
         public void MainDriver2()
         {
             // Local variables
@@ -100,30 +107,33 @@ def main():
             // Add the player's code to a defined python function for runtime running
             string playerCode = @"
 def main():
-	stripes = 8
-	snake = 2
-	red = 1
-	blue = 2
-	" + codeInput6.text + @"
-	    " + codeInput7.text + @"
-	" + codeInput8.text + @"
-		" + codeInput9.text + @"
-	if(go == 0):
-	    print(""Congratulations"")
-	else:
-	    print(""Incorrect"")
-	return";
-    
+    stripes = 8
+    snake = 2
+    red = 1
+    a = [1,2,3,4,5]
+    b = a
+    le = len(b)
+    " + codeInput6.text + @"
+        " + codeInput7.text + @"
+        " + codeInput8.text + @"
+        " + codeInput9.text + @"
+        snake = snake + 1
+    if b == [5,4,3,2,1] and snake == 4:
+        print(""Congratulations"")
+    else:
+        print(""Incorrect\nb = "" + str(b) + str(snake))
+    return";
+            Debug.Log(playerCode);
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-            
+
             scriptEngine.Execute(playerCode, scriptScope);
 
-            
+
             scriptFunction = scriptScope.GetVariable("main");
             scriptFunction(); // Execution of function "main"
 
@@ -134,8 +144,8 @@ def main():
                 codeOutput.Close();
             }
         }
-		
-		
+
+
 
         /*
          * This function executes if stdout data was found
@@ -169,24 +179,22 @@ def main():
 
             // Display the printed message
             programOutput.text = stringData;
-			
-			if(stringData == "Correct\r\n"){
-				if(count == 0){
-					lesson1.SetActive(false);
-					lesson2.SetActive(true);
-					count++;
-				}
-			}
-			
+
+            if (stringData == "Correct\r\n")
+            {
+                if (count == 0)
+                {
+                    lesson1.SetActive(false);
+                    lesson2.SetActive(true);
+                    count++;
+                }
+            }
+
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-				Audio_Manager.Instance.PlaySound("Correct");
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
             }
-			else
-				Audio_Manager.Instance.PlaySound("Incorrect");
-
         }
 
         /*
@@ -250,6 +258,6 @@ def main():
             programOutput.text = "";
             programOutput.text += logString;
         }
-		
+
     }
 }

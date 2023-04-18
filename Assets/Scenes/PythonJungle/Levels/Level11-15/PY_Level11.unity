@@ -461,7 +461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &177757540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -832,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332690875}
-  - component: {fileID: 332690868}
+  - component: {fileID: 332690877}
   - component: {fileID: 332690874}
   - component: {fileID: 332690873}
   - component: {fileID: 332690872}
@@ -847,32 +847,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &332690868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332690867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4535ce009a3ad8147bd2bf313aa024d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  codeInput1: {fileID: 1225000075}
-  codeInput2: {fileID: 891784852}
-  codeInput3: {fileID: 1745022190}
-  codeInput4: {fileID: 1151292279}
-  codeInput5: {fileID: 281284772}
-  codeInput6: {fileID: 421151276}
-  codeInput7: {fileID: 544058101}
-  codeInput8: {fileID: 1356705076}
-  codeInput9: {fileID: 1112708943}
-  programOutput: {fileID: 2054262826}
-  explanition: lol
-  lesson1: {fileID: 177757539}
-  lesson2: {fileID: 1359133207}
-  levelSprite: {fileID: 1389849990}
 --- !u!114 &332690869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,6 +955,32 @@ MonoBehaviour:
   masterSliderText: {fileID: 622649612}
   musicSliderText: {fileID: 622649611}
   soundEffectsSliderText: {fileID: 622649610}
+--- !u!114 &332690877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332690867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2360207bbc952de4082caf8fa3b3d44e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  codeInput1: {fileID: 1225000075}
+  codeInput2: {fileID: 891784852}
+  codeInput3: {fileID: 1745022190}
+  codeInput4: {fileID: 1151292279}
+  codeInput5: {fileID: 281284772}
+  codeInput6: {fileID: 421151276}
+  codeInput7: {fileID: 544058101}
+  codeInput8: {fileID: 1356705076}
+  codeInput9: {fileID: 1112708943}
+  programOutput: {fileID: 2054262826}
+  explanition: 
+  lesson1: {fileID: 177757539}
+  lesson2: {fileID: 1359133207}
+  levelSprite: {fileID: 1389849990}
 --- !u!1 &365638496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,7 +1539,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: snake = ??
+  m_text: go = be = 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "if(                             ):\n       go = "
+  m_text: "for(                             ):\n       go = "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3541,8 +3541,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332690868}
-        m_TargetAssemblyTypeName: PythonLevels.Python_L8, Assembly-CSharp
+      - m_Target: {fileID: 332690877}
+        m_TargetAssemblyTypeName: PythonLevels.Python_L11, Assembly-CSharp
         m_MethodName: setText
         m_Mode: 1
         m_Arguments:
@@ -4343,7 +4343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: stripes = ??
+  m_text: ab = cd = 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4599,7 +4599,7 @@ PrefabInstance:
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 332690868}
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495251368138, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -5573,8 +5573,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332690868}
-        m_TargetAssemblyTypeName: PythonLevels.Python_L8, Assembly-CSharp
+      - m_Target: {fileID: 332690877}
+        m_TargetAssemblyTypeName: PythonLevels.Python_L11, Assembly-CSharp
         m_MethodName: MainDriver2
         m_Mode: 1
         m_Arguments:
@@ -5951,8 +5951,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332690868}
-        m_TargetAssemblyTypeName: PythonLevels.Python_L8, Assembly-CSharp
+      - m_Target: {fileID: 332690877}
+        m_TargetAssemblyTypeName: PythonLevels.Python_L11, Assembly-CSharp
         m_MethodName: MainDriver
         m_Mode: 1
         m_Arguments:
@@ -6038,7 +6038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9430084, y: -0.6999755}
+  m_AnchoredPosition: {x: 3.6, y: -0.8}
   m_SizeDelta: {x: 62.0808, y: 7.8489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225000073
@@ -6780,7 +6780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "elif(                             ):\n       go = "
+  m_text: "for(                             ):\n       be = "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10321,7 +10321,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94.357, y: -17}
+  m_AnchoredPosition: {x: -78.2, y: -16.3}
   m_SizeDelta: {x: 81.907, y: 8.4426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1448000938
@@ -10344,7 +10344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "else:\n       go = "
+  m_text: "if( i == 5):\n       be = "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12258,8 +12258,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332690868}
-        m_TargetAssemblyTypeName: PythonLevels.Python_L8, Assembly-CSharp
+      - m_Target: {fileID: 332690877}
+        m_TargetAssemblyTypeName: PythonLevels.Python_L11, Assembly-CSharp
         m_MethodName: setText
         m_Mode: 1
         m_Arguments:
@@ -12565,9 +12565,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "if(snake == red):\r\n    go = 0\r\nif else(snake == blue):\r\n    go =
-    1\r\nelse:\r\n    go = 2\r\nif(strips >= 8):\r\n    go = 0\r\nelse:\r\n    go
-    = 2"
+  m_text: "Use a for loop to sum numbers from 0 to 4, \nor 1 to 4, and store it in
+    \"go\".\nNext, a for loop to sum numbers from 0 to 5,\nbut if \"i\" == 5, and
+    another 5 to the sum. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
