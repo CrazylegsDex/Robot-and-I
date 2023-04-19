@@ -35,9 +35,9 @@ namespace PythonLevels
         public void setText()
         {
             if (count == 0)
-                programOutput.text = "load array \"a\" with values 1,2,3,4.\nNext, use a for loop to add every\n value in \"a\" by 1.\nThen, use a for loop to subtract every\n value in \"a\" by 2.";
+                programOutput.text = "Use a for loop to sum numbers from 0 to 4,\nor 1 to 4, and store it in \"go\".\nNext, a for loop to sum numbers from 0 to 5,\nbut if \"i\" == 5, and another 5 to the sum.";
             else
-                programOutput.text = "Given \"le\" as length of \"b\" array.\nUse a for loop to reverse the order of b.";
+                programOutput.text = "Use a for loop to count each time looped from 2 to 8,\nand store it in \"ab\".\nNext, a for loop to sum numbers from 20 to 60 increaing by 10, and store it in \"cd\".";
         }
 
         public void setActives()
@@ -60,22 +60,26 @@ namespace PythonLevels
 def main():
     snake = 2
     red = 1
-    a = " + codeInput1.text + @"
-    be = " + codeInput1.text + @"
-    c = " + codeInput1.text + @"
-    go = c
-    for " + codeInput2.text + @"
-        go[j] = " + codeInput3.text + @"
-        a[j] = " + codeInput3.text + @"
-    for " + codeInput4.text + @"
-        a[i] = " + codeInput5.text + @"
-    x = a
-    if be == [1,2,3,4] and go == [2,3,4,5] and x == [0,1,2,3]:
+    be = 0
+    x = 0
+    go = 0
+    for " + codeInput1.text + @":
+        go = " + codeInput2.text + @"
+    for " + codeInput1.text + @":
+        red = " + codeInput2.text + @"
+    for " + codeInput3.text + @":
+        be = " + codeInput4.text + @"
+        if i == 5:
+            x = " + codeInput5.text + @"
+    y = be
+    if x != 0:
+        y = x
+    if go == 10 and red == 14 and be == 15 and x == 20:
         print(""Correct"")
     else:
-        print(""Incorrect\n1st a = "" + str(be) + ""\n2nd a = "" + str(go) + ""\n3rd a = "" + str(x))
+        print(""Incorrect\ngo = "" + str(go) + ""\nbe = "" + str(y))
     return";
-
+            
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
@@ -95,7 +99,7 @@ def main():
                 codeOutput.Close();
             }
         }
-
+        
 
         public void MainDriver2()
         {
@@ -110,18 +114,21 @@ def main():
     stripes = 8
     snake = 2
     red = 1
-    a = [1,2,3,4,5]
-    b = a
-    le = len(b)
+    blue = 2
+    ab = cd = 0
     " + codeInput6.text + @"
         " + codeInput7.text + @"
-        " + codeInput8.text + @"
+        red = ab
+    " + codeInput6.text + @"
+        blue = blue + 1
+    " + codeInput8.text + @"
         " + codeInput9.text + @"
+    " + codeInput8.text + @"
         snake = snake + 1
-    if b == [5,4,3,2,1] and snake == 4:
+    if(red == 7 and blue == 9 and cd == 200 and snake == 7):
         print(""Congratulations"")
     else:
-        print(""Incorrect\nb = "" + str(b) + str(snake))
+        print(""Incorrect\nab = "" + str(red) + ""\ncd = "" + str(cd))
     return";
             Debug.Log(playerCode);
 

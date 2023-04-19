@@ -8,7 +8,7 @@ using TMPro;
 
 namespace PythonLevels
 {
-    public class Python_L11 : MonoBehaviour
+    public class Python_L14 : MonoBehaviour
     {
         // Public variables
         public TMP_InputField codeInput1;
@@ -35,9 +35,9 @@ namespace PythonLevels
         public void setText()
         {
             if (count == 0)
-                programOutput.text = "Use a for loop to sum numbers from 0 to 4,\nor 1 to 4, and store it in \"go\".\nNext, a for loop to sum numbers from 0 to 5,\nbut if \"i\" == 5, and another 5 to the sum.";
+                programOutput.text = "Create a 2d array \"a\" with values 6,8,10,12\nin the first set and values 4,3,6,5\nin the second set.\n use a for loop to divide the values\nin the first set by 2. \n Then, multiply the second set by 3.";
             else
-                programOutput.text = "Use a for loop to count each time looped from 2 to 8,\nand store it in \"ab\".\nNext, a for loop to sum numbers from 20 to 60 increaing by 10, and store it in \"cd\".";
+                programOutput.text = "Given \"le\" as length of \"b\" array.\nUse a for loop to swap each value between b[0] and b[1].";
         }
 
         public void setActives()
@@ -60,26 +60,23 @@ namespace PythonLevels
 def main():
     snake = 2
     red = 1
-    be = 0
-    x = 0
-    go = 0
-    for " + codeInput1.text + @":
-        go = " + codeInput2.text + @"
-    for " + codeInput1.text + @":
-        red = " + codeInput2.text + @"
-    for " + codeInput3.text + @":
-        be = " + codeInput4.text + @"
-        if i == 5:
-            x = " + codeInput5.text + @"
-    y = be
-    if x != 0:
-        y = x
-    if go == 10 and red == 14 and be == 15 and x == 20:
+    a = " + codeInput1.text + @"
+    be = " + codeInput1.text + @"
+    c = " + codeInput1.text + @"
+    go = c[0]
+    x = c[1]
+    for " + codeInput2.text + @"
+        go[j] = " + codeInput3.text + @"
+        a[0][j] = " + codeInput3.text + @"
+    for " + codeInput4.text + @"
+        x[i] = " + codeInput5.text + @"
+        a[1][i] = " + codeInput5.text + @"
+    if be == [[6,8,10,12],[4,3,6,5]] and go == [3,4,5,6] and x == [12,9,18,15]:
         print(""Correct"")
     else:
-        print(""Incorrect\ngo = "" + str(go) + ""\nbe = "" + str(y))
+        print(""Incorrect\n1st a = "" + str(be) + ""\n2nd a = "" + str(go) + ""\n3rd a = "" + str(x))
     return";
-            
+
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
@@ -99,7 +96,7 @@ def main():
                 codeOutput.Close();
             }
         }
-        
+
 
         public void MainDriver2()
         {
@@ -112,23 +109,20 @@ def main():
             string playerCode = @"
 def main():
     stripes = 8
-    snake = 2
+    snake = 0
     red = 1
-    blue = 2
-    ab = cd = 0
+    a = [[1,2,3,4,5],[6,7,8,9,10]]
+    b = a
+    le = len(b[0])
     " + codeInput6.text + @"
         " + codeInput7.text + @"
-        red = ab
-    " + codeInput6.text + @"
-        blue = blue + 1
-    " + codeInput8.text + @"
+        " + codeInput8.text + @"
         " + codeInput9.text + @"
-    " + codeInput8.text + @"
         snake = snake + 1
-    if(red == 7 and blue == 9 and cd == 200 and snake == 7):
+    if b == [[6,7,8,9,10],[1,2,3,4,5]] and snake == 5:
         print(""Congratulations"")
     else:
-        print(""Incorrect\nab = "" + str(red) + ""\ncd = "" + str(cd))
+        print(""Incorrect\nb = "" + str(b))
     return";
             Debug.Log(playerCode);
 
