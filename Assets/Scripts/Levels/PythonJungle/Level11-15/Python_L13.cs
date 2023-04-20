@@ -26,8 +26,6 @@ namespace PythonLevels
         public GameObject lesson2;
         public BoxCollider2D levelSprite;
         private int count = 0;
-
-
         /*
          * This function is the driver to the sequence of events that are
          * required to compile and execute upon Python code

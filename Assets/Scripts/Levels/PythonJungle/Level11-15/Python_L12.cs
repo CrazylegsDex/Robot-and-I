@@ -26,7 +26,44 @@ namespace PythonLevels
         public GameObject lesson2;
         public BoxCollider2D levelSprite;
         private int count = 0;
+        public GameObject box;
+        public GameObject snake;
+        public GameObject snake2;
+        public GameObject bit;
+        private Rigidbody2D sr;
+        float num = .05f;
+        public float speed = 2f;
+        float startTime = 0;
+        float endTime = 0;
+        bool timeSet = false;
 
+        void Start()
+        {
+            box.SetActive(false);
+            sr = snake.GetComponent<Rigidbody2D>();
+        }
+        void Update()
+        {
+            if (bit.transform.position.x >= 1360 && bit.transform.position.y >= 600 && !timeSet)//Position to get to scare the snakes.
+            {
+                startTime = Time.time;// starts timer
+                timeSet = true;//opens up if statement
+            }
+            if (timeSet && endTime < 5)
+            {
+                endTime = (int)(Time.time - startTime);//timer to check
+                while (snake.transform.position.y > 530  && endTime < 2)//moves the snakes in the tree
+                {
+                    snake.transform.position = new Vector3(snake.transform.position.x - 1, snake.transform.position.y - 1, snake.transform.position.z);
+                    snake2.transform.position = new Vector3(snake2.transform.position.x + 1, snake2.transform.position.y - 1, snake2.transform.position.z);
+                }
+                if (endTime >= 1)//Hides the snakes on the ground.
+                {
+                    snake.SetActive(false);
+                    levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                }
+            }
+        }
 
         /*
          * This function is the driver to the sequence of events that are
@@ -137,7 +174,6 @@ def main():
             MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
             scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-
             scriptEngine.Execute(playerCode, scriptScope);
 
 
@@ -200,7 +236,7 @@ def main():
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                box.SetActive(false);
             }
         }
 
