@@ -32803,7 +32803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &132538346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33169,7 +33169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisLocationLevel: Level_0
-  QuitLocationLevel: MainMenu
+  QuitLocationLevel: 
 --- !u!114 &217234710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33206,10 +33206,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42cc809f94019fc4fbea2da549e7b2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentLevel: {fileID: 704171760}
+  PopUp: {fileID: 217234709}
+  ExitLvlTx: {fileID: 1667308662}
   Problem1: {fileID: 326990190}
   HelloBox: {fileID: 4487668}
   HelloError: {fileID: 1913049602}
   door: {fileID: 3762655803234408500}
+  screen2F: {fileID: 523081397}
+  Dialogue3: {fileID: 1380732496639056224}
   Problem2: {fileID: 1510310347}
   Q1: {fileID: 944151140}
   A1: {fileID: 99893946}
@@ -33236,6 +33241,7 @@ MonoBehaviour:
   Q8: {fileID: 1881293779}
   A8: {fileID: 760898684}
   Out8: {fileID: 1200073719}
+  screen3F: {fileID: 1243613253}
   BridgeBroken: {fileID: 859139305}
   BridgeFixed: {fileID: 833551181}
 --- !u!1 &221898446
@@ -33274,7 +33280,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221898448
 MonoBehaviour:
@@ -33398,7 +33404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233021991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 124.7, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: 700, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33844,7 +33850,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelComplete
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6436739411977223338, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
 --- !u!1 &281898734
@@ -35102,12 +35109,12 @@ GameObject:
   - component: {fileID: 523081398}
   - component: {fileID: 523081399}
   m_Layer: 5
-  m_Name: Dialogue4
+  m_Name: Screen2FS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &523081398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35163,7 +35170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526936656}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.4, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: -50, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35816,6 +35823,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2711205377570961009, guid: 9bac195162e34fe499449228888163db, type: 3}
   m_PrefabInstance: {fileID: 830950538}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &704171760 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4718686652554498300, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
+  m_PrefabInstance: {fileID: 258030650}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901b6dc1d87aaf64d8e5c5bf6e312b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710285727
 GameObject:
   m_ObjectHideFlags: 0
@@ -35852,7 +35870,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710285729
 MonoBehaviour:
@@ -36451,7 +36469,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761433987
 MonoBehaviour:
@@ -36796,7 +36814,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &776828984
 MonoBehaviour:
@@ -37140,7 +37158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826991606
 MonoBehaviour:
@@ -37286,9 +37304,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2711205377140246050, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711205377394073039, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2711205377570961009, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_Name
       value: LevelMenuOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711205377570961009, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2711205377570961021, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_Pivot.x
@@ -37401,6 +37431,10 @@ PrefabInstance:
     - target: {fileID: 2973017198057725062, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4478424622473685328, guid: 9bac195162e34fe499449228888163db, type: 3}
+      propertyPath: m_text
+      value: <- Exit to Title
       objectReference: {fileID: 0}
     - target: {fileID: 4706052192778737481, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -37654,7 +37688,8 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3055326755527807230, guid: 9bac195162e34fe499449228888163db, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bac195162e34fe499449228888163db, type: 3}
 --- !u!114 &830950539 stripped
@@ -39402,7 +39437,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &944151140
 MonoBehaviour:
@@ -40446,7 +40481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6.2}
+  m_AnchoredPosition: {x: 86.1, y: 68.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1175021534
@@ -41125,7 +41160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216491067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -274, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: 1297, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41242,12 +41277,12 @@ GameObject:
   - component: {fileID: 1243613254}
   - component: {fileID: 1243613255}
   m_Layer: 5
-  m_Name: Dialogue6
+  m_Name: Screen3FS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1243613254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41700,7 +41735,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295015166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 324.3, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: 899, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42198,7 +42233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1423409471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42667,7 +42702,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517874709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 523.9, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: 1098, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43130,6 +43165,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -10, y: -10, z: -10, w: -10}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &1667308662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4478424622473685328, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 830950538}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759586049
 GameObject:
   m_ObjectHideFlags: 0
@@ -43949,7 +43995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852033647}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -877, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: 1496, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44362,7 +44408,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1881293779
 MonoBehaviour:
@@ -44497,7 +44543,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -45, y: 0}
-  m_SizeDelta: {x: 55, y: 10}
+  m_SizeDelta: {x: 56, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885916669
 MonoBehaviour:
@@ -46310,7 +46356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130067838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 931.171, y: 207.60417, z: 14.798697}
+  m_LocalPosition: {x: 0, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46401,7 +46447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131802346}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1075.4711, y: -136.50418, z: -14.798697}
+  m_LocalPosition: {x: -249, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46583,16 +46629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hello!! My name is The Duke. Your here to help me program Bit; My latest
-    invention I designed to help out all of the inhabitants of our little island
-    chain. Although Bit is mechanically superb, They acquired a few programming errors.
-    Bit was designed with the capability to self-correct said errors, but to do so
-    they will need a guide to walk through some problems beside them. Thats where
-    you will come in youngin, I will keep in touch with screens I have placed throughout
-    the island.
-
-
-    To advance to the next screen press continue.'
+  m_text: This is Binary!! Binary is base 2 numbers.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -47187,12 +47224,12 @@ GameObject:
   - component: {fileID: 1380732495592990552}
   - component: {fileID: 1870911237}
   m_Layer: 5
-  m_Name: Dialogue3
+  m_Name: Dialogue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &1380732495596509889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47826,7 +47863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.6, y: 78.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1380732496209098041
@@ -48675,7 +48712,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.6, y: 78.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1380732496545255787
@@ -48689,7 +48726,7 @@ GameObject:
   - component: {fileID: 1380732496545255786}
   - component: {fileID: 1225598577}
   m_Layer: 5
-  m_Name: Dialogue2
+  m_Name: Screen1FS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48888,12 +48925,12 @@ GameObject:
   - component: {fileID: 1380732496639056225}
   - component: {fileID: 979417106}
   m_Layer: 5
-  m_Name: Dialogue5
+  m_Name: Dialogue3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1380732496639056225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49621,7 +49658,7 @@ MonoBehaviour:
   NameObject: {fileID: 1380732496209098043}
   TMP_DialogueObject: {fileID: 1380732495814493997}
   StartButton: {fileID: 1380732496834910764}
-  LessonObject: {fileID: 132538345}
+  LessonObject: {fileID: 1380732495592990553}
   ProfessorName: The Duke
   sentences:
   - Before we start teaching Bit anything you should familerize yourself with the
@@ -49652,12 +49689,4 @@ MonoBehaviour:
   LessonObject: {fileID: 1510310347}
   ProfessorName: The Duke
   sentences:
-  - Before we start teaching Bit anything you should familerize yourself with the
-    interface, and how to interact with what you can see.
-  - Control Bit's horizontal movement using either ("<--" and "-->") or ("a" and
-    "d").
-  - 'Some Special tools bit can use are activated with the "e" key.
-
-    Bit won''t
-    have access to all of their abilities, It''s for the safety of Bit and other
-    around them mind you.'
+  - 

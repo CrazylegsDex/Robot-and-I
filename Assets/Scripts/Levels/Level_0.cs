@@ -1,7 +1,7 @@
 // This script provides control and completion Level 0
 //
 // Author: Robot and I Team
-// Last modification date: 4-16-23
+// Last modification date: 4-19-23
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,13 +13,17 @@ namespace LVL_0
 {
     public class Level_0 : MonoBehaviour
     {
-
-        public GameObject Problem1;
-        public TMP_InputField HelloBox;
-        public TextMeshProUGUI HelloError;
-        public GameObject door;
-        public GameObject Problem2;
-        public TextMeshProUGUI Q1;
+        public Levels CurrentLevel;
+        public Level_Pop_Up PopUp;
+        public TextMeshProUGUI ExitLvlTx;   //
+        public GameObject Problem1;         // GameObject to hide when the "Hello World" Question is Solved
+        public TMP_InputField HelloBox;     // Input field expecting "Hello World" to be typed in
+        public TextMeshProUGUI HelloError;  // Text feild that will display when there is an error of the input
+        public GameObject door;             // GameObject that blocks the players path from screens 1 and 2, to screen 3 and exit
+        public GameObject screen2F;         // Final Screen State for Screen 2
+        public GameObject Dialogue3;        // Screen 3 to be revealed upon completion of Problem1
+        public GameObject Problem2;         // GameObject to hide when the Nybl Question is Solved
+        public TextMeshProUGUI Q1;          // TextMesh Object that will contain the 
         public TMP_InputField A1;
         public TextMeshProUGUI Out1;
         public TextMeshProUGUI Q2;
@@ -44,14 +48,14 @@ namespace LVL_0
         public TextMeshProUGUI Q8;
         public TMP_InputField A8;
         public TextMeshProUGUI Out8;
+        public GameObject screen3F;         // Final Screen State for Screen 3
         public GameObject BridgeBroken;
         public GameObject BridgeFixed;
         
-        private int rand, i, AnsIn;
+        private int rand, i, AnsIn, Tot;
         private List<int> answers = new List<int>(8);
         private List<string> questions= new List<string>(8);
-        private bool Correct; //, Check;
-        private string Typed;
+        private string Typed, ExitType;
 
         void Start()
         {
@@ -87,29 +91,47 @@ namespace LVL_0
             Q4.color = new Color32(0, 255, 9, 255);
             Q4.text = "D. " + questions[4] + " =";
             Q5.color = new Color32(0, 255, 9, 255);
-            Q5.text = "E. " + questions[5] + " =";
+            Q5.text = "E. " + questions[5].Substring(0, 4) + " " + questions[5].Substring(4, 4) + " =";
             Q6.color = new Color32(0, 255, 9, 255);
-            Q6.text = "F. " + questions[6] + " =";
+            Q6.text = "F. " + questions[6].Substring(0, 4) + " " + questions[6].Substring(4, 4) + " =";
             Q7.color = new Color32(0, 255, 9, 255);
-            Q7.text = "G. " + questions[7] + " =";
+            Q7.text = "G. " + questions[7].Substring(0, 4) + " " + questions[7].Substring(4, 4) + " =";
             Q8.color = new Color32(0, 255, 9, 255);
-            Q8.text = "H. " + questions[8] + " =";
+            Q8.text = "H. " + questions[8].Substring(0, 4) + " " + questions[8].Substring(4, 4) + " =";
+
+            
+            if (CurrentLevel.Completed)
+            {
+                PopUp.QuitLocationLevel = "PseudoIsland";
+                ExitLvlTx.text = "<- Exit to World";
+            }
+            else
+            {
+                PopUp.QuitLocationLevel = "MainMenu";
+                ExitLvlTx.text = "<- Exit to Title";
+            }
         }
         public void HelloCheck()
         {
-            //resets Correct and Check next input
-            Correct = true;
+            HelloError.text = "";
             if (!(System.String.IsNullOrEmpty(HelloBox.text))) //Checks if values were inputed skips if no value
             {
                 try
                 {
                     Typed = HelloBox.text;//tests for strings
-                    if (Typed != "Hello World")
+                    if (Typed == "Hello World")
+                    {
+                        Audio_Manager.Instance.PlaySound("Correct");
+                        screen2F.SetActive(true);
+                        Dialogue3.SetActive(true);
+                        Problem1.SetActive(false);
+                        door.SetActive(false);
+                    }
+                    else
                     {
                         Audio_Manager.Instance.PlaySound("Incorrect");
                         HelloError.color = new Color32(255, 200, 0, 255); // yellow
                         HelloError.text = "Type in 'Hello World' in the box below,\n" + "to open the door.";
-                        Correct = false;
                     }
                 }
                 catch (System.Exception)
@@ -117,22 +139,17 @@ namespace LVL_0
                     Audio_Manager.Instance.PlaySound("Incorrect");
                     HelloError.color = new Color32(255, 200, 0, 255); // yellow
                     HelloError.text = "Type in 'Hello World' in the box below,\n" + "to open the door.";
-                    Correct = false;
                 }
-            }
-            if (Correct)
-            {
-                Audio_Manager.Instance.PlaySound("Correct");
-                door.SetActive(false);
             }
         }
         public void BinaryCheckNibl()
         {
-            //resets Correct and Check next input
-            Correct = true;
-            if (!(System.String.IsNullOrEmpty(HelloBox.text))) //Checks if values were inputed skips if no value
+
+            Tot = 0;
+            // Question 1
+            Out1.text = "";
+            if (!(System.String.IsNullOrEmpty(A1.text))) //Checks if values were inputed skips if no value
             {
-                // Question 1
                 try
                 {
                     AnsIn = int.Parse(A1.text);//tests for strings
@@ -140,22 +157,25 @@ namespace LVL_0
                     {
                         Out1.color = new Color32(255, 200, 0, 255); // yellow
                         Out1.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out1.color = new Color32(0, 255, 255, 255);// cyan
                         Out1.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out1.color = new Color32(255, 200, 0, 255); // yellow
                     Out1.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
+            }
 
-                // Question 2
+            // Question 2
+            Out2.text = "";
+            if (!(System.String.IsNullOrEmpty(A2.text))) //Checks if values were inputed skips if no value
+            {
                 try
                 {
                     AnsIn = int.Parse(A2.text);//tests for strings
@@ -163,22 +183,25 @@ namespace LVL_0
                     {
                         Out2.color = new Color32(255, 200, 0, 255); // yellow
                         Out2.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out2.color = new Color32(0, 255, 255, 255);// cyan
                         Out2.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out2.color = new Color32(255, 200, 0, 255); // yellow
                     Out2.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
+            }
 
-                // Question 3
+            // Question 3
+            Out3.text = "";
+            if (!(System.String.IsNullOrEmpty(A3.text))) //Checks if values were inputed skips if no value
+            {
                 try
                 {
                     AnsIn = int.Parse(A3.text);//tests for strings
@@ -186,22 +209,25 @@ namespace LVL_0
                     {
                         Out3.color = new Color32(255, 200, 0, 255); // yellow
                         Out3.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out3.color = new Color32(0, 255, 255, 255);// cyan
                         Out3.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out3.color = new Color32(255, 200, 0, 255); // yellow
                     Out3.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
+            }
 
-                // Question 4
+            // Question 4
+            Out4.text = "";
+            if (!(System.String.IsNullOrEmpty(A4.text))) //Checks if values were inputed skips if no value
+            {
                 try
                 {
                     AnsIn = int.Parse(A4.text);//tests for strings
@@ -209,23 +235,22 @@ namespace LVL_0
                     {
                         Out4.color = new Color32(255, 200, 0, 255); // yellow
                         Out4.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out4.color = new Color32(0, 255, 255, 255);// cyan
                         Out4.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out4.color = new Color32(255, 200, 0, 255); // yellow
                     Out4.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
             }
 
-            if (Correct)
+            if (Tot == 4)
             {
                 Audio_Manager.Instance.PlaySound("Correct");
                 Problem2.SetActive(false);
@@ -238,11 +263,12 @@ namespace LVL_0
         }
         public void BinaryCheckByte()
         {
-            //resets Correct and Check next input
-            Correct = true;
-            if (!(System.String.IsNullOrEmpty(HelloBox.text))) //Checks if values were inputed skips if no value
+            
+            Tot = 0;
+            // Question 5
+            Out5.text = "";
+            if (!(System.String.IsNullOrEmpty(A5.text))) //Checks if values were inputed skips if no value
             {
-                // Question 5
                 try
                 {
                     AnsIn = int.Parse(A5.text);//tests for strings
@@ -250,22 +276,25 @@ namespace LVL_0
                     {
                         Out5.color = new Color32(255, 200, 0, 255); // yellow
                         Out5.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out5.color = new Color32(0, 255, 255, 255);// cyan
                         Out5.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out5.color = new Color32(255, 200, 0, 255); // yellow
                     Out5.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
+            }
 
-                // Question 6
+            // Question 6
+            Out6.text = "";
+            if (!(System.String.IsNullOrEmpty(A6.text))) //Checks if values were inputed skips if no value
+            {
                 try
                 {
                     AnsIn = int.Parse(A6.text);//tests for strings
@@ -273,22 +302,25 @@ namespace LVL_0
                     {
                         Out6.color = new Color32(255, 200, 0, 255); // yellow
                         Out6.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out6.color = new Color32(0, 255, 255, 255);// cyan
                         Out6.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out6.color = new Color32(255, 200, 0, 255); // yellow
                     Out6.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
+            }
 
-                // Question 7
+            // Question 7
+            Out7.text = "";
+            if (!(System.String.IsNullOrEmpty(A7.text))) //Checks if values were inputed skips if no value
+            {
                 try
                 {
                     AnsIn = int.Parse(A7.text);//tests for strings
@@ -296,22 +328,25 @@ namespace LVL_0
                     {
                         Out7.color = new Color32(255, 200, 0, 255); // yellow
                         Out7.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out7.color = new Color32(0, 255, 255, 255);// cyan
                         Out7.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out7.color = new Color32(255, 200, 0, 255); // yellow
                     Out7.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
+            }
 
-                // Question 8
+            // Question 8
+            Out8.text = "";
+            if (!(System.String.IsNullOrEmpty(A8.text))) //Checks if values were inputed skips if no value
+            {
                 try
                 {
                     AnsIn = int.Parse(A8.text);//tests for strings
@@ -319,25 +354,25 @@ namespace LVL_0
                     {
                         Out8.color = new Color32(255, 200, 0, 255); // yellow
                         Out8.text = "Incorrect";
-                        Correct = false;
                     }
                     else
                     {
                         Out8.color = new Color32(0, 255, 255, 255);// cyan
                         Out8.text = "Correct";
+                        Tot++;
                     }
                 }
                 catch (System.Exception)
                 {
                     Out8.color = new Color32(255, 200, 0, 255); // yellow
                     Out8.text = "Incorrect, Not a Integer";
-                    Correct = false;
                 }
             }
 
-            if (Correct)
+            if (Tot == 4)
             {
                 Audio_Manager.Instance.PlaySound("Correct");
+                screen3F.SetActive(true);
                 Problem3.SetActive(false);
                 BridgeBroken.SetActive(false);
                 BridgeFixed.SetActive(true);
