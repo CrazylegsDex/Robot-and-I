@@ -1,11 +1,10 @@
 /*
  * This script allows the player the ability to use the
  * CSharp compiler. This script will allow the player to
- * use a prewritten function named "MoveBit" that will
- * move Bit one unit to the right.
+ * define and use their own function in our game.
  * 
  * Author: Robot and I Team
- * Last modification date: 12-19-2022
+ * Last modification date: 04/21/2023
  */
 
 using UnityEngine;
@@ -20,8 +19,10 @@ namespace CSharpLevels
     public class CSharp_L16 : MonoBehaviour
     {
         // Public variables
-        public TMP_InputField playerInput; // References the Player's Input Field
-        public TextMeshProUGUI programOutput; // References the TMP Output Field
+        public TextMeshProUGUI programOutput;
+        public TMP_InputField playerCodeInput;
+        public TMP_InputField playerFunctionInput;
+        public GameObject Window;
 
         // Private variables
         private bool displayLog;
@@ -45,7 +46,7 @@ namespace CSharpLevels
             Func<GameObject, MonoBehaviour> runtimeDelegate;
 
             // Check and modify the player's input before ran
-            string playerText = InputModification(playerInput.text);
+            string playerText = InputModification(playerCodeInput.text);
 
             // Add the player's code to a template for runtime scripting
             string playerCode = @"
@@ -353,6 +354,8 @@ namespace CSharpLevels
 
             return newCode;
         }
+
+        public void SwapWindows() { Window.SetActive(!Window.activeSelf); }
 
         /*
          * This function is called whenever Unity sends output to the
