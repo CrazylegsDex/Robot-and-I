@@ -26,11 +26,44 @@ namespace PythonLevels
         public GameObject lesson2;
         public BoxCollider2D levelSprite;
         private int count = 0;
+        private int num = 0;
+        bool pick = false;
+        public GameObject box;
+        public GameObject bit;
+        public Rigidbody2D rb;
+        public GameObject[] flowerTests;
         /*
          * This function is the driver to the sequence of events that are
          * required to compile and execute upon Python code
          */
-        public void setText()
+        void Start()
+        {
+            flowerTests = GameObject.FindGameObjectsWithTag("Box");
+            box.SetActive(false);
+        }
+        void Update()
+        {
+            rb = box.GetComponent<Rigidbody2D>();
+            if (rb.isKinematic)
+            {
+                foreach (GameObject go in flowerTests)//searches for "Grabbable" objects
+                {
+                    if (go.transform.position.x + 1 >= bit.transform.position.x && go.transform.position.x - 1 <= bit.transform.position.x && go.activeSelf)
+                    {
+                        go.SetActive(false);
+                        num++;
+                        
+                    }
+                    if (num == 4)
+                    {
+                        levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                        Debug.Log("Good");
+                    }
+                }
+            }
+            
+        }
+            public void setText()
         {
             if (count == 0)
                 programOutput.text = "load array \"a\" with values 1,2,3,4.\nNext, use a for loop to add every\n value in \"a\" by 1.\nThen, use a for loop to subtract every\n value in \"a\" by 2.";
@@ -191,7 +224,8 @@ def main():
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                pick = true;
+                box.SetActive(true);
             }
         }
 
