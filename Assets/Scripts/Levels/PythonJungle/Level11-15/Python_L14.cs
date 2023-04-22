@@ -26,8 +26,50 @@ namespace PythonLevels
         public GameObject lesson2;
         public BoxCollider2D levelSprite;
         private int count = 0;
+        private int num = 0;
+        public GameObject box;
+        public GameObject bit;
+        private Rigidbody2D rb;
+        public GameObject[] snakeTests;
 
+        void Start()
+        {
+            snakeTests = GameObject.FindGameObjectsWithTag("Box");
+            foreach (GameObject go in snakeTests)//searches for "Box" objects
+            {
+                if(!go.name.Contains("(0)"))
+                    go.SetActive(false);
+            }
+            box.SetActive(false);
+        }
+        void Update()
+        {
+            rb = box.GetComponent<Rigidbody2D>();
+            if (rb.isKinematic)
+            {
+                foreach (GameObject go in snakeTests)//searches for "Box" objects
+                {
+                    if (go.transform.position.x + 1 >= bit.transform.position.x && go.transform.position.x - 1 <= bit.transform.position.x && go.activeSelf)
+                    {
+                        if (go.transform.position.y + 5 >= bit.transform.position.y && go.transform.position.y - 5 <= bit.transform.position.y)
+                        {
+                            if (num < 6)
+                                go.SetActive(false);
+                            num++;
+                        }
+                        
+                    }
+                    if (go.name.Contains("(" + num + ")"))
+                        go.SetActive(true);
+                    if (num == 6)
+                    {
+                        levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                        Debug.Log("Good");
+                    }
+                }
+            }
 
+        }
         /*
          * This function is the driver to the sequence of events that are
          * required to compile and execute upon Python code

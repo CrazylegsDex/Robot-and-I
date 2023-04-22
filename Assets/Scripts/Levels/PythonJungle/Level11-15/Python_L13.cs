@@ -30,7 +30,7 @@ namespace PythonLevels
         bool pick = false;
         public GameObject box;
         public GameObject bit;
-        public Rigidbody2D rb;
+        private Rigidbody2D rb;
         public GameObject[] flowerTests;
         /*
          * This function is the driver to the sequence of events that are

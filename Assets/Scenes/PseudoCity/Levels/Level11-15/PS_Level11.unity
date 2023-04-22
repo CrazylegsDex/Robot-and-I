@@ -1603,8 +1603,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D.   \t\t\ny= 0\nwhile(y<6)\n\tif(y==5)\n\t\toutput(C)\n\tif(y%3==0)\n\t\toutput(A)\n\telse
-    if(y%2 == 0)\n\t\toutput(B)\n\telse\n\t\toutput(D)\n\ty++\n\noutput: "
+  m_text: "D.   \t\t\ny= 0\nwhile(y<6)\n\tif(y==5)\n\t\toutput(\"C\")\n\tif(y%3==0)\n\t\toutput(\"A\")\n\telse
+    if(y%2 == 0)\n\t\toutput(\"B\")\n\telse\n\t\toutput(\"D\")\n\ty++\n\noutput: "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6623,9 +6623,12 @@ MonoBehaviour:
   aInput: {fileID: 385434060}
   bInput: {fileID: 224966300}
   b2Input: {fileID: 131701200}
-  c2Input: {fileID: 0}
+  b3Input: {fileID: 0}
+  b4Input: {fileID: 0}
   cInput: {fileID: 1294971342}
   dInput: {fileID: 210650651}
+  d2Input: {fileID: 0}
+  d3Input: {fileID: 0}
   aOutput: {fileID: 1775984401}
   bOutput: {fileID: 814386224}
   cOutput: {fileID: 1218304637}
@@ -8618,7 +8621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C.\n\tx = 10\n\n\t\t(x>0)\n\n\t\t\t(x%2 == 0)\n\t\t\toutput(A)\n\t\telse\n\t\t\toutput(B)\n\t\tx--\noutput:
+  m_text: "C.\n\tx = 10\n\n\t\t(x>0)\n\n\t\t\t(x%2 == 0)\n\t\t\toutput(\"A\")\n\t\telse\n\t\t\toutput(\"B\")\n\t\tx--\noutput:
     ABABABABAB\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
