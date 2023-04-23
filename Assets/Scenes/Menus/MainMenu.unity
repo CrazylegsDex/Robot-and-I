@@ -439,13 +439,6 @@ MonoBehaviour:
     volume: 1
   - audioType: 0
     source: {fileID: 0}
-    clipName: Collision
-    audioClip: {fileID: 8300000, guid: c3a08ff5a8af5824992226a97cf9e188, type: 3}
-    isLoop: 0
-    playOnAwake: 0
-    volume: 1
-  - audioType: 0
-    source: {fileID: 0}
     clipName: Correct
     audioClip: {fileID: 8300000, guid: 0a2f762b0e057884a806c60e3fafe4bf, type: 3}
     isLoop: 0
