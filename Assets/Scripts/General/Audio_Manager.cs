@@ -153,6 +153,11 @@ namespace GameMechanics
                 music.clip = musicClips[4];
                 music.Play();
             }
+			if (scene.name.Contains("Boss"))
+            {
+                music.clip = musicClips[5];
+                music.Play();
+            }
         }
 
         // PlayMusic starts and un-mutes the Main Music song
@@ -160,6 +165,7 @@ namespace GameMechanics
         {
             music.mute = false;
             music.Play();
+			UpdateMixerVolume();
         }
 
         // StopMusic stops and mutes the Main Music song
