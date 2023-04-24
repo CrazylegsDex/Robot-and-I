@@ -931,6 +931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171187268}
+  - component: {fileID: 171187269}
   - component: {fileID: 171187266}
   - component: {fileID: 171187265}
   - component: {fileID: 171187264}
@@ -1053,6 +1054,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171187269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171187259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b66cac35d2e6e4b974fc5714442f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  programOutput: {fileID: 290319006}
+  soundCheck: {fileID: 922432459}
+  answerCheck: {fileID: 1344473953}
+  playerInput: {fileID: 147702254}
+  BitsFriend: {fileID: 2015870047}
+  Friends:
+  - {fileID: 219736781, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
+  - {fileID: 1771383569, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
+  - {fileID: -1494433966, guid: 7ac79a9649f4ce040851b0e71efb9388, type: 3}
+  - {fileID: 574478972, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
+  - {fileID: 1552222850, guid: f71e285e7ece797418498f4e149c9026, type: 3}
+  - {fileID: -861482519, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
+  - {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  - {fileID: 2092662661, guid: cc405d751d6f4fc46a4a322dcad7371b, type: 3}
+  - {fileID: -1850956496, guid: 7ac79a9649f4ce040851b0e71efb9388, type: 3}
+  - {fileID: -1747034965, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
+  - {fileID: 981742158, guid: 5aa8bc84414e21643b5ec6657ac373ec, type: 3}
+  - {fileID: -889416065, guid: 2dd97b08f8ba06440b7c6535dee50249, type: 3}
+  - {fileID: 382114132, guid: f71e285e7ece797418498f4e149c9026, type: 3}
+  - {fileID: -1102614408, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
+  - {fileID: -901986330, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
+  - {fileID: -1581893028, guid: 2f85d624bfa6d434f904fae1bb235cf2, type: 3}
+  - {fileID: -1601111617, guid: 0f8d7a82db6a5304e810b9239851077c, type: 3}
+  - {fileID: 399008364, guid: 5aa8bc84414e21643b5ec6657ac373ec, type: 3}
+  - {fileID: 773809016, guid: 0f8d7a82db6a5304e810b9239851077c, type: 3}
+  - {fileID: -1090404104, guid: f71e285e7ece797418498f4e149c9026, type: 3}
 --- !u!1 &220496582
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,7 +3496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.5, y: -248.6}
+  m_AnchoredPosition: {x: -60, y: -248.6}
   m_SizeDelta: {x: 36.2983, y: 10.905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922432459
@@ -4126,6 +4165,141 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1344473951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344473952}
+  - component: {fileID: 1344473954}
+  - component: {fileID: 1344473953}
+  m_Layer: 5
+  m_Name: Answer Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1344473952
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344473951}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1479919484}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -100.5, y: -248.6}
+  m_SizeDelta: {x: 36.2983, y: 10.905}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1344473953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344473951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4283498320
+  m_fontColor: {r: 0.3150943, g: 1, b: 0.3150943, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 10
+  m_fontSizeBase: 10
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1344473954
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344473951}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1345872090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4375,12 +4549,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Green Chicken? Bit, I have come to the conclusion you need a best friend.
-    I want you to define me a string array named Friends. Define the array to contain
-    20 different possibilities. I will initialize the array for you, then I want
-    you to loop through the array checking each element. Once you find the one that
-    says "Best Friend",  then print that array index and end the loop. I know there
-    is a best friend out there for you. It certainly is not that Chicken.
+  m_text: Bit, I want you to define me a string array named Friends. Define the array
+    to contain 20 different possibilities. I will initialize the array with possible
+    friends for Jeffy, then I want you to loop through the array checking each element.
+    Once you find the one that says "Best Friend", then print that array index and
+    end the loop. You will find his best friend, I know it. It certainly cannot be
+    that Chicken.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4483,7 +4657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Pivot.x
@@ -4661,15 +4835,21 @@ PrefabInstance:
       objectReference: {fileID: 1421755054}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: An Array of elements? Complex!!
+      value: Green Chicken? Bit, I have come to the conclusion you need a best friend.
+        I want you to define me a string array named Friends. Define the array to
+        contain 20 different possibilities. I will initialize the array for you,
+        then I want you to loop through the array checking each element. Once you
+        find the one that says "Best Friend", then print that array index and end
+        the loop. I know there is a best friend out there for you. It certainly is
+        not that Chicken.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Go Bit Go
+      value: An Array of elements? Complex!!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -4791,7 +4971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1479919484
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4807,6 +4987,7 @@ RectTransform:
   - {fileID: 935317311}
   - {fileID: 1369155137}
   - {fileID: 290319005}
+  - {fileID: 1344473952}
   - {fileID: 922432458}
   - {fileID: 147702253}
   - {fileID: 1787294099}
@@ -5001,8 +5182,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CSharpLevels.CSharp_L11, Assembly-CSharp
+      - m_Target: {fileID: 171187269}
+        m_TargetAssemblyTypeName: CSharpLevels.CSharp_L14, Assembly-CSharp
         m_MethodName: MainDriver
         m_Mode: 1
         m_Arguments:
