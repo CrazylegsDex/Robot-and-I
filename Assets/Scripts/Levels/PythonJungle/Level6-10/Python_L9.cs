@@ -20,7 +20,9 @@ namespace PythonLevels
 		public TMP_InputField codeInput5;
         public TextMeshProUGUI programOutput;
 		public string explanition;
-        public BoxCollider2D levelSprite;
+		public GameObject watering;
+		public GameObject wall;
+		public BoxCollider2D levelSprite;
 		private int count = 0;
 		
 		public void setText(){
@@ -29,6 +31,7 @@ namespace PythonLevels
 		
         public void MainDriver()
         {
+			count = 0;
             if(codeInput1.text == "\"red\""){
 				count++;
 			}
@@ -38,19 +41,21 @@ namespace PythonLevels
 			if(codeInput3.text == "\"blue\""){
 				count++;
 			}
-			if(codeInput4.text == "5"){
+			if(codeInput4.text == "3"){
 				count++;
 			}
 			if(codeInput5.text == "1"){
 				count++;
 			}
 			if(count == 5){
-				Audio_Manager.Instance.PlaySound("Correct");
 				programOutput.text = "Congratulations";
+				Audio_Manager.Instance.PlaySound("Congratulations");
+				watering.SetActive(true);
+				wall.SetActive(false);
 				levelSprite.isTrigger = true;
 			}else{
-				Audio_Manager.Instance.PlaySound("Incorrect");
 				programOutput.text = "Incorrect";
+				Audio_Manager.Instance.PlaySound("Incorrect");
 			}				
         }
 	}
