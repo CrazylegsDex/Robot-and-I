@@ -48,6 +48,11 @@ namespace GameMechanics
         // Data persistence implementation of SaveGame
         public void SaveData(GameData data)
         {
+            // introduces Level_0 to the Dictionary If it is not already there.
+            if (!data.gameLevels.ContainsKey("Level_0") && LevelToComplete == "Level_0")
+            {
+                data.gameLevels.Add("Level_0", Completed);
+            }
             // If the player completed this level by hitting the end
             // NPC, save the completion to the file
             if (data.gameLevels.ContainsKey(LevelToComplete))

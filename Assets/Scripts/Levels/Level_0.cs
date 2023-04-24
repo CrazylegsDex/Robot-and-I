@@ -51,7 +51,7 @@ namespace LVL_0
         public GameObject screen3F;         // Final Screen State for Screen 3
         public GameObject BridgeBroken;
         public GameObject BridgeFixed;
-        
+
         private int rand, i, AnsIn, Tot;
         private List<int> answers = new List<int>(8);
         private List<string> questions= new List<string>(8);
@@ -59,6 +59,7 @@ namespace LVL_0
 
         void Start()
         {
+           //CurrentLevel.LoadData(GameData data);
             for (i = 0; i <= 8; i++)
             {
                 if (i <= 4)
@@ -99,7 +100,6 @@ namespace LVL_0
             Q8.color = new Color32(0, 255, 9, 255);
             Q8.text = "H. " + questions[8].Substring(0, 4) + " " + questions[8].Substring(4, 4) + " =";
 
-            
             if (CurrentLevel.Completed)
             {
                 PopUp.QuitLocationLevel = "PseudoIsland";
@@ -111,6 +111,7 @@ namespace LVL_0
                 ExitLvlTx.text = "<- Exit to Title";
             }
         }
+
         public void HelloCheck()
         {
             HelloError.text = "";
@@ -142,6 +143,7 @@ namespace LVL_0
                 }
             }
         }
+
         public void BinaryCheckNibl()
         {
 
@@ -261,6 +263,7 @@ namespace LVL_0
                 Audio_Manager.Instance.PlaySound("Incorrect");
             }
         }
+
         public void BinaryCheckByte()
         {
             
