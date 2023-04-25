@@ -36,9 +36,8 @@ namespace GameMechanics
         // An array of audio sources to add to this object.
         // The Indices are specifically set as below
         // 0th Index: Audio Clip to play
-        // 1st Index: Click Sound Effect
-        // 2nd Index: Correct Sound Effect
-        // 3rd Index: Incorrect Sound Effect
+        // 1nd Index: Correct Sound Effect
+        // 2rd Index: Incorrect Sound Effect
         [SerializeField] private Sound[] sounds;
 		
 
@@ -153,6 +152,11 @@ namespace GameMechanics
                 music.clip = musicClips[4];
                 music.Play();
             }
+			if (scene.name.Contains("Boss"))
+            {
+                music.clip = musicClips[5];
+                music.Play();
+            }
         }
 
         // PlayMusic starts and un-mutes the Main Music song
@@ -160,6 +164,7 @@ namespace GameMechanics
         {
             music.mute = false;
             music.Play();
+			UpdateMixerVolume();
         }
 
         // StopMusic stops and mutes the Main Music song
