@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 832141324}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVisible
+      value: SetVisiblityStatus
       objectReference: {fileID: 0}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -563,6 +563,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: canGrab
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_Name
       value: Bit
@@ -2271,7 +2275,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -2286,7 +2290,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -2396,11 +2400,12 @@ RectTransform:
   m_Children:
   - {fileID: 1758978205}
   - {fileID: 1081397390}
+  - {fileID: 1946604383}
+  - {fileID: 1586718566}
   - {fileID: 1179029773}
   - {fileID: 1013311409}
   - {fileID: 2000797367}
   - {fileID: 203894901}
-  - {fileID: 1946604383}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4347,7 +4352,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -4362,7 +4367,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -5453,7 +5458,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -5468,7 +5473,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -6027,7 +6032,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -6042,7 +6047,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -6709,7 +6714,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -6724,7 +6729,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 832141327}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -7388,8 +7393,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586718565}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1298.1299, y: 594.2856, z: -13.092046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 338.12988, y: 54.285583, z: -16.092045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7411,8 +7416,8 @@ Transform:
   - {fileID: 1227563493}
   - {fileID: 695718318}
   - {fileID: 438034846}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 469409834}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614356800
 GameObject:

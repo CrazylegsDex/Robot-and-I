@@ -3236,6 +3236,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: canGrab
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_Name
       value: Bit

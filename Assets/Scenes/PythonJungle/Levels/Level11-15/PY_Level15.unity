@@ -3553,6 +3553,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: canGrab
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_Name
       value: Bit
@@ -4049,7 +4053,7 @@ PrefabInstance:
       objectReference: {fileID: 819264856}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVisible
+      value: SetVisiblityStatus
       objectReference: {fileID: 0}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

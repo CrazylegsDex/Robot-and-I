@@ -974,7 +974,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -989,7 +989,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -2793,8 +2793,8 @@ PrefabInstance:
 
         Int y = 5 **2
 
-        The output for y would be 25 as 5
-        to the second power is 25.
+        The output for y would be 25 as 5 to
+        the second power is 25.
 
 '
       objectReference: {fileID: 0}
@@ -5721,7 +5721,7 @@ PrefabInstance:
       objectReference: {fileID: 145266305}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVisible
+      value: SetVisiblityStatus
       objectReference: {fileID: 0}
     - target: {fileID: 6642352080063532777, guid: 4d729ab514388384e8a4e4486273d966, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -6332,7 +6332,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -6347,7 +6347,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -6801,7 +6801,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -6816,7 +6816,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -7001,7 +7001,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -7016,7 +7016,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -8877,10 +8877,10 @@ RectTransform:
   m_Children:
   - {fileID: 43193733}
   - {fileID: 517820088}
+  - {fileID: 1888426710}
   - {fileID: 314636552}
   - {fileID: 1084564445}
   - {fileID: 1411503214}
-  - {fileID: 1888426710}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9344,7 +9344,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -9359,7 +9359,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 145266308}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -9444,6 +9444,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7782327375490643800, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
+      propertyPath: canGrab
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643805, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_Name
       value: Bit

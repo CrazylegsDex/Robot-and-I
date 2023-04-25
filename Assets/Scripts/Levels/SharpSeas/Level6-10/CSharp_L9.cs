@@ -275,46 +275,40 @@ namespace CSharpLevels
             result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
+            programOutput.text = ""; // Clear the current output box
             if (result.Errors.HasErrors)
             {
                 displayLog = false;
-                programOutput.text = ""; // Clear the current output box
 
-                // Check if there were compilation errors
-                programOutput.text = ""; // Clear the current output box
-                if (result.Errors.HasErrors)
+                // Display only 1 error
+                CompilerErrorCollection error = result.Errors;
+                programOutput.text = error[0].ErrorNumber switch
                 {
-                    displayLog = false;
+                    // Syntax Errors
+                    "CS1525" => $"Error: You have made a Syntax Error in your code.\n\n{error[0].ErrorText}",
 
-                    // Display only 1 error
-                    CompilerErrorCollection error = result.Errors;
-                    programOutput.text = error[0].ErrorNumber switch
-                    {
-                        // Syntax Errors
-                        "CS1525" => $"Error: You have made a Syntax Error in your code.\n\n{error[0].ErrorText}",
+                    // Variable Name Unknown. EX. int spellMeRight; => spelMeRight = 0;
+                    "CS0103" => $"Error: You have a typo in one of your variable names, or you never declared it.\n\n{error[0].ErrorText}",
 
-                        // Variable Name Unknown. EX. int spellMeRight; => spelMeRight = 0;
-                        "CS0103" => $"Error: You have a typo in one of your variable names, or you never declared it.\n\n{error[0].ErrorText}",
+                    // Uninitialized Variable usage
+                    "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.\n\n{error[0].ErrorText}",
 
-                        // Uninitialized Variable usage
-                        "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.\n\n{error[0].ErrorText}",
+                    // Variable Type Mismatch. EX. if (string == int)
+                    "CS0019" => $"Error: You are cannot compare two different data types together.\n\n{error[0].ErrorText}",
 
-                        // Variable Type Mismatch. EX. if (string == int)
-                        "CS0019" => $"Error: You are cannot compare two different data types together.\n\n{error[0].ErrorText}",
+                    // Variable Type Mismatch. EX. int = double;
+                    "CS0266" => $"Error: You are trying to assign a Double data type into an Integer data type.\n\n{error[0].ErrorText}",
 
-                        // Variable Type Mismatch. EX. int = double;
-                        "CS0266" => $"Error: You are trying to assign a Double data type into an Integer data type.\n\n{error[0].ErrorText}",
+                    // Variable Type Mismatch. EX. string = int;
+                    "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
 
-                        // Variable Type Mismatch. EX. string = int;
-                        "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
+                    // All Other Errors
+                    _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
+                };
+            }
 
-                        // All Other Errors
-                        _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
-                    };
-                }
-
-                // Return the assembly
-                return result.CompiledAssembly;
+            // Return the assembly
+            return result.CompiledAssembly;
         }
 
         /*

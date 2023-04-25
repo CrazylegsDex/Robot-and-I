@@ -59,7 +59,7 @@ namespace GameMechanics
 
             // Always will be true that the first level on every Island is active
             // The ships to PY and CS are only active once PS_Level1 is complete
-            if (id == "PS_Level1" || id == "PY_Level1" || id == "CS_Level1")
+            if (id == "PS_Level1" || id == "PY_Level1" || id == "CS_Level1" || id == "Level_0")
             {
                 gameObject.SetActive(true);
             }
