@@ -77,16 +77,11 @@ namespace PlayerControl
         private GameObject chec;    // Game Object for the
         private Transform checTf;   // transform for the 
         private Vector3 checkOffset;
-        //private GameObject tool;    // animations for Bit's Tools
         private static bool aniLock = false;   // if true no new Bit animation will start
         public static bool canAny = true; // when false Bit will be unable to do anything, used to stop controls when bit is dead
         private static bool canJump = true;// when false Bit will be unable to jump
         private static bool lLRight = true;// True when bit is initialized or last looked right, fals when last looked left.
-        //private bool canAct = true; // when false Bit notice pressing of 'E' action: for grabbing bit can only do it while on ground and not jumping.
         private bool isAct = false; // when true Bit is mid action and can't move or jump, ex. grabbing, but not holding
-        //private bool isGrabbing = false;// 
-        //private bool isHolding = false;
-        //private bool isThrow = false;
         private int idleActs;       // keeps track of Bit's remaining idle actions
         private float idleTime;     // keeps track of how much time until Bit will perform another idle action
         private float moveStrength; // GetAxis of Horizontal controls, ranges from -1 to 1
@@ -316,20 +311,6 @@ namespace PlayerControl
                 {
                     Tool_Animations.ToolUpdate(lLRight);
                 }
-                /*
-                if (Tool_Animations.CheCurToolAni("Grab"))
-                {
-                    Tool_Animations.GrabUpdate();
-                }
-                else if (Tool_Animations.CheCurToolAni("Hold"))
-                {
-                    Tool_Animations.HeldUpdate();
-                }
-                else if (Tool_Animations.CheCurToolAni("Drop") || Tool_Animations.CheCurToolAni("Throw"))
-                {
-                    Tool_Animations.ReleUpdate();
-                }
-                */
 
                 // checks if Bit is grounded or not, and decides what state they will go into
                 if (IsGrounded())
@@ -337,12 +318,6 @@ namespace PlayerControl
                     ActOnGro(); // Ground movement
                     GroAnimation(); // Ground animations
                 }
-                // checks if bit is in water
-                //else if(inWater()) // In case we need water controls 
-                //{
-                //    moveInWater(); // not made
-                //    watAnimation(); // not made/animated
-                //}
                 else
                 {
                     ActInAir(); // Air Movement
@@ -842,142 +817,5 @@ namespace PlayerControl
             aniLock = false;
             CurBitState = PlayerStates.Fatal;
         }
-
-        // Am I what perfect is, because that's all you will say I am...
-        /*
-        // Public variables - Inspector View modifiable
-        public int maxJumpCount;
-        public float moveSpeed;
-        public float jumpForce;
-        public float checkRadius;
-        public Transform ceilingCheck;
-        public Transform groundCheck;
-        public LayerMask groundObjects;
-        public Transform buttonCheck;
-        public LayerMask buttonObjects;
-        public Transform boxCheck;
-        public LayerMask boxObjects;
-        public GameObject[] boxTests;
-        public GameObject boxChosen;
-
-
-        // Private variables
-        private int jumpCount;
-        private float moveDirection;
-        private bool isJumping = false;
-        private bool grab = false;
-        private bool isGrounded;
-        private bool isOnButton;
-        private bool nearBox;
-        private Rigidbody2D rb;
-        private bool safe = true;
-
-        // Awake is called after all objects are initialized. Called in a random order with the rest.
-        private void Awake()
-        {
-            // Get the elements in the current sprites Rigidbody2D and SpriteRenderer
-            rb = GetComponent<Rigidbody2D>();
-        }
-
-        // Start is called before the first frame update
-        private void Start()
-        {
-            jumpCount = maxJumpCount; // jumpCount is set to whatever is in the Inspector View
-        }
-
-        // Update is called once per frame
-        void Update() // Called Second
-        {
-            if (!TMP_Selection.GetTyping()) // The the cursor is not currently in a TMP object
-            {
-                // Get player inputs
-                processInputs();
-            }
-        }
-
-        // Better for handling physics, can be called multiple times per frame
-        private void FixedUpdate() // Called First
-        {
-            // Check to see if the player is grounded
-            // Should return when on the ground.
-            // Could possibly call right after hit spacebar and before left the ground.
-            // Fix the positioning of the "groundCheck" object if having issues
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundObjects);
-            isOnButton = Physics2D.OverlapCircle(buttonCheck.position, checkRadius, buttonObjects);
-            if (isGrounded || isOnButton)
-                jumpCount = maxJumpCount; // Reset the jump count
-
-            // Use the player inputs
-            moveCharacter();
-        }
-
-        private void processInputs()
-        {
-            // Process the keyboard inputs
-            moveDirection = Input.GetAxis("Horizontal"); // Returns -1 to 1
-            if (Input.GetButtonDown("Jump") && jumpCount > 0)
-                isJumping = true;
-            if (!grab)
-            {
-                nearBox = Physics2D.OverlapCircle(boxCheck.position, checkRadius, boxObjects);
-            }
-            //checkRadius = .2
-            try//incase there are no boxes in the level
-            {
-                boxTests = GameObject.FindGameObjectsWithTag("Box");
-            }
-            catch (Exception)
-            {
-                safe = false;
-            }
-            if (safe)
-            {
-                if (nearBox && Input.GetKeyDown(KeyCode.E) && !grab)
-                {
-
-
-                    foreach (GameObject go in boxTests)
-                    {
-
-                        float boxPos = Vector3.Distance(transform.position, go.transform.position);
-
-                        //Debug.Log(boxPos / 100);
-                        if (boxPos / 100 >= .19 && boxPos / 100 <= 0.25)
-                        {
-
-                            go.transform.parent = boxCheck.parent;
-                            go.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                            ///added below
-                            go.transform.position = new Vector3(boxCheck.transform.position.x + 6, boxCheck.transform.position.y, boxCheck.transform.position.z);
-                            //added above line to fix physics issue
-                            go.GetComponent<Rigidbody2D>().isKinematic = true;
-                            boxChosen = go;
-                        }
-                        grab = true;
-                    }
-                }
-                else if (Input.GetKeyDown(KeyCode.E))
-                {
-                    //Debug.Log("E key was pressed.");
-
-                    boxChosen.transform.parent = null;
-                    boxChosen.GetComponent<Rigidbody2D>().isKinematic = false;
-                    grab = false;
-                }
-            }
-        }
-
-        private void moveCharacter()
-        {
-            // Use the player inputs to move the character
-            rb.velocity = new Vector2(moveDirection * moveSpeed, rb.velocity.y);
-            if (isJumping && jumpCount > 0) // Allows double jumping
-            {
-                rb.AddForce(new Vector2(0f, jumpForce));
-                --jumpCount;
-                isJumping = false;
-            }
-        }
-        */
     }
 }

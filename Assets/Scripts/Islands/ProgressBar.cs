@@ -21,7 +21,7 @@ namespace GameMechanics
         public void LoadData(GameData data)
         {
             // Check if the dictionary has been filled with data
-            if (data.gameLevels.ContainsKey("PS_Level1"))
+            if (data.gameLevels.ContainsKey("Level_0"))
             {
                 // Loop through the keys in the dictionary
                 foreach (var key in data.gameLevels)

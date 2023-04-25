@@ -5,7 +5,7 @@
  * of the levels to the file.
  * 
  * Author: Robot and I Team
- * Date: 01/27/2023
+ * Date: 04/19/2023
  */
 
 using UnityEngine;
@@ -18,8 +18,8 @@ namespace GameMechanics
         public string LevelToLoad;
         public string LevelToComplete;
 
-        // Private Variables
-        private bool Completed;
+        // Hidden Variables
+        [HideInInspector] public bool Completed;
 
         // Send the player back to the overworld and set level as complete
         private void OnTriggerEnter2D(Collider2D collision)
@@ -48,6 +48,11 @@ namespace GameMechanics
         // Data persistence implementation of SaveGame
         public void SaveData(GameData data)
         {
+            // introduces Level_0 to the Dictionary If it is not already there.
+            if (!data.gameLevels.ContainsKey("Level_0") && LevelToComplete == "Level_0")
+            {
+                data.gameLevels.Add("Level_0", Completed);
+            }
             // If the player completed this level by hitting the end
             // NPC, save the completion to the file
             if (data.gameLevels.ContainsKey(LevelToComplete))
