@@ -32,7 +32,8 @@ namespace GameMechanics
             // DO NOT save the following scenes
             if (
 					ContinueGame != "MainMenu" &&
-					ContinueGame != "PseudoMap" &&
+                    ContinueGame != "EndCredits" &&
+                    ContinueGame != "PseudoMap" &&
 					ContinueGame != "PythonMap" &&
 					ContinueGame != "CMap"
 				)
