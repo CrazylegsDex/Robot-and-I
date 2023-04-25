@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a42cdaabaa35a4f91b95277180e791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaximumLevels: 52
+  MaximumLevels: 50
   Mask: {fileID: 6661294458146091997}
 --- !u!1001 &6661294458914855148
 PrefabInstance:
