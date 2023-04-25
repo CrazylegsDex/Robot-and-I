@@ -31,23 +31,22 @@ namespace PseudoLevels
         public GameObject cam;
         float camx, camy, camz;
 
+        private bool end = false;
+
         public GameObject[] boxTests;
         public GameObject[] hairTests;
         private Button_Check button_Check;
-        private bool button1;
-        private bool button2;
-        private bool button3;
-        private bool button4;
+        private bool[] buttonArr = new bool[8];
         public BoxCollider2D levelSprite;
         void Start()
         {
+            for (int i = 0; i < 8; i++)
+                buttonArr[i] = false; 
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
             foreach (GameObject go in hairTests)//searches for "Grabbable" objects
             {
                 go.SetActive(false);
             }
-            button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -65,47 +64,87 @@ namespace PseudoLevels
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                        if (button_Check.boxFirstName == "1" && button_Check.name.Contains("(1)"))
                         {
 
                             if (button_Check.complete)
                             {
-                                button1 = true;
+                                buttonArr[4] = true;
                             }
                             else
-                                button1 = false;
+                                buttonArr[4] = false;
                         }
-                        else if (button_Check.boxFirstName == "2")
+                        else if (button_Check.boxFirstName == "1" && !button_Check.name.Contains("(1)"))
                         {
 
                             if (button_Check.complete)
                             {
-                                button2 = true;
+                                buttonArr[0] = true;
                             }
                             else
-                                button2 = false;
+                                buttonArr[0] = false;
                         }
-                        if (button_Check.boxFirstName == "3")
+                        else if (button_Check.boxFirstName == "2" && !button_Check.name.Contains("(1)"))
                         {
 
                             if (button_Check.complete)
                             {
-                                button3 = true;
+                                buttonArr[1] = true;
                             }
                             else
-                                button3 = false;
+                                buttonArr[1] = false;
                         }
-                        else if (button_Check.boxFirstName == "4")
+                        else if (button_Check.boxFirstName == "2" && button_Check.name.Contains("(1)"))
                         {
 
                             if (button_Check.complete)
                             {
-                                button4 = true;
+                                buttonArr[5] = true;
                             }
                             else
-                                button4 = false;
+                                buttonArr[5] = false;
                         }
-                        if (button1 && button2 && button3 && button4)
+                        else if (button_Check.boxFirstName == "3" && button_Check.name.Contains("(1)"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                buttonArr[6] = true;
+                            }
+                            else
+                                buttonArr[6] = false;
+                        }
+                        else if (button_Check.boxFirstName == "3" && !button_Check.name.Contains("(1)"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                buttonArr[2] = true;
+                            }
+                            else
+                                buttonArr[2] = false;
+                        }
+                        else if (button_Check.boxFirstName == "4" && button_Check.name.Contains("(1)"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                buttonArr[7] = true;
+                            }
+                            else
+                                buttonArr[7] = false;
+                        }
+                        else if (button_Check.boxFirstName == "4" && !button_Check.name.Contains("(1)"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                buttonArr[3] = true;
+                            }
+                            else
+                                buttonArr[3] = false;
+                        }
+                        if (end)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             Debug.Log("Good!");
@@ -113,6 +152,14 @@ namespace PseudoLevels
                         }
                         else
                         {
+                            int num = 0;
+                            for(int i = 0; i < 8; i++)
+                            {
+                                if (buttonArr[i] == true)
+                                    num++;
+                            }
+                            if (num == 8)
+                                end = true;
                             levelSprite.isTrigger = false;
                             complete.SetActive(false);
                         }

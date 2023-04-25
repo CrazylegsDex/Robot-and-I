@@ -35,7 +35,7 @@ namespace PythonLevels
          * required to compile and execute upon Python code
          */
 		public void setText(){
-			programOutput.text = explanition;
+			programOutput.text = "if(snake == red): \n    go = 0 \nif else(snake == blue): \n    go = 1 \nelse: \n    go = 2 \nif(strips >= 8): \n    go = 0 \nelse:\n    go = 2 ";
 		}
 		
 		public void setActives(){
