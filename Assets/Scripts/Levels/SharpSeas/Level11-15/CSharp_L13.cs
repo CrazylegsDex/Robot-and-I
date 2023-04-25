@@ -268,11 +268,10 @@ namespace CSharpLevels
             result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
+            programOutput.text = ""; // Clear the current output box
             if (result.Errors.HasErrors)
             {
                 displayLog = false;
-                programOutput.text = ""; // Clear the current output box
-                multiplicationTable.SetActive(false); // Inactivate the multiplicationTable
 
                 // Display only 1 error
                 CompilerErrorCollection error = result.Errors;
@@ -299,10 +298,6 @@ namespace CSharpLevels
                     // All Other Errors
                     _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
                 };
-            }
-            else
-            {
-                programOutput.text = "";
             }
 
             // Return the assembly

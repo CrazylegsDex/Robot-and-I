@@ -283,21 +283,6 @@ namespace PseudoLevels
             // Compile the sourceCode 
             result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
-            // Check if there were compilation errors
-            // TODO ---- Determine if keep or remove this from non-compiler type levels
-            if (result.Errors.HasErrors)
-            {
-                //displayLog = false;
-                foreach (CompilerError error in result.Errors)
-                {
-                    if (error.ErrorNumber == "CS1525")
-                        Debug.Log("Syntax error\n\n");
-                    else
-                        // Use the following if you want error codes along with the error text.
-                        // String.Format("Error ({0}): ({1})", error.ErrorNumber, error.ErrorText)
-                        Debug.Log(error.ErrorText + "\n");
-                }
-            }
             // Return the assembly
             return result.CompiledAssembly;
         }

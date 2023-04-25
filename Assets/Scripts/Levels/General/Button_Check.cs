@@ -45,7 +45,6 @@ namespace PseudoLevels
                 {
                     if (go.name.StartsWith(boxFirstName)) {//Tests for correct first name. 
                         num = num + 1;//counter variable
-                        //Debug.Log(num);
                     }
                 }
             }

@@ -108,7 +108,6 @@ namespace PseudoLevels
                         if (button1 > 4 && button2 > 4 && button3 > 4&& button4 > 4 && button5 > 4)//All trees are chopped down!
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
@@ -247,7 +246,6 @@ namespace PseudoLevels
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);

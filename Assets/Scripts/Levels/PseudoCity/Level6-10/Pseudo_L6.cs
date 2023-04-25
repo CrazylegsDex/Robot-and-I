@@ -90,7 +90,6 @@ namespace PseudoLevels
                         if (button1 && button2)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);//Displays completion icon above npc
                         }
                         else

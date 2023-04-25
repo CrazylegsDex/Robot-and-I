@@ -6376,7 +6376,7 @@ GameObject:
   - component: {fileID: 2062198480}
   - component: {fileID: 2062198479}
   m_Layer: 5
-  m_Name: SoundCheck
+  m_Name: SoundCheckBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

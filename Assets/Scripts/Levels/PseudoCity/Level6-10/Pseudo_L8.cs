@@ -109,7 +109,6 @@ namespace PseudoLevels
                                 endTime = Time.time - startTime;
                                 if(endTime > 10)
                                     button1 = true;
-                                Debug.Log(endTime);
                             }
                             else
                             {
@@ -120,7 +119,6 @@ namespace PseudoLevels
                         if (button1)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);
                         }
                     }

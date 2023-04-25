@@ -27,7 +27,6 @@ namespace PlayerControl
                     Grabbable = true;
                 }
             }
-            //Debug.Log("Enter " + whatCanSee.Count);
         }
 
         void OnTriggerExit2D (Collider2D other)
@@ -40,7 +39,6 @@ namespace PlayerControl
                     Grabbable = false;
                 }
             }
-            //Debug.Log("Exit " + whatCanSee.Count);
         }
 
         public static bool IsGrabbable()

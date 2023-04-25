@@ -115,7 +115,6 @@ namespace PseudoLevels
                         if (roadCount == "1111111111")
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
@@ -284,7 +283,6 @@ namespace PseudoLevels
                         dOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         dOutput.text = "Correct!";
                         num++;
-                        //Debug.Log(num);
                     }
                     else
                     {
@@ -294,11 +292,9 @@ namespace PseudoLevels
                     }
                 }
             }
-            //Debug.Log(num);
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);

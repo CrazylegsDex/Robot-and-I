@@ -111,7 +111,7 @@ namespace CSharpLevels
                     // Get references to the input & output text boxes
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
                     TMP_Text completionBox = GameObject.Find(""Completed"").GetComponent<TMP_Text>();
-					TMP_Text check = GameObject.Find(""check"").GetComponent<TMP_Text>();
+					TMP_Text check = GameObject.Find(""SoundCheckBox"").GetComponent<TMP_Text>();
                     TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // The problem statement is already displayed.
@@ -231,23 +231,23 @@ namespace CSharpLevels
             result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
+            programOutput.text = ""; // Clear the current output box
             if (result.Errors.HasErrors)
             {
                 displayLog = false;
-                programOutput.text = ""; // Clear the current output box
 
                 // Display only 1 error
                 CompilerErrorCollection error = result.Errors;
                 programOutput.text = error[0].ErrorNumber switch
                 {
                     // Syntax Errors
-                    "CS1525" => $"Error: You have made a Syntax Error in your code.",
+                    "CS1525" => $"Error: You have made a Syntax Error in your code.\n\n{error[0].ErrorText}",
 
                     // Variable Name Unknown. EX. int spellMeRight; => spelMeRight = 0;
-                    "CS0103" => $"Error: You have typoed one of your variable names, or you never declared it.\n\n{error[0].ErrorText}",
+                    "CS0103" => $"Error: You have a typo in one of your variable names, or you never declared it.\n\n{error[0].ErrorText}",
 
                     // Uninitialized Variable usage
-                    "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.",
+                    "CS0165" => $"Error: You are trying to use a variable in your code that has not been assigned a value.\n\n{error[0].ErrorText}",
 
                     // Variable Type Mismatch. EX. if (string == int)
                     "CS0019" => $"Error: You are cannot compare two different data types together.\n\n{error[0].ErrorText}",

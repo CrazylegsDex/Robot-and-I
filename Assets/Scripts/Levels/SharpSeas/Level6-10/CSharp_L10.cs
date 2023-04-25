@@ -221,7 +221,6 @@ namespace CSharpLevels
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
             }";
-            Debug.Log(playerCode);
 
             // Compile the player's code and check for syntax issues
             displayLog = true;
@@ -296,10 +295,10 @@ namespace CSharpLevels
             result = compiler.CompileAssemblyFromSource(parameters, sourceCode);
 
             // Check if there were compilation errors
+            programOutput.text = ""; // Clear the current output box
             if (result.Errors.HasErrors)
             {
                 displayLog = false;
-                programOutput.text = ""; // Clear the current output box
 
                 // Display only 1 error
                 CompilerErrorCollection error = result.Errors;

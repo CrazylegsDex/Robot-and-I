@@ -109,7 +109,6 @@ namespace PseudoLevels
                         if (button1 && button2 && button3 && button4)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);
                         }
                         else
@@ -234,7 +233,6 @@ namespace PseudoLevels
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);

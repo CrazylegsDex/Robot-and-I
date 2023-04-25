@@ -64,7 +64,6 @@ namespace PythonLevels
                     if (num == 6)
                     {
                         levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                        Debug.Log("Good");
                     }
                 }
             }
@@ -91,7 +90,6 @@ namespace PythonLevels
 
         public void MainDriver()
         {
-            //Debug.Log(playerCode);
             // Local variables
             ScriptEngine scriptEngine;
             ScriptScope scriptScope;
@@ -166,7 +164,6 @@ def main():
     else:
         print(""Incorrect\nb = "" + str(b))
     return";
-            Debug.Log(playerCode);
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();

@@ -4499,7 +4499,7 @@ GameObject:
   - component: {fileID: 1196242175}
   - component: {fileID: 1196242174}
   m_Layer: 5
-  m_Name: check
+  m_Name: SoundCheckBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4522,8 +4522,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75.20006, y: -112.80003}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -15.5383, y: -74.8884}
+  m_SizeDelta: {x: 53.3235, y: 12.3767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196242174
 MonoBehaviour:

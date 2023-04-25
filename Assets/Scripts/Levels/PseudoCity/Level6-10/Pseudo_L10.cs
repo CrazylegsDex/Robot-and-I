@@ -89,7 +89,6 @@ namespace PseudoLevels
                         if (button1 && button2)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
@@ -282,11 +281,9 @@ namespace PseudoLevels
 
                 }
             }
-            //Debug.Log(num);
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//serches for "Box" objects
                 {
                     go.SetActive(true);

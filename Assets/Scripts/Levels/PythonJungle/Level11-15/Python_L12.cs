@@ -85,7 +85,6 @@ namespace PythonLevels
 
         public void MainDriver()
         {
-            //Debug.Log(playerCode);
             // Local variables
             ScriptEngine scriptEngine;
             ScriptScope scriptScope;
@@ -166,7 +165,6 @@ def main():
     else:
         print(""Incorrect\nab = "" + str(red) + ""\ncd = "" + str(cd))
     return";
-            Debug.Log(playerCode);
 
             scriptEngine = Python.CreateEngine();
             scriptScope = scriptEngine.CreateScope();

@@ -147,7 +147,6 @@ namespace PseudoLevels
                         if (end)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            Debug.Log("Good!");
                             complete.SetActive(true);//Displays completion icon above npc
                         }
                         else
@@ -280,7 +279,6 @@ namespace PseudoLevels
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                Debug.Log("Works!");
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);
