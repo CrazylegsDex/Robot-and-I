@@ -1646,7 +1646,7 @@ MonoBehaviour:
   codeInput8: {fileID: 475052117}
   codeInput9: {fileID: 1384682747}
   programOutput: {fileID: 709794505}
-  explanition: lol
+  explanition: 
   lesson1: {fileID: 1129997966}
   lesson2: {fileID: 1330419374}
   levelSprite: {fileID: 2099631740}
