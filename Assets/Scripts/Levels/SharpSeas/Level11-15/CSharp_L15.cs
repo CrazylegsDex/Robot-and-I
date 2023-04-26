@@ -456,7 +456,7 @@ namespace CSharpLevels
                         yield return new WaitForSeconds(0.007f);
                     }
 
-                    programOutput.text = "Thats it!! Thats Shelby's favorite book Bit. You are getting really good at this Bit.";
+                    programOutput.text = "That's it!! That's Shelby's favorite book Bit. You are getting really good at this Bit.";
                     break;
 
                 case "Incorrect":

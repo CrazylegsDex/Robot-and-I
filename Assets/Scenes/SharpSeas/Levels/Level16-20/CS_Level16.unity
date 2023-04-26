@@ -311,11 +311,31 @@ Tilemap:
   m_GameObject: {fileID: 27381979}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -19, y: -3, z: 0}
+  - first: {x: -21, y: -3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 9
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 8
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: -20, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: -19, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -784,8 +804,48 @@ Tilemap:
   - first: {x: 28, y: -3, z: 0}
     second:
       serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 29, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 30, y: -3, z: 0}
+    second:
+      serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 11
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: -21, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 10
+      m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: -20, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -794,8 +854,8 @@ Tilemap:
   - first: {x: -19, y: -2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 8
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1264,8 +1324,28 @@ Tilemap:
   - first: {x: 28, y: -2, z: 0}
     second:
       serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 29, y: -2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 2147483649
+  - first: {x: 30, y: -2, z: 0}
+    second:
+      serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1283,20 +1363,20 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 46
+  - m_RefCount: 50
     m_Data: {fileID: 11400000, guid: 7200570085000e8449e67b9d3dc4f2a7, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 356e86b19ec998a4a8bac605af4ee3e1, type: 2}
-  - m_RefCount: 46
-    m_Data: {fileID: 11400000, guid: 0d0616dc730d3884fbb62e8128fee347, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: d112f35e417b95444a759e12fd1dee2c, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: d36b4bde5cb475b44b4851f39b0783da, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 50
+    m_Data: {fileID: 11400000, guid: 0d0616dc730d3884fbb62e8128fee347, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 50feba001b3e9a8499d81df15abb3c10, type: 2}
+    m_Data: {fileID: 11400000, guid: 5acb59ef622a6054ea80b8349e1af4f3, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: d36b4bde5cb475b44b4851f39b0783da, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 6a1ed5ffbc564364bb9169c416d26ccf, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: ed2fb8a655796004680dc3d4a5517c83, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -1308,22 +1388,22 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 46
+  - m_RefCount: 50
     m_Data: {fileID: 771975629, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 46
+  - m_RefCount: 50
     m_Data: {fileID: 1627982198, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -889700342, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1609214569, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1688394852, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
+    m_Data: {fileID: -1938908873, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 537862808, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
+    m_Data: {fileID: 840940684, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -962269281, guid: c37faf43d6caeb346ade04bd5f0cb39e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 96
+  - m_RefCount: 104
     m_Data:
       e00: 1
       e01: 0
@@ -1342,13 +1422,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 96
+  - m_RefCount: 104
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -19, y: -3, z: 0}
-  m_Size: {x: 48, y: 8, z: 1}
+  m_Origin: {x: -21, y: -3, z: 0}
+  m_Size: {x: 52, y: 8, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1545,11 +1625,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.4361933, y: 4.597612}
-      - {x: -2.687376, y: 3.759841}
-      - {x: -2.6906846, y: -1.1903281}
-      - {x: 5.807825, y: -1.1910626}
-      - {x: 5.8011537, y: 4.0125017}
+    - - {x: 1.3750542, y: 5.010298}
+      - {x: -3.0367422, y: 3.9345152}
+      - {x: -3.0451334, y: -1.1958925}
+      - {x: 6.1673636, y: -1.1910626}
+      - {x: 6.1376815, y: 3.935284}
   m_UseDelaunayMesh: 0
 --- !u!4 &87981165
 Transform:
@@ -1602,12 +1682,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a297499d125b044fbae644cb6af05f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterSliderValue: {fileID: 0}
-  MusicSliderValue: {fileID: 0}
-  SoundEffectsSliderValue: {fileID: 0}
-  masterSliderText: {fileID: 0}
-  musicSliderText: {fileID: 0}
-  soundEffectsSliderText: {fileID: 0}
+  MasterSliderValue: {fileID: 1931028014}
+  MusicSliderValue: {fileID: 1931028013}
+  SoundEffectsSliderValue: {fileID: 1931028012}
+  masterSliderText: {fileID: 1931028011}
+  musicSliderText: {fileID: 1931028010}
+  soundEffectsSliderText: {fileID: 1931028008}
 --- !u!114 &122925894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,9 +1791,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   programOutput: {fileID: 255553942}
+  soundCheck: {fileID: 81181913}
+  answerCheck: {fileID: 200703171}
   playerCodeInput: {fileID: 759697776}
   playerFunctionInput: {fileID: 1411907212}
   Window: {fileID: 759697774}
+  Numbers:
+  - {fileID: 1703476888}
+  - {fileID: 1688006483}
+  - {fileID: 1252969608}
+  - {fileID: 1699951647}
+  - {fileID: 1029146704}
 --- !u!1 &133013112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1791,8 +1879,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133013112}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1071.6, y: 588.6945, z: 0}
-  m_LocalScale: {x: 30, y: 34.061844, z: 1}
+  m_LocalPosition: {x: 1071.6, y: 597.2646, z: 0}
+  m_LocalScale: {x: 30, y: 36.09193, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1670022330}
@@ -1824,7 +1912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146258289}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -31.5, y: 53.4, z: 1}
+  m_LocalPosition: {x: -51.3, y: 53.4, z: 1}
   m_LocalScale: {x: 185.0421, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1944,7 +2032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.5, y: -248.6}
+  m_AnchoredPosition: {x: -100.5, y: -250.73318}
   m_SizeDelta: {x: 36.2983, y: 10.905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200703171
@@ -2121,8 +2209,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221623592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 821.6, y: 588.6945, z: 0}
-  m_LocalScale: {x: 30, y: 34.061844, z: 1}
+  m_LocalPosition: {x: 821.6, y: 597.2646, z: 0}
+  m_LocalScale: {x: 30, y: 36.09193, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1670022330}
@@ -2165,7 +2253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67.635, y: -179.09}
+  m_AnchoredPosition: {x: 67.635, y: -181.22318}
   m_SizeDelta: {x: 113.64, y: 10.5279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &254879971
@@ -2297,7 +2385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234.72, y: -113.26}
+  m_AnchoredPosition: {x: 234.72, y: -115.39318}
   m_SizeDelta: {x: 220.53, y: 119.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255553942
@@ -2452,7 +2540,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 134.66
+    OrthographicSize: 145.74
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2537,8 +2625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 121.10481, y: -91.42909}
-  m_SizeDelta: {x: 953.772, y: 386.4462}
+  m_AnchoredPosition: {x: 121.10481, y: -83}
+  m_SizeDelta: {x: 953.772, y: 428.6951}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470325742
 MonoBehaviour:
@@ -2771,7 +2859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.7323, y: -113.69}
+  m_AnchoredPosition: {x: 10.7323, y: -115.82318}
   m_SizeDelta: {x: 227.4305, y: 120.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759697776
@@ -2884,7 +2972,9 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: // Call your function and write code here
+  m_Text: '// Call your function and write code here
+
+'
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -3390,8 +3480,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860188094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1218.6, y: 588.6945, z: 0}
-  m_LocalScale: {x: 30, y: 34.061844, z: 1}
+  m_LocalPosition: {x: 1218.6, y: 597.2646, z: 0}
+  m_LocalScale: {x: 30, y: 36.09193, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1670022330}
@@ -3760,10 +3850,11 @@ PrefabInstance:
 
 
         Bit,
-        I have a big event I need to go to and I need to get these numbers in order.
-        Could you please sort them for me? Bit, for this level you will need to write
-        a lot of code. Sometimes it is helpful to put code in another area and call
-        it so that you can reuse the code and shorten your main console.'
+        I need to sum a great deal of numbers for my job, but I don''t have the room
+        to sum all of them. Can you help me sum all these numbers in the space I
+        have? Bit, for this level you will need to write a lot of code. Sometimes
+        it is helpful to put code in another area and call it so that you can reuse
+        the code and not have to write so much.'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
@@ -3951,8 +4042,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899310457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 967.6, y: 588.6945, z: 0}
-  m_LocalScale: {x: 30, y: 34.061844, z: 1}
+  m_LocalPosition: {x: 967.6, y: 597.2646, z: 0}
+  m_LocalScale: {x: 30, y: 36.09193, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1670022330}
@@ -3980,7 +4071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 948.7792
+      value: 929
       objectReference: {fileID: 0}
     - target: {fileID: 7782327375490643806, guid: 552c5cc7569eed644bd3496b3d7d5979, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4125,7 +4216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.167, y: -179}
+  m_AnchoredPosition: {x: -46.167, y: -181.13318}
   m_SizeDelta: {x: 113.64, y: 10.5279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017222266
@@ -4257,8 +4348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160.8, y: -42.111237}
-  m_SizeDelta: {x: 40.2099, y: 16.8888}
+  m_AnchoredPosition: {x: 162.43648, y: -42.111237}
+  m_SizeDelta: {x: 60.939, y: 16.8888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029146706
 MonoBehaviour:
@@ -4314,8 +4405,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4865,8 +4956,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4948,7 +5039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "// Call your function and write code here\u200B"
+  m_text: "// Call your function and write code here\n\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5062,7 +5153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.7323, y: -113.69}
+  m_AnchoredPosition: {x: 10.7323, y: -115.82318}
   m_SizeDelta: {x: 227.4305, y: 120.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411907212
@@ -5175,7 +5266,9 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: // Define your function here
+  m_Text: '// Define your function here
+
+'
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -5313,7 +5406,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 134.66
+  orthographic size: 145.74
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5337,7 +5430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483631437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1176.5906, y: 609.1785, z: -15}
+  m_LocalPosition: {x: 1176.457, y: 620.1016, z: -15}
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5370,7 +5463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605474285}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 455.8, y: 53.5239, z: 1}
+  m_LocalPosition: {x: 475.6, y: 53.5239, z: 1}
   m_LocalScale: {x: 184.65, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5489,7 +5582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1407.3
+      value: 1424
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5866,8 +5959,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6001,8 +6094,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6079,8 +6172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.3, y: -42.111237}
-  m_SizeDelta: {x: 40.2099, y: 16.8888}
+  m_AnchoredPosition: {x: -117.8116, y: -42.111237}
+  m_SizeDelta: {x: 60.6681, y: 16.8888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703476890
 MonoBehaviour:
@@ -6136,8 +6229,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6285,8 +6378,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120.999916, y: -32.0925}
-  m_SizeDelta: {x: 447.9617, y: 42.9312}
+  m_AnchoredPosition: {x: 121, y: -23.12118}
+  m_SizeDelta: {x: 447.9617, y: 65.134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906718169
 MonoBehaviour:
@@ -6308,12 +6401,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BIt, you will define a function named "Sort". This function will take in
-    an array of unsorted integers like you see on the screen. The function will return
-    an array of sorted integers (in ascending order). I have declared five different
-    arrays for you, all size 5. Their names are "Set1, Set2, Set3, Set4 and Set5".
-    Call your function five times and assign the return to an array you define. Then
-    print the five sorted numbers to output for each array. :)
+  m_text: BIt, you will define a function named "Sum". This function will take in
+    an array of integers like you see on the screen. This function will return an
+    integer which is the sum of the numbers in the array. I have declared and initialized
+    five different arrays for you, all size 5. Their names are "Set1, Set2, Set3,
+    Set4 and Set5". Call your function five times and assign the returns to five
+    integer variables you define named "Result1, Result2, Result3, Result4 and Result5"
+    for me to check. You can solve this problem many different ways. Think about
+    the most efficient method instead of the easiest. What if the array size changed?
+    How would your code change?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6497,7 +6593,7 @@ PrefabInstance:
     - target: {fileID: 2973017198057725062, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925893}
     - target: {fileID: 2973017198057725062, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6525,7 +6621,7 @@ PrefabInstance:
     - target: {fileID: 4706052192778737481, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925893}
     - target: {fileID: 4706052192778737481, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6553,7 +6649,7 @@ PrefabInstance:
     - target: {fileID: 4759841388062506123, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925893}
     - target: {fileID: 4759841388062506123, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6581,7 +6677,7 @@ PrefabInstance:
     - target: {fileID: 5740421901313730397, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925893}
     - target: {fileID: 5740421901313730397, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6609,7 +6705,7 @@ PrefabInstance:
     - target: {fileID: 5917448907992170926, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925893}
     - target: {fileID: 5917448907992170926, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6725,7 +6821,7 @@ PrefabInstance:
     - target: {fileID: 7844683507064084319, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925896}
     - target: {fileID: 7844683507064084319, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenManual
@@ -6745,7 +6841,7 @@ PrefabInstance:
     - target: {fileID: 8741716142964851127, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 122925893}
     - target: {fileID: 8741716142964851127, guid: 9bac195162e34fe499449228888163db, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6765,11 +6861,77 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bac195162e34fe499449228888163db, type: 3}
+--- !u!114 &1931028008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5540345690738831054, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 1931028007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1931028009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7841370043342226396, guid: 9bac195162e34fe499449228888163db, type: 3}
   m_PrefabInstance: {fileID: 1931028007}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931028010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4016652319556154342, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 1931028007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1931028011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6697444067838907371, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 1931028007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1931028012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5917448907992170926, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 1931028007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1931028013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2973017198057725062, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 1931028007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1931028014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4759841388062506123, guid: 9bac195162e34fe499449228888163db, type: 3}
+  m_PrefabInstance: {fileID: 1931028007}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1938075498
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,7 +6990,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "// Define your function here\u200B"
+  m_text: "// Define your function here\n\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

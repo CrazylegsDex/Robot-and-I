@@ -5226,7 +5226,7 @@ PrefabInstance:
       objectReference: {fileID: 1081397392}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -5235,19 +5235,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Python does switch statements a little differently. Instead of the
-        word \u201Cswitch\u201D, we use the word \u201Cmatch\u201D. Let\u2019s start
-        with an example and go through it together. Only Python3.10 We aren\u2019t
-        as sophisticated around here. lol.\r\n"
+      value: The Python language didn't include support for switch statements until
+        version 3.10. The people of Bittonia are a little outdated, so you will be
+        working an example as if it was a Python switch statement.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
+      value: "Python does switch statements a little differently. Instead of the
+        word \u201Cswitch\u201D, we use the word \u201Cmatch\u201D. Let\u2019s start
+        with an example and go through it together."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
       value: "Example:\r\nword = \u201Chere\u201D\r\nmatch word:\r\n    case \"there\":\r                  
         \n        x = 1\r                                                                    
         \n    case \"here\":\n        x = 3\r\n    case _:\r\n        x = 4"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
+      propertyPath: sentences.Array.data[4]
       value: "The first thing done in this example is initializing a variable named
         word with the value \u201Chere\u201D. This is the variable we will be comparing
         to other cases. We have 3 cases and one default case. But I\u2019m getting
@@ -5257,7 +5262,7 @@ PrefabInstance:
         it. Now that we have that stated, we can start writing the cases. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
+      propertyPath: sentences.Array.data[5]
       value: "When writing a case, you indent by 4 spaces and use the word \u201Ccase\u201D.
         You will then add the value we would like to be compared to the variable
         we gave. In the first case, we are comparing the value in the variable word
@@ -5271,7 +5276,7 @@ PrefabInstance:
         a part of the code that will be run if it is found to be true. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[5]
+      propertyPath: sentences.Array.data[6]
       value: "The other two cases follow the same suit as the first but with different
         values to be compared and different code that will be run if they are found
         to be equal to the variable. A default case in Python is set by using the
@@ -5281,29 +5286,10 @@ PrefabInstance:
         this example, the variable x is set to the value 4."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[6]
+      propertyPath: sentences.Array.data[7]
       value: "After learning all of this, can you tell that the variable x will end
         up equaling? 3!!! That\u2019s correct. Now let\u2019s help Medusa before
         their flowers thirsts any longer!\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[7]
-      value: 'Example:
-
-        Int x = 6
-
-        Int y = 8
-
-        Bool result
-        = (x != y) //Result would be true. This is true because 6 does not equal
-        8.
-
-        Int a  = 6
-
-        Int b = 6
-
-        Bool result = (a != b)
-        //Result would be false. This is false because 6 does equal 6.'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]
@@ -7394,7 +7380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586718565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 338.12988, y: 54.285583, z: -16.092045}
+  m_LocalPosition: {x: 338.12988, y: 53, z: -16.092045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -141,9 +141,6 @@ namespace CSharpLevels
                     // Fill in the user's code
                     " + playerText + @"
 
-                    // Put the user's answer in the completionBox
-                    completionBox.text = " + userVariable + @".ToString();
-
                     // Check for the correct answer
                     if (completionBox.text == ""16"")
                     {
@@ -285,7 +282,7 @@ namespace CSharpLevels
         {
             // Create a string for the return
             string newCode = playerCode;
-            int startIndex, endIndex;
+            int startIndex, endIndex, startCurlyBrace, endCurlyBrace;
 
             // Check for malicious code
             if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
@@ -330,11 +327,16 @@ namespace CSharpLevels
             // Remove the declarations section from the player code
             newCode = newCode.Remove(startIndex, (endIndex - startIndex));
 
-            // Find the System.Console.WriteLine() and the variable name the user used
+            // Replace the System.Console.WriteLine statement with completionBox.text =
             startIndex = newCode.IndexOf("System.Console.WriteLine");
-            startIndex = newCode.IndexOf('(', startIndex) + 1; // Get the index of the left parenthesis
-            endIndex = newCode.IndexOf(')', startIndex); // Get the index of the right parenthesis
-            userVariable = newCode[startIndex..endIndex]; // Extract the variable name from the parenthesis
+            startCurlyBrace = newCode.IndexOf('(', startIndex);
+            endCurlyBrace = newCode.IndexOf(')', startIndex) - 1; // Correct calculation when removing startCurlyBrace
+            newCode = newCode.Remove(startCurlyBrace, 1); // Removes left parenthesis
+            newCode = newCode.Remove(endCurlyBrace, 1); // Removes right parenthesis
+            newCode = newCode.Insert(endCurlyBrace, ".ToString()"); // Inserts .ToString() after user's variable name
+
+            // Replace the System.Console.WriteLine statement with the output variable
+            newCode = newCode.Replace("System.Console.WriteLine", "completionBox.text = ");
 
             return newCode;
         }
