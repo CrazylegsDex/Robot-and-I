@@ -71,7 +71,7 @@ namespace PythonLevels
         public void setText()
         {
             if (count == 0)
-                programOutput.text = "Use a for loop to sum numbers from 0 to 4,\nor 1 to 4, and store it in \"go\".\nNext, a for loop to sum numbers from 0 to 5,\nbut if \"i\" == 5, and another 5 to the sum.";
+                programOutput.text = explanition;
             else
                 programOutput.text = "Use a for loop to count each time looped from 2 to 8,\nand store it in \"ab\".\nNext, a for loop to sum numbers from 20 to 60 increaing by 10, and store it in \"cd\".";
         }
