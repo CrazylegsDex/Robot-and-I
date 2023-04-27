@@ -4,6 +4,7 @@ using Microsoft.Scripting.Hosting;
 using System;
 using System.IO;
 using System.Text;
+using System.Collections;
 using TMPro;
 
 namespace PythonLevels
@@ -35,8 +36,16 @@ namespace PythonLevels
         float startTime = 0;
         float endTime = 0;
         bool timeSet = false;
-
-        void Start()
+        private IEnumerator DisplayCorrect()
+        {
+            while (snake.transform.position.y > 530)//moves the snakes in the tree
+            {
+                snake.transform.Translate(-1, -1, 0);
+                snake2.transform.Translate(1, -1, 0);
+                yield return new WaitForSeconds(0.027f);
+            }
+        }
+            void Start()
         {
             box.SetActive(false);
             sr = snake.GetComponent<Rigidbody2D>();
@@ -51,11 +60,7 @@ namespace PythonLevels
             if (timeSet && endTime < 5)
             {
                 endTime = (int)(Time.time - startTime);//timer to check
-                while (snake.transform.position.y > 530  && endTime < 2)//moves the snakes in the tree
-                {
-                    snake.transform.position = new Vector3(snake.transform.position.x - 1, snake.transform.position.y - 1, snake.transform.position.z);
-                    snake2.transform.position = new Vector3(snake2.transform.position.x + 1, snake2.transform.position.y - 1, snake2.transform.position.z);
-                }
+                StartCoroutine(DisplayCorrect());
                 if (endTime >= 1)//Hides the snakes on the ground.
                 {
                     snake.SetActive(false);

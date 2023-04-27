@@ -29,8 +29,9 @@ namespace PseudoLevels
         public TMP_InputField playerInput5;
         public TMP_InputField playerInput6;
         public TMP_InputField playerInput7;
-		
-		public TextMeshProUGUI soundCheck;
+        public GameObject complete;
+
+        public TextMeshProUGUI soundCheck;
 
 		/* This function updates constantly to check if the text box
 		 * under the screen has the work correct, incorrect or a 
@@ -39,6 +40,10 @@ namespace PseudoLevels
 		 * play the correlating sound effect and change the text to a
 		 * blank. If it's blank, play nothing.
 		 */
+        void Start()
+        {
+            complete.SetActive(false);
+        }
 		private void Update()
 		{
 			if (soundCheck.text == "incorrect")
@@ -198,8 +203,7 @@ namespace PseudoLevels
                     
                     if(num == 4){
 						check.text = ""correct"";
-                        GameObject NPC = GameObject.FindWithTag(""LevelChange"");
-						NPC.GetComponent<BoxCollider2D>().isTrigger = true;
+                        Debug.Log(check.text);
 					}
 						
 					else{

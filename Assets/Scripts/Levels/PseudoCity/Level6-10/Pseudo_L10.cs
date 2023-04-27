@@ -27,9 +27,15 @@ namespace PseudoLevels
         public TextMeshProUGUI bOutput;
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
+        public TextMeshProUGUI NameOutput; // References the TMP Output Field
+        public TextMeshProUGUI Name2Output;
+        public TextMeshProUGUI Name3Output;
+        public TextMeshProUGUI Name4Output;
 
         public GameObject complete;
+        public TMP_InputField gameInput;
 
+        public GameObject flo;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
@@ -43,10 +49,7 @@ namespace PseudoLevels
         void Start()
         {
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
-            foreach (GameObject go in hairTests)//serches for "Box" objects
-            {
-                go.SetActive(false);
-            }
+            //flo.SetActive(false);
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;
@@ -66,27 +69,38 @@ namespace PseudoLevels
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                        if (button_Check.name.Contains("(0)"))
+                        {
+                            if (button_Check.complete)
+                            {
+                                NameOutput.text = gameInput.text;
+                            }
+                        }
+                        else if (button_Check.name.Contains("(1)"))
                         {
 
                             if (button_Check.complete)
                             {
-                                button1 = true;
+                                Name2Output.text = gameInput.text;
                             }
-                            else
-                                button1 = false;
                         }
-                        else if (button_Check.boxFirstName == "2")
+                        else if (button_Check.name.Contains("(2)"))
                         {
 
                             if (button_Check.complete)
                             {
-                                button2 = true;
+                                Name3Output.text = gameInput.text;
                             }
-                            else
-                                button2 = false;
                         }
-                        if (button1 && button2)
+                        else if (button_Check.name.Contains("(3)"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                Name4Output.text = gameInput.text;
+                            }
+                        }
+                        if (NameOutput.text != "Name" && Name2Output.text != "Name" && Name3Output.text != "Name" && Name4Output.text != "Name")
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             complete.SetActive(true);//Displays completion icon above npc
@@ -284,10 +298,8 @@ namespace PseudoLevels
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                foreach (GameObject go in hairTests)//serches for "Box" objects
-                {
-                    go.SetActive(true);
-                }
+                flo.SetActive(true);
+
             }
 			else 
 				Audio_Manager.Instance.PlaySound("Incorrect");

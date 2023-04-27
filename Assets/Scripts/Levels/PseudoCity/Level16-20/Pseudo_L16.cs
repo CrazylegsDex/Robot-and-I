@@ -7,6 +7,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Audio;
+using System.Collections;
 using GameMechanics; // Pulls in the interface from GameMechanics
 
 namespace PseudoLevels
@@ -35,13 +36,99 @@ namespace PseudoLevels
         public GameObject[] boxTests;
         public GameObject[] hairTests;
         private Button_Check button_Check;
+        public GameObject cat;
+        public GameObject left;
+        public GameObject right;
+        public GameObject top;
         private bool button1;
         private bool button2;
         private bool button3;
         private bool button4;
+        private bool turn = false;
+        private bool hit = false;
+        private bool flip = false;
+        private bool fro = true;
+        private bool play = false;
+        float startTime;
+        float endTime;
         public BoxCollider2D levelSprite;
+        private IEnumerator CatLeft()
+        {
+            while (!flip)
+            {
+                while (cat.transform.position.y > 380)//moves the snakes in the tree
+                {
+                    cat.transform.Translate(0.006f, 0, 0);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (!turn && !hit)
+                {
+                    cat.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+                    turn = true;
+                }
+                while (cat.transform.position.x < 1700 && !hit)//moves the cat
+                {
+                    if (left.activeSelf && cat.transform.position.x >= left.transform.position.x - 1 && cat.transform.position.x <= left.transform.position.x + 1)
+                    {
+                        hit = true;
+                        turn = false;
+                    }
+                    cat.transform.Translate(0.006f, 0, 0);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (!turn && hit)
+                {
+                    cat.transform.Translate(200f, 200f, 0);
+                    cat.transform.Rotate(0.0f, 0.0f, 270.0f, Space.Self);
+                    cat.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                    hit = false;
+                    flip = true;
+                }
+                else
+                    flip = true;
+            }
+        }
+        private IEnumerator CatRight()
+        {
+            while (flip)
+            {
+                while (cat.transform.position.y > 380)//moves the snakes in the tree
+                {
+                    cat.transform.Translate(0.006f, 0, 0);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (!turn && !hit)
+                {
+                    cat.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+                    turn = true;
+                }
+                while (cat.transform.position.x > 1710 && !hit)//moves the cat
+                {
+                    if (right.activeSelf && cat.transform.position.x >= right.transform.position.x - 1 && cat.transform.position.x <= right.transform.position.x + 1)
+                    {
+                        hit = true;
+                        turn = false;
+                    }
+                    cat.transform.Translate(0.006f, 0, 0);
+                    yield return new WaitForSeconds(1f);
+                }
+                if (!turn && hit)
+                {
+                    cat.transform.Translate(160f, 200f, 0);
+                    cat.transform.Rotate(0.0f, 0.0f, 270.0f, Space.Self);
+                    cat.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                    hit = false;
+                    flip = false;
+                }
+                else
+                    flip = false;
+            }
+        }
         void Start()
         {
+            left.SetActive(false);
+            right.SetActive(false);
+            top.SetActive(false);
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
             foreach (GameObject go in hairTests)//serches for "Box" objects
             {
@@ -60,64 +147,91 @@ namespace PseudoLevels
             if (bit.transform.position.x > 1331)//gameplay section
             {
                 cam.transform.position = new Vector3(camx + 505, camy, camz);
-                boxTests = GameObject.FindGameObjectsWithTag("Button");
-                foreach (GameObject go in boxTests)//serches for "Button" objects
+                if (play)
                 {
-                    if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                    boxTests = GameObject.FindGameObjectsWithTag("Button");
+                    if (!flip && fro)
                     {
-                        button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button1 = true;
-                            }
-                            else
-                                button1 = false;
-                        }
-                        else if (button_Check.boxFirstName == "2")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button2 = true;
-                            }
-                            else
-                                button2 = false;
-                        }
-                        if (button_Check.boxFirstName == "3")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button3 = true;
-                            }
-                            else
-                                button3 = false;
-                        }
-                        else if (button_Check.boxFirstName == "4")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button4 = true;
-                            }
-                            else
-                                button4 = false;
-                        }
-                        if (button1 && button2 && button3 && button4)
-                        {
-                            levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-                            complete.SetActive(true);//Displays completion icon above npc
-                        }
-                        else
-                        {
-                            levelSprite.isTrigger = false;
-                            complete.SetActive(false);
-                        }
+                        startTime = Time.time;
+                        fro = false;
+                        StartCoroutine(CatLeft());
+                    }
+                    if (flip && endTime < 60)
+                    {
+                        endTime = Time.time - startTime;
+                        Debug.Log(endTime);
+                        StopCoroutine(CatLeft());
+                        StartCoroutine(CatRight());
+                    }
+                    if (!flip && endTime < 60)
+                    {
+                        endTime = Time.time - startTime;
+                        Debug.Log(endTime);
+                        StopCoroutine(CatRight());
+                        StartCoroutine(CatLeft());
                     }
 
+                    foreach (GameObject go in boxTests)//serches for "Button" objects
+                    {
+                        if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                        {
+                            button_Check = go.GetComponent<Button_Check>();//Gets variables from script
+                            if (button_Check.boxFirstName == "1" && button_Check.name.Contains("(1)"))
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    left.SetActive(true);
+                                }
+                                else
+                                    left.SetActive(false);
+                            }
+                            else if (button_Check.boxFirstName == "1" && button_Check.name.Contains("(2)"))
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    top.SetActive(true);
+                                }
+                                else
+                                    top.SetActive(false);
+                            }
+                            if (button_Check.boxFirstName == "1" && button_Check.name.Contains("(3)"))
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    right.SetActive(true);
+                                }
+                                else
+                                    right.SetActive(false);
+                            }
+                            else if (button_Check.boxFirstName == "4")
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    button4 = true;
+                                }
+                                else
+                                    button4 = false;
+                            }
+                            if (endTime >= 60 && button4)
+                            {
+                                StopCoroutine(CatLeft());
+                                StopCoroutine(CatRight());
+                                cat.SetActive(false);
+                                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                                complete.SetActive(true);//Displays completion icon above npc
+                            }
+                            else
+                            {
+                                levelSprite.isTrigger = false;
+                                complete.SetActive(false);
+                            }
+                        }
+
+                    }
                 }
 
             }
@@ -243,6 +357,7 @@ namespace PseudoLevels
                 {
                     go.SetActive(true);
                 }
+                play = true;
             }
 			else
 				Audio_Manager.Instance.PlaySound("Incorrect");

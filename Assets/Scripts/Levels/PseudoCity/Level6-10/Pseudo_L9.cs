@@ -29,6 +29,7 @@ namespace PseudoLevels
         public TextMeshProUGUI dOutput;
 
         public GameObject complete;
+        public TextMeshProUGUI questText;
 
         public GameObject bit;
         public GameObject cam;
@@ -36,16 +37,17 @@ namespace PseudoLevels
 
         public GameObject[] boxTests;
         public GameObject[] hairTests;
+        private int count = 0;
         private Button_Check button_Check;
         private bool[] button;
         public BoxCollider2D levelSprite;
         void Start()
         {
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
-            foreach (GameObject go in hairTests)//searches for "Grabbable" objects
+            /*foreach (GameObject go in hairTests)//searches for "Grabbable" objects
             {
                 go.SetActive(false);
-            }
+            }*/
             button = new bool[9];
             for (int i = 0; i < 9; i++)
             {
@@ -68,7 +70,7 @@ namespace PseudoLevels
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                        if (button_Check.name.Contains("1"))
                         {
 
                             if (button_Check.complete)
@@ -78,7 +80,7 @@ namespace PseudoLevels
                             else
                                 button[0] = false;
                         }
-                        else if (button_Check.boxFirstName == "2")
+                        else if (button_Check.name.Contains("2"))
                         {
 
                             if (button_Check.complete)
@@ -88,8 +90,89 @@ namespace PseudoLevels
                             else
                                 button[1] = false;
                         }
-                        if (button[0] && button[5])
+                        else if (button_Check.name.Contains("3"))
                         {
+
+                            if (button_Check.complete)
+                            {
+                                button[2] = true;
+                            }
+                            else
+                                button[2] = false;
+                        }
+                        else if (button_Check.name.Contains("4"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button[3] = true;
+                            }
+                            else
+                                button[3] = false;
+                        }
+                        else if (button_Check.name.Contains("5"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button[4] = true;
+                            }
+                            else
+                                button[4] = false;
+                        }
+                        else if (button_Check.name.Contains("6"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button[5] = true;
+                            }
+                            else
+                                button[5] = false;
+                        }
+                        else if (button_Check.name.Contains("7"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button[6] = true;
+                            }
+                            else
+                                button[6] = false;
+                        }
+                        else if (button_Check.name.Contains("8"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button[7] = true;
+                            }
+                            else
+                                button[7] = false;
+                        }
+                        else if (button_Check.name.Contains("9"))
+                        {
+
+                            if (button_Check.complete)
+                            {
+                                button[8] = true;
+                            }
+                            else
+                                button[8] = false;
+                        }
+                        if (button[1] && button[7] && count == 0)
+                        {
+                            questText.text = "I want a warm color dress.";
+                            count++;
+                        }
+                        if (button[1] && button[4] && count == 1)
+                        {
+                            questText.text = "I a spotted dress.";
+                            count++;
+                        }
+                        if (button[2] && count == 2)
+                        {
+                            questText.text = "Thank you for helping me.";
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             complete.SetActive(true);//Displays completion icon above npc
                         }
