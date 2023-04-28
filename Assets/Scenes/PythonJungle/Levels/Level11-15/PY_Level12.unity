@@ -2600,7 +2600,9 @@ MonoBehaviour:
   codeInput8: {fileID: 437105280}
   codeInput9: {fileID: 143318749}
   programOutput: {fileID: 116251458}
-  explanition: 
+  explanition: 'Use a for loop to sum numbers from 0 to 4,  or 1 to 4, and store
+    it in "go". Next, a for loop to sum numbers from 0 to 5, but if "i" == 5, and
+    another 5 to the sum. '
   lesson1: {fileID: 427482297}
   lesson2: {fileID: 300463825}
   levelSprite: {fileID: 1704815371}
