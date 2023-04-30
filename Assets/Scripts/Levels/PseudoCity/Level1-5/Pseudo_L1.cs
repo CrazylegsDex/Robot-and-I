@@ -22,8 +22,203 @@ namespace PseudoLevels
         public TextMeshProUGUI boolOutput;
         public TextMeshProUGUI floatOutput;
         public BoxCollider2D levelSprite;
-		
-        public void Code_Compiler()
+
+        public GameObject[] boxTests;
+        public GameObject[] basketTests;
+        public GameObject complete;
+        public GameObject bit;
+        public GameObject box;
+        public GameObject cam;
+        float camx, camy, camz;
+        int count;
+        private Button_Check button_Check;
+
+        void Start()
+        {
+            count = 0;
+            boxTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            basketTests = GameObject.FindGameObjectsWithTag("Button");
+            foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+            {
+                go.SetActive(false);
+            }
+            camx = cam.transform.position.x;
+            camy = cam.transform.position.y;
+            camz = cam.transform.position.z;
+            complete.SetActive(false);
+        }
+
+        void Update()
+        {
+            if (bit.transform.position.x > 1331)//gameplay section
+            {
+
+                cam.transform.position = new Vector3(camx + 405, camy, camz);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    foreach (GameObject go in basketTests)//serches for "Button" objects
+                    {
+                        if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                        {
+                            button_Check = go.GetComponent<Button_Check>();//Gets variables from script
+                            if (button_Check.boxFirstName == "1" && count == 0)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("41"))
+                                            fo.SetActive(true);
+                                    }
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "2" && count == 0)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("11"))
+                                            fo.SetActive(true);
+                                    }
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "3" && count == 0)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("21"))
+                                            fo.SetActive(true);
+                                    }
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "4" && count == 0)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("12"))
+                                            fo.SetActive(true);
+                                        
+                                    }
+                                    count++;
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "1" && count == 1)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("22"))
+                                            fo.SetActive(true);
+                                    }
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "2" && count == 1)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("32"))
+                                            fo.SetActive(true);
+                                    }
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "3" && count == 1)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        if (fo.name.Contains("42"))
+                                            fo.SetActive(true);
+                                    }
+                                }
+                            }
+                            else if (button_Check.boxFirstName == "4" && count == 1)
+                            {
+
+                                if (button_Check.complete)
+                                {
+                                    foreach (GameObject fo in boxTests)//searches for "Grabbable" objects
+                                    {
+                                        if (fo.activeSelf)
+                                        {
+                                            fo.SetActive(false);
+                                            fo.transform.position = new Vector3(camx + 605, camy, camz);
+                                        }
+                                        
+                                    }
+                                    count++;
+                                }
+                            }
+                            if (count == 2)
+                            {
+                                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                                complete.SetActive(true);//Displays completion icon above npc
+                            }
+                            else
+                            {
+                                levelSprite.isTrigger = false;
+                                complete.SetActive(false);
+                            }
+                        }
+
+                    }
+                }
+            }
+            else
+                cam.transform.position = new Vector3(camx, camy, camz);
+        }
+
+                public void Code_Compiler()
         {
             //Ints
             int num = 0;//counts up everytime a try block receives valid input.
@@ -136,7 +331,7 @@ namespace PseudoLevels
 
             if (num == 4)
             {
-                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                box.SetActive(true);
 				Audio_Manager.Instance.PlaySound("Correct");
             }
             else

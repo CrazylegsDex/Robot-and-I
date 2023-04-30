@@ -76,7 +76,7 @@ namespace PseudoLevels
                         if (!go.name.Contains("Arm"))//Button objects that don't use a script
                         {
                             button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Yell"))
+                            if (button_Check.complete && paintTest.name.Contains("Yell"))
                             {//Paints each fence yellow
 
                                 var goRenderer = go.GetComponent<Renderer>();
@@ -120,7 +120,7 @@ namespace PseudoLevels
 
                             }
 
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Black"))
+                            if (button_Check.complete && paintTest.name.Contains("Black"))
                             {//Paints each fence black
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.black);
@@ -161,7 +161,7 @@ namespace PseudoLevels
                                     fences[8] = 2;
                                 }
                             }
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete && paintTest.name.Contains("Blue"))
+                            if (button_Check.complete && paintTest.name.Contains("Blue"))
                             {//Paints each fence blue
                                 var goRenderer = go.GetComponent<Renderer>();
                                 goRenderer.material.SetColor("_Color", Color.blue);
