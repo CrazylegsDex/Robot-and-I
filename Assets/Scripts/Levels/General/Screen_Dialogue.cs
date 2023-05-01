@@ -2,10 +2,10 @@
  * Level_Dialogue script. This script is
  * attached to the script controller, and is
  * called by the "Runtime OnClick" methods
- * to call the Start and Continue methods.
+ * to call the Start, Continue and Back methods.
  * 
  * Author: Robot and I Team
- * Date Modification: 12-28-2022
+ * Date Modification: 04-30-2022
  */
 
 using UnityEngine;
@@ -41,6 +41,22 @@ namespace GameMechanics
                 if (script.DialogueObject.activeSelf)
                 {
                     script.DisplayNextSentence();
+                    break;
+                }
+            }
+        }
+
+        // Call the DisplayPreviousSentence in Level_Dialogue Script
+        public void BackButton()
+        {
+            // Loop through all the attached scripts looking for the correct one
+            // If there is only one script attached, continue immediately
+            foreach (Level_Dialogue script in FindObjectsOfType<Level_Dialogue>(true))
+            {
+                // If the Dialogue Object is currently active
+                if (script.DialogueObject.activeSelf)
+                {
+                    script.DisplayPreviousSentence();
                     break;
                 }
             }
