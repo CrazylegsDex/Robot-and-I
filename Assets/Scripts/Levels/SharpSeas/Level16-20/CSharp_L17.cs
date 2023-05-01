@@ -3,15 +3,15 @@
  * This class will be run to allow the player to
  * learn about pointers in C#.
  * 
- * Date: 04/13/2023
+ * Date: 04/30/2023
  * Author: Robot and I Team
  */
 
 using UnityEngine;
+using Cinemachine;
 using Modified.Mono.CSharp;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.CodeDom.Compiler;
 using System.Reflection;
 using TMPro;
@@ -24,16 +24,16 @@ namespace CSharpLevels
         // Public variables
         public TextMeshProUGUI programOutput;
         public TextMeshProUGUI soundCheck;
-        public TextMeshProUGUI speedCheck;
+        public TextMeshProUGUI answerCheck;
         public TMP_InputField playerInput;
-        public List<GameObject> Crabs;
+        public GameObject Bit;
+        public CinemachineVirtualCamera Camera;
 
         // Private variables
-        private string declarations;
-        private string[] speeds;
+        private const int ExecutionTime = 6; // Time in Seconds before the script gets killed
         private bool displayLog;
 
-        // Use update to check the speedCheck and soundCheck input boxes
+        // Use update to check the soundCheck input box
         private void Update()
         {
             // Check the soundCheck text box
@@ -50,31 +50,10 @@ namespace CSharpLevels
                     break;
             }
 
-            // Check the speedCheck text box
-            if (speedCheck.text != "")
+            if (answerCheck.text != "")
             {
-                // Get the array of values in the text box
-                speeds = speedCheck.text.Split(",");
-
-                // Loop through the speeds array
-                for (int i = 0; i < 4; ++i)
-                {
-                    // Replace the speed value with a new one
-                    speeds[i] = speeds[i] switch
-                    {
-                        // Left is original, right is new value
-                        "1" => "0.6",
-                        "2" => "0.7",
-                        "3" => "0.8",
-                        "4" => "0.9",
-                        "5" => "1",
-                        _ => "1"
-                    };
-                }
-
-                // Start the Race Coroutine and clear the text box
-                StartCoroutine(StartRace());
-                speedCheck.text = "";
+                StartCoroutine(PreviewHouse(Int32.Parse(answerCheck.text)));
+                answerCheck.text = "";
             }
         }
 
@@ -97,10 +76,14 @@ namespace CSharpLevels
             string playerCode = @"
             using UnityEngine;
             using System;
+            using System.Collections;
             using TMPro;
 
             public class RuntimeScript : MonoBehaviour
             {
+                // Global definition of variables
+                private TMP_Text output, soundBox, completionBox;
+
                 // Required for addition to the GameObject
                 public static RuntimeScript AddYourselfTo(GameObject host)
                 {
@@ -111,93 +94,86 @@ namespace CSharpLevels
                 // When the script is added to the HostGameObject and invoked, run the following code
                 void Start()
                 {
-                    // Get references to the input & output text boxes
-                    TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
-                    TMP_Text completionBox = GameObject.Find(""Completed"").GetComponent<TMP_Text>();
-                    TMP_Text soundBox = GameObject.Find(""SoundCheckBox"").GetComponent<TMP_Text>();
+                    // Must call GameObject.Find from within start
+                    output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
+                    completionBox = GameObject.Find(""AnswerCheck"").GetComponent<TMP_Text>();
+                    soundBox = GameObject.Find(""SoundCheckBox"").GetComponent<TMP_Text>();
 
-                    // The problem statement is already displayed.
-                    // Create the variables and use the player's defined variables
-                    string[] nameTest = new string[] { ""Chitin"", ""Red"", ""Clamps"", ""Jenny"" };
-                    int[] speeds = new int[4];
-                    int winSpeed = 0, errorNumber = 0;
-                    " + declarations + @"
+                    // Start two coroutines
+                    // GameTimer - Starts a timer to destroy this script
+                    // Main() - Runs the player's code
+                    StartCoroutine(GameTimer());
+                    StartCoroutine(Main());
+                }
 
-                    // Put the program in a loop
-                    for (int i = 0; i < 4; ++i)
+                // This function, GameTimer, times the execution of this script
+                // until time has has been hit by ExecutionTime. If time is hit,
+                // this function removes the script from the ScriptController
+                // as a means of stopping infinite loops.
+                private IEnumerator GameTimer()
+                {
+                    // Wait for seconds
+                    yield return new WaitForSeconds(" + ExecutionTime + @");
+
+                    // At end of time, if script is still running, display message and remove script
+                    output.text = ""My CPU cannot handle long running code. Killing the execution process.\r\n"" + 
+                          ""Please check that your code reaches an ending point in a timely manner :)"";
+                    Destroy(gameObject.GetComponent<RuntimeScript>());
+                }
+
+                // This function, Main, contains whatever the
+                // player wrote from the input box.
+                private IEnumerator Main()
+                {
+                    // The problem statement is already displayed. Define an array of houses
+                    string[] Houses = new string[]
                     {
-                        // Assign the *input* variable data
-                        CrabName = nameTest[i];
-                        CrabSpeed = 0;
+                        ""Straw House:\r\nArea is full of trash. Mutated chickens roam and live happily in the area cornering unsuspecting visitors.\r\n"",
+                        ""Cobblestone House:\r\nHouse is underwater. Fish, crabs and turtles rule the sea and visitors are not welcome.\r\n"",
+                        ""Wood House:\r\nFriends and family welcome all who visit. Area is clean and perfect living conditions.\r\n"",
+                        ""Brick House:\r\nDeep in the jungle, amidst the snakes, mosquitoes and flies lies this house. Enter at your own risk."",
+                    };
+                    bool foundAddress = false;
 
-                        // Insert the player's code into the program
-                        " + playerText + @"
-
-                        // Assign the winSpeed to Clamps, else assign the speed to the speed array
-                        if (CrabName == ""Clamps"")
-                        {
-                            winSpeed = CrabSpeed;
-                            speeds[i] = -1;
-                        }
-                        else
-                            speeds[i] = CrabSpeed;
-
-                        // Test the CrabSpeed variable is within range
-                        if (CrabSpeed < 1 || CrabSpeed > 5)
-                        {
-                            errorNumber = 1;
-                        }
-
-                        // Send the speed to the completionBox
-                        completionBox.text += CrabSpeed.ToString() + "","";
-                    }
-
-                    // Test the speed array with the winSpeed if valid speeds
-                    if (errorNumber == 0)
+                    // Define an indexer and 2D array to simulate pointers
+                    int TheIndexer = 0, RandRow = UnityEngine.Random.Range(0, 5);
+                    string[ , ] SystemAddresses = new string[5, 4]
                     {
-                        for (int i = 0; i < 4; ++i)
-                        {
-                            // Crab is faster than desired winner (precedence over tie)
-                            if (speeds[i] > winSpeed)
-                                errorNumber = 2;
+                        { ""0x6ffdd0"", ""0x6ffdd4"", ""0x6ffdd8"", ""0x6ffddc"" },
+                        { ""0xab9e48"", ""0xab9e4c"", ""0xab9e50"", ""0xab9e54"" },
+                        { ""0xcdcdcc"", ""0xcdcdd0"", ""0xcdcdd4"", ""0xcdcdd8"" },
+                        { ""0x174a64"", ""0x174a68"", ""0x174a6c"", ""0x174a70"" },
+                        { ""0xfa25d0"", ""0xfa25d4"", ""0xfa25d8"", ""0xfa25dc"" },
+                    };
 
-                            // Crab is same speed as desired winner (tie)
-                            if (speeds[i] == winSpeed && errorNumber == 0)
-                                errorNumber = 3;
-                        }
-                    }
+                    // Player's code goes here
+                    " + playerText + @"
 
-                    // Test if Clamps won
-                    if (errorNumber == 0)
+                    // Loop through each index in the array
+                    for (int i = 0; !foundAddress && i < 4; ++i)
                     {
-                        // Send winner to the output box
-                        completionBox.text += ""Winner"";
-                        soundBox.text = ""Correct"";
-                        GameObject NPC = GameObject.FindWithTag(""LevelChange"");
-                        NPC.GetComponent<BoxCollider2D>().isTrigger = true;
-                    }
-                    else
-                    {
-                        // Case statement on ErrorNumber
-                        switch (errorNumber)
+                        // If the output text contains the address on a specific index
+                        if (output.text.Contains(SystemAddresses[RandRow, i]))
                         {
-                            case 1:
-                                completionBox.text = """";
+                            // Set the answer box and end loop
+                            completionBox.text = i.ToString();
+                            foundAddress = true;
+
+                            // Check for correct answer
+                            if (i == 2)
+                            {
+                                soundBox.text = ""Correct"";
+                                GameObject.FindWithTag(""LevelChange"").GetComponent<BoxCollider2D>().isTrigger = true;
+                            }
+                            else
                                 soundBox.text = ""Incorrect"";
-                                output.text = ""The crabs cannot move slower than 1 or faster than 5. Please try again."";
-                                break;
-                            case 2:
-                                completionBox.text += ""Fail1"";
-                                soundBox.text = ""Incorrect"";
-                                break;
-                            case 3:
-                                completionBox.text += ""Fail2"";
-                                soundBox.text = ""Incorrect"";
-                                break;
                         }
                     }
 
-                    // Keep runtime clean and speedy
+                    // Required for coroutines to have a return
+                    yield return null; 
+
+                    // Remove the added script from the object
                     Destroy(gameObject.GetComponent<RuntimeScript>());
                 }
             }";
@@ -302,6 +278,32 @@ namespace CSharpLevels
                     // Variable Type Mismatch. EX. string = int;
                     "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
 
+                    //*******************************************************************************
+                    // The following Error codes are for specific errors the compiler gives
+                    // with regards to using pointers in C#. These error messages will remain
+                    // on this level in case the user gets passed my many string manipulation checks.
+                    //*******************************************************************************
+
+                    // Managed Type Error. EX. C# will not let you declare a pointer to a string, it is a managed data type
+                    "CS0208" => "Error: Bit, you have somehow managed to write code I do not understand.\n\n" +
+                                "Please try to update your code to something that is simpler and follows the " +
+                                "code shown during the lesson dialogue.",
+
+                    // Unsafe Context Only Error. EX. C# code that uses pointers must have an "unsafe" block around it
+                    "CS0214" => "Error: Bit, you have somehow managed to write code I do not understand.\n\n" +
+                                "Please try to update your code to something that is simpler and follows the " +
+                                "code shown during the lesson dialogue.",
+
+                    // Unsafe Compilation Option Error. EX. C# code can only run pointers when the "unsafe" option is used in the build parameters
+                    "CS0227" => "Error: Bit, you have somehow managed to write code I do not understand.\n\n" +
+                                "Please try to update your code to something that is simpler and follows the " +
+                                "code shown during the lesson dialogue.",
+
+                    // Unsafe Code in Iterator Error. EX. C# cannot run unsafe code inside a coroutine (IEnumerator return)
+                    "CS1629" => "Error: Bit, you have somehow managed to write code I do not understand.\n\n" +
+                                "Please try to update your code to something that is simpler and follows the " +
+                                "code shown during the lesson dialogue.",
+
                     // All Other Errors
                     _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
                 };
@@ -313,19 +315,18 @@ namespace CSharpLevels
 
         /*
          * This function, InputModification, checks and modifies the player's input.
-         * This function will check that the player declared the proper variables
-         * and that the player used a switch statement for this level.
+         * This function will attempt to strip out the player's code and replace it
+         * with other predefined code that will imitate a pointer.
          * Once all checks are complete, this code is passed to the MainDriver();
          */
         private string InputModification(string playerCode)
         {
-            // Create a string for the return
-            string newCode = playerCode;
-            int startIndex, endIndex;
+            // Create a string for the return, define string manipulation variables
+            string newCode = playerCode, copy, temp, userVariable;
+            int startIndex, endIndex, startCurlyBrace, endCurlyBrace;
 
             // Check for malicious code
-            if (newCode.Contains("GameObject") || newCode.Contains("sleep") ||
-                newCode.Contains("while") || newCode.Contains("for"))
+            if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
             {
                 // Both are required due to Unity issues with display.
                 programOutput.text = @"I am not running code with that kind of language in it. " +
@@ -334,111 +335,327 @@ namespace CSharpLevels
                     "You should consider trying not to overwrite my programming.");
             }
 
-            // Check for declared variables
-            if (!newCode.Contains("CrabName") || !newCode.Contains("CrabSpeed"))
+            // The player must declare their pointer with the asterisk either on the datatype or variable name.
+            if (!newCode.Contains("string*") && !newCode.Contains("string *"))
             {
-                // Inform the player they need to use certain variables
-                programOutput.text = "Sorry, but you must declare and use the variables CrabName and CrabSpeed.";
-                throw new Exception("Sorry, but you must declare and use the variables CrabName and CrabSpeed.");
+                programOutput.text = "Bit, please declare your pointer using:\r\nstring* VariableName || string *VariableName";
+                throw new Exception("Bit, please declare your pointer using:\r\nstring* VariableName || string *VariableName");
             }
 
-            // Test that the user used a switch-statement.
-            if (!newCode.Contains("switch"))
+            // Get a temp variable of the declaration line of the pointer
+            startIndex = newCode.IndexOf("string*");
+            if (startIndex == -1)
+                startIndex = newCode.IndexOf("string *");
+            endIndex = newCode.IndexOf(";", startIndex) + 1;
+            temp = newCode[startIndex..endIndex];
+            copy = temp; // Copy the substring into copy
+
+            // Determine if the player used &House or simply House for address assignment
+            if (copy.Contains("&"))
+                copy = copy.Replace("&", ""); // Replace the ampersand
+            copy = copy.Replace("*", "[]"); // Replace the asterisk
+
+            // Swap out the pointer declaration with the array assignment
+            newCode = newCode.Replace(temp, copy);
+
+            // Determine the variable name the player used
+            startIndex = copy.IndexOf("[]") + 2;
+            if (!copy.Contains("=")) // User defined and initialized variable on different lines
+                endIndex = copy.IndexOf(";");
+            else
+                endIndex = copy.IndexOf("="); // User defined and initialized variable on same line
+            userVariable = newCode[startIndex..endIndex];
+            userVariable = userVariable.Trim(); // Trim off the whitespace from the variable name
+
+            // The player cannot increment the pointer in any other notation than ++
+            if (newCode.Contains(userVariable + "+=") || newCode.Contains(userVariable + " +=") ||
+                newCode.Contains("= " + userVariable) || newCode.Contains("=" + userVariable))
             {
-                programOutput.text = "Sorry, but you must use a switch-statement for this level.";
-                throw new Exception("Sorry, but you must use a switch-statement for this level.");
+                programOutput.text = "Bit, why be different? Please increment your pointer using:\r\n++VariableName || VariableName++";
+                throw new Exception("Bit, why be different? Please increment your pointer using:\r\n++VariableName || VariableName++");
             }
 
-            // Strip out the player's variable declaration section and put it in the declarations variable
-            startIndex = 0; // Start of input text
-            endIndex = newCode.IndexOf("switch"); // Player Code starts at switch
-            declarations = newCode[startIndex..endIndex];
+            // The player cannot use &pointer
+            if (newCode.Contains("&" + userVariable))
+            {
+                programOutput.text = "Bit, why be different? Please display the address through:\r\nVariableName || &Houses[index]";
+                throw new Exception("Bit, why be different? Please display the address through:\r\nVariableName || &Houses[index]");
+            }
 
-            // Remove the declarations section from the player code
-            newCode = newCode.Remove(startIndex, (endIndex - startIndex));
+            // Replace dereference of the pointer with array notation and a pre-defined variable indexer
+            while (newCode.Contains("*" + userVariable))
+            {
+                // Get a temp variable of the line where the asterisk occurred
+                startIndex = newCode.IndexOf("*" + userVariable);
+                endIndex = newCode.IndexOf(";", startIndex) + 1;
+                temp = newCode[startIndex..endIndex];
+                copy = temp; // Copy the substring into copy
+
+                // Remove the asterisk and replace the variable name with array notation
+                copy = copy.Replace("*", "");
+                copy = copy.Replace(userVariable, userVariable + "[TheIndexer]");
+
+                // Swap out the pointer notation with array notation
+                newCode = newCode.Replace(temp, copy);
+            }
+
+            // Replace the address referencing of the pointer with an array of predefined addresses
+            while (newCode.Contains("System.Console.WriteLine(" + userVariable + ")"))
+            {
+                // Get a temp variable of the line where the display occured
+                startIndex = newCode.IndexOf("System.Console.WriteLine(" + userVariable + ")");
+                endIndex = newCode.IndexOf(";", startIndex) + 1;
+                temp = newCode[startIndex..endIndex];
+                copy = temp; // Copy the substring into copy
+
+                // Replace the variable name with predefined addressing in array notation
+                copy = copy.Replace(userVariable, "SystemAddresses[RandRow, TheIndexer]");
+
+                // Swap out the code in the original string
+                newCode = newCode.Replace(temp, copy);
+            }
+
+            // Replace the address referencing of the array with an array of predefined addresses
+            while (newCode.Contains("System.Console.WriteLine(&Houses["))
+            {
+                // Get a temp variable of the line where the display occured
+                startIndex = newCode.IndexOf("System.Console.WriteLine(&Houses[");
+                endIndex = newCode.IndexOf(";", startIndex) + 1;
+                temp = newCode[startIndex..endIndex];
+                copy = temp; // Copy the substring into copy
+
+                // Get the number the player used inside of the brackets
+                startCurlyBrace = copy.IndexOf("[") + 2;
+                endCurlyBrace = copy.IndexOf("]");
+
+                // Replace the &Houses[X] with SystemAddresses[RandRow, X]
+                copy = copy.Replace("&Houses[", "SystemAddresses[RandRow, " + copy[startCurlyBrace..endCurlyBrace]);
+
+                // Swap out the code in the original string
+                newCode = newCode.Replace(temp, copy);
+                break;
+            }
+
+            // Replace the System.Console.WriteLine statement with output.text =
+            while (newCode.Contains("System.Console.WriteLine"))
+            {
+                // Get a temp variable of the line where the statement is
+                startIndex = newCode.IndexOf("System.Console.WriteLine");
+                endIndex = newCode.IndexOf(";", startIndex) + 1;
+                temp = newCode[startIndex..endIndex];
+                copy = temp; // Copy the substring
+
+                // Get the parenthesis and remove them, then replace the statement
+                startCurlyBrace = copy.IndexOf("(");
+                endCurlyBrace = copy.IndexOf(")") - 1; // Correct calculation when removing startCurlyBrace
+                copy = copy.Remove(startCurlyBrace, 1); // Removes left parenthesis
+                copy = copy.Remove(endCurlyBrace, 1); // Removes right parenthesis
+                copy = copy.Replace("System.Console.WriteLine", "output.text += "); // Replace the statement
+
+                // Replace the System.Console.WriteLine statement with the output variable
+                newCode = newCode.Replace(temp, copy);
+            }
+
+            // Replace the pointer incrementation notation to array indexing incrementation
+            while (newCode.Contains("++" + userVariable) || newCode.Contains(userVariable + "++"))
+            {
+                // Get a temp variable of the line where the incrementation is
+                startIndex = newCode.IndexOf("++" + userVariable);
+                if (startIndex == -1)
+                    startIndex = newCode.IndexOf(userVariable + "++");
+                endIndex = newCode.IndexOf(";", startIndex);
+                temp = newCode[startIndex..endIndex];
+                copy = temp; // Copy the substring into copy
+
+                // Replace the variable name with TheIndexer
+                copy = copy.Replace(userVariable, "TheIndexer");
+
+                // Swap out copy with the original string
+                newCode = newCode.Replace(temp, copy);
+            }
+
+            newCode = ModifyLoops(newCode);
 
             return newCode;
         }
 
-        // This function, StartRace, will count down
-        // on the output box a timer. At the end of the timer,
-        // the Crabs will race to the finish line with the desired
-        // speed.
-        private IEnumerator StartRace()
+        /*
+         * This function, ModifyLoops, checks the input string for any form of loop.
+         * If the string contains a loop, it updates it so that the loop will
+         * "yield return null". This function will return the new string.
+         */
+        private string ModifyLoops(string oldString)
         {
-            // Get the starting crab location for reset.
-            Vector3 startLocation = Crabs[0].transform.position;
-            int finish = 0;
+            // Create a string for the return
+            string modifiedString = oldString;
+            int startIndex, startCurlyBrace, endCurlyBrace;
 
-            // Dramatic effect text, show racers
-            programOutput.text = "The Race will begin in: ";
-            Crabs[0].SetActive(true);
-            Crabs[1].SetActive(true);
-            Crabs[2].SetActive(true);
-            Crabs[3].SetActive(true);
-            yield return new WaitForSecondsRealtime(1f);
-
-            // Start the Countdown
-            for (int i = 3; i > 0; --i)
+            // If the player wrote a for-loop
+            if (modifiedString.Contains("for"))
             {
-                // Count down from 3 each second
-                programOutput.text += i.ToString() + " ";
-                yield return new WaitForSecondsRealtime(1f);
+                // Append on the line after for -> yield return null
+                // Step 1: Find the starting index of the for-loop
+                startIndex = modifiedString.IndexOf("for");
+
+                // Step 2: Determine if the player wrote a curly brace (multi-line for-loop)
+                startCurlyBrace = modifiedString.IndexOf('{', startIndex);
+                if (startCurlyBrace != -1)
+                {
+                    // Step 3: Insert "yield return null" after the startCurlyBrace location
+                    modifiedString = modifiedString.Insert(startCurlyBrace + 1, "yield return null;");
+                }
+                else // Single lined for-loop
+                {
+                    // Step 4: Add in curly braces and the "yield return null" code
+                    // Left curlyBrace and the added code
+                    startCurlyBrace = modifiedString.IndexOf(')', startIndex) + 1;
+                    modifiedString = modifiedString.Insert(startCurlyBrace, "{yield return null;");
+
+                    // Get an index for the end of this line
+                    startIndex = modifiedString.IndexOf(';', startCurlyBrace) + 1;
+
+                    // Get an index for the next semicolon (Single-lined for-loop, this is where to insert '}')
+                    endCurlyBrace = modifiedString.IndexOf(';', startIndex) + 1;
+
+                    // Insert the ending curly brace
+                    modifiedString = modifiedString.Insert(endCurlyBrace, "}");
+                }
             }
 
-            // Set race text
-            programOutput.text = "GO";
-
-            // Loop through the distance until the finish line
-            for (int i = 0; i < 680; ++i)
+            // If the player wrote a do-while loop
+            if (modifiedString.Contains("do"))
             {
-                // Move each Crab forward by movement speed
-                Crabs[0].transform.Translate(float.Parse(speeds[0]), 0, 0);
-                Crabs[1].transform.Translate(float.Parse(speeds[1]), 0, 0);
-                Crabs[2].transform.Translate(float.Parse(speeds[2]), 0, 0);
-                Crabs[3].transform.Translate(float.Parse(speeds[3]), 0, 0);
+                // Append on the line after do -> yield return null
+                // Step 1: Find the starting index of the do-while loop
+                startIndex = modifiedString.IndexOf("do");
 
-                // Check the location of each crab. If greater than finish line, set inactive
-                for (int j = 0; j < 4; ++j)
+                // Step 2: Determine if the player wrote a curly brace (multi-line do-while loop)
+                startCurlyBrace = modifiedString.IndexOf('{', startIndex);
+                if (startCurlyBrace != -1)
                 {
-                    // Location of the Finish Line
-                    if (Crabs[j].transform.position.x > 1371 && Crabs[j].activeInHierarchy)
+                    // Step 3: Insert "yield return null" after the startCurlyBrace location
+                    modifiedString = modifiedString.Insert(startCurlyBrace + 1, "yield return null;");
+                }
+                else // Single lined do-while loop
+                {
+                    // Step 4: Add in curly braces and the "yield return null" code
+                    // Left curlyBrace and the added code
+                    modifiedString = modifiedString.Insert(startIndex + 2, "{yield return null;");
+
+                    // Get an index for while part of the loop
+                    endCurlyBrace = modifiedString.IndexOf("while", startIndex);
+
+                    // Insert the ending curly brace before the while
+                    modifiedString = modifiedString.Insert(endCurlyBrace, "}");
+                }
+            }
+            else
+            {
+                // If the player wrote a while-loop
+                if (modifiedString.Contains("while"))
+                {
+                    // Append on the line after while -> yield return null
+                    // Step 1: Find the starting index of the while-loop
+                    startIndex = modifiedString.IndexOf("while");
+
+                    // Step 2: Determine if the player wrote a curly brace (multi-line while-loop)
+                    startCurlyBrace = modifiedString.IndexOf('{', startIndex);
+                    if (startCurlyBrace != -1)
                     {
-                        Crabs[j].SetActive(false);
-                        finish++; // Add one for track of how many crabs still running
+                        // Step 3: Insert "yield return null" after the startCurlyBrace location
+                        modifiedString = modifiedString.Insert(startCurlyBrace + 1, "yield return null;");
+                    }
+                    else // Single lined while-loop
+                    {
+                        // Step 4: Add in curly braces and the "yield return null" code
+                        // Left curlyBrace and the added code
+                        startCurlyBrace = modifiedString.IndexOf(')', startIndex) + 1;
+                        modifiedString = modifiedString.Insert(startCurlyBrace, "{yield return null;");
+
+                        // Get an index for the end of this line
+                        startIndex = modifiedString.IndexOf(';', startCurlyBrace) + 1;
+
+                        // Get an index for the next semicolon (Single-lined while-loop, this is where to insert '}')
+                        endCurlyBrace = modifiedString.IndexOf(';', startIndex) + 1;
+
+                        // Insert the ending curly brace
+                        modifiedString = modifiedString.Insert(endCurlyBrace, "}");
                     }
                 }
-
-                // If all the Crabs are finished, end the race
-                if (finish == 4)
-                {
-                    // Set i to 680 instead of using break inside loop
-                    i = 680;
-                }
-
-                // Yield statement allows the Crab to simulate moving through space in frames
-                yield return new WaitForSeconds(0.007f);
             }
 
-            // At end of race, reset Crabs
-            Crabs[0].transform.position = startLocation;
-            Crabs[1].transform.position = startLocation;
-            Crabs[2].transform.position = startLocation;
-            Crabs[3].transform.position = startLocation;
+            return modifiedString;
+        }
+
+        // This Coroutine, PreviewHouse, will move bit to
+        // the appropriate house given by HouseNum. Then
+        // this script will preview the contents of the
+        // selected house given by the same variable.
+        private IEnumerator PreviewHouse(int HouseNum)
+        {
+            // Variables to be used in the code
+            Vector3 bitLocation = Bit.transform.position;
+            Vector3 cameraLocation = Camera.transform.position;
+            int[] houseCenter = new int[] { 130, 237, 332, 436 };
+            Vector3[] sceneLocationStart = new Vector3[]
+            {
+                new Vector3(249f, 445f, -15f),
+                new Vector3(249f, 145f, -15f),
+                new Vector3(1242f, 150f, -15f),
+                new Vector3(1242f, 445f, -15f)
+            };
+            int[] sceneLocationEnd = new int[] { 758, 758, 1679, 1689 };
+
+            // Suck Bit into the center of the chosen house
+            while (Bit.transform.position.x < (houseCenter[HouseNum] - 1) || Bit.transform.position.x > (houseCenter[HouseNum] + 1))
+            {
+                // If Bit is less than location
+                if (Bit.transform.position.x < houseCenter[HouseNum])
+                    Bit.transform.Translate(1f, 0, 0);
+                else // Bit is greater than location
+                    Bit.transform.Translate(-1f, 0, 0);
+
+                // Sucking effect
+                yield return new WaitForSeconds(0.029f);
+            }
+
+            // Move the Camera to the correct scene
+            Camera.GetComponent<CinemachineConfiner2D>().enabled = false;
+            Camera.transform.position = sceneLocationStart[HouseNum];
+
+            // Move the Camera forward until hit location end
+            while (Camera.transform.position.x < sceneLocationEnd[HouseNum])
+            {
+                // Move camera to the right
+                Camera.transform.Translate(1f, 0, 0);
+
+                // Keep the camera slow
+                yield return new WaitForSeconds(0.039f);
+            }
+
+            // Wait 3 seconds before returning everything back to normal
+            yield return new WaitForSecondsRealtime(3f);
+            Bit.transform.position = bitLocation;
+            Camera.transform.position = cameraLocation;
+            Camera.GetComponent<CinemachineConfiner2D>().enabled = true;
 
             // Set the output box
-            switch (speeds[4])
+            switch (HouseNum)
             {
-                case "Winner":
-                    programOutput.text = "Clamps WON!!! Amazing job Bit :)";
+                case 2:
+                    programOutput.text = "Bit, you have played and completed every level in the game. " +
+                                        "You have surpassed all my expectations and I am truly proud of you.\r\n" +
+                                        "Bit, our journey sadly ends here. I hope you continue to expound upon your learning, " +
+                                        "there is still a lot I have not taught you.\r\nThe people of Bittonia than you " +
+                                        "for helping them in their many problems. They hope you come back to levels you enjoyed and " +
+                                        "continue to learn things you may have missed.\r\nUntil next time :) ~ The Duke";
                     break;
 
-                case "Fail1":
-                    programOutput.text = "Oh no! Clamps did not win. Try again Bit :(";
-                    break;
-
-                case "Fail2":
-                    programOutput.text = "Soooo close! Clamps tied for first instead of winning. Try again Bit :|";
+                case 0:
+                case 1:
+                case 3:
+                    programOutput.text = "How was the house hunting trip Bit?\r\nIt was awful you say?\r\nI am sorry to hear that.\r\n" +
+                                        "I don't think Dexter would enjoy that house either. You should try another House.";
                     break;
             }
         }

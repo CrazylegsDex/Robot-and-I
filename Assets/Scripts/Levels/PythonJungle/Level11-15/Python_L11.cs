@@ -29,7 +29,6 @@ namespace PythonLevels
 		public GameObject arrow1;
 		public GameObject arrow2;
         public BoxCollider2D levelSprite;
-		private int count = 0;
 		
 
         /*

@@ -28,7 +28,7 @@ namespace CSharpLevels
 
         // Private variables
         private bool displayLog;
-        private const int ExecutionTime = 30; // Time in Seconds before the script gets killed
+        private const int ExecutionTime = 35; // Time in Seconds before the script gets killed
 
         // Use update to check the soundCheck input box
         private void Update()

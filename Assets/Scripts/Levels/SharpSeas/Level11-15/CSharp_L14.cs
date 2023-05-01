@@ -31,7 +31,6 @@ namespace CSharpLevels
 
         // Private variables
         private string declarations;
-        private string userVariable;
         private const int ExecutionTime = 6; // Time in Seconds before the script gets killed
         private bool displayLog;
 

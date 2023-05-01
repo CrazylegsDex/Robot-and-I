@@ -359,9 +359,8 @@ namespace CSharpLevels
 
         /*
          * This function, ModifyLoops, checks the input string for loops of any kind.
-         * If the string contains a loop, it updates it so that that loop will have a call
-         * to "CheckProcess" which is a Coroutine. The return of the Coroutine will be
-         * thrown away using the _ operator.
+         * If the string contains a loop, it updates it so that that loop will count
+         * and then kill the loop if it exceeds 100.
          * This function will return the new string when finished.
          */
         private string ModifyLoops(string oldString)
