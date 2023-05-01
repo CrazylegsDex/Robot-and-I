@@ -43,7 +43,7 @@ namespace GameMechanics
         }
 
         // Call the CloseDialogue in Island_Dialogue Script
-        public void BackButton()
+        public void CloseButton()
         {
             // There is no need to check for the correct script
             // attached to the NPC. All this function does is

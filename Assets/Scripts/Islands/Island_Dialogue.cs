@@ -20,6 +20,8 @@ namespace GameMechanics
     {
         // Get references to the Dialogue Box
         public GameObject DialogueBox; // The Dialogue Box in Canvas
+        public GameObject ContinueBox; // The Continue Button Box in Canvas
+        public GameObject ContinueButton; // The Continue Button itself
         public TextMeshProUGUI NameObject; // The Name child in DialogueBox
         public TextMeshProUGUI DialogueObject; // The Dialogue child in DialogueBox
 
@@ -63,6 +65,18 @@ namespace GameMechanics
                 NameObject.text = NPC_Name;
                 DialogueObject.text = Dialogue.Dequeue();
 
+                // Set the Continue Button inactive if there are no other sentences to Continue on
+                if (Dialogue.Count == 0)
+                {
+                    ContinueBox.SetActive(false);
+                    ContinueButton.SetActive(false);
+                }
+                else
+                {
+                    ContinueBox.SetActive(true);
+                    ContinueButton.SetActive(true);
+                }
+
                 // Set the DialogueBox Animation so the player can see it
                 DialogueBox.SetActive(true);
             }
@@ -88,6 +102,13 @@ namespace GameMechanics
             if (Dialogue.Count > 0)
             {
                 DialogueObject.text = Dialogue.Dequeue();
+
+                // If this was the last sentence to display, set the Continue Button inactive
+                if (Dialogue.Count == 0)
+                {
+                    ContinueBox.SetActive(false);
+                    ContinueButton.SetActive(false);
+                }
             }
         }
 
