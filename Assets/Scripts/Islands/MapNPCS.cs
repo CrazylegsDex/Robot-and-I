@@ -30,7 +30,7 @@ namespace GameMechanics
 
             // Always will be true that the first level on every Island is active
             // The ships to PY and CS are only active once PS_Level1 is complete
-            if (id == "PS_Level1" || id == "PY_Level1" || id == "CS_Level1")
+            if (id == "PS_Level1" || id == "PY_Level1" || id == "CS_Level1" || id == "Level_0")
             {
 				LevelName.color = new Color(255,255,0,255);
             }
@@ -55,15 +55,16 @@ namespace GameMechanics
             // Ignore Python and CSharp NPC
             if (id.Contains("PS_Level") && !id.Contains("Ship"))
             {
-                // Loop through all the levels
-                for (int i = 1; i <= data.gameLevels.Count; ++i)
+                // Loop through all the levels (Pseudo Island has 17 Levels)
+                for (int i = 1; i <= 17; ++i)
                 {
                     // Test if level exists
                     data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
 
                     if (checkComplete) // If level exists and was complete, set next level
                     {
-						if(id == ("PS_Level" + (i)) || id == "PS_Level1") {
+						if(id == ("PS_Level" + i) || id == "PS_Level1")
+                        {
 							LevelName.color = new Color(0,0,255,255);
 							spriteRenderer.sprite = check;
 						}
@@ -81,8 +82,8 @@ namespace GameMechanics
                 // Separate out the Python and CSharp NPC based on ID
                 if (id.Contains("PY_Level") && !id.Contains("Ship"))
                 {
-                    // Loop through the Python Levels
-                    for (int i = 1; i <= data.gameLevels.Count; ++i)
+                    // Loop through the Python Levels (PythonIsland has 15 Levels)
+                    for (int i = 1; i <= 15; ++i)
                     {
                         // Test if level exists
                         data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
@@ -94,7 +95,8 @@ namespace GameMechanics
 
                             if (checkComplete) // PY Level exists and was complete
                             {
-                                if(id == ("PY_Level" + (i))){
+                                if(id == ("PY_Level" + i))
+                                {
 									LevelName.color = new Color(0,0,255,255);
 									spriteRenderer.sprite = check;
 								}
@@ -110,11 +112,11 @@ namespace GameMechanics
 
                 if (id.Contains("CS_Level") && !id.Contains("Ship"))
                 {
-                    // Loop through the CSharp Levels
-                    for (int i = 1; i <= data.gameLevels.Count; ++i)
+                    // Loop through the CSharp Levels (CIsland has 17 Levels)
+                    for (int i = 1; i <= 17; ++i)
                     {
                         // Test if level exists
-                        data.gameLevels.TryGetValue("CS_Level" + i, out checkComplete);
+                        data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
 
                         if (checkComplete) // PS Level exists and was complete
                         {
@@ -123,15 +125,31 @@ namespace GameMechanics
 
                             if (checkComplete) // CS Level exists and was complete
                             {
-                                if(id == ("CS_Level" + (i))){
+                                if(id == ("CS_Level" + i))
+                                {
 									LevelName.color = new Color(0,0,255,255);
 									spriteRenderer.sprite = check;
 								}
-								if (id == ("CS_Level" + (i + 1))) // Next level id with current
-								{
-									spriteRenderer.sprite = cirlce;
-									LevelName.color = new Color(255,225,0,255);
-								}
+
+                                // Level 17 is special, requires PS_Level17 and PY_Level15 to unlock
+                                if (id == "CS_Level17" && !checkComplete)
+                                {
+                                    // PS_Level17 already checked and passed.
+                                    data.gameLevels.TryGetValue("PY_Level15", out checkComplete);
+                                    if (checkComplete) // Both levels are complete.
+                                    {
+                                        spriteRenderer.sprite = cirlce;
+                                        LevelName.color = new Color(255, 225, 0, 255);
+                                    }
+                                }
+                                else
+                                {
+                                    if (id == ("CS_Level" + (i + 1))) // Next level id with current
+                                    {
+                                        spriteRenderer.sprite = cirlce;
+                                        LevelName.color = new Color(255, 225, 0, 255);
+                                    }
+                                }
                             }
                         }
                     }

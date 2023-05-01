@@ -107,7 +107,7 @@ Transform:
   - {fileID: 3482547849225073608}
   - {fileID: 6661294458254385703}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6661294458146091987
 GameObject:
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a42cdaabaa35a4f91b95277180e791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaximumLevels: 50
+  MaximumLevels: 52
   Mask: {fileID: 6661294458146091997}
 --- !u!1001 &6661294458914855148
 PrefabInstance:

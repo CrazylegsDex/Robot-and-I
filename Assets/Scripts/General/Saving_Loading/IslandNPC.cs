@@ -10,6 +10,9 @@
  * the next level in sequence for PseudoIsland. Completing a level
  * in either Python or C# will unlock the next level in sequence iff
  * the current level in sequence is also complete for PseudoIsland.
+ * The exception to this rule is the last level in the game.
+ * In order for the last level to open up, all other levels must
+ * also be open.
  * 
  * Author: Robot and I Team
  * Date: 01/27/2023
@@ -97,8 +100,8 @@ namespace GameMechanics
                 // Ignore Python and CSharp NPC
                 if (id.Contains("PS_Level") && !id.Contains("Ship"))
                 {
-                    // Loop through all the levels
-                    for (int i = 1; i <= data.gameLevels.Count; ++i)
+                    // Loop through all the levels (Pseudo Contains 17 Levels)
+                    for (int i = 1; i <= 16; ++i)
                     {
                         // Test if level exists
                         data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
@@ -117,13 +120,15 @@ namespace GameMechanics
 
             // For PythonIsland and CIsland, if Level is complete and the equivalent
             // Pseudo level is complete, then set Level + 1 to active
+            // If the level is CS_Level17, all levels in the game must be complete in
+            // order to set the level active
             if (data.gameLevels.ContainsKey("PY_Level1") || data.gameLevels.ContainsKey("CS_Level1"))
             {
                 // Separate out the Python and CSharp NPC based on ID
                 if (id.Contains("PY_Level") && !id.Contains("Ship"))
                 {
-                    // Loop through the Python Levels
-                    for (int i = 1; i <= data.gameLevels.Count; ++i)
+                    // Loop through the Python Levels (Python Contains 15 Levels)
+                    for (int i = 1; i <= 14; ++i)
                     {
                         // Test if level exists
                         data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
@@ -147,8 +152,8 @@ namespace GameMechanics
 
                 if (id.Contains("CS_Level") && !id.Contains("Ship"))
                 {
-                    // Loop through the CSharp Levels
-                    for (int i = 1; i <= data.gameLevels.Count; ++i)
+                    // Loop through the CSharp Levels (CSharp Contains 17 Levels)
+                    for (int i = 1; i <= 15; ++i) // Exclude 17 as it is special
                     {
                         // Test if level exists
                         data.gameLevels.TryGetValue("PS_Level" + i, out checkComplete);
@@ -165,6 +170,23 @@ namespace GameMechanics
                                     gameObject.SetActive(true);
                                     break; // Only one level will open each completion
                                 }
+                            }
+                        }
+                    }
+
+                    // CS_Level17 only opens if PS_Level17 and PY_Level15 are complete
+                    if (id == "CS_Level17")
+                    {
+                        // Get the completion value of PS_Level17;
+                        data.gameLevels.TryGetValue("PS_Level17", out checkComplete);
+                        if (checkComplete)
+                        {
+                            // Get the completion value of PY_Level15
+                            data.gameLevels.TryGetValue("PY_Level15", out checkComplete);
+                            if (checkComplete)
+                            {
+                                // Set CS_Level17 to active
+                                gameObject.SetActive(true);
                             }
                         }
                     }
