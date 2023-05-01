@@ -11561,11 +11561,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hey Bit, I running test to make sure you know the difference between each
-    data type. Put the given value in the most correct box
-
-    If the number is
-    an integer, it gos into the integer box.'
+  m_text: "Hey Bit, I am running test to make sure you know the difference between
+    each data type. \nPut the given value in the most correct box,\nif the number
+    is an integer, it goes into the integer box."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

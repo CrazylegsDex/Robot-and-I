@@ -9781,14 +9781,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1861875052}
   m_Father: {fileID: 1628882777}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 702, y: 25.5}
-  m_SizeDelta: {x: 420.8445, y: 207.1056}
+  m_AnchoredPosition: {x: 729.4505, y: 14.5}
+  m_SizeDelta: {x: 429.8465, y: 120.0199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258098044
 MonoBehaviour:
@@ -10904,7 +10905,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1258098043}
-  - {fileID: 1861875052}
   - {fileID: 1022845960}
   - {fileID: 751088142}
   - {fileID: 1986336079}
@@ -11497,16 +11497,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861875051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1628882777}
+  m_Father: {fileID: 1258098043}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651.7, y: 47.9}
+  m_AnchoredPosition: {x: -100.59979, y: 1.2571182}
   m_SizeDelta: {x: 86.7739, y: 42.393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861875053
@@ -11529,8 +11529,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey Bit, I am putting together this machine, but I need help sorting items.
-    Can you help me?
+  m_text: 'Hey Bit, can you chop down these trees? they should take at least 5 hits
+    to bring them down! '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

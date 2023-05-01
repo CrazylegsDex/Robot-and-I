@@ -6811,14 +6811,23 @@ MonoBehaviour:
   aInput: {fileID: 385434060}
   bInput: {fileID: 224966300}
   b2Input: {fileID: 131701200}
-  c2Input: {fileID: 0}
+  b3Input: {fileID: 0}
+  b4Input: {fileID: 0}
   cInput: {fileID: 1294971342}
   dInput: {fileID: 210650651}
+  d2Input: {fileID: 0}
+  d3Input: {fileID: 0}
   aOutput: {fileID: 1775984401}
   bOutput: {fileID: 814386224}
   cOutput: {fileID: 1218304637}
   dOutput: {fileID: 490580783}
+  NameOutput: {fileID: 0}
+  Name2Output: {fileID: 0}
+  Name3Output: {fileID: 0}
+  Name4Output: {fileID: 0}
   complete: {fileID: 1669607991}
+  gameInput: {fileID: 0}
+  flo: {fileID: 0}
   bit: {fileID: 577700442}
   cam: {fileID: 1487249709}
   boxTests: []
@@ -8429,16 +8438,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138157325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1327801866}
+  m_Father: {fileID: 1557846355}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651.7, y: 47.9}
+  m_AnchoredPosition: {x: -100.59979, y: 6.9282}
   m_SizeDelta: {x: 86.7739, y: 42.393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138157327
@@ -8461,8 +8470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey Bit, I am putting together this machine, but I need help sorting items.
-    Can you help me?
+  m_text: Hey Bit, I need help replacing the dirt path with cobblestone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9736,7 +9744,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1557846355}
-  - {fileID: 1138157326}
   - {fileID: 157168115}
   - {fileID: 495181813}
   - {fileID: 1077818761}
@@ -11201,14 +11208,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1138157326}
   m_Father: {fileID: 1327801866}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 702, y: 25.5}
-  m_SizeDelta: {x: 420.8445, y: 207.1056}
+  m_AnchoredPosition: {x: 702, y: 9.7}
+  m_SizeDelta: {x: 420.8445, y: 131.3621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1557846356
 MonoBehaviour:

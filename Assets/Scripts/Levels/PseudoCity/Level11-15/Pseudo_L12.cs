@@ -47,7 +47,6 @@ namespace PseudoLevels
             {
                 go.SetActive(false);
             }
-            //codeComp = false;
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;

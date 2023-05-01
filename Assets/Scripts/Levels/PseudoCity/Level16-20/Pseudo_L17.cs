@@ -45,10 +45,10 @@ namespace PseudoLevels
         void Start()
         {
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
-            /*foreach (GameObject go in hairTests)//serches for "Box" objects
+            foreach (GameObject go in hairTests)//serches for "Box" objects
             {
                 go.SetActive(false);
-            }*/
+            }
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;

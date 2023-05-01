@@ -4369,7 +4369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651.7, y: 47.9}
+  m_AnchoredPosition: {x: 652.8, y: 47.9}
   m_SizeDelta: {x: 86.7739, y: 42.393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &713267225
@@ -4392,8 +4392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey Bit, I am putting together this machine, but I need help sorting items.
-    Can you help me?
+  m_text: Hey Bit, I forgot the names of my cats, can you help me rename them?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11109,8 +11108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 702, y: 25.5}
-  m_SizeDelta: {x: 420.8445, y: 207.1056}
+  m_AnchoredPosition: {x: 702, y: 45.9919}
+  m_SizeDelta: {x: 420.8445, y: 125.1378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307142541
 MonoBehaviour:

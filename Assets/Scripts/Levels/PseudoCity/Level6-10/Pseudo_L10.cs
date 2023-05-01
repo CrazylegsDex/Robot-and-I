@@ -49,7 +49,7 @@ namespace PseudoLevels
         void Start()
         {
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
-            //flo.SetActive(false);
+            flo.SetActive(false);
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;

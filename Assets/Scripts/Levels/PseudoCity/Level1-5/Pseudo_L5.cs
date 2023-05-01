@@ -277,7 +277,6 @@ namespace PseudoLevels
                     
                     if(num == 4){
 						check.text = ""correct"";
-                        Debug.Log(check.text);
                     }
 						
 					else{

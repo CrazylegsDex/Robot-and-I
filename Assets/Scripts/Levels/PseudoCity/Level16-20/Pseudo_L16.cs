@@ -28,6 +28,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
+        public GameObject fail;
         public GameObject complete;
         public GameObject bit;
         public GameObject cam;
@@ -140,6 +141,8 @@ namespace PseudoLevels
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
             complete.SetActive(false);
+            fail.SetActive(false);
+            //play = true;
         }
         void Update()
         {
@@ -155,20 +158,45 @@ namespace PseudoLevels
                         startTime = Time.time;
                         fro = false;
                         StartCoroutine(CatLeft());
+                        if (cat.transform.position.x < 1711 && cat.transform.position.x > 1699)
+                        {
+                            button4 = false;
+                            foreach (GameObject go in hairTests)//serches for "Box" objects
+                            {
+                                if(go.name.Contains("4"))
+                                    go.SetActive(false);
+                            }
+                        }
                     }
-                    if (flip && endTime < 60)
+                    if (flip && endTime < 60 && button4)
                     {
                         endTime = Time.time - startTime;
-                        Debug.Log(endTime);
                         StopCoroutine(CatLeft());
                         StartCoroutine(CatRight());
+                        if (cat.transform.position.x < 1711 && cat.transform.position.x > 1699)
+                        {
+                            button4 = false;
+                            foreach (GameObject go in hairTests)//serches for "Box" objects
+                            {
+                                if (go.name.Contains("4"))
+                                    go.SetActive(false);
+                            }
+                        }
                     }
-                    if (!flip && endTime < 60)
+                    if (!flip && endTime < 60 && button4)
                     {
                         endTime = Time.time - startTime;
-                        Debug.Log(endTime);
                         StopCoroutine(CatRight());
                         StartCoroutine(CatLeft());
+                        if (cat.transform.position.x < 1711 && cat.transform.position.x > 1699)
+                        {
+                            button4 = false;
+                            foreach (GameObject go in hairTests)//serches for "Box" objects
+                            {
+                                if (go.name.Contains("4"))
+                                    go.SetActive(false);
+                            }
+                        }
                     }
 
                     foreach (GameObject go in boxTests)//serches for "Button" objects
@@ -224,10 +252,16 @@ namespace PseudoLevels
                                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                                 complete.SetActive(true);//Displays completion icon above npc
                             }
+                            else if (!button4)
+                            {
+                                fail.SetActive(true);//Displays failure icon above npc
+                                levelSprite.isTrigger = false;
+                            }
                             else
                             {
                                 levelSprite.isTrigger = false;
                                 complete.SetActive(false);
+                                fail.SetActive(false);
                             }
                         }
 
@@ -294,18 +328,56 @@ namespace PseudoLevels
                 try
                 {
                     c = int.Parse(cInput.text);
+                }
+                catch (Exception)
+                {
+                    safe = false;
+                    if (cInput.text == "part1" || cInput.text == "part2")
+                    {
+                        c = 2;
+                        safe = true;
+                    }
+                    if (!safe)
+                    {
+                        cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+
+                        cOutput.text = "Invalid";
+                        safe = false;
+                    }
+                }
+                try
+                {
                     c2 = int.Parse(c2Input.text);
+                }
+                catch (Exception)
+                {
+                    safe = false;
+                    if (c2Input.text == "part1" || c2Input.text == "part2" || c2Input.text == "temp")
+                    {
+                        c2 = 2;
+                        safe = true;
+                    }
+                    if (!safe)
+                    {
+                        cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
+
+                        cOutput.text = "Invalid";
+                        safe = false;
+                    }
+                }
+                try 
+                {
                     c3 = int.Parse(c3Input.text);
                 }
                 catch (Exception)
                 {
-                    if (cInput.text == "part1" || cInput.text == "part2" )
-                        c = 2;
-                    if (c2Input.text == "part1" || c2Input.text == "part2" || c2Input.text == "temp")
-                        c2 = 2;
+                    safe = false;
                     if (c3Input.text == "part1" || c3Input.text == "part2" || c3Input.text == "temp")
+                    {
                         c3 = 2;
-                    else
+                        safe = true;
+                    }
+                    if (!safe)
                     {
                         cOutput.color = new Color32(255, 100, 100, 255);//Changes font color to red 
 
@@ -352,12 +424,13 @@ namespace PseudoLevels
             }
             if (num == 4)
             {
-				Audio_Manager.Instance.PlaySound("Correct");
+				
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);
                 }
                 play = true;
+                Audio_Manager.Instance.PlaySound("Correct");
             }
 			else
 				Audio_Manager.Instance.PlaySound("Incorrect");
