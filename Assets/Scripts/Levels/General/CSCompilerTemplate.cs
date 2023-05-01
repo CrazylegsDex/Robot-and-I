@@ -199,7 +199,7 @@ namespace GameMechanics
             int startIndex, startCurlyBrace, endCurlyBrace;
 
             // Check for malicious code
-            if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
+            if (newCode.Contains("GameObject") || newCode.Contains("Sleep"))
             {
                 // Both are required due to Unity issues with display.
                 programOutput.text = @"I am not running code with that kind of language in it. " +

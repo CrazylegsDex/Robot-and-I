@@ -323,7 +323,7 @@ namespace CSharpLevels
                     "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
 
                     // All Other Errors
-                    _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
+                    _ => $"Error: {error[0].ErrorText}"
                 };
             }
 
@@ -346,7 +346,7 @@ namespace CSharpLevels
             int startIndex, endIndex;
 
             // Check for malicious code in either text box
-            if (negotiateText.Contains("GameObject") || negotiateText.Contains("sleep") ||
+            if (negotiateText.Contains("GameObject") || negotiateText.Contains("Sleep") ||
                 negotiateText.Contains("while") || negotiateText.Contains("for"))
             {
                 // Both are required due to Unity issues with display.
@@ -405,7 +405,7 @@ namespace CSharpLevels
             int startIndex, endIndex;
 
             // Check for malicious code in either text box
-            if (responseText.Contains("GameObject") || responseText.Contains("sleep") ||
+            if (responseText.Contains("GameObject") || responseText.Contains("Sleep") ||
                 responseText.Contains("while") || responseText.Contains("for"))
             {
                 // Both are required due to Unity issues with display.

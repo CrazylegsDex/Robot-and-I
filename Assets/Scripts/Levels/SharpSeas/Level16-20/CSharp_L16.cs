@@ -262,7 +262,7 @@ namespace CSharpLevels
                     "CS0029" => $"Error: You are cannot assign two different data types together.\n\n{error[0].ErrorText}",
 
                     // All Other Errors
-                    _ => $"Line: {error[0].Line}\n\nError: {error[0].ErrorText}",
+                    _ => $"Error: {error[0].ErrorText}"
                 };
             }
 
@@ -281,7 +281,7 @@ namespace CSharpLevels
             string newCode = playerCode;
 
             // Check for malicious code
-            if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
+            if (newCode.Contains("GameObject") || newCode.Contains("Sleep"))
             {
                 // Both are required due to Unity issues with display.
                 programOutput.text = @"I am not running code with that kind of language in it. " +
@@ -326,7 +326,7 @@ namespace CSharpLevels
             string newCode = playerCode;
 
             // Check for malicious code
-            if (newCode.Contains("GameObject") || newCode.Contains("sleep"))
+            if (newCode.Contains("GameObject") || newCode.Contains("Sleep"))
             {
                 // Both are required due to Unity issues with display.
                 programOutput.text = @"I am not running code with that kind of language in it. " +
