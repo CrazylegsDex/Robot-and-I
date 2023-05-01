@@ -43,15 +43,11 @@ namespace PseudoLevels
         public GameObject[] boxTests;
         public GameObject[] hairTests;
         private Button_Check button_Check;
-        private bool button1;
-        private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
             flo.SetActive(false);
-            button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;

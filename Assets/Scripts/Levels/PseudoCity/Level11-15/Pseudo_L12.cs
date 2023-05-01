@@ -38,7 +38,6 @@ namespace PseudoLevels
         public GameObject[] hairTests;
         private Button_Check button_Check;
         private bool button1;
-        private bool button2;
         public BoxCollider2D levelSprite;
         void Start()
         {
@@ -48,7 +47,6 @@ namespace PseudoLevels
                 go.SetActive(false);
             }
             button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -75,16 +73,6 @@ namespace PseudoLevels
                             }
                             else
                                 button1 = false;
-                        }
-                        else if (button_Check.boxFirstName == "2")
-                        {
-
-                            if (button_Check.complete)
-                            {
-                                button2 = true;
-                            }
-                            else
-                                button2 = false;
                         }
                         if (button1)
                         {

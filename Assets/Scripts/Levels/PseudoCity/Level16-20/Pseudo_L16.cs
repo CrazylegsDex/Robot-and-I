@@ -41,9 +41,6 @@ namespace PseudoLevels
         public GameObject left;
         public GameObject right;
         public GameObject top;
-        private bool button1;
-        private bool button2;
-        private bool button3;
         private bool button4;
         private bool turn = false;
         private bool hit = false;
@@ -135,8 +132,6 @@ namespace PseudoLevels
             {
                 go.SetActive(false);
             }
-            button1 = false;
-            button2 = false;
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
