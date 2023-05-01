@@ -32,19 +32,79 @@ namespace PseudoLevels
         public TMP_InputField playerInput6;
         public TMP_InputField playerInput7;
         public TMP_InputField playerInput8;
-		
-		public TextMeshProUGUI soundCheck;
-		
-		/* This function updates constantly to check if the text box
+
+        public GameObject[] boxTests;
+        public GameObject[] basketTests;
+        public GameObject complete;
+        public GameObject bit;
+        public TextMeshProUGUI soundCheck;
+        public TextMeshProUGUI check;
+
+        public BoxCollider2D levelSprite;
+        private Button_Check button_Check;
+        int count;
+        public GameObject cam;
+        float camx, camy, camz;
+        /* This function updates constantly to check if the text box
 		 * under the screen has the work correct, incorrect or a 
 		 * blank space. If it's correct, play the correlating sound
 		 * effect and change the text to a blank. If it's incorrect, 
 		 * play the correlating sound effect and change the text to a
 		 * blank. If it's blank, play nothing.
 		 */
-		private void Update()
+        void Start()
+        {
+            count = 0;
+            boxTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            basketTests = GameObject.FindGameObjectsWithTag("Button");
+            foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+            {
+                go.SetActive(false);
+            }
+            complete.SetActive(false);
+            camx = cam.transform.position.x;
+            camy = cam.transform.position.y;
+            camz = cam.transform.position.z;
+        }
+        private void Update()
 		{
-			if (soundCheck.text == "incorrect")
+            if(check.text == "correct")
+            {
+                foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+                {
+                    go.SetActive(true);
+                }
+            }
+            //Debug.Log(bit.transform.position.x);
+            //cam.transform.position = new Vector3(camx, camy, camz);//moves camera to new section
+            if (bit.transform.position.x > 1331)//gameplay section
+            {
+                cam.transform.position = new Vector3(camx + 505, camy, camz);
+                //Debug.Log(bit.transform.position.x);
+                foreach (GameObject go in basketTests)//searches for "Grabbable" objects
+                {
+                    if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                    {
+                        button_Check = go.GetComponent<Button_Check>();//Gets variables from script
+                        if (button_Check.complete)
+                        {
+                            count++;
+                        }
+                    }
+                }
+                if(count == 3)
+                {
+                    levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                    complete.SetActive(true);//Displays completion icon above npc
+                }
+                count = 0;
+            }
+            else
+            {
+                cam.transform.position = new Vector3(camx, camy, camz);
+            }
+            
+                if (soundCheck.text == "incorrect")
 			{
 				Audio_Manager.Instance.PlaySound("Incorrect");
 				soundCheck.text = " ";
@@ -217,9 +277,7 @@ namespace PseudoLevels
                     
                     if(num == 4){
 						check.text = ""correct"";
-                        GameObject NPC = GameObject.FindWithTag(""LevelChange"");
-						NPC.GetComponent<BoxCollider2D>().isTrigger = true;
-					}
+                    }
 						
 					else{
 						check.text = ""incorrect"";

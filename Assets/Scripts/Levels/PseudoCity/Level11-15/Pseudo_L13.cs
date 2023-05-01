@@ -72,35 +72,35 @@ namespace PseudoLevels
                         if (go.name.StartsWith("1"))
                         {
 
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete )
+                            if (Input.GetKeyDown(KeyCode.E) && button_Check.complete )
                             {
                                 button1++;
                             }
                         }
                         if (go.name.StartsWith("2"))
                         {
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            if (Input.GetKeyDown(KeyCode.E) && button_Check.complete)
                             {
                                 button2++;
                             }
                         }
                         if (go.name.StartsWith("3"))
                         {
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            if (Input.GetKeyDown(KeyCode.E) && button_Check.complete)
                             {
                                 button3++;
                             }
                         }
                         if (go.name.StartsWith("4"))
                         {
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            if (Input.GetKeyDown(KeyCode.E) && button_Check.complete)
                             {
                                 button4++;
                             }
                         }
                         if (go.name.StartsWith("5"))
                         {
-                            if (Input.GetMouseButtonDown(0) && button_Check.complete)
+                            if (Input.GetKeyDown(KeyCode.E) && button_Check.complete)
                             {
                                 button5++;
                             }

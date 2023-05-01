@@ -47,7 +47,6 @@ namespace PseudoLevels
             {
                 go.SetActive(false);
             }
-            //codeComp = false;
             button1 = false;
             button2 = false;
             camx = cam.transform.position.x;
@@ -87,7 +86,7 @@ namespace PseudoLevels
                             else
                                 button2 = false;
                         }
-                        if (button1 && button2)
+                        if (button1)
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             complete.SetActive(true);//Displays completion icon above npc

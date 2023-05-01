@@ -26,6 +26,7 @@ namespace PseudoLevels
         public TextMeshProUGUI cOutput;
         public TextMeshProUGUI dOutput;
 
+        public GameObject chicken;
         public GameObject complete;
         public GameObject bit;
         public GameObject cam;
@@ -51,6 +52,7 @@ namespace PseudoLevels
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
             complete.SetActive(false);
+            chicken.SetActive(false);
         }
         void Update()
         {
@@ -148,6 +150,7 @@ namespace PseudoLevels
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             complete.SetActive(true);//Displays completion icon above npc
+                            chicken.SetActive(true);//Displays chicken icon
                         }
                         else
                         {
@@ -161,6 +164,7 @@ namespace PseudoLevels
                                 end = true;
                             levelSprite.isTrigger = false;
                             complete.SetActive(false);
+                            chicken.SetActive(false);
                         }
                     }
                 }

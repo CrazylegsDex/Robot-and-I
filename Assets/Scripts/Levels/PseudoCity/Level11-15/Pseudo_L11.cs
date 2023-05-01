@@ -62,7 +62,7 @@ namespace PseudoLevels
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
                        
-                        if (button_Check.complete && Input.GetMouseButtonDown(0))
+                        if (button_Check.complete && Input.GetKeyDown(KeyCode.E))
                         {
                             var goRenderer = go.GetComponent<Renderer>();
                             goRenderer.material.SetColor("_Color", Color.gray);

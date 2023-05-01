@@ -65,7 +65,7 @@ namespace PseudoLevels
             {
                 cam.transform.position = new Vector3(camx + 505, camy, camz);//moves camera to new section
                 boxTests = GameObject.FindGameObjectsWithTag("Button");
-                if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && !active)
+                if (hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && !active)
                 {
                     for(int i = 0; i < hoseTest.transform.childCount; i++)//turns on the water
                     {
@@ -74,16 +74,7 @@ namespace PseudoLevels
                         active = true;
                     }
                 }
-                else if (Input.GetMouseButtonDown(0) && hoseTest.GetComponent<Rigidbody2D>().isKinematic == true && active)
-                {
-                    for (int i = 0; i < hoseTest.transform.childCount; i++)//turns off the water
-                    {
-                        Transform water = hoseTest.transform.GetChild(i);
-                        water.gameObject.SetActive(false);
-                        active = false;
-                    }
-                }
-                else if(Input.GetKeyDown(KeyCode.E)) {
+                else if(hoseTest.GetComponent<Rigidbody2D>().isKinematic == false) {
                     for (int i = 0; i < hoseTest.transform.childCount; i++)//turns off the water
                     {
                         Transform water = hoseTest.transform.GetChild(i);
@@ -96,7 +87,7 @@ namespace PseudoLevels
                     if (!go.name.Contains("Arm"))//Button objects that don't use a script
                     {
                         button_Check = go.GetComponent<Button_Check>();//Gets variables from script
-                        if (button_Check.boxFirstName == "1")
+                        if (button_Check.boxFirstName == "2")
                         {
                             if(button_Check.complete && active && !timeSet)
                             {
@@ -107,7 +98,7 @@ namespace PseudoLevels
                             {
                                 
                                 endTime = Time.time - startTime;
-                                if(endTime > 10)
+                                if(endTime > 5)
                                     button1 = true;
                             }
                             else

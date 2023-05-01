@@ -29,19 +29,112 @@ namespace PseudoLevels
         public TMP_InputField playerInput5;
         public TMP_InputField playerInput6;
         public TMP_InputField playerInput7;
-		
-		public TextMeshProUGUI soundCheck;
+        public GameObject complete;
 
-		/* This function updates constantly to check if the text box
+        public GameObject[] boxTests;
+        public GameObject[] basketTests;
+        public GameObject bit;
+        public TextMeshProUGUI soundCheck;
+        public TextMeshProUGUI check;
+
+        public BoxCollider2D levelSprite;
+        private Button_Check button_Check;
+        int count;
+        public GameObject cam;
+        float camx, camy, camz;
+        private bool button1;
+        private bool button2;
+        private bool button3;
+        private bool button4;
+
+        /* This function updates constantly to check if the text box
 		 * under the screen has the work correct, incorrect or a 
 		 * blank space. If it's correct, play the correlating sound
 		 * effect and change the text to a blank. If it's incorrect, 
 		 * play the correlating sound effect and change the text to a
 		 * blank. If it's blank, play nothing.
 		 */
+        void Start()
+        {
+            boxTests = GameObject.FindGameObjectsWithTag("Grabbable");
+            basketTests = GameObject.FindGameObjectsWithTag("Button");
+            complete.SetActive(false);
+            foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+            {
+                go.SetActive(false);
+            }
+            camx = cam.transform.position.x;
+            camy = cam.transform.position.y;
+            camz = cam.transform.position.z;
+            button1 = false;
+            button2 = false;
+            button3 = false;
+            button4 = false;
+        }
 		private void Update()
 		{
-			if (soundCheck.text == "incorrect")
+            if (bit.transform.position.x > 1331)//gameplay section
+            {
+                cam.transform.position = new Vector3(camx + 505, camy, camz);
+                //Debug.Log(bit.transform.position.x);
+                foreach (GameObject go in basketTests)//searches for "Grabbable" objects
+                {
+                    if (!go.name.Contains("Arm"))//Button objects that don't use a script
+                    {
+                        button_Check = go.GetComponent<Button_Check>();//Gets variables from script
+                        if (button_Check.boxFirstName == "1")
+                        {
+                            if (button_Check.complete)
+                            {
+                                button1 = true;
+                            }
+                        }
+                        if (button_Check.boxFirstName == "2")
+                        {
+                            if (button_Check.complete)
+                            {
+                                button2 = true;
+                            }
+                        }
+                        if (button_Check.boxFirstName == "3")
+                        {
+                            if (button_Check.complete)
+                            {
+                                button3 = true;
+                            }
+                        }
+                        if (button_Check.boxFirstName == "4")
+                        {
+                            if (button_Check.complete)
+                            {
+                                button4 = true;
+                            }
+                        }
+                    }
+                }
+                if (button1 && button2 && button3 && button4)
+                {
+                    levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+                    complete.SetActive(true);//Displays completion icon above npc
+                }
+                else
+                {
+                    complete.SetActive(false);
+                    levelSprite.isTrigger = false; 
+                }
+            }
+            else
+            {
+                cam.transform.position = new Vector3(camx, camy, camz);
+            }
+            if (check.text == "correct")
+            {
+                foreach (GameObject go in boxTests)//searches for "Grabbable" objects
+                {
+                    go.SetActive(true);
+                }
+            }
+            if (soundCheck.text == "incorrect")
 			{
 				Audio_Manager.Instance.PlaySound("Incorrect");
 				soundCheck.text = " ";
@@ -125,7 +218,7 @@ namespace PseudoLevels
                         object2.text = """";
                         safe = false; 
                     }
-			        bool zBool;
+			        bool zBool = false;
                     if(safe){
 			            if (y == x && y >0){
                             object2.color = new Color32(0, 255, 255, 255);//changes font color to cyan
@@ -151,7 +244,7 @@ namespace PseudoLevels
                         object3.text = """";
                         safe = false; 
                     }
-                    bool aBool;
+                    bool aBool = false;
                     if(safe){
                         zBool = (y > 0);
 			            aBool = (x >= y);
@@ -198,17 +291,14 @@ namespace PseudoLevels
                     
                     if(num == 4){
 						check.text = ""correct"";
-                        GameObject NPC = GameObject.FindWithTag(""LevelChange"");
-						NPC.GetComponent<BoxCollider2D>().isTrigger = true;
 					}
 						
 					else{
 						check.text = ""incorrect"";
 						Destroy(gameObject.GetComponent<RuntimeScript>());
 					}
-                
+                }
             }";
-
             // Compile the player's code and check for syntax issues
             resultAssembly = CSharpCompile(playerCode);
 
