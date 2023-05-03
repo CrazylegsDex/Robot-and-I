@@ -320,8 +320,9 @@ namespace PseudoLevels
             }
             if (num == 4)
             {
-				Audio_Manager.Instance.PlaySound("Correct");
+				
                 hoseTest.SetActive(true);
+                Audio_Manager.Instance.PlaySound("Correct");
             }
 			else
 				Audio_Manager.Instance.PlaySound("Incorrect");

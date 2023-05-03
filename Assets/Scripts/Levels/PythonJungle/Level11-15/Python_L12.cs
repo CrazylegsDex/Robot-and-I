@@ -238,7 +238,7 @@ def main():
             // Allow the player to leave the level
             if (stringData == "Congratulations\r\n")
             {
-                box.SetActive(false);
+                box.SetActive(true);
             }
         }
 

@@ -127,7 +127,7 @@ namespace PseudoLevels
                 
                 if (safe)
                 {
-                    if (bInput.text == "22222111111")
+                    if (bInput.text == "22222211111")
                     {
                         bOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
                         bOutput.text = "Correct!";
@@ -234,11 +234,11 @@ namespace PseudoLevels
             }
             if (num == 4)
             {
-				Audio_Manager.Instance.PlaySound("Correct");
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);
                 }
+                Audio_Manager.Instance.PlaySound("Correct");
             }
 			else
 				Audio_Manager.Instance.PlaySound("Incorrect");

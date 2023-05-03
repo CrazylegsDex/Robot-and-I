@@ -245,11 +245,11 @@ namespace PseudoLevels
             }
             if (num == 4)
             {
-				Audio_Manager.Instance.PlaySound("Correct");
                 foreach (GameObject go in hairTests)//searches for "Grabbable" objects
                 {
                     go.SetActive(true);
                 }
+                Audio_Manager.Instance.PlaySound("Correct");
             }
 			else
 				Audio_Manager.Instance.PlaySound("Incorrect");
