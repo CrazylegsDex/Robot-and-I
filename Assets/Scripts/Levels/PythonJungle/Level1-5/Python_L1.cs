@@ -1,10 +1,8 @@
-// This script provides control and completion for Python levels
-//
-// Author: Robot and I Team
-// Last modification date: 11-12-2022
-
-using System;
 using UnityEngine;
+using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
+using System.IO;
+using System.Text;
 using TMPro;
 using UnityEngine.Audio;
 using GameMechanics; // Pulls in the interface from GameMechanics
@@ -13,135 +11,171 @@ namespace PythonLevels
 {
     public class Python_L1 : MonoBehaviour
     {
-        public TMP_InputField userInput; // References the User's Input Field
-        public TMP_InputField stringInput;
-        public TMP_InputField boolInput;
-        public TMP_InputField floatInput;
-        public TextMeshProUGUI programOutput; // References the TMP Output Field
-        public TextMeshProUGUI stringOutput;
-        public TextMeshProUGUI boolOutput;
-        public TextMeshProUGUI floatOutput;
-        public BoxCollider2D levelSprite;
-        public void Code_Compiler()
+		public TMP_InputField codeInput1;
+        public TMP_InputField codeInput2;
+        public TMP_InputField codeInput3;
+        public TMP_InputField codeInput4;
+		public TextMeshProUGUI programOutput;
+		[TextArea(5, 30)] public string explanition;
+		public BoxCollider2D levelSprite;
+		
+		public void setText(){
+            programOutput.text = explanition;
+        }
+        public void MainDriver()
         {
-            //Ints
-            int num = 0;//counts up everytime a try block receives valid input.
+            // Local variables
+            ScriptEngine scriptEngine;
+            ScriptScope scriptScope;
+            dynamic scriptFunction;
+            // Modify the player's input code to have proper indentation
+            // Add the player's code to a defined python function for runtime running
+            string playerCode = @"
+def main():
+    count = 0
+    var1 = " + codeInput1.text + @"
+    var2 = " + codeInput2.text + @"
+    var3 = " + codeInput3.text + @"
+    var4 = " + codeInput4.text + @"
+    if(var1 == 10):
+        count+=1
+    if(var2 == 92):
+        count+=1
+    if(var3 == 75):
+        count+=1
+    if(var4 == 153):
+        count+=1
+    if(count == 4):
+        print(""Congratulations"")
+    else:
+        print(""Incorrect"")
+    return";
 
-            bool safe = true;//goes false if the input in the try blocks is invalid
-            if (!(String.IsNullOrEmpty(userInput.text)))//Checks if values were inputed skips if no value
-            {
-                try
-                { // Saves Text from input field into user input
-                    int i = int.Parse(userInput.text);//tests for only integers
-                }
-                catch (Exception)//activates when the input is invalid
-                {
-                    programOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow //R,G,B, Transparency. 
-                    programOutput.text = "Incorrect";
-                    safe = false;
-                }
-                if (safe)
-                {
-                    programOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    programOutput.text = "Correct!";
-                    num++;
-                }
-            }
+            scriptEngine = Python.CreateEngine();
+            scriptScope = scriptEngine.CreateScope();
+            MemoryStream codeOutput = new MemoryStream(); // Unbounded stream of data storage
+            scriptEngine.Runtime.IO.SetOutput(codeOutput, Encoding.Default);
 
-            //String
-            safe = true;//resets safe for next input
-            if (!(String.IsNullOrEmpty(stringInput.text))) //Checks if values were inputed skips if no value
-            {
-                try
-                {
-                    string s = stringInput.text;//tests for strings
-                }
-                catch (Exception)
-                {
-                    stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                    stringOutput.text = "Incorrect";
-                    safe = false;
-                }
-                if (safe)
-                {
-                    string s = stringInput.text;
+            
+            
+            scriptEngine.Execute(playerCode, scriptScope);
 
-                    if (s.StartsWith("\"") && s.EndsWith("\"") && s.Length != 1)
-                    {
-                        stringOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                        stringOutput.text = "Correct!";
-                        num++;
-                    }
-                    else
-                    {
-                        stringOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                        stringOutput.text = "Incorrect";
-                    }
-                }
-            }
-            //bool
-            safe = true;
-            if (!(String.IsNullOrEmpty(boolInput.text)))//Checks if values were inputed skips if no value
-            {
-                try
-                {
-                    bool i = bool.Parse(boolInput.text);//tests for bools
-                }
-                catch (Exception)
-                {//below makes the use of 1 or 0 for bool acceptable.
-                    if (1 == int.Parse(boolInput.text) || 0 == int.Parse(boolInput.text))
-                    {
-                        boolOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                        boolOutput.text = "Correct!";
-                        num++;
-                    }
-                    else
-                    {
-                        boolOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                        boolOutput.text = "Incorrect";
+            
+            scriptFunction = scriptScope.GetVariable("main");
+            scriptFunction(); // Execution of function "main"
 
-                    }
-                    safe = false;
-                }
-                if (safe)
-                {
-                    boolOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    boolOutput.text = "Correct!";
-                    num++;
-                }
-            }
-            safe = true;
-            //float
-            if (!(String.IsNullOrEmpty(floatInput.text)))//Checks if values were inputed skips if no value
+            // Test if the player used a print statement
+            if (codeOutput.Length > 0)
             {
-                try
-                {
-                    float i = float.Parse(floatInput.text);//tests for floats
-                }
-                catch (Exception)
-                {
-                    floatOutput.color = new Color32(255, 200, 0, 255);//changes font color to yellow
-                    floatOutput.text = "Incorrect";
-                    safe = false;
-                }
-                if (safe)
-                {
-                    floatOutput.color = new Color32(0, 255, 255, 255);//changes font color to cyan
-                    floatOutput.text = "Correct!";
-                    num++;
-                }
-            }
-
-            if (num == 4)
-            {
-				Audio_Manager.Instance.PlaySound("Correct");
-                levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
-            }
-            else
-            {
-				Audio_Manager.Instance.PlaySound("Incorrect");
-                levelSprite.isTrigger = false;
+                PythonPrint(codeOutput);
+                codeOutput.Close();
             }
         }
-    }
+		
+		        /*
+         * This function executes if stdout data was found
+         * in the executed Python code.
+         * This function will retrieve that stdout data and send
+         * it to the program's output text box.
+         */
+        private void PythonPrint(MemoryStream data)
+        {
+            // Local variables
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            int dataLength = (int)data.Length;
+            string stringData = "";
+            byte[] byteData;
+            char[] charData;
+
+            // Set the memory stream to start reading from the start of data
+            data.Seek(0, SeekOrigin.Begin);
+
+            // Read the data into a byte array
+            byteData = new byte[dataLength];
+            data.Read(byteData, 0, dataLength);
+
+            // Extract the byte data into character data
+            charData = new char[encoding.GetCharCount(byteData, 0, dataLength)];
+            encoding.GetDecoder().GetChars(byteData, 0, dataLength, charData, 0); // Decode the data into ASCII
+
+            // Move the character data into a string for output into the textbox
+            for (int i = 0; i < dataLength; ++i)
+                stringData += charData[i];
+
+            // Display the printed message
+            programOutput.text = stringData;
+
+            // Allow the player to leave the level
+            if (stringData == "Congratulations\r\n")
+            {
+				Audio_Manager.Instance.PlaySound("Correct");
+				levelSprite.isTrigger = true;
+            }
+			else
+				Audio_Manager.Instance.PlaySound("Incorrect");
+
+        }
+		
+		/*
+         * This function modifies the player's input code string
+         * to conform to Python's indentation of functions.
+         * This function will accomplish this task by going through
+         * the following checklist.
+         * 1. Split the input string up into an array delimited by \n
+         * 2. If the array has more than one element, indent all indices
+         *    by 4 spaces
+         * 3. If the array is a single element, return the array with an
+         *    indention of 4 spaces
+         */
+        private string StringManipulation(string playerText)
+        {
+            // Local variables
+            string returnString = "";
+            string[] stringArray = playerText.Split("\n");
+
+            // Check if the string was split, aka player put 2 or more lines of code
+            if (stringArray.Length > 1)
+            {
+                // For each string in the array, indent the string by 4 spaces
+                for (int i = 0; i < stringArray.Length; ++i)
+                {
+                    // PadLeft will pad spaces to the left IFF the specified length
+                    // is greater than the length of the string itself
+                    returnString += stringArray[i].PadLeft(stringArray[i].Length + 4) + "\n";
+                }
+            }
+            else
+                returnString = playerText.PadLeft(playerText.Length + 4);
+
+            return returnString;
+        }
+
+        /*
+         * This function is called whenever Unity sends output to the
+         * log console, or whenever the player creates a Runtime error that
+         * inherently gets sent to the Unity log console.
+         * This function grabs the log and sends the information to the Handle
+         */
+        private void OnEnable() { Application.logMessageReceived += HandleLog; }
+
+        /*
+         * This function acts like a destructor for the Unity logs.
+         * This function effectively removes the messages from the handle that
+         * are captured during "OnEnable". This function is called whenever the
+         * object is disabled.
+         */
+        void OnDisable() { Application.logMessageReceived -= HandleLog; }
+
+        /*
+         * This function is called whenever text is put into or taken away from
+         * the Console logs. Essentially, this function will act like a runtime
+         * display to the player. Any runtime messages from the compilation will also be
+         * displayed from this function.
+         */
+        private void HandleLog(string logString, string stackTrace, LogType type)
+        {
+            programOutput.text = "";
+            programOutput.text += logString;
+        }
+	}
 }
