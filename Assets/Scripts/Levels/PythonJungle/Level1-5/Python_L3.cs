@@ -18,6 +18,7 @@ namespace PythonLevels
 		public TMP_InputField codeInput4;
 		public TMP_InputField codeInput5;
         public TextMeshProUGUI programOutput;
+		public GameObject deco;
         [TextArea(5, 30)] public string explanition;
         public BoxCollider2D levelSprite;
 		
@@ -54,7 +55,7 @@ def main():
 		correct = correct + 1
 	else:
 		print(""concreteleftover = incorrect"")
-	if(windows == 12):
+	if(windows == 6):
 		correct = correct + 1
 	else:
 		print(""windows = incorrect"")
@@ -134,6 +135,7 @@ def main():
             {
 				Audio_Manager.Instance.PlaySound("Correct");
                 levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
+				deco.SetActive(true);
             }
 			else
 				Audio_Manager.Instance.PlaySound("Incorrect");
