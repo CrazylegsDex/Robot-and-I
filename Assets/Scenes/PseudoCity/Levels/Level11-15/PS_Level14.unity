@@ -234,7 +234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D.   \n\t\t\nx = [0,0,0,0]\n\nfor(i = 0, i<4, i++)\n    x[\t\t   ]=                 
+  m_text: "D.   \n\t\t\nx = {0,0,0,0}\n\nfor(i = 0, i<4, i++)\n    x[\t\t   ]=                 
     +1\n\nfor(a=0,a<4,a++)\n    output(\t\t  [i])\n\noutput: 1234"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8073,7 +8073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B.\n\n\n\n\nb=[3,4,5,6,7]\nfor(i=4,i>0,i--)\n    output(b[i])\n\noutput: "
+  m_text: "B.\n\n\n\n\nb={3,4,5,6,7}\nfor(i=4,i>0,i--)\n    output(b[i])\n\noutput: "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8675,7 +8675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "C.\n\nx = [9,8,7,6]\n\nfor(a=0, a<\t\t       , a++)\n    y = x[i]\n   
+  m_text: "C.\n\nx = {9,8,7,6}\n\nfor(a=0, a<\t\t       , a++)\n    y = x[i]\n   
     x[i] = x[\t\t   -1]\n    x[i - 1] = y\n\nfor(a=0, a<\t\t   ,a++)\n    ouput(x[a])\n\noutput:
     6789"
   m_isRightToLeft: 0
@@ -11403,7 +11403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A. \n\n\n\n\n\na = [1,2,3,4]\n    output(a[2])\n\n\noutput:"
+  m_text: "A. \n\n\n\n\n\na = {1,2,3,4}\n    output(a[2])\n\n\noutput:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
