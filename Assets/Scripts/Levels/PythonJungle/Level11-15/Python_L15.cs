@@ -23,12 +23,18 @@ namespace PythonLevels
         public TMP_InputField functionInput;
         public TMP_InputField codeInput;
         public TextMeshProUGUI programOutput;
+		[TextArea(5, 30)] public string explanition;
         public BoxCollider2D levelSprite;
 
         /*
          * This function is the driver to the sequence of events that are
          * required to compile and execute upon Python code
          */
+		 
+		public void setText(){
+            programOutput.text = explanition;
+        }
+		 
         public void MainDriver()
         {
             // Local variables
