@@ -12578,7 +12578,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-        variables at the same time if they\u2019re the same type. Below are the different
       value: "int x = 4\r\nbool y = true\r\nstring z = \u201CHello World\u201D\r\n\nThose
         are variables! Variables are stored in memory as bytes and represent a number,
         character, word, sentences, ect. You can create multiple variables at the
