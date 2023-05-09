@@ -11800,100 +11800,82 @@ PrefabInstance:
       objectReference: {fileID: 1344275574}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "Let\u2019s teach Bit how to get input and output to and from the user
+        so we can help Selena."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "Now I know what you\u2019re thinking, \u201CHow do I check what my
+        code is doing?\u201D or \u201CHow do I receive values from a user?\u201D.
+        That is an excellent question that has a simple answer, input and output.
+        This can be the most important and most helpful thing you learn as a program."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: Input and output can be given to a program in many ways. You can read
+        in information from a file, run your code, and print your output into a file
+        as well. You can also ask the person running your code (a user) for input
+        directly. You can print out the values you wish to the console of your computer.
+        This is what we will be teaching you, how to get input values from the user
+        and how to print out to the console of the computer.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "Let\u2019s look at an example:\r\n\r\nstring yourName\r\n\r\noutput(\u201CPlease
+        type your name and then press Enter: \u201D)\r\ninput(yourName)\r\noutput(\u201CWelcome
+        to our game, \u201D + yourName + \u201C!\u201D)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
+      value: "In this example, there is a string variable called yourName. We then
+        print out to the screen \u201CPlease type your name and then press Enter:
+        \u201C. To print out something like this, you just need to write the word
+        output, open parenthesis, put what text you want printed out on the screen
+        in quotes, and then close parenthesis. To accept input from the user we need
+        to write the work input, open parenthesis, write the name of the variable
+        we would like the input to be stored in, and close parenthesis. The user
+        can then type their name. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: "Once the user presses Enter on their keyboard, the program accepts
+        that input and stores that value into the variable yourName. We then print
+        out to the user, Welcome to our game, *name here*! To make this print statement
+        work, we use both text and the variables\u2019 content. We do this by again
+        writing the word output, opening parenthesis, and writing what text we wanted
+        printed on the screen in quotes and then a plus sign to signify that we want
+        to add more to this print statement. We can now put the name of the variable
+        whose content we would like to be printed out. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: 'We would also like to end this sentence with an explanation mark so
+        we add another plus sign, open quotes, put an explanation mark, close the
+        quotes and parentheses. This is what the user will see:
 
-        Int x = 3
+        
 
-        Int y = 4
+        Please
+        type your name and then press Enter: The Duke
 
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
+        Welcome to our game,
+        The Duke!
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'Example:
-
-        Int x = 6
-
-        Int y = 8
-
-        Bool result
-        = (x != y) //Result would be true. This is true because 6 does not equal
-        8.
-
-        Int a  = 6
-
-        Int b = 6
-
-        Bool result = (a != b)
-        //Result would be false. This is false because 6 does equal 6.'
+      value: "When a program asks for input, it will accept whatever is typed from
+        the user until they press Enter. For example, if the user typed \u201CMy
+        name is Suzie and I am 17 years old\u201D and pressed enter, the output would
+        look like this: \u201CWelcome to our game, My name is Suzie and I am 17 years
+        old!\u201D\r\n\r\nNow that we\u2019ve learned about how to accept input and
+        write output, are you ready to program Bit to help Selena. Press Continue
+        to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]
@@ -12883,14 +12865,23 @@ MonoBehaviour:
   aInput: {fileID: 576659558}
   bInput: {fileID: 276256901}
   b2Input: {fileID: 1605272814}
-  c2Input: {fileID: 0}
+  b3Input: {fileID: 0}
+  b4Input: {fileID: 0}
   cInput: {fileID: 942976177}
   dInput: {fileID: 2104975958}
+  d2Input: {fileID: 0}
+  d3Input: {fileID: 0}
   aOutput: {fileID: 1338191890}
   bOutput: {fileID: 2001874705}
   cOutput: {fileID: 705767852}
   dOutput: {fileID: 1365838736}
+  NameOutput: {fileID: 0}
+  Name2Output: {fileID: 0}
+  Name3Output: {fileID: 0}
+  Name4Output: {fileID: 0}
   complete: {fileID: 164399068}
+  gameInput: {fileID: 0}
+  flo: {fileID: 0}
   bit: {fileID: 1066773864}
   cam: {fileID: 2081055345}
   boxTests: []

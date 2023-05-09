@@ -10587,6 +10587,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_margin.y
+      value: -5.748657
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -10625,72 +10629,51 @@ PrefabInstance:
       objectReference: {fileID: 1744608429}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "Oh NO! We need to help John put this tree fire out! We need to learn
+        nested if-else statements to program Bit to do a job like this. Let\u2019s
+        not waste any time and get started learning!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "int x = 6 \r\nif (x == 5)\r\n    y = 3\r\nelse if (x == 6)\r\n    y
+        = 5\r\n\nThese are nested if-else statements. Nested if-else statements are
+        easy to learn once you\u2019ve already gotten the hang of if-else statements.
+        \n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "There\u2019s only one small difference, an extra if statement. Before
+        we jump in, you should know that once an if statement's condition is met,
+        you ignore the rest of the else or if statements. This is very important
+        as there can be multiple conditions that are met but it\u2019s first come,
+        first serve.  Now, let\u2019s look at an example and break it down. \r\n\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "int t = 40\r\n\nif t == 60\r \n    string time = \u201COne minute\u201D\r\nelse
+        if t < 60\r\n    string time = \u201CLess than one minute\u201D\r\nelse\r\n    
+        string time = \u201COver one minute\u201D\r\nt ++\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Ok this is a lot so let\u2019s take it one step at a time. The integer
+        t has been initialized to be equal to 40. The first if statement compares
+        t to see if it is equal to 60. It is not equal to 60 so we go to the next
+        statement. The next comparison checks if the variable t is less than 60,
+        which it is. This means that a string variable is created named time that
+        is initialized to say \u201CLess than one minute\u201D. Now that we\u2019ve
+        found a condition that is true, we are done with the if-else statements.
+        The next line that will be run is incrementing t by 1 that is at the very
+        end of the example and is not linked at any of the if, else, or else if statements.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "Got it? Good! We\u2019re running out of time to save the tree! Let\u2019s
+        program Bit as fast as we can!   Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]

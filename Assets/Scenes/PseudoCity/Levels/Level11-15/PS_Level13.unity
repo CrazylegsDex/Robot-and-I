@@ -5446,65 +5446,54 @@ PrefabInstance:
       objectReference: {fileID: 751088144}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "I\u2019m sure we can program Bit to fix this problem. Let\u2019s learn
+        the last kind of loop then program Bit to help Simon."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "There\u2019s another type of loop that you should know about, For loops.
+        This loop is different from the others. In this loop, you declare a variable,
+        state a conditional statement, and that you would like to change with every
+        loop occurrence. I know this is a little confusing so let\u2019s loop\u2026.oops
+        I mean look at an example.\r\n\r\nExample:\r\nfor(int i = 10, i <= 100, i
+        += 10)\r\noutput (i)\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "This example prints out 10  20  30  40  50  60  70  80  90  100 with
+        each number on a separate line. To start a For loop, you first have to type
+        the word \u201Cfor\u201D and open a parenthesis. You then declare and initialize
+        the variable you would like to control the loop and add a comma at the end
+        of that initialization. In this example, we declare and initialize i to 10.
+        We now write our conditional statement which is i less than or equal to 100.
+        We end the conditional statement with another comma. We can now add what
+        changes we would like after every time this loop is run. In the While loop
+        and Do While loop, we did this in the code section. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "The For loop has a special spot for this. In this example, we would
+        like 10 to be added to i after every loop, so we write i += 10 and close
+        the parentheses. Now, we indent what code we would like to be run if the
+        conditional statement is found to be true. This example has only one line
+        that prints out the value of i, but you can have more than one line of code.
+        So the first time this code is run, i starts with the value of 10 which is
+        less than or equal to 100, so we can proceed to the code portion. The variable
+        i is printed out to the console and 10 is added to it. This continues until
+        i is equal to 110 and is greater than 100. This will stop the loop. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Now, I should mention that any variables created inside the For loop,
+        only apply inside the For loop. In the example above, the variable i only
+        exists in the for loop. If you try to print out the value of i outside of
+        the loop, the compiler will not know there was ever the variable i and give
+        you an error. Keep this in mind when you continue to write code. \r\n\r\nGot
+        it? Good! Let\u2019s start programming Bit. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]

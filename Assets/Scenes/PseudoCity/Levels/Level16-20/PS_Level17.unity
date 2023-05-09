@@ -13958,6 +13958,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -14197,6 +14201,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -14239,96 +14247,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "We can definitely help you with that!! Let\u2019s teach Bit pointers
+        so we can help Amy."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "Pointers are variables that have memory addresses of another variable.The
+        variable type does not matter. That may seem confusing but stay with us.
+        Pointers make your code more efficient. Right now, that may not be something
+        you are worried about. But when you are working with 1,000 lines worth of
+        code, it\u2019s something you should be conscious of. Let\u2019s first look
+        at a simple pointer. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "Example:\r\nint i = 4\r\nint *ptr = &i\r\noutput(\u201CAddress of i
+        is \u201C + ptr)\r\noutput(\u201CValue of i is \u201C + *ptr)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "In this example, we declare and initialize an integer, i, to the value
+        of 4. We can now declare and initialize a pointer that points to the memory
+        address of the integer i. This is done using the ampersand (&) before the
+        variable you would like to have a pointer of. We then have two output statements
+        that show how to access the address of the pointer and the value of that
+        memory address. To get the memory location, you simply use the name of the
+        pointer, ptr. To access the value of that memory location, you put an asterisk
+        before the pointer. Easy, right? Let\u2019s make it a smidgen harder. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Pointers are usually used with arrays, so we\u2019ll show you how they
+        work with an array. Ready? Let\u2019s look at an example.\r\n\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "Example:\r\nint numAr = [1,2,3]\r\nint *ptr = &numAr\r\n\r\nfor(int
+        i = 0 ; i < 3; i++){\r\n\toutput(\u201CAddress of array [\u201C + i + \u201C]
+        is \u201C + (ptr))\r\n\toutput(\u201CValue of array [\u201C + i + \u201C]
+        is \u201C + *(ptr))\r\n\tptr++\r\n}\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
+      value: "Like I said, it\u2019s confusing, but stay with us. I promise it\u2019ll
+        be worth it. We first declare an array with three numbers in it, 1, 2, and
+        3. We can now declare a pointer for our array that will point to its memory
+        address. You don\u2019t have to use the ampersand when it\u2019s an array.
+        Here, it\u2019s the array numAr. We then start a for loop so we can loop
+        through the pointer of the array. Inside the for loop, we have two output
+        statements. The difference between the two output statements. Both use the
+        pointer but one prints the memory address and the other prints the value
+        in that address. As stated before, putting an asterisk before the pointer
+        will give you access to the value the pointer is pointing at."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'Example:
-
-        Int x = 6
-
-        Int y = 8
-
-        Bool result
-        = (x != y) //Result would be true. This is true because 6 does not equal
-        8.
-
-        Int a  = 6
-
-        Int b = 6
-
-        Bool result = (a != b)
-        //Result would be false. This is false because 6 does equal 6.'
+      value: "As you can see, the second output statement uses an asterisk. One output
+        will print the address of that number in the array and the other will print
+        the value of that memory address. It is worth mentioning that the memory
+        address will change every time, so don\u2019t be worried if it changes. You\u2019ll
+        notice that we add one to the pointer every loop. This is to gain access
+        to the next number in the array. Just like normal arrays, you have to one
+        to get to the next number in the array. This loop will print the memory address
+        and the value in that memory address for all three values in the array. \r\n\r\nLet\u2019s
+        program Bit to learn pointers and help Amy. Press Continue to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]

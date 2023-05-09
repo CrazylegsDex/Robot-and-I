@@ -5573,68 +5573,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "This is the perfect job for Bit. Let\u2019s learn while loops so Bit
+        can help them."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "Now that we\u2019ve learned the essentials for programming, let\u2019s
+        look at some ways to make writing programs easier. One way to do that is
+        with loops. A loop runs a section of code a certain amount of times that
+        is set by the programmers. There are three kinds of loops we will be programming
+        Bit to be able to use. Here, we will be learning about while loops. They
+        can be read as while this is true, do this.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "Let\u2019s start off with an example of a loop that calculates the
+        sum of 1 - 10:\r\n\r\nExample:\r\nint sum = 0; \r\nint count = 1;\r\n\r\nwhile
+        (count <= 10)\r\n\tsum = sum + count\r\n\tcount = count + 1\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "In this example, we add up all the numbers from 1-10. We first declare
+        the variables count and sum. Sum is what will be added on to in the loop
+        to find the sum of 1 - 10. The variable count is what will control the loop
+        and what we will be adding to the sum every time. Now that we have our variables
+        set up, we can start the loop. We start the loop with the word \u201Cwhile\u201D.
+        We then open parentheses and write our conditional statement. For this loop,
+        the conditional statement compares count to 10 to see if it is less than
+        or equal to it."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: 'While this is true, the loop will run. When this is not true, we will
+        exit the loop. Now that we are inside the loop, we add sum to itself and
+        the variable count. This is how we continuously add the number to the sum
+        plus the previously added numbers. We now add one to the variable count to
+        go to the next number that needs to be added and to control the loop to only
+        run 10 times. We now go back to the conditional statement and check again.
+        This runs until the variable count is greater than 10. '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "You\u2019ve got it? Great! Let\u2019s program Bit so we can help Martha.
+        Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
@@ -6936,14 +6917,23 @@ MonoBehaviour:
   aInput: {fileID: 385434060}
   bInput: {fileID: 224966300}
   b2Input: {fileID: 131701200}
-  c2Input: {fileID: 0}
+  b3Input: {fileID: 0}
+  b4Input: {fileID: 0}
   cInput: {fileID: 1294971342}
   dInput: {fileID: 210650651}
+  d2Input: {fileID: 0}
+  d3Input: {fileID: 0}
   aOutput: {fileID: 1775984401}
   bOutput: {fileID: 814386224}
   cOutput: {fileID: 1218304637}
   dOutput: {fileID: 490580783}
+  NameOutput: {fileID: 0}
+  Name2Output: {fileID: 0}
+  Name3Output: {fileID: 0}
+  Name4Output: {fileID: 0}
   complete: {fileID: 1669607991}
+  gameInput: {fileID: 0}
+  flo: {fileID: 0}
   bit: {fileID: 577700442}
   cam: {fileID: 1487249709}
   boxTests: []
