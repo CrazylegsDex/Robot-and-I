@@ -83,9 +83,13 @@ namespace GameMechanics
                         Island_Dialogue NPC = GameObject.Find("Sally").GetComponent<Island_Dialogue>();
 
                         // Change the Dialogue that the NPC presents.
-                        NPC.sentences[0] = "This is a test";
-                        NPC.sentences[1] = "I am testing more";
-                        NPC.sentences[2] = "MASHED POTATOES!!!!";
+                        NPC.sentences[0] = "I bet you’re wondering how to get to the other islands. There are two boats on each island. Press Continue to find out.";
+                        NPC.sentences[1] = "Each boat will bring you to a different island. ";
+                        NPC.sentences[2] = "Where they bring you will change based on what island you are on.";
+						NPC.sentences[3] = "To see what island they will bring you to, walk up to the NPC...";
+						NPC.sentences[4] = "And they will ask if you would like to go the *this* island.";
+						NPC.sentences[5] = "If you would like to go, press “Start”. If not, you can just walk away. ";
+						NPC.sentences[6] = "Are you ready to see the other islands? Let’s go! Use the map to see where the ships are.";
                     }
                     if (id == "Ship1" || id == "Ship2") // On the Ship's turn, set them active
                     {
