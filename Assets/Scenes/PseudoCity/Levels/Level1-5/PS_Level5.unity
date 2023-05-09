@@ -8607,20 +8607,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: 'AND
-
-
-        XOR
-
-
-        NOT'
+      value: "This looks like a problem that can be solved using logical operators.
+        Let\u2019s learn what those are so we can program Bit."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Those aren\u2019t words! Those are logical operators! Logical operators
-        are used to perform logical operations between two or more operands using
-        AND, OR, XOR, and NOT. Logical Operators return a boolean value of true or
-        false. Let\u2019s dive in to make more sense of this."
+      value: "AND\nXOR\nNOT\n\nThose aren\u2019t words! Those are logical operators!
+        Logical operators are used to perform logical operations between two or more
+        operands using AND, OR, XOR, and NOT. Logical Operators return a boolean
+        value of true or false. Let\u2019s dive in to make more sense of this. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -8711,7 +8706,7 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[9]
       value: "Use what you\u2019ve learned about logical operators to help program
-        Bit to help Dr Riddler build their machine!"
+        Bit to help Joesph build their machine!"
       objectReference: {fileID: 0}
     - target: {fileID: 8963123874008368823, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x
