@@ -5312,8 +5312,8 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
       value: "After learning all of this, can you tell that the variable x will end
-        up equaling? 3!!! That\u2019s correct. Now let\u2019s help Medusa before
-        their flowers thirsts any longer!\r\n"
+        up equaling? 3!!! That\u2019s correct. Now let\u2019s help Medusa lawn before
+        their grass thirsts any longer! Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]

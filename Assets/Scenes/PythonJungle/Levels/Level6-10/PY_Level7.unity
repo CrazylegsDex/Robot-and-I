@@ -1410,44 +1410,42 @@ PrefabInstance:
       objectReference: {fileID: 237186625}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "NPC - \u201CHello Bit, my name is ****.  I just got a new pet snake,
-        but I lost him! Can you help me find him out of all of the other snakes?\u201D\r\nAfter
-        the level is finished - \u201C I can\u2019t figure out what to name him.
-        \u201C \r\n"
+      value: "I think we can program Bit to help Billy. But first, we\u2019ll need
+        to teach Bit how to use if-else statements in Python and the syntax he\u2019ll
+        need to know."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Duke - \u201CI think we can program Bit to help ***. But first, we\u2019ll
-        need to teach Bit how to use if-else statements in Python and the syntax
-        he\u2019ll need to know.\u201D\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[2]
       value: "The syntax for if-else statements is very similar to if statements.
         After you have finished what you would like to be a part of your if statement,
         you then write the word \u201Celse\u201D and add a colon after it (:). You
         then will start a new line, and write what you would like to happen if the
         conditional statement is not met. When you are writing these lines on code,
         remember to indent by 4 spaces. This lets the compiler know it is still a
-        part of the else statement. Here is an example,"
+        part of the else statement. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: "Here is an example,\r\nif x > y:\r\n    y = x\r\n    y ++ \r\nelse:\r\n   
+        x = 5\r\n    z = 6\r\ny = 7\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "if x > y:\r\n    y = x\r\n    y ++ \r\nelse:\r\n    x = 5\r\n    z
-        = 6\r\ny = 7\r\n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
       value: "In this example, the condition is \u201Cx > y\u201D. If x is greater
         than y, y will be set equal to x and y will be incremented by one (add one
         to it). If x is not greater than y, x will be set to equal 5 and z will be
         set equal to 6. The line where y is set equal to 7 is a line of code that
         will be run no matter what the if-else statement is. It is not indented and
-        therefore, is not a part of the statements. \r\n"
+        therefore, is not a part of the statements. \r\n\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "\nNow that we\u2019ve gone over syntax, let\u2019s help Billy find
+        their snake! Press Continue to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]

@@ -157,11 +157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.2
+      value: 15.199997
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 44.4
+      value: 44.999977
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495148010783, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_text
@@ -492,7 +492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.9903
+      value: 8.7902
       objectReference: {fileID: 0}
     - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_text
@@ -548,43 +548,32 @@ PrefabInstance:
       objectReference: {fileID: 29161064}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "We can definitely help your snake find a friend and 2D arrays are the
+        exact thing we need to program Bit to make this happen. Let\u2019s get started."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: "You know, I could make you go over the syntax of a 2D array in Python,
+        but you\u2019ve already learned it\u2026.kind of. It is almost exactly like
+        it was taught on Pseudo Island but with square brackets instead of curly
+        brackets. Let\u2019s compare the differences here.  "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "Example in Pseudo: \r\na = { {1, 7, 6, 8}, {2, 5, 3, 12}, {10, 4, 11,
+        9} }\r\n\r\nExample in Python:\r\na = [ [1, 7, 6, 8], [2, 5, 3, 12], [10,
+        4, 11, 9] ]\r\n\r\nJust like that. Switch the curly brackets out for square
+        brackets and it works perfectly. Accessing the contents inside works the
+        same way too, a[r-1][c-1], where r is the row you want and c is the column
+        you want. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "Think you\u2019ve got it? Good! Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]

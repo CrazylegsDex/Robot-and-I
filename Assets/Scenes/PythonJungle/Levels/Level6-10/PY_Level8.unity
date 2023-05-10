@@ -6064,22 +6064,16 @@ PrefabInstance:
       objectReference: {fileID: 1200184530}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "NPC - \u201CHello Bit, my name is ******. My front yard is looking
-        a little empty and I want to plant this tree but I don\u2019t have a shovel.
-        Can you help me dig this hole and plant my tree?\u201C"
+      value: "This seems like the perfect job for Bit. Before we start to program
+        Bit, we\u2019ll need to learn a little more about nested if-else statements
+        in Python. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Duke - \u201CThis seems like the perfect job for Bit. Before we start
-        to program Bit, we\u2019ll need to learn a little more about nested if-else
-        statements in Python."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[2]
       value: "Python does nested-if else statements a little differently than any
         other languages. Instead of using the words if and else, you use if, elif,
         and else. That is not a typo. Elif. Instead of using both words, they combined
@@ -6088,12 +6082,12 @@ PrefabInstance:
         be indented. Let\u2019s look at an example. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
+      propertyPath: sentences.Array.data[2]
       value: "h = 5\r\nif h == 6:\r\n    y = 6\r\nelif h == 7:\r\n    y = 7\r\nz
         = 5\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
+      propertyPath: sentences.Array.data[3]
       value: "In this example, h is set to equal 5. Because h does not equal 6, the
         first if statement is ignored. Because h does not equal 7, the elif (else
         if) statement is ignored as well. You\u2019ll notice that there isn\u2019t
@@ -6101,6 +6095,12 @@ PrefabInstance:
         have an if statement without an else statement. The last line assigns the
         value of 5 to the variable z. This line does run because it is not a part
         of the elif statement that's condition was not met.\r\n\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "Now that we\u2019ve learned a little bit about nested if-else statements
+        in Python, let\u2019s program Bit to help Daphne. Press Continue to see the
+        question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]

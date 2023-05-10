@@ -8454,19 +8454,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "NPC - \u201CHello Bit! My name is *****. There\u2019s so many fireflies
-        out tonight! I\u2019ve always wanted to catch one. Can you help me catch
-        some fireflies?\u201D \r\n"
+      value: 'Hello there again! Do you remember talking about syntax in specific
+        programming languages? Well, Python has some of its own syntax rules too.
+        For this lesson, there are if-statement syntax rules for Python. '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Hello there again! Do you remember talking about syntax in specific
-        programming languages? Well, Python has some of its own syntax rules too.
-        For this lesson, there are if-statement syntax rules for Python. First, we\u2019re
-        going to talk about how you should actually set up the if-statement. You
-        should first write the word if and the conditions you\u2019d like to have
-        met. You don\u2019t have to use any parentheses in Python, but you do have
-        to end the line with a colon (:). It should look like this:\r\nif x > y:\r\n"
+      value: "First, we\u2019re going to talk about how you should actually set up
+        the if-statement. You should first write the word if and the conditions you\u2019d
+        like to have met. You don\u2019t have to use any parentheses in Python, but
+        you do have to end the line with a colon (:). It should look like this:\r\nif
+        x > y:\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -8494,7 +8492,7 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
       value: "Now that we\u2019ve gone over some syntax needed, let\u2019s get started
-        on the task at hand!\r\n"
+        on the task at hand! Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
@@ -11902,8 +11900,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.29}
-    newSize: {x: 0.4, y: 0.29}
+    oldSize: {x: 1, y: 2.67}
+    newSize: {x: 1, y: 2.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

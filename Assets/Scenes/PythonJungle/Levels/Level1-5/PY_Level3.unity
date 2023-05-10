@@ -2796,47 +2796,49 @@ PrefabInstance:
       objectReference: {fileID: 517820086}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "NPC - \u201CHello Bit! My name is ******. I just came to town and haven\u2019t
-        found a home yet. Do you think you could help me get supplies to build a
-        home.\n"
+      value: To help Anne build a home, you will have to help Bit understand operators
+        in Python, but be careful. Python has an extra arithmetic operator and some
+        rules to follow.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Duke - To help ***** get suppiles a home, you will have to help Bit
-        understand operators in Python, but be careful. Python has an extra arithmetic
-        operator and some rules to follow.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[2]
-      value: 'Python has an extra operator that you can use! The operator is ** which
-        is used for exponents. An example of this being used is below,
+      value: 'Python is a little different than other languages. It has an extra
+        operator that you can use but also does not allow the ++ and -- operators.
+        The extra operator is ** which is used for exponents. An example of this
+        being used is below,
 
-        Int
-        x = 5
+        Int x = 5
 
         Int y = 5 **2
 
-        The output for y would be 25 as 5 to
-        the second power is 25.
+        The
+        output for y would be 25 as 5 to the second power is 25.
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
+      propertyPath: sentences.Array.data[2]
       value: "Another thing you need to know is that Python is a language that uses
         white space. This means that indentations and spaces are very important.
         This plays into many things when writing code in Python. Some concepts in
         Python require indentation and others cannot be run if there are indentations.
-        \r\n"
+        \r\n\r\nThe concepts we have learned so far, variables, variable assignments,
+        and now arithmetic operators need to all be lined up. \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "For example,\r\nint x = 4\r\n    int y = x + 3\r\nwould cause a syntax
+        error as this is not lined up. To fix this, you would need to change it to
+        this:\r\nint x = 4\r\nint y = x + 3\r\nThis would not cause any errors!\r\n\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "The concepts we have learned so far, variables, variable assignments,
-        and now arithmetic operators need to all be lined up. \r\n"
+      value: "That\u2019s all for now! Now, let\u2019s use these arithmetic operators
+        to help Anne out! Press Continue to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]

@@ -10093,13 +10093,13 @@ PrefabInstance:
       objectReference: {fileID: 1444077621}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "NPC - \u201CHello Bit! My name is ******. This is my pet snake ***.
-        I ran out of eggs to feed him. Do you think you could find more to help feed
-        him?\u201D"
+      value: "To help Autumn feed their snake, you will need to help Bit learn Relational
+        operators in Python. But don\u2019t feed the snake too much or he will get
+        a stomach ache. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]

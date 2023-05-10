@@ -3896,52 +3896,49 @@ PrefabInstance:
       objectReference: {fileID: 1144450136}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "NPC - \u201CHello Bit! My name is ******. I just came to town and haven\u2019t
-        found a home yet. Do you think you could help me build one home?\u201D\r\n"
+      value: "11011010\n00100111\nThis looks a little familiar. Binary right? I\u2019m
+        sure if we change this back to base 10 it\u2019ll make a little more sense.
+        But first, there\u2019s some things you need to know about Python and how
+        variables are different then we can help Micky make sense of what those numbers
+        mean."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Duke - To help ***** build a home, you will have to help Bit understand
-        operators in Python, but be careful. Python has an extra arithmetic operator
-        and some rules to follow.
+      value: 'Some languages have their own set of rules that are different from
+        others. Variables in Python are an example of this. While Python does still
+        use variable types, you do not need to specify the variable type. For example,
+        x = 4 will be given the variable type of int (integer). You can always identify
+        the variable with the type of variable you would like the variable to be.
+        Example, float x = 4.7. '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Python has an extra operator that you can use! The operator is ** which
-        is used for exponents. An example of this being used is below,
-
-        Int
-        x = 5
-
-        Int y = 5 **2
-
-        The output for y would be 25 as 5 to
-        the second power is 25.
-
-'
+      value: There are also some cool uses of int and float in Python. One of those
+        being the converter. For example, x = 3.14 will automatically be a float
+        as there is a decimal. But if you use int(x), it will turn x to 3. This also
+        goes the other way where if you say x = 3 then float(x), x will be turned
+        into a float with the number 3.0.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Another thing you need to know is that Python is a language that uses
-        white space. This means that indentations and spaces are very important.
-        This plays into many things when writing code in Python. Some concepts in
-        Python require indentation and others cannot be run if there are indentations.
-        \r\n"
+      value: "When it comes to strings, Python does not care if you use single or
+        double quotations. \r\n\r\nBoolean values in Python can either be 1 or 0
+        but can also be True or False. The words \u201CTrue\u201D and \u201CFalse\u201D
+        have to be capitalized for it to work. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "The concepts we have learned so far, variables, variable assignments,
-        and now arithmetic operators need to all be lined up. \r\n"
+      value: "Now that we\u2019ve gone over this, let\u2019s program Bit to understand
+        variable types in Python! Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "For example,\r\nint x = 4\r\n    int y = x + 3\r\nwould cause a syntax
-        error as this is not lined up. To fix this, you would need to change it to
-        this:\r\nint x = 4\r\nint y = x + 3\r\nThis would not cause any errors!\r\n"
+      value: "That\u2019s all for now! Now, let\u2019s use these arithmetic operators
+        to help ***** out!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]

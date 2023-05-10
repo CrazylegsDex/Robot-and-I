@@ -6010,43 +6010,36 @@ PrefabInstance:
       objectReference: {fileID: 1052626107}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "Bit has a special set of arms for this. Let\u2019s program him for
+        this job real quick."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: "Python does not allow for arrays. I know. It\u2019s a bummer. But they
+        do have something similar named lists. They look very similar to arrays so
+        you will have to just trust me when I say it\u2019s a list and not an array.
+        Let\u2019s start with an example:\r\nExample:\r\n\r\ngrades = [95, 83, 74,
+        10]\r\ngrades[3] = 100\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "In this example, I have a list of grades for a class with 4 students.
+        The list name is grades. To initialize this list, we type the name, an equal
+        sign, an open square bracket, the list of grades with commas separating them,
+        and finally, a close square bracket. It seems like we made a mistake in the
+        4th students grade. To change the grade, we use the list name, an open square
+        bracket, the students number minus 1     (4 - 1 = 3), an equal sign, and
+        the correct grade. OOF! 100 is a lot different than 10. I\u2019m glad we
+        fixed that. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: Easy enough, right? Ready to program Bit? Perfect! Press Continue to
+        see the question!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]

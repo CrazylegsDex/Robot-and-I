@@ -3587,64 +3587,60 @@ PrefabInstance:
       objectReference: {fileID: 56315376}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: 'Daphne Does Graphics Stuff
-
-'
+      value: Bit is BROKE!!!!! We need to fix him!! I think he has a problem in his
+        code and we need to swap something inside him. Learn how to use functions
+        in Python so we can fix Bit!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Lauren Does Dialogue Stuff
+      value: "Python allows you to program functions too. As usual, Python has to
+        be different. Their functions do not require us to state whether or not we
+        want to return something when first creating the function. We use the word
+        \u201Cdef\u201D to define the function, and if you want to return something,
+        you use the word \u201Creturn\u201D. It\u2019s easier than it sounds. Let\u2019s
+        look at an example:"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: Travis Does Level Stuff
+      value: "Example:\r\ndef addNprint(num1, num2):\r\n    print(num1) \r\n    print(num2)\r\n   
+        return num1 + num2\r\n\r\nsum = addNprint(3,6)\r\n\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "\nThis example creates and calls the function addNprint. This function
+        takes in two numbers, prints them out, then returns the sum of the two numbers
+        to store in a variable. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "To create a function, you use the word \u201Cdef\u201D. This tells
+        the compiler you are defining a function. You then can name your function.
+        Here, we name it addNprint. We then open parenthesis, name the input variables
+        we would like to get from the function call, and close parenthesis. We name
+        them num1 and num2. After we have named our function and indicated what input
+        we would like, we add a colon. Now, everything under function declaration
+        and indented by 4 spaces (IT MUST BE INDENTED) is a part of this function.
+        Inside this function, we print out both numbers then return the sum of the
+        numbers. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "When we call this function, we state that we would like the value that
+        is returned to be stored in a variable named sum. We do this by adding the
+        name \u201Csum\u201D, an equal sign, the functions name, and inside parentheses,
+        the two numbers we would like to be printed out and added together separated
+        by a comma. When giving these two numbers, you can give them using digits
+        or variables storing the value. In this example, we use a function that only
+        includes numbers, but a function can accept any kind of input. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
+      value: Ready for your last Python programming session. All good things must
+        come to an end. Press Continue to see the question!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]

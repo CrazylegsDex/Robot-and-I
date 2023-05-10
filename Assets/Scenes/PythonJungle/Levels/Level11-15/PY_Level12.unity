@@ -3941,62 +3941,44 @@ PrefabInstance:
       objectReference: {fileID: 770876691}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "I think they're right! That\u2019s too many snakes. I\u2019m sure Bit
+        can help them out! Let\u2019s learn for loops in Python real quick so we
+        can program Bit to help."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: gayyyyyyyyyyyyy
+      value: "Python does For loops a little differently than other programming languages.
+        As always, let\u2019s look at an example then dissect it after. \r\n\r\nExample:\r\nfor
+        var in range (10,21):\r\n    print(var)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "This loop will print out 10 to 20. First, we start with the word \u201Cfor\u201D.
+        We then name the variable we would like to be compared. In this example,
+        our variable is named var. You then type \u201Cin range\u201D and open your
+        parentheses. The first number in the parentheses is what your variable will
+        be initialized to. The second number after the comma (Don\u2019t Forget About
+        The Comma!!) will tell you what number we don\u2019t want our variable to
+        exceed. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "Here, we want the variable to stay less than 21. Once the variable
+        var reaches the value 21, the loop ends. You then close the parentheses,
+        add a colon, then you can write that code you would like to be in the for
+        loop. Everything you would like to be inside the loop should be indented
+        by 4 spaces. In this example, you simply print out the value in variable
+        var. For loops in Python automatically add one to the variable you have named,
+        so you don\u2019t have to worry about that. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Are you ready? You\u2019ve got this. Let\u2019s program Bit. Press
+        Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
