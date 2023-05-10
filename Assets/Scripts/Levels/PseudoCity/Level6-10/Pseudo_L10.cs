@@ -35,7 +35,7 @@ namespace PseudoLevels
         public GameObject complete;
         public TMP_InputField gameInput;
 
-        public GameObject flo;
+        public GameObject box;
         public GameObject bit;
         public GameObject cam;
         float camx, camy, camz;
@@ -47,7 +47,7 @@ namespace PseudoLevels
         void Start()
         {
             hairTests = GameObject.FindGameObjectsWithTag("Grabbable");
-            flo.SetActive(false);
+            box.SetActive(false);
             camx = cam.transform.position.x;
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
@@ -294,7 +294,7 @@ namespace PseudoLevels
             if (num == 4)
             {
 				Audio_Manager.Instance.PlaySound("Correct");
-                flo.SetActive(true);
+                box.SetActive(true);
 
             }
 			else 

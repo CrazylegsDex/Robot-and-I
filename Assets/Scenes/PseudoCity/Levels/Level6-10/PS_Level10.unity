@@ -11857,7 +11857,7 @@ PrefabInstance:
         we add another plus sign, open quotes, put an explanation mark, close the
         quotes and parentheses. This is what the user will see:
 
-        
+
 
         Please
         type your name and then press Enter: The Duke
@@ -12865,23 +12865,23 @@ MonoBehaviour:
   aInput: {fileID: 576659558}
   bInput: {fileID: 276256901}
   b2Input: {fileID: 1605272814}
-  b3Input: {fileID: 0}
-  b4Input: {fileID: 0}
+  b3Input: {fileID: 745639863}
+  b4Input: {fileID: 48227028}
   cInput: {fileID: 942976177}
   dInput: {fileID: 2104975958}
-  d2Input: {fileID: 0}
-  d3Input: {fileID: 0}
+  d2Input: {fileID: 1635179649}
+  d3Input: {fileID: 1170811607}
   aOutput: {fileID: 1338191890}
   bOutput: {fileID: 2001874705}
   cOutput: {fileID: 705767852}
   dOutput: {fileID: 1365838736}
-  NameOutput: {fileID: 0}
-  Name2Output: {fileID: 0}
-  Name3Output: {fileID: 0}
-  Name4Output: {fileID: 0}
+  NameOutput: {fileID: 804845000}
+  Name2Output: {fileID: 1037807462}
+  Name3Output: {fileID: 1310713245}
+  Name4Output: {fileID: 74039020}
   complete: {fileID: 164399068}
-  gameInput: {fileID: 0}
-  flo: {fileID: 0}
+  gameInput: {fileID: 856269872}
+  box: {fileID: 191596661}
   bit: {fileID: 1066773864}
   cam: {fileID: 2081055345}
   boxTests: []
