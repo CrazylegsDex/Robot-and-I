@@ -43,6 +43,7 @@ namespace PseudoLevels
         public GameObject hoseTest;
         public GameObject[] hoseTests;
         private Button_Check button_Check;
+        public GameObject tree;
         private bool button1;
         public BoxCollider2D levelSprite;
         void Start()
@@ -57,6 +58,7 @@ namespace PseudoLevels
             camy = cam.transform.position.y;
             camz = cam.transform.position.z;
             complete.SetActive(false);
+            tree.SetActive(false);
         }
         void Update()
         {
@@ -98,8 +100,11 @@ namespace PseudoLevels
                             {
                                 
                                 endTime = Time.time - startTime;
-                                if(endTime > 5)
+                                if (endTime > 5)
+                                {
                                     button1 = true;
+                                    go.SetActive(false);
+                                }
                             }
                             else
                             {
@@ -111,6 +116,7 @@ namespace PseudoLevels
                         {
                             levelSprite.isTrigger = true; // Sets levelSprite to trigger complete
                             complete.SetActive(true);
+                            tree.SetActive(true);
                         }
                     }
 
