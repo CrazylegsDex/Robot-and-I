@@ -5569,7 +5569,7 @@ PrefabInstance:
       objectReference: {fileID: 495181815}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -5588,7 +5588,7 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
       value: "Let\u2019s start off with an example of a loop that calculates the
-        sum of 1 - 10:\r\n\r\nExample:\r\nint sum = 0; \r\nint count = 1;\r\n\r\nwhile
+        sum of 1 - 10:\r\nExample:\r\nint sum = 0; \r\nint count = 1;\r\n\r\nwhile
         (count <= 10)\r\n\tsum = sum + count\r\n\tcount = count + 1\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
