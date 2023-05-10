@@ -2042,6 +2042,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 82
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -2204,6 +2212,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_margin.y
+      value: -43.93506
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2242,60 +2254,64 @@ PrefabInstance:
       objectReference: {fileID: 408663635}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: 'Crab Racing?
-
-        Thats right. May the best crab win.'
+      value: "We need to help Kenny win. Let\u2019s program Bit to understand switch
+        statements in C# so we can help Kenny out. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Go Bit Go
+      value: "Switch statements in C# is very similar to how we learned it in Pseudo
+        City. The only main difference is the use of semicolons and curly brackets.
+        Let\u2019s look at an example and see how semicolons and curly brackets should
+        be used. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: "int num = 2;\r\nstring weekDay;\r\nswitch (num) {\r\ncase 1:\r\n   
+        weekDay = \u201CMonday\u201D; \r\n    break;\r\ncase 2:\r\n    weekDay =
+        \u201CTuesday\u201D; \r\n    break;\r\ndefault:\r\n    weekDay = \u201CI
+        don\u2019t remember\u201D;\r\n    break; \r\n}\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
-        of the string takes up 2 bytes (16 bits) of memory."
+      value: "In this example, we have an integer variable named \u201Cnum\u201D
+        and initialized to 2. We also declare a string variable called \u201CweekDay\u201D.
+        Now that we have these variables, we can start the switch statement. We start
+        the switch statement just like we did when we first learnt it. We use the
+        word \u201Cswitch\u201D and the variable we would like to be compared in
+        parenthesis, num. In C#, you need to then use a curly bracket. You will use
+        this after putting the variable you would like to be compared in parenthesis
+        and one at the very end of the switch statement. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "char: This type of variable holds a character value like \u2018c\u2019,
-        \u2018F\u2019, \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character
-        takes up 2 bytes (16 bits) of memory. Characters are enclosed by a single
-        quotation. Example, char c = \u2018A\u2019"
+      value: "We then start the cases. There are 2 cases and one default case. To
+        declare a case, you use the word case then what you would like to be compared
+        to the value of the variable we used in the switch section. The first case
+        compares it to the number 1. We then use a colon to signify the start of
+        the code portion we would like to be run if that case is found to be true.
+        For this case, we initialize the variable weekDay to the value \u201CMonday\u201D.
+        Just like every other variable assignment, you end it with a semicolon. The
+        next line ends this case using the word \u201Cbreak\u201D and needs a semicolon
+        after it as well. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: 'bool: This type of variable holds a boolean value true or false. For
-        a true output, you can use the number 1 or the word true. For a false output,
-        you can use the number 0 or the word false. A boolean value holds 1 byte
-        (8 bits) of memory. Example, bool d = true or bool d = 1 (both of these values
-        result in the variable being true).
-
-'
+      value: "The other case is very similar but with variable assignments and comparisons
+        to num. The default case is similar to the cases but doesn\u2019t have a
+        comparison for num. The default case just has the word default and a colon
+        after it. The next line initializes weekDay to the word \u201CI don\u2019t
+        remember\u201D and of course, ends with a semicolon. The next line ends the
+        switch statement with \u201Cbreak\u201D, a semicolon, and finally, a close
+        curly bracket. This is how switch statements work in C#."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: 'double: This variable holds a double-precision floating point value.
-        This means that it holds a number with a decimal. The range for a double
-        number is 1.7E - 308 to 1.7E + 308. It holds 8 bytes (64 bits) of memory.
-        Example, double e = 3.14
-
-'
+      value: "Now that we\u2019ve learned switch statements in C#, let\u2019s help
+        Kenny and Chuckles. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
@@ -3123,8 +3139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 37.667603, y: -1.0665283}
-  m_SizeDelta: {x: 958.1517, y: 327.4154}
+  m_AnchoredPosition: {x: 37.667603, y: 13.642}
+  m_SizeDelta: {x: 958.1517, y: 386.2498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011876781
 MonoBehaviour:

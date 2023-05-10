@@ -5207,73 +5207,82 @@ PrefabInstance:
       objectReference: {fileID: 1421755054}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Green Chicken? Bit, I have come to the conclusion you need a best friend.
-        I want you to define me a string array named Friends. Define the array to
-        contain 20 different possibilities. I will initialize the array for you,
-        then I want you to loop through the array checking each element. Once you
-        find the one that says "Best Friend", then print that array index and end
-        the loop. I know there is a best friend out there for you. It certainly is
-        not that Chicken.
+      value: "I\u2019m sure we can find some friends for Lauren. Let\u2019s learn
+        about arrays so we can program Bit to help Lauren find some friends."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: An Array of elements? Complex!!
+      value: 'Arrays in C# are a little more complex. There are multiple ways to
+        declare an array. You can declare an empty array like this:
+
+        
+
+        Example:
+
+        string
+        [] pets = new string [3];
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: "This creates a new array of size 3 that is empty. To do this, you type
+        the variable type you would like. Here, it is a string. You then type open
+        and close square brackets ( [] ). This is what makes it an array. You then
+        name the array. We chose the name pets for the example. Next, you type an
+        equal sign (=) and the word \u201Cnew\u201D. This creates a new instance
+        of an array. Lastly, you open square brackets, put the size of the array
+        you would like, a close square bracket, and as always, a semicolon. This
+        creates an array named pets with the size 3. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
-        of the string takes up 2 bytes (16 bits) of memory."
+      value: 'To populate an array that has been initialized like this you can do
+        this:
+
+        
+
+        Example:
+
+        pets = new string []{"George","Carl","Jen"};
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "char: This type of variable holds a character value like \u2018c\u2019,
-        \u2018F\u2019, \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character
-        takes up 2 bytes (16 bits) of memory. Characters are enclosed by a single
-        quotation. Example, char c = \u2018A\u2019"
+      value: "First, we state the name of the array then an equal sign. As we did
+        before, we type the word \u201Cnew\u201D, the variable type name and open
+        and close square brackets. We can now open a curly bracket and populate the
+        array. Between each variable, you put a comma. This will help separate them
+        for the compiler. At the end, you close with a curly bracket and as always,
+        a semicolon. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: 'bool: This type of variable holds a boolean value true or false. For
-        a true output, you can use the number 1 or the word true. For a false output,
-        you can use the number 0 or the word false. A boolean value holds 1 byte
-        (8 bits) of memory. Example, bool d = true or bool d = 1 (both of these values
-        result in the variable being true).
-
-'
+      value: "There is another way to declare and initialize an array at once in
+        C#. While this may seem like an easier way, both ways are important and have
+        their own time to shine. So, take your time to learn both. Let\u2019s look
+        of an example of this way to declare and initialize:\r\n\r\nExample:\r\nint
+        [] years = {2000, 1995, 2005, 1984};\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: 'double: This variable holds a double-precision floating point value.
-        This means that it holds a number with a decimal. The range for a double
-        number is 1.7E - 308 to 1.7E + 308. It holds 8 bytes (64 bits) of memory.
-        Example, double e = 3.14
-
-'
+      value: "In this example, we are creating an array of integers. We start with
+        the variable type, square brackets, and the variable name \u201Cyears\u201D.
+        We can now initialize the values directly with an equal sign (=), an open
+        curly bracket, the list of integers we would like, a close curly bracket,
+        and a semicolon. Just like that we have an array of integers. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'float: Single-precision floating point value. This variable is much
-        like double but holds less memory space with only 4 bytes (32 bits) of memory.
-        The range of Float variables in C language is -3.4e^38 to +3.4e^38. Example,
-        float f = 1.2345
-
-'
+      value: "Before we move on, remember that when you are looking to access an
+        object in the array, it is one less than you would like. The first number
+        in this array is accessed using years[0]. Now that we\u2019ve learned arrays,
+        let\u2019s program Bit to help Lauren. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]

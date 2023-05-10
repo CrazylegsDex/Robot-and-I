@@ -2034,21 +2034,16 @@ PrefabInstance:
       objectReference: {fileID: 321028136}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Bubba - \u201CHello Bit,my name is Bubba. I lost which cans have dog
-        food and which have vegetables. Is there any way you could help me sort them?\u201C"
+      value: "This is a job Bit was made for. Let\u2019s first teach Bit if-else
+        statements and the syntax needed for C# then we can help Timothy sort these
+        cans."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Duke - \u201CThis is a job Bit was made for. Let\u2019s first teach
-        Bit if-else statements and the syntax needed for C# then we can help Bubba
-        sort these cans.\u201D"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[2]
       value: "The syntax for if-else statements in C# is very similar to if statements.
         The if section of the if-else statement is the exact same. Once that is created
         to your liking, you\u2019ll then be able to start the else section. You will
@@ -2062,12 +2057,12 @@ PrefabInstance:
         example before we start coding Bit. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[3]
+      propertyPath: sentences.Array.data[2]
       value: "if (x > y) {\r\n    y = x;\r\n    y ++;}\r\nelse {\r\n    x = 5;\r\n   
         y = 6;}\r\nx \u2013-;\r"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[4]
+      propertyPath: sentences.Array.data[3]
       value: "In this example, if x is greater than y, y will be set equal to the
         value that is in x and will be incremented by one. If not, x will be set
         to value 5 and y will be set to the value 6. The last line of code will execute
@@ -2075,10 +2070,15 @@ PrefabInstance:
         the end of the if-else statement, x will be decremented by one. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[5]
+      propertyPath: sentences.Array.data[4]
       value: Bit, you will find this level is different than the previous ones. For
         this level, when you click Sort, your *input* variable will be assigned random
         values and your code will be run several times. Good Luck!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: "Now that we\u2019ve learned about if-else statements in C#, let\u2019s
+        help Timothy! Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]

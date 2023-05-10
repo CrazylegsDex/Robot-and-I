@@ -2249,26 +2249,32 @@ PrefabInstance:
       objectReference: {fileID: 458750062}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Every language has their own syntax rules. Syntax means the structure
-        of how code is written or formatted for a particular language. For example,
-        in the programming language C#, every variable assignment needs to end with
-        a semicolon, \";\". So, if you are trying to create a integer variable named
-        cats with the value 4, the declaration would look like this: \r\n\nint cats
-        = 4;\r\n"
+      value: "To play this game with Jasmina, you\u2019ll need to assign these variables
+        to the right type to find the right cup. But first, there\u2019s a little
+        more you need to know about the language C#."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "This applies to all variable assignments in C#.\r\nstring num = \u201Cfive\u201D;\r\n\nWatch
-        out for these syntax rules! It\u2019s easy to forget something as small as
-        a semicolon. Now, let\u2019s start programming Bit!\r\n"
+      value: Every language has their own syntax rules. Syntax means the structure
+        of how code is written or formatted for a particular language. For example,
+        in the programming language C#, every variable assignment needs to end with
+        a semicolon, ;.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: Use variable assignment to find the correct cup.
+      value: " So, if you are trying to create a integer variable named cats with
+        the value 4, the declaration would look like this: \r\nint cats = 4;\r\nThis
+        applies to all variable assignments in C#.\r\nstring num = \u201Cfive\u201D;\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "Watch out for these syntax rules! It\u2019s easy to forget something
+        as small as a semicolon. Now, let\u2019s start programming Bit! Press Continue
+        to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 8963123874008368823, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x

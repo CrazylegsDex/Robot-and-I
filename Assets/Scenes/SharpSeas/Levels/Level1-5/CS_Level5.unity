@@ -889,25 +889,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: LEARN!!!!
+      value: To help Tyrone, program Bit to understand logical operators in C# to
+        cast the fishing line into the correct location. Press Continue to see the
+        question!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Those are variables! Variables are stored in memory as bytes and represent
-        a number, character, word, sentences, ect. Every variable needs their own
-        amount of byte space in memory. A byte consists of 8 bits. If a variable
-        needs 4 bytes, that is equivalent to 32 bits. \r\n\nYou can create multiple
-        variables at the same time if they\u2019re the same type. Below are the different
-        types of variables available for your use:\r\n\r\n"
+      value: LEARN!!!!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: LEARN!!!!
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]

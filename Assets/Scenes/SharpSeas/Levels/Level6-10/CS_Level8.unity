@@ -3073,6 +3073,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -3235,6 +3239,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3273,41 +3285,42 @@ PrefabInstance:
       objectReference: {fileID: 346048166}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Bit, you will find this level is different than the previous ones. For
-        this level, when you click Run, your *input* variable will be assigned random
-        values and your code will be run several times. Good Luck!
+      value: "Oh No!! We need to help them. Let\u2019s learn about nested if-else
+        statements in C# so we can program Bit to help them!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Go Bit Go
+      value: "Nested if-else statements is just like if else statements in C# but
+        with a small extra step. When you go to write a nested if-else statement,
+        you\u2019ll start it out exactly like an if-else statement, with the word
+        if, a conditional statement, code to be run if that condition is met, and
+        the word else. The extra part comes here. Directly after the word else, you\u2019ll
+        write the word if again and start a new conditional statement. The syntax
+        for this is the same as before. Let\u2019s look at an example."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: "Example:\r\nint y, z;\r\nint x = 7;\r\nif (x == 6){\r\n    y = 7;\r\n   
+        z = 5;}\r\nelse if (x == 7)\r\n    y = 6;\r\nelse\r\n    y = 5;\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
-        of the string takes up 2 bytes (16 bits) of memory."
+      value: 'In this example, we have three variables, x, y, and z. The variables
+        y and z have been initialized but not set to a value. The variable x has
+        been initialized and set to equal 7. The first if statement does not get
+        run because the condition of x equaling 6 is not met. Now we have the else-if
+        statement. This condition is met as x does equal 7. We now run the code that
+        is linked to that statement. Now y is equal to 6. The else statement is not
+        run or tested because a condition has already been met. '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "char: This type of variable holds a character value like \u2018c\u2019,
-        \u2018F\u2019, \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character
-        takes up 2 bytes (16 bits) of memory. Characters are enclosed by a single
-        quotation. Example, char c = \u2018A\u2019"
+      value: "You\u2019ve got this. Let\u2019s program Bit so we can help this poor
+        fish! Press Continue to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]

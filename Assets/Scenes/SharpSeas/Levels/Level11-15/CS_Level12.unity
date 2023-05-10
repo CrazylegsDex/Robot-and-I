@@ -937,6 +937,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -1099,6 +1103,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_margin.y
+      value: -3.8380127
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1137,32 +1149,36 @@ PrefabInstance:
       objectReference: {fileID: 228491491}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Its Turtle Time!!
+      value: "Oooo this looks like fun. I\u2019m sure we can program Bit to help
+        them out with their turtle race. Let\u2019s start now."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: Go Bit Go
+      value: "Now that you\u2019ve learned Do While loops in Pseudo, let\u2019s learn
+        the syntax of them in C#. As usual, let\u2019s start with an example.\r\n\r\nExample:\r\nint
+        i = 10;\r\n\r\ndo{\r\n    System.Console.WriteLine(i);\r\n    i ++;\r\n}while(i
+        < 21);\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: "This Do While loop will print the numbers 10 - 20. We first start off
+        with declaring and initializing the variable i with the value 10. We can
+        now start the Do While loop with the word \u201Cdo\u201D and an open curly
+        bracket. Everything inside this curly bracket will be a part of the do section
+        of this loop. In this example, we first print out the number to the console
+        then increment i by 1. We then close the do part of the do while loop with
+        a curly bracket. We next type the word \u201Cwhile\u201D, put our conditional
+        statement in parentheses and then end it with a semicolon. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
-        of the string takes up 2 bytes (16 bits) of memory."
+      value: "Watch out for those semicolons. We are what we programmers most often
+        miss in languages like C#. Now let\u2019s program Bit so we can watch these
+        turtles race. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
