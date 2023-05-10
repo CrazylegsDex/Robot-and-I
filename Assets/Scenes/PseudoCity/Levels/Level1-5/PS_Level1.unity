@@ -12571,32 +12571,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "int x = 4\r\nbool y = true\r\nstring z = \u201CHello World\u201D\r\n"
+      value: "To help Sally sort their things, you\u2019ll need to help me program
+        Bit to know the different variable types. Are you ready to get started? Great!
+        Let\u2019s first talk about the different variable types. Press Continue
+        to start the lesson."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Those are variables! Variables are stored in memory as bytes and represent
-        a number, character, word, sentences, ect. Every variable needs their own
-        amount of byte space in memory. A byte consists of 8 bits. If a variable
-        needs 4 bytes, that is equivalent to 32 bits. \r\n\nYou can create multiple
-        variables at the same time if they\u2019re the same type. Below are the different
-        types of variables available for your use:\r\n\r\n"
+      value: "int x = 4\r\nbool y = true\r\nstring z = \u201CHello World\u201D\r\n\nThose
+        are variables! Variables are stored in memory as bytes and represent a number,
+        character, word, sentences, ect. You can create multiple variables at the
+        same time if they\u2019re the same type. Let's go over some different types
+        of variables."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: "int: This type of variable holds integer values from 0 to 4,294,967,295
+        only including positive numbers. One int variable has 4 bytes (32 bits) of
+        memory.\n\nExample:  int a  = 145,458.\n \nAn example of multiple variable
+        assignment for int would be: Int a,b"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
       value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
+        such as a sentence. Strings are enclosed with double quotations. \n\nExample,
+        string b = \u201CHello World\u201D. \n\nOne string variable can contain up
+        to 2 billion characters. The memory size varies on the string as one character
         of the string takes up 2 bytes (16 bits) of memory."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
@@ -12604,32 +12604,31 @@ PrefabInstance:
       value: "char: This type of variable holds a character value like \u2018c\u2019,
         \u2018F\u2019, \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character
         takes up 2 bytes (16 bits) of memory. Characters are enclosed by a single
-        quotation. Example, char c = \u2018A\u2019"
+        quotation. \n\nExample, char c = \u2018A\u2019"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: 'bool: This type of variable holds a boolean value true or false. For
+      value: "bool: This type of variable holds a boolean value true or false. For
         a true output, you can use the number 1 or the word true. For a false output,
         you can use the number 0 or the word false. A boolean value holds 1 byte
-        (8 bits) of memory. Example, bool d = true or bool d = 1 (both of these values
-        result in the variable being true).
-
-'
+        (8 bits) of memory. \n\nExample, bool d = true or bool d = 1 (both of these
+        values result in the variable being true).\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: 'double: This variable holds a double-precision floating point value.
+      value: "double: This variable holds a double-precision floating point value.
         This means that it holds a number with a decimal. The range for a double
         number is 1.7E - 308 to 1.7E + 308. It holds 8 bytes (64 bits) of memory.
-        Example, double e = 3.14
-
-'
+        \n\nExample, double e = 3.14\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
       value: 'float: Single-precision floating point value. This variable is much
         like double but holds less memory space with only 4 bytes (32 bits) of memory.
-        The range of Float variables in C language is -3.4e^38 to +3.4e^38. Example,
+        The range of Float variables in C language is -3.4e^38 to +3.4e^38.
+
+
+        Example,
         float f = 1.2345
 
 '
@@ -12637,11 +12636,14 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]
       value: "These are all the main variable types you will come across. Now that
-        we\u2019ve gone over them, let\u2019s start to upload Bit\u2019s first program!\r\n"
+        we\u2019ve gone over them, let\u2019s help Sally! Press Continue to see the
+        question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[9]
-      value: The lesson is now complete! Press continue to answer the question!
+      value: "These are all the main variable types you will come across. Now that
+        we\u2019ve gone over them, let\u2019s help Fiona! Press Continue to see the
+        question!"
       objectReference: {fileID: 0}
     - target: {fileID: 8963123874008368823, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x

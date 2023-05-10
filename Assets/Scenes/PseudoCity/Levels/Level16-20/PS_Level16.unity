@@ -2385,6 +2385,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -91.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 59.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010783, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_margin.w
+      value: -3.3319092
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -2624,6 +2636,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_margin.y
+      value: -17.492859
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2666,100 +2682,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "Oh no!! We can definitely help you out. Let\u2019s program Bit to understand
+        functions so we can save these chickens!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "A powerful tool for programming is a function. A function is a section
+        of code that can be declared once then used over and over again. There are
+        some built-in functions in every language that we welcome you to explore.
+        We will go over how to declare a function that either returns a value or
+        doesn\u2019t and how to call a function."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "A function first starts with either a variable type you would like
+        to be returned or the word \u201Cvoid\u201D, which indicates that no variables
+        will be returned after the function is run. In sum functions, you will want
+        to take in information and then modify it then return the changed value.
+        Some functions do not require any input or returns. Let\u2019s look at an
+        example of function declaration and function calls. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "Functions:\nint addOne (int num)\r\n    return num + 1\r\n\r\nint addTwo
+        (int num)\r\n    num = num + 2\r\n    return num\r\n\r\nvoid print(int num1,
+        int num2, int num3)\r\n    output(num1)\r\n    output(num2)\r\n    output(num3)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Function call:\nint main()\r\n    x = 4\r\n    y = addOne(x)\r\n   
+        z = addTwo(y)\r\n    print(x,y,z)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "Above, we created three functions and we have our main function that
+        we will call our other functions from. The first function returns an integer.
+        We know this because there is \u201Cint\u201D before the function name. The
+        function name is addOne. We then accept input from the main function where
+        it is called. We can tell this inside the function by what is in the parentheses,
+        int num. This means that we accept an integer input and change the name of
+        it to num. Inside the function, we add one to the variable num and then return
+        it. Returning it means that the new value will be returned to the main function
+        where it was called. Here, we assign the changed value to a new integer named
+        y. To call a function in main, you use the name and parentheses. If the function
+        calls for input, you will put the input inside the parentheses. If not, leave
+        the parentheses empty. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
+      value: "We have a couple other examples of functions for you to examine as
+        well. The function addTwo takes in an integer, adds two to it and then returns
+        it back to the main function. The third function takes in multiple integers
+        then prints them out to the console. It does not return anything. You can
+        tell this by the void by the function name. This function also shows that
+        you can take in more than one input. \r\n\r\nOh!! I almost forgot. You can
+        pass an array into a function as well. Let\u2019s look at an example."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'Example:
-
-        Int x = 6
-
-        Int y = 8
-
-        Bool result
-        = (x != y) //Result would be true. This is true because 6 does not equal
-        8.
-
-        Int a  = 6
-
-        Int b = 6
-
-        Bool result = (a != b)
-        //Result would be false. This is false because 6 does equal 6.'
+      value: "Example:\r\nvoid changeAr(string [] array)\r\n    array[0] = \u201CZ\u201D\r\n   
+        array[1] = \u201CA\u201D\r\n\r\nstring [] ar = [\u201CA\u201D,\u201DZ\u201D]\r\nchangeAr(ar)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]
-      value: The lesson is now complete! Press continue to answer the question!
+      value: "This function, changeAr, takes in an array and changes the first value
+        to \u201CZ\u201D and the second value to \u201CA\u201D. Let\u2019s break
+        this down a little bit. When you call the function that takes in an array,
+        it is just like any other input. You simply put the name of the array inside
+        the parentheses. The hard part is when you are declaring the function. Inside
+        the parentheses you type the variable type,string here, open and close square
+        brackets, and the name you would like to use inside the function. In this
+        function, we have renamed the array to the name array. We now have access
+        to the values in the array inputted to this function and we can modify them
+        as needed. If we printed out the values of the array ar before the function,
+        it would be \u201CA\u201D then \u201CZ\u201D. If we printed out the values
+        of the array ar after the function, it would be \u201CZ\u201D then \u201CA\u201D.
+        \r\n\r\nReady to teach Bit how to use functions? Let\u2019s go! \nPress Continue
+        to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8963123874008368823, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -10157,8 +10156,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782304605}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1442.8, y: 375.8, z: 0}
-  m_LocalScale: {x: 19.183617, y: 18.703432, z: 1}
+  m_LocalPosition: {x: 1445.9501, y: 385.0875, z: 0}
+  m_LocalScale: {x: 42.702354, y: 44.239056, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 143179969}
@@ -10198,7 +10197,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00076550245, y: 0.00038075447}
+  m_Offset: {x: -0.0527367, y: -0.23473519}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10209,7 +10208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.019054, y: 1.0215683}
+  m_Size: {x: 0.40698707, y: 0.5513364}
   m_EdgeRadius: 0
 --- !u!212 &1782304609
 SpriteRenderer:
@@ -10252,8 +10251,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 654082032, guid: dcc3c20cc3c8a1941900ed6c472df224, type: 3}
+  m_Color: {r: 0.4528302, g: 0.23875074, b: 0.10893556, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0

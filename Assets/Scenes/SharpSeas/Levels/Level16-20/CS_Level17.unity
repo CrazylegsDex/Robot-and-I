@@ -24808,6 +24808,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 5.6
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010783, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_text
+      value: The Duke
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010783, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278845184
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -24970,6 +24982,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_text
+      value: Here already?! I guess all good things have to come to an end. But not
+        yet..... The last and hardest challenge awaits you. I need your help with
+        something special. Press Start if you think you're up for it!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046025, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278845184
+      objectReference: {fileID: 0}
     - target: {fileID: 1900159464891297894, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -25012,78 +25038,69 @@ PrefabInstance:
       objectReference: {fileID: 2044261218}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Bit, I need your help in finding the right home to live in. Each one
-        of these looks nice, but I need more information than just what is shown
-        on the outside. Can you help me choose the right house to live in?
+      value: "Before we dig too deep, I ought to mention some things. Due to a malfunction
+        in our system, we will not be able to fully program Bit to use pointers in
+        C#. We can teach him the gist but there are just some things even I can\u2019t
+        handle. We will go over the majority of the things you should know about
+        pointers in C# but I urge you to look into it more, specifically the word
+        \u201Cunsafe\u201D in C#."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: The Last Level?
+      value: "Now that we\u2019ve settled that, let\u2019s look at an example of
+        what I can teach:\r\n\r\nExample Part 1:\r\ndouble [] rate = {9.50, 10.25,
+        15.95};\r\nint [] hours = {15, 18, 25};\r\ndouble pay = 0;\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "int: This type of variable holds integer values either negative or
-        positive from -2,147,483,648 to 2,147,483,647. You can also put the word
-        \u201Cunsigned\u201D before the variable assignment to change the range from
-        0 to 4,294,967,295 only including positive numbers. One int variable has
-        4 bytes (32 bits) of memory. Example: int a = -128 or unsigned int a  = 145,458.
-        An example of multiple variable assignment for int would be: Int a,b"
+      value: "Example Part 2:\r\ndouble *ratePtr = &rate;\r\nint *hoursPtr = &hours;\r\n\r\nfor
+        (int i = 0; i < 3; i++){\r\npay = *ratePtr * *hoursPtr;\r\n\tSystem.Console.WriteLine(\u201CPay
+        for employee\u201C + (i + 1) + \u201C is \u201C + pay);\r\n\tratePtr++;\r\n\thoursPtr++;\r\n}\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "string: This type of variable holds multiple characters (letters) together
-        such as a sentence. Strings are enclosed with double quotations. Example,
-        string b = \u201CHello World\u201D. One string variable can contain up to
-        2 billion characters. The memory size varies on the string as one character
-        of the string takes up 2 bytes (16 bits) of memory."
+      value: 'This example shows pay rate and hours being multiplied to show the
+        pay for an employee. We first start with two arrays being declared and initialized.
+        Then one variable is declared and initialized that will later be used to
+        store the pay of an employee. After that, we create a pointer for each array.
+        It is just like you were taught in Pseudo Island except you need to end with
+        a semicolon at the end of the declaration/initialization. '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "char: This type of variable holds a character value like \u2018c\u2019,
-        \u2018F\u2019, \u2018B\u2019, \u2018p\u2019, \u2018q\u2019 etc. A character
-        takes up 2 bytes (16 bits) of memory. Characters are enclosed by a single
-        quotation. Example, char c = \u2018A\u2019"
+      value: "Now that has been done, we can create a for loop that runs through
+        the arrays and calculates the employees pay. To access the value of an array,
+        you add an asterisk before the pointer name. We do this for the pay rate
+        and the hour array then multiply them together to store in the variable pay.
+        We now have the pay for this employee and can print it out. To ensure the
+        next loop has the correct values, we add one to both pointers at the end
+        of the loop. This brings the next value of each array forward. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: 'bool: This type of variable holds a boolean value true or false. For
-        a true output, you can use the number 1 or the word true. For a false output,
-        you can use the number 0 or the word false. A boolean value holds 1 byte
-        (8 bits) of memory. Example, bool d = true or bool d = 1 (both of these values
-        result in the variable being true).
-
-'
+      value: "Last time I get to say this to you, don\u2019t forget the semicolon.
+        Makes me a little sad but I\u2019m glad you made it this far. Are you ready
+        for your last problem? Me too. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: 'double: This variable holds a double-precision floating point value.
-        This means that it holds a number with a decimal. The range for a double
-        number is 1.7E - 308 to 1.7E + 308. It holds 8 bytes (64 bits) of memory.
-        Example, double e = 3.14
-
-'
+      value: The Last Level?
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'float: Single-precision floating point value. This variable is much
-        like double but holds less memory space with only 4 bytes (32 bits) of memory.
-        The range of Float variables in C language is -3.4e^38 to +3.4e^38. Example,
-        float f = 1.2345
-
-'
+      value: The Last Level?
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]
-      value: "These are all the main variable types you will come across. Now that
-        we\u2019ve gone over them, let\u2019s start to upload Bit\u2019s first program!\r\n"
+      value: The Last Level?
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[9]
-      value: The lesson is now complete! Press continue to answer the question!
+      value: The Last Level?
       objectReference: {fileID: 0}
     - target: {fileID: 8963123874008368823, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_SizeDelta.x

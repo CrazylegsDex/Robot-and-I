@@ -1172,46 +1172,37 @@ PrefabInstance:
       objectReference: {fileID: 181892149}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "This is a perfect job for Bit. We can definitely find a friend for
+        this lonely cat. Let\u2019s learn about 2D arrays so we can program Bit."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "Now that we have learned about 1 dimensional arrays, we can learn about
+        2 dimensional (2D) arrays. A 2D array is a list of lists. You can think of
+        it like a table with rows and columns. \r\nExample:\n      0    1     2   
+        3\r\n_________________\n0 |  1,   7,   6,   8\r\n1  |  2,   5,   3,  12\r\n2
+        | 10,  4,  11,   9\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "Don\u2019t forget that you should start counting with 0 when you are
+        working with arrays. Let\u2019s look at a code version of the table above
+        and explain it further. \r\n\r\na = [ [1, 7, 6, 8], [2, 5, 3, 12], [10, 4,
+        11, 9] ]\r\n\r\nTo access the first number in the first array, we would type
+        a[0][0] = 1. To access the fourth number in the third array, we would type
+        a[2][3] = 9.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: " Let\u2019s look at it like rows and columns now. You access them like
+        this: a[r-1][c-1] where r means row and c means column. Just like in 1D arrays,
+        you should subtract one to what you are trying to access because you start
+        off counting with 0 and not 1. Now that we know how 2D arrays work, let\u2019s
+        help this cat find a friend. Press Continue to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
@@ -1760,7 +1751,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: 1491843925, guid: 11043f91d169c0940b0ce0c6308971f5, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3022,7 +3013,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: 232891879, guid: 923e59f7ea850e34385566f5d393a281, type: 3}
   m_Color: {r: 0, g: 1, b: 0.003575325, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4095,7 +4086,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: -377746632, guid: 923e59f7ea850e34385566f5d393a281, type: 3}
   m_Color: {r: 0, g: 1, b: 0.9700117, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7756,7 +7747,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: -50856787, guid: 923e59f7ea850e34385566f5d393a281, type: 3}
   m_Color: {r: 1, g: 0.99149597, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10647,7 +10638,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: -50856787, guid: 923e59f7ea850e34385566f5d393a281, type: 3}
   m_Color: {r: 1, g: 0.99149597, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13459,7 +13450,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: -377746632, guid: 923e59f7ea850e34385566f5d393a281, type: 3}
   m_Color: {r: 0, g: 1, b: 0.9700117, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13860,7 +13851,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: 232891879, guid: 923e59f7ea850e34385566f5d393a281, type: 3}
   m_Color: {r: 0, g: 1, b: 0.003575325, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15575,7 +15566,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 227578110, guid: a957617b60bf3b3448a297c76432f7eb, type: 3}
+  m_Sprite: {fileID: 1491843925, guid: 11043f91d169c0940b0ce0c6308971f5, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

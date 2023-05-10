@@ -76,11 +76,23 @@ namespace PseudoLevels
                             {
                                 button1++;
                             }
+                            if(button1 == 5)
+                            {
+                                go.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                                go.transform.Translate(0, 80f, 0);
+                                button1++;
+                            }
                         }
                         if (go.name.StartsWith("2"))
                         {
                             if (Input.GetKeyDown(KeyCode.E) && button_Check.complete)
                             {
+                                button2++;
+                            }
+                            if (button2 == 5)
+                            {
+                                go.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                                go.transform.Translate(0, 80f, 0);
                                 button2++;
                             }
                         }
@@ -90,6 +102,12 @@ namespace PseudoLevels
                             {
                                 button3++;
                             }
+                            if (button3 == 5)
+                            {
+                                go.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                                go.transform.Translate(0, 80f, 0);
+                                button3++;
+                            }
                         }
                         if (go.name.StartsWith("4"))
                         {
@@ -97,11 +115,23 @@ namespace PseudoLevels
                             {
                                 button4++;
                             }
+                            if (button4 == 5)
+                            {
+                                go.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                                go.transform.Translate(0, 80f, 0);
+                                button4++;
+                            }
                         }
                         if (go.name.StartsWith("5"))
                         {
                             if (Input.GetKeyDown(KeyCode.E) && button_Check.complete)
                             {
+                                button5++;
+                            }
+                            if (button5 == 5)
+                            {
+                                go.transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+                                go.transform.Translate(0, 80f, 0);
                                 button5++;
                             }
                         }

@@ -205,6 +205,18 @@ namespace PseudoLevels
                         dOutput.text = "Will create an infinite loop!";
                         safe = false;
                     }
+                    else if (dInput.text == "i")
+                    {
+                        try
+                        {
+                            d = int.Parse(d2Input.text);
+                        }
+                        catch (Exception)
+                        {
+                            dOutput.text = "Invalid";
+                            safe = false;
+                        }
+                    }
                     else if (d3Input.text == "i")
                         d = 2;
                     else

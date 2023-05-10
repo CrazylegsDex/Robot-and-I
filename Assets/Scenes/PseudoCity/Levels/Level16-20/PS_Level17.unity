@@ -319,6 +319,9 @@ RectTransform:
   - {fileID: 156874473}
   - {fileID: 1093085101}
   - {fileID: 882644511}
+  - {fileID: 439809994}
+  - {fileID: 719272931}
+  - {fileID: 108986729}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -999,6 +1002,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -10, y: -10, z: -10, w: -10}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &108986728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108986729}
+  - component: {fileID: 108986731}
+  - component: {fileID: 108986730}
+  m_Layer: 5
+  m_Name: Bale (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &108986729
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108986728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36282298}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 550.4, y: -62.8}
+  m_SizeDelta: {x: 42.0082, y: 45.6135}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &108986730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108986728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0797d248e3524d64398ba1e68d288318, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &108986731
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108986728}
+  m_CullTransparentMesh: 1
 --- !u!1 &135625156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,8 +4783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 702, y: 25.5}
-  m_SizeDelta: {x: 420.8445, y: 207.1056}
+  m_AnchoredPosition: {x: 704.1985, y: 45.13379}
+  m_SizeDelta: {x: 429.6387, y: 128.5705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377870052
 MonoBehaviour:
@@ -4933,6 +5012,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428566754}
+  m_CullTransparentMesh: 1
+--- !u!1 &439809993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 439809994}
+  - component: {fileID: 439809996}
+  - component: {fileID: 439809995}
+  m_Layer: 5
+  m_Name: Bale
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &439809994
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439809993}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36282298}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 655.2, y: -62.5}
+  m_SizeDelta: {x: 42.0082, y: 45.6135}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &439809995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439809993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0797d248e3524d64398ba1e68d288318, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &439809996
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439809993}
   m_CullTransparentMesh: 1
 --- !u!1 &478655733
 GameObject:
@@ -6787,6 +6942,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &719272930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719272931}
+  - component: {fileID: 719272933}
+  - component: {fileID: 719272932}
+  m_Layer: 5
+  m_Name: Bale (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &719272931
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719272930}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36282298}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 599.7, y: -61.8}
+  m_SizeDelta: {x: 42.0082, y: 45.6135}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &719272932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719272930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0797d248e3524d64398ba1e68d288318, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &719272933
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719272930}
+  m_CullTransparentMesh: 1
 --- !u!1 &734446579
 GameObject:
   m_ObjectHideFlags: 0
@@ -7504,7 +7735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 651.7, y: 47.9}
+  m_AnchoredPosition: {x: 655.2, y: 45.134}
   m_SizeDelta: {x: 86.7739, y: 42.393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796429122
@@ -7527,8 +7758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey Bit, I am putting together this machine, but I need help sorting items.
-    Can you help me?
+  m_text: Hey Bit, I need help attaching ropes to my hay bales. Wanna help?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11572,7 +11802,6 @@ Transform:
   - {fileID: 179708307}
   - {fileID: 140033076}
   - {fileID: 352875713}
-  - {fileID: 1786905602}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13372,90 +13601,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -10, y: -10, z: -10, w: -10}
   m_Softness: {x: 0, y: 0}
---- !u!1 &1786905600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1786905602}
-  - component: {fileID: 1786905601}
-  m_Layer: 0
-  m_Name: Crabs_n_Rope_5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1786905601
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786905600}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -4850944, guid: 18e9876fb505b3846828e9a360ae9aa3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1786905602
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1786905600}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1557.5801, y: 411.7197, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1476411530}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789571809
 GameObject:
   m_ObjectHideFlags: 0
@@ -13958,6 +14103,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732495148010782, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 50.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -14197,6 +14346,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1380732496901046024, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 2831892604609994432, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -14239,96 +14392,70 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "Logical operators are used to perform logical operations between two
-        or more operands using AND, OR, XOR, and NOT. Logical Operators return a
-        boolean value of true or false. Let\u2019s dive in to make more sense of
-        this."
+      value: "We can definitely help you with that!! Let\u2019s teach Bit pointers
+        so we can help Amy."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "Operator AND: This operator stands for and. The standard symbol for
-        AND is \u201C&&\u201D. This operator will be true when both statements on
-        either side of the \u201C&&\u201D are true. If anything is false on either
-        side or both, the result will be false. Press Continue to see an example."
+      value: "Pointers are variables that have memory addresses of another variable.The
+        variable type does not matter. That may seem confusing but stay with us.
+        Pointers make your code more efficient. Right now, that may not be something
+        you are worried about. But when you are working with 1,000 lines worth of
+        code, it\u2019s something you should be conscious of. Let\u2019s first look
+        at a simple pointer. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: "Example:\r\nint i = 4\r\nint *ptr = &i\r\noutput(\u201CAddress of i
+        is \u201C + ptr)\r\noutput(\u201CValue of i is \u201C + *ptr)\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: "In this example, we declare and initialize an integer, i, to the value
+        of 4. We can now declare and initialize a pointer that points to the memory
+        address of the integer i. This is done using the ampersand (&) before the
+        variable you would like to have a pointer of. We then have two output statements
+        that show how to access the address of the pointer and the value of that
+        memory address. To get the memory location, you simply use the name of the
+        pointer, ptr. To access the value of that memory location, you put an asterisk
+        before the pointer. Easy, right? Let\u2019s make it a smidgen harder. "
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Example:
-
-        Int x = 3
-
-        Int y = 4
-
-        Bool result
-        = (x < 2) || (x < y) //This result will equal true
-
-        Bool result =
-        (x > 2) || (y >= x) //This result will equal true
-
-        Bool result =
-        (x < 2) || (x > y) //This result will equal false
-
-'
+      value: "Pointers are usually used with arrays, so we\u2019ll show you how they
+        work with an array. Ready? Let\u2019s look at an example.\r\n\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: "Operator XOR: This operator stands for exclusive or. The standard symbol
-        for XOR is \u201C^\u201D. This operator is only true when one side of the
-        operator is true and the other side is false. Every other combination of
-        operators will result in a false statement. Press continue to see an example."
+      value: "Example:\r\nint numAr = [1,2,3]\r\nint *ptr = &numAr\r\n\r\nfor(int
+        i = 0 ; i < 3; i++){\r\n\toutput(\u201CAddress of array [\u201C + i + \u201C]
+        is \u201C + (ptr))\r\n\toutput(\u201CValue of array [\u201C + i + \u201C]
+        is \u201C + *(ptr))\r\n\tptr++\r\n}\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: "Operator NOT: This operator stands for not. The standard symbol for
-        NOT is \u201C!\u201D. This operator is usually used with the equals operator
-        (=). Together they would look like \u201C!=\u201D. This means not equal.
-        When this operator is used together with =, the value will either be true
-        if the values compared are not equal and false if they are equal.Press continue
-        to see an example. "
+      value: "Like I said, it\u2019s confusing, but stay with us. I promise it\u2019ll
+        be worth it. We first declare an array with three numbers in it, 1, 2, and
+        3. We can now declare a pointer for our array that will point to its memory
+        address. You don\u2019t have to use the ampersand when it\u2019s an array.
+        Here, it\u2019s the array numAr. We then start a for loop so we can loop
+        through the pointer of the array. Inside the for loop, we have two output
+        statements. The difference between the two output statements. Both use the
+        pointer but one prints the memory address and the other prints the value
+        in that address. As stated before, putting an asterisk before the pointer
+        will give you access to the value the pointer is pointing at."
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: 'Example:
-
-        Int x = 6
-
-        Int y = 8
-
-        Bool result
-        = (x != y) //Result would be true. This is true because 6 does not equal
-        8.
-
-        Int a  = 6
-
-        Int b = 6
-
-        Bool result = (a != b)
-        //Result would be false. This is false because 6 does equal 6.'
+      value: "As you can see, the second output statement uses an asterisk. One output
+        will print the address of that number in the array and the other will print
+        the value of that memory address. It is worth mentioning that the memory
+        address will change every time, so don\u2019t be worried if it changes. You\u2019ll
+        notice that we add one to the pointer every loop. This is to gain access
+        to the next number in the array. Just like normal arrays, you have to one
+        to get to the next number in the array. This loop will print the memory address
+        and the value in that memory address for all three values in the array. \r\n\r\nLet\u2019s
+        program Bit to learn pointers and help Amy. Press Continue to see the question!\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[8]

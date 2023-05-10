@@ -10618,19 +10618,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
+      value: Before we can help George, we need to first program Bit to know relational
+        operators.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
+      propertyPath: sentences.Array.data[1]
       value: 'int a = 4
 
         int b -= a
 
         bool c = a > b
 
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
-      propertyPath: sentences.Array.data[1]
-      value: These are called Relational operators! Relational operators are operators
-        that are used to compare two or more variables. Relational operators will
-        work every type of variable. There are 6 different types of relational operators.
+
+        These
+        are called Relational operators! Relational operators are operators that
+        are used to compare two or more variables. Relational operators will work
+        every type of variable. There are 6 different types of relational operators.'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -10763,8 +10766,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[10]
-      value: "To help Lil' Red Ridir, program Bit to know relational operators to
-        help him label which apples are ready to be picked and which aren\u2019t.\r\n"
+      value: "To help George, program Bit to know relational operators to help him
+        label which apples are ready to be picked and which aren\u2019t.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 8963123874008368823, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_AnchoredPosition.x
