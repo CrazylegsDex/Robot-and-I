@@ -1011,7 +1011,7 @@ PrefabInstance:
       objectReference: {fileID: 157573641}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -1032,8 +1032,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: "Example:\r\nnames = [\u201CJack\u201D,\u201DSuzie\u201D,\u201DAlex\u201D]\r\nplace
-        = [3,1,2]\r\n\r\noutput(names[0] + \u201C got \u201C + place[0] + \u201C
+      value: "Example:\r\nnames = {\u201CJack\u201D,\u201DSuzie\u201D,\u201DAlex\u201D}\r\nplace
+        = {3,1,2}\r\n\r\noutput(names[0] + \u201C got \u201C + place[0] + \u201C
         place.\u201D)\r\noutput(names[1] + \u201C got \u201C + place[1] + \u201C
         place.\u201D)\r\noutput(names[2] + \u201C got \u201C + place[2] + \u201C
         place.\u201D)\r\n"
@@ -1043,21 +1043,22 @@ PrefabInstance:
       value: 'In this example, we declare and initialize two arrays. To do this,
         we first give it a name. Here, it is names and place. We then can declare
         the variables for them. For the variable names, we use strings. To start
-        it off, we use an open square bracket ( [ ). We then list the names we want
+        it off, we use an open curly bracket ( { ). We then list the names we want
         inside quotes and separated by commas. We then close the array with a close
-        square bracket ( ] ). We then do the same for the second array. Variable
-        name, equal sign, open square bracket, integers separated by commas, and
-        a close square bracket. '
+        curly bracket ( } ). We then do the same for the second array. Variable name,
+        equal sign, open curly bracket, integers separated by commas, and a close
+        curly bracket. '
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: 'Now here is the part that most people get a little mixed up, accessing
+      value: Now here is the part that most people get a little mixed up, accessing
         the variables. When you are trying to access the first object in the array,
         you start with 0 instead of 1. To access it, you write the name of the array,
         an open square bracket, the place of the array you would like minus one,
         then a close bracket. In the first output statement, we access the first
         name in the array names using names[0] and we access the first number in
-        the array place using place[0]. '
+        the array place using place[0]. We use square brackets when access the contents
+        on an array.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[5]
@@ -1071,8 +1072,8 @@ PrefabInstance:
       propertyPath: sentences.Array.data[6]
       value: "If we input this wrong and need to change it, that\u2019s easy. You
         just type the part of the array you would like to change and reinitialize
-        it. Let\u2019s look at an example:\r\nExample:\r\nnames = [\u201CJack\u201D,\u201DSuzie\u201D,\u201DAlex\u201D]\r\nplace
-        = [3,1,2]\r\nplace [0] = 2\r\nplace [2] = 3\r\nIn this example, we changed
+        it. Let\u2019s look at an example:\r\n\r\nExample:\r\nnames = {\u201CJack\u201D,\u201DSuzie\u201D,\u201DAlex\u201D}\r\nplace
+        = {3,1,2}\r\nplace [0] = 2\r\nplace [2] = 3\r\n\r\nIn this example, we changed
         Jack to placing 2nd and Alex to placing 3rd. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}

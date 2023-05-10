@@ -1191,18 +1191,18 @@ PrefabInstance:
       propertyPath: sentences.Array.data[2]
       value: "Don\u2019t forget that you should start counting with 0 when you are
         working with arrays. Let\u2019s look at a code version of the table above
-        and explain it further. \r\n\r\na = [ [1, 7, 6, 8], [2, 5, 3, 12], [10, 4,
-        11, 9] ]\r\n\r\nTo access the first number in the first array, we would type
+        and explain it further. \r\n\r\na = { {1, 7, 6, 8}, {2, 5, 3, 12}, {10, 4,
+        11, 9} }\r\n\r\nTo access the first number in the first array, we would type
         a[0][0] = 1. To access the fourth number in the third array, we would type
         a[2][3] = 9.\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: " Let\u2019s look at it like rows and columns now. You access them like
+      value: "Let\u2019s look at it like rows and columns now. You access them like
         this: a[r-1][c-1] where r means row and c means column. Just like in 1D arrays,
         you should subtract one to what you are trying to access because you start
         off counting with 0 and not 1. Now that we know how 2D arrays work, let\u2019s
-        help this cat find a friend. Press Continue to see the question!\r\n"
+        help this cat find a friend. Press Continue to see the question!"
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
