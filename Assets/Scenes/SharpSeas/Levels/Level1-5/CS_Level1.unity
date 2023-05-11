@@ -357,7 +357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &166194882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -468,8 +468,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CSharpLevels.CSharp_L11, Assembly-CSharp
+      - m_Target: {fileID: 1916993543}
+        m_TargetAssemblyTypeName: CSharpLevels.CSharp_L1, Assembly-CSharp
         m_MethodName: MainDriver
         m_Mode: 1
         m_Arguments:
@@ -615,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247488, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1380732495151247489, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: m_Pivot.x
@@ -871,7 +871,7 @@ PrefabInstance:
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: LessonObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 166194881}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: ProfessorName
       value: The Duke
@@ -886,41 +886,31 @@ PrefabInstance:
       objectReference: {fileID: 1145850874}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
       value: Help me teach Bit variable types in C# to learn more about the pirates
-        here in The Sharp Seas. Press Continue to see the question!
+        here in The Sharp Seas. Press Start Lesson to continue.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: I should be able to develop this quickly.
+      value: Bit, the Sharp Seas are not too different than Pseudo Island. The things
+        you will do here are very similiar with the only difference being Syntax.
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: 'Example:
-
-        Int x = 15
-
-        Int y = 10
-
-        Bool result
-        = (x < y) && (x > 11) //This result will equal false
-
-        Bool result
-        = (x == y) && (x < 20) //This result will equal false
-
-        Bool result
-        = (x >= y) && (x < 20) //This result will equal true'
+      value: You will learn a little more about Syntax in Level 2, but in short,
+        Syntax is how you write statements of code. Here in the Sharp Seas, you end
+        all your statements with a semicolon -> ;
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Operator OR: This operator stands for or. The standard symbol for OR
-        is \u201C||\u201D. This operator is true when there is a true statement on
-        one or both sides of \u201C||\u201D. The only time this operator will produce
-        a false reading is when both statements on each side of \u201C||\u201D is
-        false. Press Continue to see an example."
+      value: 'This level will start you off simple, simply declare some variables
+        that you learned in Pseudo Island. Just remember to end each variable declaration
+        with a semicolon.
+
+        Press Continue to start the level.'
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[4]
@@ -3785,11 +3775,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
---- !u!61 &1368994108 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 6436739411977223337, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
-  m_PrefabInstance: {fileID: 1368994107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1388974743
 GameObject:
   m_ObjectHideFlags: 3
@@ -4244,7 +4229,7 @@ MonoBehaviour:
   m_OnSelect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1916993540}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: SetTyping
         m_Mode: 1
@@ -4259,7 +4244,7 @@ MonoBehaviour:
   m_OnDeselect:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1916993540}
         m_TargetAssemblyTypeName: PlayerControl.TMP_Selection, Assembly-CSharp
         m_MethodName: ResetTyping
         m_Mode: 1
@@ -4932,19 +4917,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae086b496917a704980c16b98faee419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userInput: {fileID: 0}
-  charInput: {fileID: 0}
-  stringInput: {fileID: 0}
-  boolInput: {fileID: 0}
-  floatInput: {fileID: 0}
-  doubleInput: {fileID: 0}
-  programOutput: {fileID: 0}
-  charOutput: {fileID: 0}
-  stringOutput: {fileID: 0}
-  boolOutput: {fileID: 0}
-  floatOutput: {fileID: 0}
-  doubleOutput: {fileID: 0}
-  levelSprite: {fileID: 1368994108}
+  programOutput: {fileID: 1519974303}
+  soundCheck: {fileID: 135134990}
+  playerInput: {fileID: 1560990131}
 --- !u!114 &1916993544
 MonoBehaviour:
   m_ObjectHideFlags: 0

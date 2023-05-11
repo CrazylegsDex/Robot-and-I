@@ -113,7 +113,6 @@ namespace CSharpLevels
                     TMP_Text output = GameObject.Find(""Error Output"").GetComponent<TMP_Text>();
                     TMP_Text completionBox = GameObject.Find(""Completed"").GetComponent<TMP_Text>();
 					TMP_Text check = GameObject.Find(""SoundCheckBox"").GetComponent<TMP_Text>();
-                    TMP_InputField code = GameObject.Find(""User Input"").GetComponent<TMP_InputField>();
 
                     // The problem statement is already displayed.
                     // Create the variables and use the player's defined variables
