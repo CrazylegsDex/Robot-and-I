@@ -153,18 +153,17 @@ namespace CSharpLevels
                         }
 
                         // Problem 4
-                        if (problemStatement.text.Contains(""double 1.5""))
+                        if (problemStatement.text.Contains(""integer 240""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            int a = 2;
-                            double b = 3.0, result = 0;
+                            int a = 2, b = 10, result = 0;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
                             // Test the value of result
-                            if (result == 1.5)
+                            if (result == 240)
                             {
                                 // Set the input & output boxes
                                 programResults.text = ""Correct Again"";
@@ -195,7 +194,7 @@ namespace CSharpLevels
                             {
                                 // Set the input & output boxes
                                 programResults.text = ""Awesome Work"";
-                                problemStatement.text = ""int a = 2; double b = 3;\r\nName your variable result, and use a,b to get the resulting double 1.5."";
+                                problemStatement.text = ""int a = 2; int b = 10;\r\nName your variable result, and use a,b to get the resulting integer 240."";
                                 code.text = """";
 								check.text = ""correct"";
                             }
@@ -208,20 +207,17 @@ namespace CSharpLevels
                         }
 
                         // Problem 2
-                        if (problemStatement.text.Contains(""double 0.62""))
+                        if (problemStatement.text.Contains(""integer 0""))
                         {
                             // The problem statement is already displayed.
                             // Create the variables
-                            double a = 9.4, b = 7.3, result = 0;
+                            int a = 9, b = 7, result = -1;
 
                             // Insert the player's code into the program
                             " + playerText + @"
 
-                            // Due to precision, round result off
-                            result = Math.Round(result, 2);
-
                             // Test the value of result
-                            if (result == 0.62)
+                            if (result == 0)
                             {
                                 // Set the input & output boxes
                                 programResults.text = ""Great Job"";
@@ -252,7 +248,7 @@ namespace CSharpLevels
                             {
                                 // Set the input & output boxes
                                 programResults.text = ""Correct"";
-                                problemStatement.text = ""double a = 9.4, b = 7.3;\r\nName your variable result, and use a,b to get the resulting double 0.62."";
+                                problemStatement.text = ""int a = 9, b = 7;\r\nName your variable result, and use a,b to get the resulting integer 0."";
                                 code.text = """";	
 								check.text = ""correct"";
                             }
