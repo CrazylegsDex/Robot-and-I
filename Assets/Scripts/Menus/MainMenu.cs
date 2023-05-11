@@ -15,7 +15,6 @@ namespace GameMechanics
     public class MainMenu : MonoBehaviour
     {
         [Header("Menu Buttons")]
-        public TMP_InputField hiddenInputField;
         public Button newGameButton;
         public Button continueGameButton;
         public Button optionsGameButton;
@@ -29,12 +28,6 @@ namespace GameMechanics
             {
                 continueGameButton.interactable = false;
             }
-        }
-
-        public void GotoLevel()
-        {
-            // For development purposes, load the scene in the hiddenText
-            StartCoroutine(Load_Level.SceneLoader(hiddenInputField.text));
         }
 
         public void NewGame()
