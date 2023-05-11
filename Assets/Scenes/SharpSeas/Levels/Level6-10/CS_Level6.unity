@@ -594,7 +594,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1398,7 +1398,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5659,7 +5659,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5987,7 +5987,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6434,7 +6434,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6965,7 +6965,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7581,7 +7581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bit: {fileID: 407321632}
   LessonObject: {fileID: 1195352653}
-  ChestSprite: {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  ChestSprite: {fileID: -1171583405, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   Chest:
   - {fileID: 888184394}
   - {fileID: 1743120860}
@@ -7816,7 +7816,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 618186207, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
+  m_Sprite: {fileID: -1788310022, guid: 63cdebe589bdd1949ab0ce5d0e5dc984, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

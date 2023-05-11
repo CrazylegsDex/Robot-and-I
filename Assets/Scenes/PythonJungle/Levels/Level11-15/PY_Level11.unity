@@ -2462,11 +2462,7 @@ PrefabInstance:
       objectReference: {fileID: 537108707}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
-<<<<<<< Updated upstream
       value: 6
-=======
-      value: 2
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -2475,15 +2471,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
-<<<<<<< Updated upstream
       value: "For every programming language, the only difference in while loops
         is syntax. Let\u2019s look at an example and go over it so we can learn more
         about while loops in Python."
-=======
-      value: 'rippp
-
-'
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
