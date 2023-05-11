@@ -25,7 +25,7 @@ public class Manual : MonoBehaviour
             if (Application.isEditor) // If in Editor mode
             {
                 // Get the Path
-                ManualPath = Path.Combine(Path.GetDirectoryName(Application.dataPath), "BuildRelease\\UserManual1.0.pdf");
+                ManualPath = Path.Combine(Path.GetDirectoryName(Application.dataPath), "BuildRelease\\UserManual.pdf");
 
                 // Check the validity of the file before attempting an open
                 if (!File.Exists(ManualPath))
@@ -37,7 +37,7 @@ public class Manual : MonoBehaviour
             else // If in Build mode
             {
                 // Get the Path
-                ManualPath = Path.Combine(Path.GetDirectoryName(Application.dataPath), "UserManual1.0.pdf");
+                ManualPath = Path.Combine(Path.GetDirectoryName(Application.dataPath), "UserManual.pdf");
 
                 // Check the validity of the file before attempting an open
                 if (!File.Exists(ManualPath))
