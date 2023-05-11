@@ -5786,7 +5786,7 @@ PrefabInstance:
     - target: {fileID: 6436739411977223338, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1988206086, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
+      objectReference: {fileID: 1339716226, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5797,7 +5797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 506.7
+      value: 504.88
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5833,7 +5833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223341, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_Name
-      value: Shelby
+      value: Gerome
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223382, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_GravityScale

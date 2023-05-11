@@ -1372,7 +1372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &259610531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1385,12 +1385,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1076127392}
+  m_Father: {fileID: 1074259699}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 163.03336, y: 66.757}
+  m_AnchoredPosition: {x: 70.100006, y: 4.200058}
   m_SizeDelta: {x: 132.585, y: 63.557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259610532
@@ -2462,7 +2462,11 @@ PrefabInstance:
       objectReference: {fileID: 537108707}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.size
+<<<<<<< Updated upstream
       value: 6
+=======
+      value: 2
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[0]
@@ -2471,9 +2475,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[1]
+<<<<<<< Updated upstream
       value: "For every programming language, the only difference in while loops
         is syntax. Let\u2019s look at an example and go over it so we can learn more
         about while loops in Python."
+=======
+      value: 'rippp
+
+'
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -6910,6 +6920,7 @@ RectTransform:
   - {fileID: 1222867302}
   - {fileID: 1500922749}
   - {fileID: 1049670556}
+  - {fileID: 259610531}
   m_Father: {fileID: 1076127392}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7083,7 +7094,6 @@ RectTransform:
   - {fileID: 248582374}
   - {fileID: 1761072378}
   - {fileID: 537108705}
-  - {fileID: 259610531}
   - {fileID: 1074259699}
   - {fileID: 1360517869}
   - {fileID: 1552502908}
@@ -8571,7 +8581,7 @@ PrefabInstance:
     - target: {fileID: 6436739411977223338, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1771383569, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
+      objectReference: {fileID: -2074357080, guid: 160c23010d26d474b867af7f88bbb772, type: 3}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8582,7 +8592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 534.3
+      value: 533.72
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223339, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8618,7 +8628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6436739411977223341, guid: e2f961d82ff494b4980caf39a9d2f212, type: 3}
       propertyPath: m_Name
-      value: Dr Michigan
+      value: Favion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

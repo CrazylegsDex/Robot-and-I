@@ -44,10 +44,7 @@ namespace PythonLevels
 		}
 		
 		public void setActives(){
-			lesson1.SetActive(true);
 			lesson2.SetActive(false);
-			exbox.SetActive(true);
-			setText();
 		}
 		
 		
