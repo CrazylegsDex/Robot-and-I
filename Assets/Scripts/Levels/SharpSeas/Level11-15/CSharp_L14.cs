@@ -26,8 +26,7 @@ namespace CSharpLevels
         public TextMeshProUGUI soundCheck;
         public TextMeshProUGUI answerCheck;
         public TMP_InputField playerInput;
-        public GameObject BitsFriend;
-        public List<Sprite> Friends;
+        public List<GameObject> Friends;
 
         // Private variables
         private string declarations;
@@ -457,14 +456,19 @@ namespace CSharpLevels
             int SpriteNumber = 0;
             int Number = UnityEngine.Random.Range(25, 101);
 
-            // Loop through the Sprites until Number
+            // Set the potentially active Friends to inactive
+            Friends[6].SetActive(false);
+            Friends[16].SetActive(false);
+
+            // Loop through the Friends until Number
             for (int i = 0; i < Number; ++i)
             {
-                // Change the Sprite
-                BitsFriend.GetComponent<SpriteRenderer>().sprite = Friends[SpriteNumber];
+                // Deactivate the current sprite and activate the next one
+                Friends[SpriteNumber].SetActive(false);
+                Friends[(SpriteNumber + 1) % 20].SetActive(true);
                 SpriteNumber += 1;
 
-                // If the SpriteNumber hits 20, reset it back to 0
+                // If the SpriteNumber hits 19, reset it back to 0
                 if (SpriteNumber == 20)
                     SpriteNumber = 0;
 
@@ -473,20 +477,21 @@ namespace CSharpLevels
             }
 
             // Check the answer box to see if the user got the correct index
+            Friends[SpriteNumber].SetActive(false); // Set the last active Sprite to inactive
             switch (answerCheck.text)
             {
                 case "16":
-                    programOutput.text = "16\n\nYou found Jeffries best Friend Bit!! Amazing Job.";
-                    BitsFriend.GetComponent<SpriteRenderer>().sprite = Friends[16];
+                    programOutput.text = "16\n\nYou found Lauren's best Friend Bit!! Amazing Job.";
+                    Friends[16].SetActive(true);
                     break;
 
                 case "Error":
-                    BitsFriend.GetComponent<SpriteRenderer>().sprite = Friends[15];
+                    Friends[0].SetActive(true);
                     break;
 
                 default:
-                    programOutput.text = answerCheck.text + "\n\nWhat are you doing Bit?\nJeffry is allergic to Cats, fix the Code...\nFix the Code!!";
-                    BitsFriend.GetComponent<SpriteRenderer>().sprite = Friends[6];
+                    programOutput.text = answerCheck.text + "\n\nWhat are you doing Bit?\nLauren is allergic to Cats, fix the Code...\nFix the Code!!";
+                    Friends[6].SetActive(true);
                     break;
             }
         }

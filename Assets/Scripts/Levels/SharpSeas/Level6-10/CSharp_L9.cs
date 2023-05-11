@@ -368,7 +368,7 @@ namespace CSharpLevels
         {
             // Get the starting crab location for reset.
             Vector3 startLocation = Crabs[0].transform.position;
-            int finish = 0;
+            int finish = 0, CrabNum = 0, AxisValue = 6;
 
             // Dramatic effect text, show racers
             programOutput.text = "The Race will begin in: ";
@@ -397,6 +397,20 @@ namespace CSharpLevels
                 Crabs[1].transform.Translate(float.Parse(speeds[1]), 0, 0);
                 Crabs[2].transform.Translate(float.Parse(speeds[2]), 0, 0);
                 Crabs[3].transform.Translate(float.Parse(speeds[3]), 0, 0);
+
+                if (i % 50 == 0)
+                {
+                    // Rotate through each crab to change the Z-Axis position so the user can see all the crabs
+                    Crabs[CrabNum].transform.Translate(0, 0, AxisValue);
+                    CrabNum++; // Increment to next crab
+
+                    // If end of Crabs
+                    if (CrabNum == 4)
+                    {
+                        CrabNum = 0; // Reset CrabNum
+                        AxisValue *= -1; // Invert the Axis Value
+                    }
+                }
 
                 // Check the location of each crab. If greater than finish line, set inactive
                 for (int j = 0; j < 4; ++j)

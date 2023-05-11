@@ -1176,7 +1176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7755815015385650935, guid: 640214e2c0023b6429fc425b9627fefd, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "Watch out for those semicolons. We are what we programmers most often
+      value: "Watch out for those semicolons. They are what we programmers most often
         miss in languages like C#. Now let\u2019s program Bit so we can watch these
         turtles race. Press Continue to see the question!"
       objectReference: {fileID: 0}

@@ -140,8 +140,8 @@ namespace CSharpLevels
                     }
 
                     // At end of loop, check the output box and if it contains the right numbers
-                    if (output.text.Contains("" 215"") && output.text.Contains("" 252"") && output.text.Contains("" 226"") &&
-                        output.text.Contains("" 357"") && output.text.Contains("" 286"") && output.text.Contains("" 429""))
+                    if (output.text.Contains("" 211"") && output.text.Contains("" 249"") && output.text.Contains("" 223"") &&
+                        output.text.Contains("" 352"") && output.text.Contains("" 282"") && output.text.Contains("" 422""))
                     {
                         output.text += ""You timed all the turtles correctly. Amazing job Bit!!"";
                         soundBox.text = ""Correct"";
