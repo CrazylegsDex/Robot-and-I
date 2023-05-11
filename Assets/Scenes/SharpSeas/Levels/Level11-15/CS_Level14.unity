@@ -1055,24 +1055,24 @@ MonoBehaviour:
   Friends:
   - {fileID: 219736781, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
   - {fileID: 1771383569, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
-  - {fileID: -1494433966, guid: 7ac79a9649f4ce040851b0e71efb9388, type: 3}
-  - {fileID: 574478972, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
-  - {fileID: 1552222850, guid: f71e285e7ece797418498f4e149c9026, type: 3}
-  - {fileID: -861482519, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
-  - {fileID: -1819360400, guid: a5f6614d7ec592d4b9649d4977e52353, type: 3}
-  - {fileID: 2092662661, guid: cc405d751d6f4fc46a4a322dcad7371b, type: 3}
-  - {fileID: -1850956496, guid: 7ac79a9649f4ce040851b0e71efb9388, type: 3}
-  - {fileID: -1747034965, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
+  - {fileID: -278660302, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
+  - {fileID: 828198229, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
+  - {fileID: 1339716226, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
+  - {fileID: 552065723, guid: b20cb91f3c58fa54ab7776d0bb2a20e1, type: 3}
+  - {fileID: 2553213, guid: 51a95d9848625dc4caaf2914515c9afc, type: 3}
+  - {fileID: 730412996, guid: 160c23010d26d474b867af7f88bbb772, type: 3}
+  - {fileID: 1580547082, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
+  - {fileID: 252615708, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
+  - {fileID: -819691587, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
+  - {fileID: -88345064, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
   - {fileID: 981742158, guid: 5aa8bc84414e21643b5ec6657ac373ec, type: 3}
-  - {fileID: -889416065, guid: 2dd97b08f8ba06440b7c6535dee50249, type: 3}
-  - {fileID: 382114132, guid: f71e285e7ece797418498f4e149c9026, type: 3}
   - {fileID: -1102614408, guid: 4376e87fe3d074a42befcdd69159b420, type: 3}
-  - {fileID: -901986330, guid: 882db1b5d7180dd4bb5252e4a480f052, type: 3}
-  - {fileID: -1581893028, guid: 2f85d624bfa6d434f904fae1bb235cf2, type: 3}
-  - {fileID: -1601111617, guid: 0f8d7a82db6a5304e810b9239851077c, type: 3}
-  - {fileID: 399008364, guid: 5aa8bc84414e21643b5ec6657ac373ec, type: 3}
-  - {fileID: 773809016, guid: 0f8d7a82db6a5304e810b9239851077c, type: 3}
-  - {fileID: -1090404104, guid: f71e285e7ece797418498f4e149c9026, type: 3}
+  - {fileID: 1050647941, guid: 160c23010d26d474b867af7f88bbb772, type: 3}
+  - {fileID: 432825863, guid: 160c23010d26d474b867af7f88bbb772, type: 3}
+  - {fileID: -762774199, guid: 51a95d9848625dc4caaf2914515c9afc, type: 3}
+  - {fileID: 184813561, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
+  - {fileID: -6800826857180800239, guid: a00e1c346421e554187bbe5418b78892, type: 3}
+  - {fileID: -1940738496428130850, guid: a00e1c346421e554187bbe5418b78892, type: 3}
 --- !u!1 &220496582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4913,8 +4913,8 @@ MonoBehaviour:
     to contain 20 different possibilities. I will initialize the array with possible
     friends for Jeffy, then I want you to loop through the array checking each element.
     Once you find the one that says "Best Friend", then print that array index and
-    end the loop. You will find his best friend, I know it. It certainly cannot be
-    that Chicken.
+    end the loop. You will find Lauren's best friend, I know it. It certainly cannot
+    be that Chicken.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5223,7 +5223,7 @@ PrefabInstance:
       value: 'Arrays in C# are a little more complex. There are multiple ways to
         declare an array. You can declare an empty array like this:
 
-        
+
 
         Example:
 
@@ -5248,7 +5248,7 @@ PrefabInstance:
       value: 'To populate an array that has been initialized like this you can do
         this:
 
-        
+
 
         Example:
 

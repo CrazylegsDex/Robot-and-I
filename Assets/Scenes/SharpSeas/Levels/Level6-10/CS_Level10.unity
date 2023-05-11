@@ -201,8 +201,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126325341}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100.997925, y: -194.4, z: -3}
-  m_LocalScale: {x: 73, y: 66, z: 1}
+  m_LocalPosition: {x: 96.8, y: -200.9, z: -3}
+  m_LocalScale: {x: 60, y: 60, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1213020702}
@@ -249,7 +249,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5521963042201966392, guid: a00e1c346421e554187bbe5418b78892, type: 3}
+  m_Sprite: {fileID: 828198229, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -285,7 +285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162110930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 218.45172, y: -208.50008, z: -3}
+  m_LocalPosition: {x: 218.45172, y: -211.9, z: -3}
   m_LocalScale: {x: 20, y: 23, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -958,7 +958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583988870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 203.1, y: -193.90005, z: -3}
+  m_LocalPosition: {x: 225.3, y: -198.1, z: -3}
   m_LocalScale: {x: 73, y: 66, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1006,7 +1006,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1215416811962233960, guid: a00e1c346421e554187bbe5418b78892, type: 3}
+  m_Sprite: {fileID: -278660302, guid: 4a6488385982bbf488d658506ec737ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2026,7 +2026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114345134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 85.2, y: -208.60005, z: -3}
+  m_LocalPosition: {x: 85.2, y: -212.3, z: -3}
   m_LocalScale: {x: 20, y: 23, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2100,7 +2100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1213020702
 RectTransform:
   m_ObjectHideFlags: 0
