@@ -47466,8 +47466,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'It seems that the bridge that leads out to the rest of this island has
-    collapsed; I can order a new one but only if there was someone who could translate
-    these binary numbers to their decimal equivalents for me.
+    collapsed; I can order a new one, but only if there was someone who could translate
+    these binary numbers to their decimal equivalents for me.....
 
 
     *Ahem*, Sorry
@@ -50513,15 +50513,20 @@ MonoBehaviour:
   LessonObject: {fileID: 326990190}
   ProfessorName: The Duke
   sentences:
-  - "The \u201CM\u201D button is for the menu in the level. This menu will give you
-    access to the options menu for controlling sound output or access to the user
-    manual, the save button, or a way to exit back to the current island\u2019s map. "
-  - A level will start with a citizen explaining what they need help with. Then I,
-    The Duke, will teach you the lesson over a programming concept that Bit needs
+  - "If you look on the right hand corner of the screen, you will see some buttons:
+    R, N, M. The \u201CR\u201D button will reset the level as if it was the first
+    time you saw it. The \u201CN\u201D button will pop up a notebook if you would
+    like to write any notes there. This can be accessed during the level or while
+    in the map. It will automatically save whatever you add or delete to it after
+    being closed. The \u201CM\u201D button is for the menu in the level. This menu
+    will give you access to a save button if you would rather manually save your
+    progress, the options menu, your notebook, or a way to exit back to the map. "
+  - 'A level will start with a citizen explaining what they need help with. Then
+    I, The Duke, will teach you the lesson over a programming concept that Bit needs
     to learn. Remember, you can take notes at any time. You will then answer questions
     over this concept. Once finished, Bit will gain the code he needs to solve the
-    task at hand. Some of these early levels will be ways to teach basic concepts
-    to Bit rather than actual peril.
+    task at hand. The first level you start with will not have a task. This is just
+    a warm up level to show you what you can expect for the lessons and questions. '
   - "Now that we\u2019ve discussed a little bit about your interface controls, your
     first task starts now!"
 --- !u!114 &7755815016446602963
@@ -50546,13 +50551,11 @@ MonoBehaviour:
   - Before we start teaching Bit anything you should familiarize yourself with the
     interface, and how to interact with what you can see. As you have already discovered
     you can click on buttons using your mouse/trackpad.
-  - "You can get Bit to move left using the \u201Cleft\u201D key or \u201Ca\u201D
-    key. They can move right as well using the \u201Cright\u201D key or \u201Cd\u201D
-    key. You can try this out now if you haven\u2019t.\r\n\r\nSome Special tools
-    bit can use are activated with the \"e\" key. Bit won\u2019t have access to all
-    their abilities as they learn how to use their innate capabilities more and more.
-    Occasionally abilities will be disabled it\u2019s for the safety of Bit and other
-    around them mind you.\r\n"
+  - "To move around in the levels, you can either use your left and right arrow keys
+    or A and D. The left arrow and \u201CA\u201D on the keyboard will move Bit to
+    the left. The right arrow and \u201CD\u201D on the keyboard will move Bit to
+    the right. To jump, press the spacebar. In some levels, you may need to pick
+    up an item. If you need to do that, you can press \u201CE\u201D on your keyboard. "
 --- !u!114 &7755815016882093847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50572,43 +50575,67 @@ MonoBehaviour:
   LessonObject: {fileID: 1510310347}
   ProfessorName: The Duke
   sentences:
-  - "So, what is binary? Binary is a system to record numbers using only two digits,
-    those being 1, and 0. you might be asking yourself \u201CHow can you record numbers
-    using only two numbers?\u201D it\u2019s simple, the same way you would with any
-    other system."
-  - "Alright let me explain using Decimal (also known as base-ten), what we humans
-    are used to counting in. Decimal uses ten digits 0 through 9, when you count
-    you start at 0 then increment until you reach 9. On the ten count you start over
-    back at 0 in the ones-place and the next place over (the tens-place) it increments
-    from an implied 0 to a 1, making the number look like \u201C10\u201D. This process
-    continues until the tens-place reaches wants to change from 9 to 0, at this point
-    we do the same thing we did before, but with the hundredths-place instead."
-  - "This is how binary works, increment digits in the ones-place and when you cycle
-    back to 0 in a place increment the next place. One other difference is what we
-    call most of the \u201Cplaces\u201D since they cycle at different numbers each
-    place represents a different number. In decimal each N-place is represented by
-    10^(N-1)[example the 4th place to the left represent is the thousandths-place
-    or 10^(4-1)]. A similar equation is used for binary, 2^(N-1). The only difference
-    is replacing the ten with two."
-  - The first eight places in decimal represent ones, twos, fours, eights, sixteens,
-    thirty-twos, sixty-fours, and one hundred twenty-eights; Meaning with eight digits
-    the highest you could count to in binary would be two hundred fifty-five.
-  - "When talking about Binary numbers, a single digit of it is referred to as a
-    bit not unlike our friend here. It is not uncommon to group binary numbers into
-    groups of four bits (called nibbles) for clarity, even if they include leading
-    zeros just to make sure there are four digits.\r\n\r\nWhat do you call it when
-    you have two nibbles...?\r\n\r\nYou get a BYTE! No\u2026 seriously, a collection
-    of eight bits is we actually refer to as a byte.\r\n"
-  - "Hopefully by now you\u2019ve grasped the concept of how to count in binary,
-    now we will discuss how you can go about identifying a binary number. The easiest
-    way to read a binary number is to recall what each place represents (hope you
-    were taking notes), as you can get what it represents just based on what places
-    have 1s in them. For every place that is represented by a one, get the sum of
-    the numbers those places represent, the total will be the number what the binary
-    number will be in decimal."
-  - "1010\r\nSay for example you have the number up above, there are two 1s, one
-    in the twos-place and another in the eights-place.  To get the number we add
-    together two and eight getting ten. Meaning 1010 in binary is equivalent to 10
-    in decimal. Okay let\u2019s try this out, I have four nibbles that need translated
-    into decimal, followed by four bytes that will need to also be translated into
-    their decimal equivalents.\r\n"
+  - '1100 1011 1101 1111 0001 1100
+
+
+    This is Binary!! Binary is base 2 numbers.
+    [Feels rushed. Start with an explanation of the number system. Ones place, tens
+    place, Hundreds and where base 10 fits into that. Then start to transition to
+    what Binary is and what it means in the places.] This means that the only numbers
+    we have to work with are 1 and 0. What we consider normal numbers as base 10
+    (0-9). '
+  - "To explain binary to you, I\u2019ll first use base 10 as an example. Binary
+    works very similar to base 10. The difference is that the only numbers used are
+    1 and 0. In base 10, once we get to the number 9, we move to another number place,
+    the tens place. Once we get to 19, we run out of numbers in the ones place again.
+    We then change the tens place to 2 to make it 20 and start the ones place back
+    over with 0. This is a lot like binary except after 1, we move to the next number
+    place. "
+  - 'Example:
+
+    1 = 0001
+
+    2 = 0010
+
+    3 = 0011
+
+    4 = 0100
+
+    5 = 0101
+
+    6
+    = 0110
+
+'
+  - "Binary is usually shown in groups of 4. Example: 1000 1101 1100\r\nLet\u2019s
+    break this down a little more. \r\nZero is the same as in base 10. It\u2019s
+    0000.\r\nOne is the same as in base 10 as well, 0001.\r\n"
+  - 'Two is where it gets tricky. As stated before, 1 and 0 are the only numbers
+    in binary (base 2). So, like in base 10, when you run out of numbers to use,
+    you create another number place. This makes 2 equal 0010 in binary. Much like
+    in base 10, we create a new number place and leave the last as 0.
+
+'
+  - "Three is one more than two. Like in base 10, we keep adding to the first place
+    until we run out of space. Therefore, three is 0011. \r\nFrom there, we need
+    another number place as the last two places are filled with one. This means that
+    4 is 0100. \r\n"
+  - 'After we learn how to count in binary, We should learn how to convert binary
+    to base 10 using the simple chart below. The above portion is a number that is
+    in binary. The lower portion is that number places value. These can be found
+    by using powers of two or in other words, base 2 and exponents starting from
+    0 and then going up by one exponent every time. '
+  - 'The least significant digit (all the way to the right and has the least value)
+    is 2 to the power of 0 (2^0) (I should mention ^ indicates an exponent) or 1
+    in base 10, as anything to the power of 0 is 1. The next number place is 2 to
+    the power of 1 (2^1) or 2 in base 10. The next number place is 2 to the power
+    of 2 (22) or 4 in base 10. This continues for every number place. 2^3 = 8. 2^4
+    = 16. 2^5 = 32. 2^6 = 64. 2^7 = 128. '
+  - "128 64 32 16       8   4   2   1  \r\n\r\nUsing this chart, we can find the
+    base 10 version of this number. The numbers below, 0\u2019s and 1\u2019s, are
+    the values that each place holds. Starting from the left, the first value is
+    1 then 2 then 4 and so on. Because these are base 2, to find the next value,
+    you multiply by 2 starting with 1. To find the value of this binary number 1011
+    1101, you will add the numbers with 1 above them. So 1 + 4 + 8 + 16 + 32 + 128
+    = 189\r\n"
+  - Are you ready to help Bit understand this concept? Great! Press Continue to start!
