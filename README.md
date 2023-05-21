@@ -37,5 +37,4 @@ in-game Notebook.
 
 # The Future
 This repository is hereafter considered finished and will not be returned to. For individuals wishing to continue the project, copy the code
-or ask questions about the project; they may contact Dexter directly via email - dwdowney1@buffs.wtamu.edu  
-For those that do not have Unity but would like to play the game, please see the release section of this repository for a downloadable zip file. 
+or ask questions about the project; they may contact Dexter directly via email - dwdowney1@buffs.wtamu.edu
